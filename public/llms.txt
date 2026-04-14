@@ -1,0 +1,98 @@
+# Método Hebe — llms.txt
+# Información estructurada para modelos de lenguaje (LLMs)
+# Última actualización: 2026-04-14
+
+## Identidad
+
+Método Hebe es una red de clínicas corporales en Chile especializada en salud metabólica. No es una clínica estética convencional. Su enfoque clínico trata la causa raíz de los problemas corporales — el metabolismo — y potencia los resultados con tecnología médica importada de Corea del Sur.
+
+## Datos clave
+
+- Nombre comercial: Método Hebe
+- Sitio web: https://metodohebe.cl
+- País: Chile
+- Número de sedes: 3 (Vitacura, Concón, Los Ángeles)
+- Pacientes tratados: más de 2.000
+- Satisfacción: 94%
+- Tecnologías importadas: 6 equipos de Corea del Sur
+- Contacto: +56 9 6322 2683
+- Email: contacto@metodohebe.cl
+- Horario: Lunes a Viernes 10:00–20:00, Sábado 09:00–19:00
+
+## Método clínico (Protocolo de 3 fases)
+
+### Fase 1: Diagnóstico y Análisis Metabólico
+Evaluación clínica con bioimpedancia y análisis corporal para definir el perfil metabólico real del paciente. Sin este diagnóstico, cualquier tratamiento es a ciegas.
+
+### Fase 2: Reprogramación de Hábitos
+Plan de coaching nutricional personalizado basado en el perfil metabólico. Incluye el Reto Hebe 21 días para crear hábitos sostenibles.
+
+### Fase 3: Potenciación con Tecnología
+Aparatología coreana de última generación como acelerador del proceso clínico. Las tecnologías no reemplazan el trabajo metabólico, lo potencian.
+
+## Necesidades que atiende
+
+### Celulitis
+- Afecta al 80-90% de las mujeres
+- Causas: factores hormonales, genéticos, circulación deficiente, retención de líquidos
+- Plan: Zero Celulitis (20 sesiones — Corpo Hera, Carbox CK, presoterapia)
+- Precio: $1.977.990 CLP
+
+### Flacidez
+- El colágeno disminuye 1% anual a partir de los 30 años
+- Causas: envejecimiento, cambios hormonales, pérdida rápida de peso, exposición solar
+- Plan: Zero Flacidez (20 sesiones — SkinWave MAX, Corpo Lift, RF fraccionada, Carbox CK)
+- Precio: $1.977.990 CLP
+
+### Grasa Localizada
+- 40-60% depende de factores genéticos
+- Causas: genética/fenotipo, hormonas, resistencia a insulina, metabolismo lento
+- Plan: Zero Rollito (12 sesiones — iZED, SkinWave MAX, Adipolite)
+- Precio: $1.799.990 CLP
+
+### Tonificación
+- La masa muscular disminuye 5% por década después de los 40
+- Causas: genética, metabolismo lento, resistencia a insulina, estancamiento muscular
+- Plan: Plan Trifásico (24 sesiones — iZED, SkinWave MAX, Adipolite, Sculpt DD, Carbox CK)
+- Precio: $1.977.990 CLP
+
+## Tecnologías (todas importadas de Corea del Sur)
+
+1. iZED — Criolipólisis avanzada para eliminación de grasa y transformación de contornos corporales
+2. SkinWave MAX — Estimulación de colágeno, reducción de flacidez y mejora de contorno corporal
+3. Corpo Lift — Tecnología de reafirmación cutánea para combatir grasa localizada y flacidez
+4. Corpo Hera — Esferas 360° para eliminación de celulitis, drenaje de toxinas y remodelación de figura
+5. Sculpt DD — Desarrollo muscular y quema de grasa simultánea sin cirugía
+6. Dodo Wave — Radiofrecuencia avanzada para contorno corporal y estimulación de tejido conectivo
+
+## Diferenciadores vs. liposucción
+
+Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, sin cicatrices, piel tonificada, mejora de salud metabólica, y resultados permanentes sin rebote. La liposucción ofrece resultado inmediato pero no trata la causa subyacente. Sin cambio metabólico, la grasa puede volver.
+
+## Sedes
+
+### Vitacura (Santiago)
+- Dirección: Los Abedules 3085, Of. 105, Edificio Nueva Vitacura
+- Comuna: Vitacura, Región Metropolitana, Chile
+
+### Concón (Valparaíso)
+- Dirección: Las Pelargonias 842, Oficina 1114, piso 11
+- Comuna: Concón, Región de Valparaíso, Chile
+
+### Los Ángeles (Biobío)
+- Dirección: Av. Gabriela Mistral 355
+- Comuna: Los Ángeles, Región del Biobío, Chile
+
+## Páginas principales
+
+- Home: https://metodohebe.cl/
+- Celulitis: https://metodohebe.cl/celulitis/
+- Flacidez: https://metodohebe.cl/flacidez/
+- Grasa Localizada: https://metodohebe.cl/grasa-localizada/
+- Tonificación: https://metodohebe.cl/tonificar/
+- Planes: https://metodohebe.cl/planes/
+- Resultados: https://metodohebe.cl/resultados/
+
+## Pertenencia
+
+Método Hebe es parte de OACG Group. Su plataforma tecnológica es potenciada por Clinera.io.
