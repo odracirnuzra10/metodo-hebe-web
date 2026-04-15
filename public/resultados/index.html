@@ -76,9 +76,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:100;background:rgba(254,254,254,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,197,197,.08)}
 .nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
-.nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
-.nav-logo-svg{height:40px;width:auto}
-.nav-badge{font-size:10px;letter-spacing:.5px;color:var(--ink-muted);font-weight:500}
+.nav-logo{display:flex;align-items:baseline;gap:5px;text-decoration:none;line-height:1}
+.nav-logo-script{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:14px;font-weight:400;color:var(--cyan);letter-spacing:.5px}
+.nav-logo-bold{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:800;color:var(--cyan);letter-spacing:3px}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:13.5px;font-weight:500;color:var(--ink-2)}
 .nav-links a{transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
@@ -122,8 +122,8 @@ img{max-width:100%;display:block}
 .cases-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:clamp(16px,2.5vw,28px)}
 .case-card{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(28,197,197,.08);background:var(--bg);transition:transform .3s,box-shadow .3s}
 .case-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.08)}
-.case-img-wrap{position:relative;background:var(--bg-section)}
-.case-img-wrap img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.case-img-wrap{position:relative;background:#f0f0f0}
+.case-img-wrap img{width:100%;display:block;object-fit:contain;background:#f0f0f0}
 .case-badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px}
 .badge-before{background:rgba(11,30,30,.7);color:rgba(255,255,255,.7);font-size:10px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;text-transform:uppercase;backdrop-filter:blur(4px)}
 .badge-after{background:var(--cyan);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;text-transform:uppercase}
@@ -198,19 +198,13 @@ img{max-width:100%;display:block}
 <nav class="nav" id="navbar">
   <div class="wrap">
     <a href="/" class="nav-logo">
-      <svg class="nav-logo-svg" width="140" height="44" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
-        <style>@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Playfair+Display:wght@800&display=swap');</style>
-        <text x="50%" y="32" text-anchor="middle" font-family="'Dancing Script',cursive" font-weight="500" font-size="32" fill="#1CC5C5">Método</text>
-        <text x="50%" y="76" text-anchor="middle" font-family="'Playfair Display',serif" font-weight="800" font-size="48" fill="#1CC5C5" letter-spacing="6">HEBE</text>
-      </svg>
-      <span class="nav-badge">🇰🇷 Tecnología Coreana</span>
+      <span class="nav-logo-script">Método</span>
+      <span class="nav-logo-bold">HEBE</span>
     </a>
     <div class="nav-links">
       <a href="/">Inicio</a>
       <a href="/planes/">Planes</a>
       <a href="/resultados/" class="active">Resultados</a>
-      <a href="/#sedes">Sedes</a>
-      <a href="/#faq">Preguntas</a>
     </div>
     <button class="nav-cta" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n%20gratuita','_blank');hebeTrack('whatsapp_click',{location:'nav'})">Agenda tu evaluación</button>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -222,16 +216,9 @@ img{max-width:100%;display:block}
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="/">Inicio</a> <span>›</span> <span>Resultados</span></div>
-    <div class="page-hero-eyebrow"><span>Casos reales documentados</span></div>
-    <h1>Transformaciones <em>reales</em> de nuestras pacientes</h1>
-    <p>Cada caso es real, documentado y tratado con nuestro protocolo clínico de 3 fases. Sin filtros, sin cirugía, sin retoque.</p>
-    <div class="hero-stats-bar">
-      <div class="hero-stat-item"><div class="hero-stat-n">+30.000</div><div class="hero-stat-l">Pacientes tratados</div></div>
-      <div class="hero-stat-item"><div class="hero-stat-n">94%</div><div class="hero-stat-l">Satisfacción</div></div>
-      <div class="hero-stat-item"><div class="hero-stat-n">10</div><div class="hero-stat-l">Zonas tratadas</div></div>
-      <div class="hero-stat-item"><div class="hero-stat-n">4</div><div class="hero-stat-l">Planes disponibles</div></div>
-    </div>
+    <div class="page-hero-eyebrow"><span>+30.000 pacientes tratadas · 94% satisfacción</span></div>
+    <h1>Resultados <em>reales</em> de nuestras pacientes</h1>
+    <p>Casos documentados por zona. Sin filtros, sin cirugía, sin retoque.</p>
   </div>
 </div>
 
@@ -248,10 +235,9 @@ img{max-width:100%;display:block}
 <section class="zona-section section" id="zona-celulitis" data-zona="celulitis">
   <div class="wrap">
     <div class="zona-header">
-      <div class="zona-eyebrow"><span>Resultados / Celulitis</span></div>
-      <h2 class="zona-title">Celulitis — Eliminación <em>desde el tejido</em></h2>
-      <p class="zona-desc">La celulitis es una alteración del tejido subcutáneo que afecta al 80-90% de las mujeres. Nuestro Plan Zero Celulitis la ataca desde los factores circulatorios, hormonales y estructurales que la generan, con resultados documentados desde la primera sesión.</p>
-      <div class="zona-plan-badge">Plan Zero Celulitis · 20 sesiones · $1.977.990 CLP</div>
+      <div class="zona-eyebrow"><span>Celulitis</span></div>
+      <h2 class="zona-title">Plan Zero Celulitis — <em>20 sesiones</em></h2>
+      <div class="zona-plan-badge"><a href="/planes/#celulitis" style="color:inherit">Ver plan completo →</a></div>
     </div>
 
     <div class="cases-grid">
@@ -267,7 +253,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">20 sesiones</span>
             <span class="case-meta-item">3 meses</span>
           </div>
-          <p class="case-detail">Tratamiento completo con Corpo Hera (esferas 360°), Carbox CK y presoterapia. La celulitis en glúteos y parte posterior de muslos se redujo notablemente.</p>
           <div class="case-plan">→ Plan Zero Celulitis</div>
         </div>
       </figure>
@@ -284,7 +269,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">20 sesiones</span>
             <span class="case-meta-item">3.5 meses</span>
           </div>
-          <p class="case-detail">Protocolo combinado de drenaje linfático profundo con presoterapia y Carbox CK. Reducción visible de la textura de piel de naranja en abdomen bajo y cara interna de muslos.</p>
           <div class="case-plan">→ Plan Zero Celulitis</div>
         </div>
       </figure>
@@ -308,10 +292,9 @@ img{max-width:100%;display:block}
 <section class="zona-section section" id="zona-grasa" data-zona="grasa" style="background:var(--bg-section)">
   <div class="wrap">
     <div class="zona-header">
-      <div class="zona-eyebrow"><span>Resultados / Grasa Localizada</span></div>
-      <h2 class="zona-title">Grasa Localizada — Contorno <em>redefinido</em></h2>
-      <p class="zona-desc">La grasa localizada resiste dieta y ejercicio porque el 40-60% de su distribución es genética. Nuestro Plan Zero Rollito usa criolipólisis avanzada para eliminar las células grasas de forma permanente.</p>
-      <div class="zona-plan-badge">Plan Zero Rollito · 12 sesiones · $1.799.990 CLP</div>
+      <div class="zona-eyebrow"><span>Grasa Localizada</span></div>
+      <h2 class="zona-title">Plan Zero Rollito — <em>12 sesiones</em></h2>
+      <div class="zona-plan-badge"><a href="/planes/#grasa" style="color:inherit">Ver plan completo →</a></div>
     </div>
 
     <div class="cases-grid">
@@ -327,7 +310,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">12 sesiones</span>
             <span class="case-meta-item">2 meses</span>
           </div>
-          <p class="case-detail">Criolipólisis con iZED en flancos y abdomen. Reducción de más de 8cm de contorno abdominal documentado. La grasa eliminada no regresa con metabolismo estable.</p>
           <div class="case-plan">→ Plan Zero Rollito</div>
         </div>
       </figure>
@@ -344,7 +326,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">12 sesiones</span>
             <span class="case-meta-item">2 meses</span>
           </div>
-          <p class="case-detail">Protocolo de iZED en flancos bilaterales con posterior SkinWave MAX para tensar la piel sobre las zonas tratadas. Silueta más definida y contorno de cintura visiblemente mejorado.</p>
           <div class="case-plan">→ Plan Zero Rollito</div>
         </div>
       </figure>
@@ -361,7 +342,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">12 sesiones</span>
             <span class="case-meta-item">2.5 meses</span>
           </div>
-          <p class="case-detail">Tratamiento multizonal que incluyó flancos, abdomen y cara anterior de muslos. Recomposición del contorno total con criolipólisis + coaching metabólico personalizado.</p>
           <div class="case-plan">→ Plan Zero Rollito</div>
         </div>
       </figure>
@@ -378,7 +358,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">12 sesiones</span>
             <span class="case-meta-item">2 meses</span>
           </div>
-          <p class="case-detail">Criolipólisis en zona abdominal inferior y superior. Reducción documentada del perímetro abdominal con ajuste metabólico que previene la reaparición de la grasa eliminada.</p>
           <div class="case-plan">→ Plan Zero Rollito</div>
         </div>
       </figure>
@@ -395,7 +374,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">12 sesiones</span>
             <span class="case-meta-item">2 meses</span>
           </div>
-          <p class="case-detail">Tratamiento de zona dorsal y subcostal con iZED. Eliminación de grasa acumulada en la espalda que suele ser resistente al ejercicio por su alto componente genético.</p>
           <div class="case-plan">→ Plan Zero Rollito</div>
         </div>
       </figure>
@@ -412,7 +390,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">12 sesiones</span>
             <span class="case-meta-item">2 meses</span>
           </div>
-          <p class="case-detail">Vista lateral del abdomen con notable reducción del volumen. Protocolo completo con iZED + Adipolite + SkinWave MAX para resultado visual óptimo desde todos los ángulos.</p>
           <div class="case-plan">→ Plan Zero Rollito</div>
         </div>
       </figure>
@@ -424,10 +401,9 @@ img{max-width:100%;display:block}
 <section class="zona-section section" id="zona-flacidez" data-zona="flacidez">
   <div class="wrap">
     <div class="zona-header">
-      <div class="zona-eyebrow"><span>Resultados / Flacidez</span></div>
-      <h2 class="zona-title">Flacidez — Piel <em>firmada y tensada</em></h2>
-      <p class="zona-desc">El colágeno cae 1% por año desde los 30. Nuestro Plan Zero Flacidez estimula la neo-colagenesis con tecnología coreana, reafirmando el tejido desde las capas más profundas sin cirugía.</p>
-      <div class="zona-plan-badge">Plan Zero Flacidez · 20 sesiones · $1.977.990 CLP</div>
+      <div class="zona-eyebrow"><span>Flacidez</span></div>
+      <h2 class="zona-title">Plan Zero Flacidez — <em>20 sesiones</em></h2>
+      <div class="zona-plan-badge"><a href="/planes/#flacidez" style="color:inherit">Ver plan completo →</a></div>
     </div>
 
     <div class="cases-grid">
@@ -443,7 +419,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">20 sesiones</span>
             <span class="case-meta-item">3 meses</span>
           </div>
-          <p class="case-detail">SkinWave MAX activó la producción de colágeno nuevo en la zona abdominal. RF fraccionada trabajó en capas profundas. La piel recuperó tensión y firmeza visibles al tacto y visualmente.</p>
           <div class="case-plan">→ Plan Zero Flacidez</div>
         </div>
       </figure>
@@ -455,10 +430,9 @@ img{max-width:100%;display:block}
 <section class="zona-section section" id="zona-tonificacion" data-zona="tonificacion" style="background:var(--bg-section)">
   <div class="wrap">
     <div class="zona-header">
-      <div class="zona-eyebrow"><span>Resultados / Tonificación</span></div>
-      <h2 class="zona-title">Tonificación — Músculo definido <em>sin cirugía</em></h2>
-      <p class="zona-desc">El Plan Trifásico combina Sculpt DD (20.000 contracciones musculares por sesión) con iZED (eliminación de grasa) para una recomposición corporal real. Funciona para hombres y mujeres.</p>
-      <div class="zona-plan-badge">Plan Trifásico · 24 sesiones · $1.977.990 CLP</div>
+      <div class="zona-eyebrow"><span>Tonificación</span></div>
+      <h2 class="zona-title">Plan Trifásico — <em>24 sesiones</em></h2>
+      <div class="zona-plan-badge"><a href="/planes/#tonificacion" style="color:inherit">Ver plan completo →</a></div>
     </div>
 
     <div class="cases-grid">
@@ -474,7 +448,6 @@ img{max-width:100%;display:block}
             <span class="case-meta-item">24 sesiones</span>
             <span class="case-meta-item">4 meses</span>
           </div>
-          <p class="case-detail">Plan Trifásico completo. Sculpt DD generó el equivalente a meses de entrenamiento abdominal en pocas semanas. Reducción simultánea de grasa subcutánea con iZED para que la definición muscular sea visible.</p>
           <div class="case-plan">→ Plan Trifásico</div>
         </div>
       </figure>

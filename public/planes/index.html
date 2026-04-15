@@ -92,9 +92,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:100;background:rgba(254,254,254,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,197,197,.08)}
 .nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
-.nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px}
-.nav-logo-svg{height:40px;width:auto}
-.nav-badge{font-size:10px;letter-spacing:.5px;color:var(--ink-muted);font-weight:500}
+.nav-logo{display:flex;align-items:baseline;gap:5px;text-decoration:none;line-height:1}
+.nav-logo-script{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:14px;font-weight:400;color:var(--cyan);letter-spacing:.5px}
+.nav-logo-bold{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:800;color:var(--cyan);letter-spacing:3px}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:13.5px;font-weight:500;color:var(--ink-2)}
 .nav-links a{transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
@@ -224,19 +224,13 @@ img{max-width:100%;display:block}
 <nav class="nav" id="navbar">
   <div class="wrap">
     <a href="/" class="nav-logo">
-      <svg class="nav-logo-svg" width="140" height="44" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
-        <style>@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Playfair+Display:wght@800&display=swap');</style>
-        <text x="50%" y="32" text-anchor="middle" font-family="'Dancing Script',cursive" font-weight="500" font-size="32" fill="#1CC5C5">Método</text>
-        <text x="50%" y="76" text-anchor="middle" font-family="'Playfair Display',serif" font-weight="800" font-size="48" fill="#1CC5C5" letter-spacing="6">HEBE</text>
-      </svg>
-      <span class="nav-badge">🇰🇷 Tecnología Coreana</span>
+      <span class="nav-logo-script">Método</span>
+      <span class="nav-logo-bold">HEBE</span>
     </a>
     <div class="nav-links">
       <a href="/">Inicio</a>
       <a href="/planes/" class="active">Planes</a>
       <a href="/resultados/">Resultados</a>
-      <a href="/#sedes">Sedes</a>
-      <a href="/#faq">Preguntas</a>
     </div>
     <button class="nav-cta" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n%20gratuita','_blank');hebeTrack('whatsapp_click',{location:'nav'})">Agenda tu evaluación</button>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -275,7 +269,7 @@ img{max-width:100%;display:block}
       <div>
         <div class="plan-tag">Plan Zero Celulitis</div>
         <h2 class="plan-title">Elimina la celulitis desde <em>la raíz</em></h2>
-        <p class="plan-subtitle">La celulitis afecta al 80-90% de las mujeres. No es solo estética — es una alteración del tejido subcutáneo causada por factores hormonales, genéticos y circulatorios. Nuestro protocolo la ataca desde el origen, no solo la superficie.</p>
+        <p class="plan-subtitle">Protocolo clínico de 20 sesiones que trata la causa real: metabolismo + circulación + tejido subcutáneo. Sin cirugía, sin rebote.</p>
       </div>
       <div class="plan-price-box">
         <div class="plan-price-label">Precio plan completo</div>
@@ -291,32 +285,12 @@ img{max-width:100%;display:block}
     <div class="plan-body">
       <div>
         <div class="plan-info-block">
-          <div class="plan-info-label">¿Por qué aparece la celulitis?</div>
-          <div class="plan-stat-row">Factores hormonales (estrógeno) que debilitan el tejido conectivo</div>
-          <div class="plan-stat-row">Circulación deficiente que genera retención de líquidos y toxinas</div>
-          <div class="plan-stat-row">Predisposición genética que acelera su aparición desde joven</div>
-          <div class="plan-stat-row">Pérdida de colágeno que degrada la estructura del tejido subcutáneo</div>
-        </div>
-
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso del tratamiento (20 sesiones)</div>
+          <div class="plan-info-label">Proceso (20 sesiones)</div>
           <div class="phase-steps">
-            <div class="phase-step">
-              <div class="phase-num">1</div>
-              <div><div class="phase-title">Diagnóstico Metabólico (Sesión 1–2)</div><div class="phase-desc">Bioimpedancia y análisis de composición corporal. Definimos el perfil metabólico y el protocolo exacto para tu caso.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">2</div>
-              <div><div class="phase-title">Activación y drenaje (Sesiones 3–8)</div><div class="phase-desc">Corpo Hera rompe los nódulos de celulitis con esferas 360°. Carbox CK mejora la circulación con microinyecciones de CO₂. Presoterapia drena toxinas y activa el sistema linfático.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">3</div>
-              <div><div class="phase-title">Reafirmación tisular (Sesiones 9–16)</div><div class="phase-desc">Intensificamos el tratamiento. Los resultados se hacen visibles. Ajustamos el coaching nutricional según tu evolución.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">4</div>
-              <div><div class="phase-title">Consolidación (Sesiones 17–20)</div><div class="phase-desc">Sellamos los resultados. Protocolo de mantenimiento y hábitos para que la celulitis no regrese.</div></div>
-            </div>
+            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Diagnóstico metabólico</div><div class="phase-desc">Bioimpedancia + análisis corporal. Protocolo personalizado.</div></div></div>
+            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Activación y drenaje</div><div class="phase-desc">Corpo Hera rompe nódulos. Carbox CK mejora circulación. Presoterapia drena toxinas.</div></div></div>
+            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Reafirmación tisular</div><div class="phase-desc">Resultados visibles. Ajuste de coaching nutricional.</div></div></div>
+            <div class="phase-step"><div class="phase-num">4</div><div><div class="phase-title">Consolidación</div><div class="phase-desc">Sellado de resultados y protocolo de mantenimiento.</div></div></div>
           </div>
         </div>
       </div>
@@ -325,27 +299,9 @@ img{max-width:100%;display:block}
         <div class="plan-info-block">
           <div class="plan-info-label">Tecnologías incluidas 🇰🇷</div>
           <div class="tech-list">
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">Corpo Hera</div>
-                <div class="tech-item-desc">Esferas 360° que penetran el tejido subcutáneo, destruyen los nódulos de celulitis, drenan toxinas y redefinen la figura. Resultado visible desde la primera sesión.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">Carbox CK</div>
-                <div class="tech-item-desc">Carboxiterapia coreana avanzada. Microinyecciones de CO₂ medicinal que mejoran la circulación, oxigenan el tejido y estimulan la producción de colágeno.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">Presoterapia</div>
-                <div class="tech-item-desc">Compresión secuencial que activa el sistema linfático, elimina retención de líquidos y reduce la apariencia de piel de naranja desde dentro.</div>
-              </div>
-            </div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">Corpo Hera</div><div class="tech-item-desc">Esferas 360° — rompe nódulos, drena toxinas, redefine figura.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">Carbox CK</div><div class="tech-item-desc">CO₂ medicinal — mejora circulación y estimula colágeno.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">Presoterapia</div><div class="tech-item-desc">Sistema linfático activado — elimina retención de líquidos.</div></div></div>
           </div>
         </div>
 
@@ -382,7 +338,7 @@ img{max-width:100%;display:block}
       <div>
         <div class="plan-tag">Plan Zero Flacidez</div>
         <h2 class="plan-title">Recupera la firmeza que <em>el tiempo quitó</em></h2>
-        <p class="plan-subtitle">El colágeno disminuye 1% anual desde los 30. La flacidez no es inevitable — es tratable con el protocolo correcto. Nuestro plan estimula la producción natural de colágeno y reafirma el tejido en profundidad.</p>
+        <p class="plan-subtitle">Protocolo de 20 sesiones para estimular colágeno y reafirmar tejido en profundidad. Sin cirugía.</p>
       </div>
       <div class="plan-price-box">
         <div class="plan-price-label">Precio plan completo</div>
@@ -398,32 +354,12 @@ img{max-width:100%;display:block}
     <div class="plan-body">
       <div>
         <div class="plan-info-block">
-          <div class="plan-info-label">¿Por qué aparece la flacidez?</div>
-          <div class="plan-stat-row">El colágeno baja 1% anual desde los 30, perdiendo soporte estructural</div>
-          <div class="plan-stat-row">La elastina se degrada, reduciendo la capacidad de tensión de la piel</div>
-          <div class="plan-stat-row">Pérdida de masa muscular que deja la piel sin soporte interno</div>
-          <div class="plan-stat-row">Cambios hormonales post-embarazo o menopausia que aceleran el proceso</div>
-        </div>
-
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso del tratamiento (20 sesiones)</div>
+          <div class="plan-info-label">Proceso (20 sesiones)</div>
           <div class="phase-steps">
-            <div class="phase-step">
-              <div class="phase-num">1</div>
-              <div><div class="phase-title">Evaluación de tejido (Sesión 1–2)</div><div class="phase-desc">Análisis del grado de flacidez, pérdida de colágeno y composición corporal. Protocolo personalizado.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">2</div>
-              <div><div class="phase-title">Estimulación profunda (Sesiones 3–10)</div><div class="phase-desc">SkinWave MAX activa los fibroblastos para producir colágeno nuevo. Corpo Lift reafirma en superficie. RF fraccionada trabaja en las capas más profundas del tejido conectivo.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">3</div>
-              <div><div class="phase-title">Remodelación (Sesiones 11–17)</div><div class="phase-desc">La piel comienza a tensarse y redefinirse. Ajustamos la intensidad según tu respuesta al tratamiento.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">4</div>
-              <div><div class="phase-title">Sellado de resultados (Sesiones 18–20)</div><div class="phase-desc">Consolidación del nuevo tejido. Protocolo de mantenimiento con coaching nutricional adaptado.</div></div>
-            </div>
+            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Evaluación de tejido</div><div class="phase-desc">Análisis de grado de flacidez y composición corporal.</div></div></div>
+            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Estimulación profunda</div><div class="phase-desc">SkinWave MAX activa colágeno. Corpo Lift reafirma superficie. RF fraccionada trabaja capas profundas.</div></div></div>
+            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Remodelación</div><div class="phase-desc">Piel se tensa y redefine. Ajuste según respuesta individual.</div></div></div>
+            <div class="phase-step"><div class="phase-num">4</div><div><div class="phase-title">Sellado de resultados</div><div class="phase-desc">Consolidación y protocolo de mantenimiento.</div></div></div>
           </div>
         </div>
       </div>
@@ -432,27 +368,9 @@ img{max-width:100%;display:block}
         <div class="plan-info-block">
           <div class="plan-info-label">Tecnologías incluidas 🇰🇷</div>
           <div class="tech-list">
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">SkinWave MAX</div>
-                <div class="tech-item-desc">Estimulación ultrasónica que activa los fibroblastos y dispara la producción de colágeno y elastina nuevos. Reduce flacidez y mejora el contorno corporal profundamente.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">Corpo Lift</div>
-                <div class="tech-item-desc">Reafirmación cutánea desde la superficie. Combate la flacidez superficial y mejora la textura de la piel en áreas como abdomen, brazos y muslos.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">RF Fraccionada</div>
-                <div class="tech-item-desc">Radiofrecuencia fraccionada que penetra en las capas profundas del tejido conectivo, estimulando la neo-colagenesis y retensando la piel desde adentro hacia afuera.</div>
-              </div>
-            </div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">SkinWave MAX</div><div class="tech-item-desc">Activa fibroblastos — produce colágeno y elastina nuevos.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">Corpo Lift</div><div class="tech-item-desc">Reafirmación cutánea superficial en abdomen, brazos y muslos.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">RF Fraccionada</div><div class="tech-item-desc">Penetra capas profundas — retensa desde adentro hacia afuera.</div></div></div>
           </div>
         </div>
 
@@ -489,7 +407,7 @@ img{max-width:100%;display:block}
       <div>
         <div class="plan-tag">Plan Zero Rollito</div>
         <h2 class="plan-title">Elimina la grasa localizada <em>sin cirugía</em></h2>
-        <p class="plan-subtitle">El 40-60% de la grasa localizada tiene base genética. No desaparece solo con dieta o ejercicio. Nuestro protocolo con criolipólisis avanzada elimina las células grasas de forma permanente y natural.</p>
+        <p class="plan-subtitle">Criolipólisis avanzada en 12 sesiones. Elimina células grasas de forma permanente. Sin dieta extrema, sin recuperación.</p>
       </div>
       <div class="plan-price-box">
         <div class="plan-price-label">Precio plan completo</div>
@@ -505,28 +423,11 @@ img{max-width:100%;display:block}
     <div class="plan-body">
       <div>
         <div class="plan-info-block">
-          <div class="plan-info-label">¿Por qué la grasa localizada es tan resistente?</div>
-          <div class="plan-stat-row">El 40-60% de su distribución es genética, independiente del peso total</div>
-          <div class="plan-stat-row">Las células grasas en ciertas zonas tienen más receptores alfa (almacenan más, liberan menos)</div>
-          <div class="plan-stat-row">La insulina alta cronifica la acumulación en abdomen, flancos y muslos</div>
-          <div class="plan-stat-row">El metabolismo lento impide que el ejercicio elimine grasa de estas zonas específicas</div>
-        </div>
-
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso del tratamiento (12 sesiones)</div>
+          <div class="plan-info-label">Proceso (12 sesiones)</div>
           <div class="phase-steps">
-            <div class="phase-step">
-              <div class="phase-num">1</div>
-              <div><div class="phase-title">Mapeo y diagnóstico (Sesión 1–2)</div><div class="phase-desc">Identificamos con bioimpedancia las zonas de acumulación grasa y el perfil metabólico. Diseñamos el protocolo de criolipólisis.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">2</div>
-              <div><div class="phase-title">Eliminación de grasa (Sesiones 3–8)</div><div class="phase-desc">iZED aplica criolipólisis avanzada, congelando y destruyendo las células grasas sin dañar el tejido circundante. El cuerpo las elimina de forma natural en semanas.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">3</div>
-              <div><div class="phase-title">Redefinición y tonificación (Sesiones 9–12)</div><div class="phase-desc">SkinWave MAX y Adipolite afilan el contorno resultante, tensando la piel sobre las zonas tratadas y consolidando el nuevo volumen.</div></div>
-            </div>
+            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Mapeo y diagnóstico</div><div class="phase-desc">Bioimpedancia + identificación de zonas de acumulación.</div></div></div>
+            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Eliminación de grasa</div><div class="phase-desc">iZED destruye células grasas por frío controlado. El cuerpo las elimina naturalmente.</div></div></div>
+            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Redefinición de contorno</div><div class="phase-desc">SkinWave MAX y Adipolite tensan la piel y consolidan el nuevo volumen.</div></div></div>
           </div>
         </div>
       </div>
@@ -535,27 +436,9 @@ img{max-width:100%;display:block}
         <div class="plan-info-block">
           <div class="plan-info-label">Tecnologías incluidas 🇰🇷</div>
           <div class="tech-list">
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">iZED</div>
-                <div class="tech-item-desc">Criolipólisis de última generación importada de Corea del Sur. Destruye permanentemente las células grasas por frío controlado. Las células eliminadas no vuelven — resultado permanente con metabolismo estable.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">SkinWave MAX</div>
-                <div class="tech-item-desc">Posterior a la criolipólisis, retensa la piel y mejora el contorno para evitar flacidez en las zonas tratadas. Resultado más definido y natural.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">Adipolite</div>
-                <div class="tech-item-desc">Terapia de luz que acelera la metabolización de la grasa liberada post-criolipólisis y mejora la microcirculación en las zonas tratadas.</div>
-              </div>
-            </div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">iZED</div><div class="tech-item-desc">Criolipólisis avanzada — destruye células grasas por frío. Resultado permanente.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">SkinWave MAX</div><div class="tech-item-desc">Retensa la piel post-criolipólisis. Contorno más definido y natural.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">Adipolite</div><div class="tech-item-desc">Luz terapéutica — acelera metabolización de grasa liberada.</div></div></div>
           </div>
         </div>
 
@@ -592,7 +475,7 @@ img{max-width:100%;display:block}
       <div>
         <div class="plan-tag">Plan Trifásico</div>
         <h2 class="plan-title">Define tu cuerpo con <em>tecnología y metabolismo</em></h2>
-        <p class="plan-subtitle">La masa muscular disminuye 5% por década desde los 40. Pero también influyen la genética, el metabolismo lento y la resistencia a la insulina. El Plan Trifásico combina desarrollo muscular, quema de grasa y recomposición metabólica simultáneamente.</p>
+        <p class="plan-subtitle">24 sesiones que combinan desarrollo muscular, quema de grasa y recomposición metabólica. Para hombres y mujeres.</p>
       </div>
       <div class="plan-price-box">
         <div class="plan-price-label">Precio plan completo</div>
@@ -608,32 +491,12 @@ img{max-width:100%;display:block}
     <div class="plan-body">
       <div>
         <div class="plan-info-block">
-          <div class="plan-info-label">¿Por qué es difícil tonificar?</div>
-          <div class="plan-stat-row">La masa muscular baja 5% por década desde los 40 (sarcopenia)</div>
-          <div class="plan-stat-row">La resistencia a la insulina impide que los nutrientes lleguen al músculo</div>
-          <div class="plan-stat-row">El metabolismo lento crónico no responde al ejercicio convencional</div>
-          <div class="plan-stat-row">La genética determina la distribución y capacidad de desarrollo muscular</div>
-        </div>
-
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso del tratamiento (24 sesiones)</div>
+          <div class="plan-info-label">Proceso (24 sesiones)</div>
           <div class="phase-steps">
-            <div class="phase-step">
-              <div class="phase-num">1</div>
-              <div><div class="phase-title">Diagnóstico de composición (Sesión 1–3)</div><div class="phase-desc">Bioimpedancia completa: porcentaje muscular, grasa, agua y masa ósea. Diseñamos el protocolo de recomposición específico.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">2</div>
-              <div><div class="phase-title">Fase 1 — Activación metabólica (Sesiones 4–10)</div><div class="phase-desc">iZED elimina la grasa que cubre el músculo. Coaching nutricional activa el metabolismo. El cuerpo empieza a responder.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">3</div>
-              <div><div class="phase-title">Fase 2 — Construcción muscular (Sesiones 11–18)</div><div class="phase-desc">Sculpt DD genera contracciones musculares equivalentes a 20.000 abdominales por sesión, desarrollando músculo mientras quema grasa simultáneamente.</div></div>
-            </div>
-            <div class="phase-step">
-              <div class="phase-num">4</div>
-              <div><div class="phase-title">Fase 3 — Definición y sellado (Sesiones 19–24)</div><div class="phase-desc">Carbox CK y SkinWave MAX definen el contorno final. Consolidamos el nuevo porcentaje muscular con el plan nutricional de mantenimiento.</div></div>
-            </div>
+            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Diagnóstico de composición</div><div class="phase-desc">Bioimpedancia: músculo, grasa, agua. Protocolo personalizado.</div></div></div>
+            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Activación metabólica</div><div class="phase-desc">iZED elimina grasa que cubre el músculo. Metabolismo activado.</div></div></div>
+            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Construcción muscular</div><div class="phase-desc">Sculpt DD: 20.000 contracciones por sesión. Músculo + quema de grasa simultánea.</div></div></div>
+            <div class="phase-step"><div class="phase-num">4</div><div><div class="phase-title">Definición y sellado</div><div class="phase-desc">Carbox CK + SkinWave MAX consolidan el contorno final.</div></div></div>
           </div>
         </div>
       </div>
@@ -642,27 +505,9 @@ img{max-width:100%;display:block}
         <div class="plan-info-block">
           <div class="plan-info-label">Tecnologías incluidas 🇰🇷</div>
           <div class="tech-list">
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">Sculpt DD</div>
-                <div class="tech-item-desc">Electroestimulación muscular de alta intensidad. Genera el equivalente a 20.000 contracciones musculares por sesión, desarrollando músculo y quemando grasa simultáneamente. Sin sudar, sin recuperación.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">iZED</div>
-                <div class="tech-item-desc">Criolipólisis que elimina la grasa que cubre el músculo, permitiendo que la definición sea visible. Complementa la tonificación con Sculpt DD para una recomposición corporal completa.</div>
-              </div>
-            </div>
-            <div class="tech-item">
-              <div class="tech-item-flag">🇰🇷</div>
-              <div>
-                <div class="tech-item-name">Carbox CK + SkinWave MAX</div>
-                <div class="tech-item-desc">Finalización del tratamiento. Carbox CK mejora la vascularización muscular. SkinWave MAX define el contorno y tensiona la piel sobre la nueva musculatura.</div>
-              </div>
-            </div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">Sculpt DD</div><div class="tech-item-desc">20.000 contracciones/sesión — desarrolla músculo y quema grasa a la vez.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">iZED</div><div class="tech-item-desc">Criolipólisis — elimina grasa que oculta la definición muscular.</div></div></div>
+            <div class="tech-item"><div class="tech-item-flag">🇰🇷</div><div><div class="tech-item-name">Carbox CK + SkinWave MAX</div><div class="tech-item-desc">Vascularización + tensado de piel sobre nueva musculatura.</div></div></div>
           </div>
         </div>
 

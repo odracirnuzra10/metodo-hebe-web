@@ -222,9 +222,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:100;background:rgba(254,254,254,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,197,197,.08);transition:box-shadow .3s}
 .nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
-.nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none}
-.nav-logo-svg{height:40px;width:auto}
-.nav-badge{font-size:10px;letter-spacing:.5px;color:var(--ink-muted);font-weight:500}
+.nav-logo{display:flex;align-items:baseline;gap:5px;text-decoration:none;line-height:1}
+.nav-logo-script{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:14px;font-weight:400;color:var(--cyan);letter-spacing:.5px}
+.nav-logo-bold{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:800;color:var(--cyan);letter-spacing:3px}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:13.5px;font-weight:500;color:var(--ink-2)}
 .nav-links a{transition:color .2s;white-space:nowrap}
 .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
@@ -419,19 +419,13 @@ h1 em{color:var(--cyan);font-style:italic}
 <nav class="nav" id="navbar" aria-label="Navegación principal">
   <div class="wrap">
     <a href="/" class="nav-logo" aria-label="Método Hebe — Inicio">
-      <svg class="nav-logo-svg" width="140" height="44" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Método Hebe">
-        <style>@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Playfair+Display:wght@800&display=swap');</style>
-        <text x="50%" y="32" text-anchor="middle" font-family="'Dancing Script',cursive" font-weight="500" font-size="32" fill="#1CC5C5">Método</text>
-        <text x="50%" y="76" text-anchor="middle" font-family="'Playfair Display',serif" font-weight="800" font-size="48" fill="#1CC5C5" letter-spacing="6">HEBE</text>
-      </svg>
-      <span class="nav-badge">🇰🇷 Tecnología Coreana</span>
+      <span class="nav-logo-script">Método</span>
+      <span class="nav-logo-bold">HEBE</span>
     </a>
     <div class="nav-links" role="navigation">
-      <a href="/">Inicio</a>
+      <a href="/" class="active">Inicio</a>
       <a href="/planes/">Planes</a>
       <a href="/resultados/">Resultados</a>
-      <a href="#sedes">Sedes</a>
-      <a href="#faq">Preguntas</a>
     </div>
     <button class="nav-cta" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n%20gratuita','_blank');hebeTrack('whatsapp_click',{location:'nav'})" aria-label="Agenda tu evaluación gratuita">Agenda tu evaluación</button>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Abrir menú" aria-expanded="false">
@@ -530,8 +524,7 @@ h1 em{color:var(--cyan);font-style:italic}
   <div class="wrap">
     <div class="section-header">
       <div class="section-eyebrow"><span>Planes según tu necesidad</span></div>
-      <h2 class="section-title" id="necesidades-title">Elige lo que quieres resolver y descubre <em>tu plan</em></h2>
-      <p class="section-desc">Cada plan combina tecnologías coreanas específicas con coaching nutricional personalizado.</p>
+      <h2 class="section-title" id="necesidades-title">¿Qué quieres resolver? Hay un <em>plan para ti</em></h2>
     </div>
     <div class="necesidades-grid">
       <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
@@ -664,7 +657,7 @@ h1 em{color:var(--cyan);font-style:italic}
   <div class="wrap">
     <div class="section-header" style="text-align:center">
       <div class="section-eyebrow" style="justify-content:center"><span>Preguntas frecuentes</span></div>
-      <h2 class="section-title" id="faq-title" style="text-align:center">Todo lo que necesitas saber sobre <em>Método Hebe</em></h2>
+      <h2 class="section-title" id="faq-title" style="text-align:center">Preguntas <em>frecuentes</em></h2>
     </div>
     <div class="faq-list">
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
