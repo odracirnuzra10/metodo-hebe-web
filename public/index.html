@@ -813,7 +813,7 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 
 // Scroll animations
 if('IntersectionObserver' in window){
-  const els=document.querySelectorAll('.pilar-card,.necesidad-card,.review-card,.sede-card,.faq-item,.result-card-home');
+  const els=document.querySelectorAll('.pilar-card,.necesidad-card,.review-card,.sede-card,.faq-item');
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}});
   },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
