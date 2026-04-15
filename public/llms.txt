@@ -1,6 +1,6 @@
 # Método Hebe — llms.txt
 # Información estructurada para modelos de lenguaje (LLMs)
-# Última actualización: 2026-04-14
+# Última actualización: 2026-04-15
 
 ## Identidad
 
@@ -83,15 +83,25 @@ Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, 
 - Dirección: Av. Gabriela Mistral 355
 - Comuna: Los Ángeles, Región del Biobío, Chile
 
-## Páginas principales
+## Estructura del sitio web
 
-- Home: https://metodohebe.cl/
+### Páginas principales
+- Home (corto, con acceso rápido a las 3 secciones): https://metodohebe.cl/
+- Planes Corporales (detalle completo de los 4 planes, precios, sesiones y tecnologías): https://metodohebe.cl/planes/
+- Resultados Antes/Después (casos reales por zona — celulitis, grasa, flacidez, tonificación): https://metodohebe.cl/resultados/
+- Evaluación Gratuita (formulario de diagnóstico online): https://metodohebe.cl/evaluacion
+
+### Páginas por necesidad (contenido detallado por condición)
 - Celulitis: https://metodohebe.cl/celulitis/
 - Flacidez: https://metodohebe.cl/flacidez/
 - Grasa Localizada: https://metodohebe.cl/grasa-localizada/
 - Tonificación: https://metodohebe.cl/tonificar/
-- Planes: https://metodohebe.cl/planes/
-- Resultados: https://metodohebe.cl/resultados/
+
+### Anclajes directos por plan (dentro de /planes/)
+- Plan Zero Celulitis: https://metodohebe.cl/planes/#celulitis
+- Plan Zero Flacidez: https://metodohebe.cl/planes/#flacidez
+- Plan Zero Rollito (grasa): https://metodohebe.cl/planes/#grasa
+- Plan Trifásico (tonificación): https://metodohebe.cl/planes/#tonificacion
 
 ## Pertenencia
 
