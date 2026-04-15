@@ -293,10 +293,9 @@ h1 em{color:var(--cyan);font-style:italic}
 .btn-section-link:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-subtle)}
 
 /* ── RESULTADOS SNIPPET ── */
-.results-grid-home{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.5vw,16px);margin-bottom:32px}
-.result-card-home{border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
-.result-card-home:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
-.result-card-home img{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#f0f0f0}
+.results-grid-home{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(6px,1vw,12px);margin-bottom:32px}
+.result-card-home{overflow:hidden}
+.result-card-home img{width:100%;display:block;border-radius:8px}
 .result-card-home figcaption{display:none}
 
 /* ── REVIEWS ── */
@@ -550,36 +549,33 @@ h1 em{color:var(--cyan);font-style:italic}
 </section>
 
 <!-- ═══ RESULTADOS SNIPPET ═══ -->
-<section class="section" id="resultados" aria-labelledby="results-title">
+<section class="section" id="resultados" aria-labelledby="results-title" style="background:var(--bg-dark)">
   <div class="wrap">
     <div class="section-header">
       <div class="section-eyebrow"><span>Resultados comprobados</span></div>
-      <h2 class="section-title" id="results-title">Resultados <em>reales</em></h2>
+      <h2 class="section-title" id="results-title" style="color:#fff">Resultados <em>reales</em></h2>
     </div>
     <div class="results-grid-home">
       <figure class="result-card-home">
-        <img src="/img/resultado-abdomen-cintura.webp" alt="Antes y después tratamiento abdomen y cintura — Método Hebe" loading="lazy" width="600" height="600">
-        <figcaption>Abdomen y Cintura</figcaption>
+        <img src="/img/resultado-abdomen-cintura.webp" alt="Antes y después — Método Hebe" loading="lazy">
       </figure>
       <figure class="result-card-home">
-        <img src="/img/resultado-celulitis-gluteos.webp" alt="Antes y después tratamiento celulitis glúteos — Método Hebe" loading="lazy" width="600" height="600">
-        <figcaption>Celulitis y Glúteos</figcaption>
+        <img src="/img/resultado-celulitis-gluteos.webp" alt="Antes y después — Método Hebe" loading="lazy">
       </figure>
       <figure class="result-card-home">
-        <img src="/img/resultado-flacidez-abdomen.webp" alt="Antes y después tratamiento flacidez abdominal — Método Hebe" loading="lazy" width="600" height="600">
-        <figcaption>Flacidez Abdominal</figcaption>
+        <img src="/img/resultado-flacidez-abdomen.webp" alt="Antes y después — Método Hebe" loading="lazy">
       </figure>
     </div>
     <div class="section-link-row">
-      <a href="/resultados/" class="btn-section-link" onclick="hebeTrack('cta_click',{location:'home_resultados_link'})">
-        Ver todos los casos antes/después por zona →
+      <a href="/resultados/" class="btn-section-link" style="color:#fff;border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07)" onclick="hebeTrack('cta_click',{location:'home_resultados_link'})">
+        Ver todos los resultados →
       </a>
     </div>
   </div>
 </section>
 
 <!-- ═══ REVIEWS ═══ -->
-<section class="section" style="background:var(--bg-section)" aria-labelledby="reviews-title">
+<section class="section" aria-labelledby="reviews-title">
   <div class="wrap">
     <div class="section-header">
       <div class="section-eyebrow"><span>Lo que dicen nuestras pacientes</span></div>
@@ -647,31 +643,31 @@ h1 em{color:var(--cyan);font-style:italic}
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Qué es el Método Hebe y en qué se diferencia de otras clínicas?</button>
         <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Método Hebe es la primera red de clínicas corporales en Chile especializada en salud metabólica. A diferencia de las clínicas convencionales que tratan síntomas, Hebe aplica un protocolo de 3 fases: diagnóstico metabólico con bioimpedancia, reprogramación de hábitos con coaching nutricional, y potenciación con 6 tecnologías importadas de Corea del Sur. +30.000 pacientes tratados, 94% de satisfacción.</p>
+          <p itemprop="text">Protocolo clínico de 3 fases: diagnóstico metabólico, coaching nutricional y 6 tecnologías coreanas. Tratamos la causa, no el síntoma. +30.000 pacientes, 94% satisfacción.</p>
         </div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Cuánto cuestan los planes de Método Hebe?</button>
         <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Plan Zero Celulitis $1.977.990 CLP (20 sesiones), Plan Zero Flacidez $1.977.990 CLP (20 sesiones), Plan Zero Rollito $1.799.990 CLP (12 sesiones), Plan Trifásico $1.977.990 CLP (24 sesiones). Todos incluyen coaching nutricional y el Reto Hebe 21 días. La evaluación inicial es gratuita y sin compromiso.</p>
+          <p itemprop="text">Zero Celulitis y Zero Flacidez $1.977.990 (20 sesiones). Zero Rollito $1.799.990 (12 sesiones). Trifásico $1.977.990 (24 sesiones). Todos incluyen coaching nutricional.</p>
         </div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Cuándo se ven los resultados?</button>
         <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Los resultados son visibles desde la primera sesión. El plan completo varía entre 12 y 24 sesiones dependiendo de la condición. El enfoque metabólico asegura resultados permanentes porque se trata la causa, no solo el síntoma.</p>
+          <p itemprop="text">Desde la primera sesión. El plan completo varía entre 12 y 24 sesiones según la condición.</p>
         </div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-q" itemprop="name" aria-expanded="false">¿Qué incluye la evaluación gratuita?</button>
+        <button class="faq-q" itemprop="name" aria-expanded="false">¿Qué incluye la evaluación inicial?</button>
         <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">La evaluación gratuita incluye análisis de composición corporal con bioimpedancia, evaluación del perfil metabólico, identificación de condiciones a tratar y recomendación personalizada del plan. Sin costo ni compromiso. Agenda al +56 9 6322 2683 en cualquiera de las 3 sedes.</p>
+          <p itemprop="text">Bioimpedancia, perfil metabólico y recomendación personalizada de plan. Sin compromiso. Agenda al +56 9 6322 2683.</p>
         </div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Es mejor que la liposucción?</button>
         <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Son alternativas distintas. Método Hebe ofrece: sin cirugía ni anestesia, sin dolor ni recuperación, sin cicatrices, mejora la salud metabólica, y resultados permanentes sin rebote porque trata la causa. La liposucción da resultado inmediato pero sin cambio metabólico la grasa puede volver.</p>
+          <p itemprop="text">Sin cirugía, sin anestesia, sin recuperación. Resultados permanentes porque trata la causa metabólica. La liposucción da resultados inmediatos pero sin cambio metabólico la grasa puede volver.</p>
         </div>
       </div>
     </div>
