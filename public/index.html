@@ -397,7 +397,9 @@ h1 em{color:var(--cyan);font-style:italic}
   .results-grid-home{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
   .topbar .wrap{flex-direction:column;gap:4px;text-align:center}
+  .topbar-r{display:none}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .btn-hero-outline{display:none}
 }
 </style>
 </head>
@@ -810,6 +812,30 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
   });
 });
+
+// ── ViewContent: scroll al fondo (≥90%) ──────────────────────────────
+(function(){
+  var fired=false;
+  window.addEventListener('scroll',function(){
+    if(fired)return;
+    var scrolled=(window.scrollY+window.innerHeight)/(document.documentElement.scrollHeight||1);
+    if(scrolled>=0.9){
+      fired=true;
+      // GA4 / GTM
+      gtag('event','view_content',{page:'home',method:'scroll_bottom'});
+      // Meta Pixel
+      if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Home',content_category:'landing'});
+    }
+  },{passive:true});
+})();
+
+// ── ViewContent: tiempo en página (30s) ──────────────────────────────
+(function(){
+  setTimeout(function(){
+    gtag('event','view_content',{page:'home',method:'time_30s'});
+    if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Home',content_category:'time_engaged'});
+  },30000);
+})();
 
 // Scroll animations
 if('IntersectionObserver' in window){
