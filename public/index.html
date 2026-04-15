@@ -292,11 +292,18 @@ h1 em{color:var(--cyan);font-style:italic}
 .btn-section-link{display:inline-flex;align-items:center;gap:8px;background:var(--bg-section);color:var(--ink-2);border:1.5px solid rgba(28,197,197,.2);cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;padding:12px 28px;border-radius:10px;transition:all .2s;text-decoration:none}
 .btn-section-link:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-subtle)}
 
-/* ── RESULTADOS SNIPPET ── */
-.results-grid-home{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(6px,1vw,12px);margin-bottom:32px}
-.result-card-home{overflow:hidden}
-.result-card-home img{width:100%;display:block;border-radius:8px}
-.result-card-home figcaption{display:none}
+/* ── RESULTADOS CARRUSEL ── */
+.results-carousel{position:relative;overflow:hidden;margin-bottom:28px}
+.results-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+.results-track::-webkit-scrollbar{display:none}
+.result-card-home{scroll-snap-align:start;flex:0 0 calc(50% - 6px);border-radius:10px;overflow:hidden}
+.result-card-home img{width:100%;display:block}
+.results-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.results-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s;cursor:pointer}
+.results-dots span.active{background:var(--cyan);width:18px;border-radius:3px}
+@media(min-width:901px){
+  .result-card-home{flex:0 0 calc(33.333% - 8px)}
+}
 
 /* ── REVIEWS ── */
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
@@ -555,16 +562,19 @@ h1 em{color:var(--cyan);font-style:italic}
       <div class="section-eyebrow"><span>Resultados comprobados</span></div>
       <h2 class="section-title" id="results-title" style="color:#fff">Resultados <em>reales</em></h2>
     </div>
-    <div class="results-grid-home">
-      <figure class="result-card-home">
-        <img src="/img/resultado-abdomen-cintura.webp" alt="Antes y después — Método Hebe" loading="lazy">
-      </figure>
-      <figure class="result-card-home">
-        <img src="/img/resultado-celulitis-gluteos.webp" alt="Antes y después — Método Hebe" loading="lazy">
-      </figure>
-      <figure class="result-card-home">
-        <img src="/img/resultado-flacidez-abdomen.webp" alt="Antes y después — Método Hebe" loading="lazy">
-      </figure>
+    <div class="results-carousel">
+      <div class="results-track" id="results-track">
+        <figure class="result-card-home"><img src="/img/resultado-abdomen-cintura.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
+        <figure class="result-card-home"><img src="/img/resultado-celulitis-gluteos.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
+        <figure class="result-card-home"><img src="/img/resultado-flacidez-abdomen.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
+        <figure class="result-card-home"><img src="/img/resultado-lateral-cintura.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
+        <figure class="result-card-home"><img src="/img/resultado-abdomen-muslos.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
+        <figure class="result-card-home"><img src="/img/resultado-contorno-corporal.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
+        <figure class="result-card-home"><img src="/img/resultado-lateral-abdomen.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
+      </div>
+      <div class="results-dots" id="results-dots">
+        <span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
     </div>
     <div class="section-link-row">
       <a href="/resultados/" class="btn-section-link" style="color:#fff;border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07)" onclick="hebeTrack('cta_click',{location:'home_resultados_link'})">
@@ -762,6 +772,23 @@ h1 em{color:var(--cyan);font-style:italic}
 // Navbar scroll
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)});
+
+// Carrusel resultados — dots
+(function(){
+  const track=document.getElementById('results-track');
+  const dots=document.querySelectorAll('#results-dots span');
+  if(!track||!dots.length)return;
+  track.addEventListener('scroll',function(){
+    const idx=Math.round(track.scrollLeft/(track.scrollWidth/dots.length));
+    dots.forEach((d,i)=>{d.classList.toggle('active',i===idx)});
+  },{passive:true});
+  dots.forEach((d,i)=>{
+    d.addEventListener('click',function(){
+      const w=track.scrollWidth/dots.length;
+      track.scrollTo({left:w*i,behavior:'smooth'});
+    });
+  });
+})();
 
 // Mobile sticky CTA — aparece al scrollear 300px
 (function(){
