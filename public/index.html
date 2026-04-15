@@ -293,11 +293,11 @@ h1 em{color:var(--cyan);font-style:italic}
 .btn-section-link:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-subtle)}
 
 /* ── RESULTADOS SNIPPET ── */
-.results-grid-home{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,16px);margin-bottom:32px}
+.results-grid-home{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.5vw,16px);margin-bottom:32px}
 .result-card-home{border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
 .result-card-home:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
-.result-card-home img{width:100%;display:block;object-fit:contain;background:#f0f0f0}
-.result-card-home figcaption{padding:10px 12px;font-size:12px;font-weight:600;color:var(--ink-2);background:var(--bg);letter-spacing:.3px;text-transform:uppercase}
+.result-card-home img{width:100%;display:block;aspect-ratio:1;object-fit:cover;background:#f0f0f0}
+.result-card-home figcaption{display:none}
 
 /* ── REVIEWS ── */
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
@@ -475,21 +475,12 @@ h1 em{color:var(--cyan);font-style:italic}
   </div>
 </header>
 
-<!-- ═══ METABOLIC STRIP ═══ -->
-<aside class="metabolic-strip" aria-label="Posicionamiento metabólico">
-  <div class="wrap">
-    <div class="metabolic-strip-label">Enfoque metabólico</div>
-    <p class="metabolic-strip-desc">No somos una clínica estética convencional. <strong>Tratamos tu salud de base</strong> — metabolismo, hábitos y composición corporal — y luego potenciamos resultados con tecnología. Por eso nuestros resultados son permanentes.</p>
-  </div>
-</aside>
-
 <!-- ═══ EL MÉTODO ═══ -->
 <section class="section" id="metodo" aria-labelledby="metodo-title">
   <div class="wrap">
     <div class="section-header">
       <div class="section-eyebrow"><span>Protocolo clínico de 3 fases</span></div>
       <h2 class="section-title" id="metodo-title">La salud es el <em>origen</em> de la estética</h2>
-      <p class="section-desc">El Método Hebe trata la causa raíz — tu metabolismo — y potencia los resultados con tecnología médica importada de Corea del Sur.</p>
     </div>
     <div class="pilares-grid">
       <article class="pilar-card">
@@ -497,21 +488,21 @@ h1 em{color:var(--cyan);font-style:italic}
         <div class="pilar-tag">Fase 1 — Diagnóstico</div>
         <h3 class="pilar-title">Análisis Metabólico Completo</h3>
         <div class="pilar-quote">"No adivinamos, medimos."</div>
-        <p class="pilar-desc">Evaluación clínica con bioimpedancia y análisis corporal para definir tu perfil metabólico real. Sin esto, cualquier tratamiento es a ciegas.</p>
+        <p class="pilar-desc">Bioimpedancia y análisis corporal para definir tu perfil metabólico real.</p>
       </article>
       <article class="pilar-card">
         <div class="pilar-number">02</div>
         <div class="pilar-tag">Fase 2 — Reprogramación</div>
-        <h3 class="pilar-title">Coaching Nutricional y de Hábitos</h3>
-        <div class="pilar-quote">"Cambios sostenibles, no soluciones temporales."</div>
-        <p class="pilar-desc">Con tu perfil definido, diseñamos un plan de coaching nutricional personalizado. Incluye el Reto Hebe 21 días para crear hábitos que se mantengan.</p>
+        <h3 class="pilar-title">Coaching Nutricional</h3>
+        <div class="pilar-quote">"Cambios sostenibles, no temporales."</div>
+        <p class="pilar-desc">Plan nutricional personalizado con Reto Hebe 21 días para crear hábitos reales.</p>
       </article>
       <article class="pilar-card">
         <div class="pilar-number">03</div>
         <div class="pilar-tag">Fase 3 — Potenciación</div>
-        <h3 class="pilar-title">Tecnología Coreana Avanzada</h3>
+        <h3 class="pilar-title">Tecnología Coreana</h3>
         <div class="pilar-quote">"Aceleramos el resultado clínico."</div>
-        <p class="pilar-desc">Las tecnologías no son la base, son el acelerador. 6 equipos importados de Corea del Sur para potenciar lo que tu cuerpo ya está haciendo bien.</p>
+        <p class="pilar-desc">6 equipos importados de Corea del Sur para potenciar lo que tu cuerpo ya logró.</p>
       </article>
     </div>
   </div>
@@ -528,29 +519,25 @@ h1 em{color:var(--cyan);font-style:italic}
       <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
         <div class="necesidad-icon">◎</div>
         <h3 class="necesidad-title" itemprop="name">Celulitis</h3>
-        <div class="necesidad-stat">↗ Afecta al 80-90% de las mujeres</div>
-        <p class="necesidad-desc" itemprop="description">Plan Zero Celulitis — 20 sesiones con Corpo Hera, Carbox CK y presoterapia. Tratamiento desde el origen.</p>
+        <p class="necesidad-desc" itemprop="description">Plan Zero Celulitis — 20 sesiones con Corpo Hera, Carbox CK y presoterapia.</p>
         <a href="/planes/#celulitis" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'celulitis'})">Ver plan completo · $1.977.990 →</a>
       </article>
       <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
         <div class="necesidad-icon">◎</div>
         <h3 class="necesidad-title" itemprop="name">Flacidez</h3>
-        <div class="necesidad-stat">↗ Colágeno baja 1% anual desde los 30</div>
-        <p class="necesidad-desc" itemprop="description">Plan Zero Flacidez — 20 sesiones con SkinWave MAX, Corpo Lift y RF fraccionada. Reafirma y tensiona.</p>
+        <p class="necesidad-desc" itemprop="description">Plan Zero Flacidez — 20 sesiones con SkinWave MAX, Corpo Lift y RF fraccionada.</p>
         <a href="/planes/#flacidez" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'flacidez'})">Ver plan completo · $1.977.990 →</a>
       </article>
       <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
         <div class="necesidad-icon">◎</div>
         <h3 class="necesidad-title" itemprop="name">Grasa Localizada</h3>
-        <div class="necesidad-stat">↗ 40-60% depende de factores genéticos</div>
-        <p class="necesidad-desc" itemprop="description">Plan Zero Rollito — 12 sesiones con iZED, SkinWave MAX y Adipolite. Elimina la grasa sin cirugía.</p>
+        <p class="necesidad-desc" itemprop="description">Plan Zero Rollito — 12 sesiones con iZED, SkinWave MAX y Adipolite.</p>
         <a href="/planes/#grasa" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'grasa'})">Ver plan completo · $1.799.990 →</a>
       </article>
       <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
         <div class="necesidad-icon">◎</div>
         <h3 class="necesidad-title" itemprop="name">Tonificación</h3>
-        <div class="necesidad-stat">↗ Masa muscular baja 5% por década desde los 40</div>
-        <p class="necesidad-desc" itemprop="description">Plan Trifásico — 24 sesiones con iZED, Sculpt DD y Carbox CK. Musculatura definida sin cirugía.</p>
+        <p class="necesidad-desc" itemprop="description">Plan Trifásico — 24 sesiones con iZED, Sculpt DD y Carbox CK.</p>
         <a href="/planes/#tonificacion" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'tonificacion'})">Ver plan completo · $1.977.990 →</a>
       </article>
     </div>
@@ -567,8 +554,7 @@ h1 em{color:var(--cyan);font-style:italic}
   <div class="wrap">
     <div class="section-header">
       <div class="section-eyebrow"><span>Resultados comprobados</span></div>
-      <h2 class="section-title" id="results-title">Transformaciones <em>reales</em> de nuestras pacientes</h2>
-      <p class="section-desc">+30.000 pacientes tratados. Resultados visibles desde la primera sesión.</p>
+      <h2 class="section-title" id="results-title">Resultados <em>reales</em></h2>
     </div>
     <div class="results-grid-home">
       <figure class="result-card-home">
@@ -697,7 +683,7 @@ h1 em{color:var(--cyan);font-style:italic}
   <div class="wrap">
     <div class="section-header">
       <div class="section-eyebrow"><span>Nuestras 3 sedes en Chile</span></div>
-      <h2 class="section-title" id="sedes-title">Tecnología de última generación <em>en cada clínica</em></h2>
+      <h2 class="section-title" id="sedes-title">Nuestras <em>3 sedes</em></h2>
     </div>
     <div class="sedes-grid">
       <article class="sede-card" itemscope itemtype="https://schema.org/LocalBusiness">
