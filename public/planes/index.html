@@ -135,8 +135,8 @@ img{max-width:100%;display:block}
 .plan-sessions-badge{display:inline-flex;align-items:center;gap:6px;background:var(--cyan);color:#fff;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;margin-top:12px}
 
 /* PLAN VIDEO */
-.plan-video{width:100%;border-radius:12px;overflow:hidden;margin-bottom:28px;background:#000;line-height:0}
-.plan-video video{width:100%;display:block;max-height:360px;object-fit:cover}
+.plan-video{border-radius:12px;overflow:hidden;background:#000;line-height:0;aspect-ratio:9/16;max-height:520px}
+.plan-video video{width:100%;height:100%;display:block;object-fit:cover}
 
 /* PLAN BODY */
 .plan-body{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px)}
@@ -201,6 +201,7 @@ img{max-width:100%;display:block}
   .plan-header{grid-template-columns:1fr}
   .plan-price-box{text-align:left}
   .plan-body{grid-template-columns:1fr}
+  .plan-video{aspect-ratio:9/16;max-height:400px}
   .footer-grid{grid-template-columns:1fr 1fr}
   .mobile-sticky-cta{display:block}
   .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(28,197,197,.1);flex-direction:column;padding:16px 20px;gap:0;box-shadow:0 8px 24px rgba(0,0,0,.06)}
@@ -286,23 +287,11 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
-    <div class="plan-video">
-      <video autoplay muted loop playsinline preload="none">
-        <source src="/video/plan-celulitis.webm" type="video/webm">
-      </video>
-    </div>
-
     <div class="plan-body">
-      <div>
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso (20 sesiones)</div>
-          <div class="phase-steps">
-            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Diagnóstico metabólico</div><div class="phase-desc">Bioimpedancia + análisis corporal. Protocolo personalizado.</div></div></div>
-            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Activación y drenaje</div><div class="phase-desc">Corpo Hera rompe nódulos. Carbox CK mejora circulación. Presoterapia drena toxinas.</div></div></div>
-            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Reafirmación tisular</div><div class="phase-desc">Resultados visibles. Ajuste de coaching nutricional.</div></div></div>
-            <div class="phase-step"><div class="phase-num">4</div><div><div class="phase-title">Consolidación</div><div class="phase-desc">Sellado de resultados y protocolo de mantenimiento.</div></div></div>
-          </div>
-        </div>
+      <div class="plan-video">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="/video/plan-celulitis.webm" type="video/webm">
+        </video>
       </div>
 
       <div>
@@ -361,23 +350,11 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
-    <div class="plan-video">
-      <video autoplay muted loop playsinline preload="none">
-        <source src="/video/plan-flacidez.webm" type="video/webm">
-      </video>
-    </div>
-
     <div class="plan-body">
-      <div>
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso (20 sesiones)</div>
-          <div class="phase-steps">
-            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Evaluación de tejido</div><div class="phase-desc">Análisis de grado de flacidez y composición corporal.</div></div></div>
-            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Estimulación profunda</div><div class="phase-desc">SkinWave MAX activa colágeno. Corpo Lift reafirma superficie. RF fraccionada trabaja capas profundas.</div></div></div>
-            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Remodelación</div><div class="phase-desc">Piel se tensa y redefine. Ajuste según respuesta individual.</div></div></div>
-            <div class="phase-step"><div class="phase-num">4</div><div><div class="phase-title">Sellado de resultados</div><div class="phase-desc">Consolidación y protocolo de mantenimiento.</div></div></div>
-          </div>
-        </div>
+      <div class="plan-video">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="/video/plan-flacidez.webm" type="video/webm">
+        </video>
       </div>
 
       <div>
@@ -436,22 +413,11 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
-    <div class="plan-video">
-      <video autoplay muted loop playsinline preload="none">
-        <source src="/video/plan-grasa.webm" type="video/webm">
-      </video>
-    </div>
-
     <div class="plan-body">
-      <div>
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso (12 sesiones)</div>
-          <div class="phase-steps">
-            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Mapeo y diagnóstico</div><div class="phase-desc">Bioimpedancia + identificación de zonas de acumulación.</div></div></div>
-            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Eliminación de grasa</div><div class="phase-desc">iZED destruye células grasas por frío controlado. El cuerpo las elimina naturalmente.</div></div></div>
-            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Redefinición de contorno</div><div class="phase-desc">SkinWave MAX y Adipolite tensan la piel y consolidan el nuevo volumen.</div></div></div>
-          </div>
-        </div>
+      <div class="plan-video">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="/video/plan-grasa.webm" type="video/webm">
+        </video>
       </div>
 
       <div>
@@ -510,23 +476,11 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
-    <div class="plan-video">
-      <video autoplay muted loop playsinline preload="none">
-        <source src="/video/plan-trifasico.webm" type="video/webm">
-      </video>
-    </div>
-
     <div class="plan-body">
-      <div>
-        <div class="plan-info-block">
-          <div class="plan-info-label">Proceso (24 sesiones)</div>
-          <div class="phase-steps">
-            <div class="phase-step"><div class="phase-num">1</div><div><div class="phase-title">Diagnóstico de composición</div><div class="phase-desc">Bioimpedancia: músculo, grasa, agua. Protocolo personalizado.</div></div></div>
-            <div class="phase-step"><div class="phase-num">2</div><div><div class="phase-title">Activación metabólica</div><div class="phase-desc">iZED elimina grasa que cubre el músculo. Metabolismo activado.</div></div></div>
-            <div class="phase-step"><div class="phase-num">3</div><div><div class="phase-title">Construcción muscular</div><div class="phase-desc">Sculpt DD: 20.000 contracciones por sesión. Músculo + quema de grasa simultánea.</div></div></div>
-            <div class="phase-step"><div class="phase-num">4</div><div><div class="phase-title">Definición y sellado</div><div class="phase-desc">Carbox CK + SkinWave MAX consolidan el contorno final.</div></div></div>
-          </div>
-        </div>
+      <div class="plan-video">
+        <video autoplay muted loop playsinline preload="none">
+          <source src="/video/plan-trifasico.webm" type="video/webm">
+        </video>
       </div>
 
       <div>
