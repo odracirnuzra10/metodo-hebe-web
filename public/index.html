@@ -293,16 +293,16 @@ h1 em{color:var(--cyan);font-style:italic}
 .btn-section-link:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-subtle)}
 
 /* ── RESULTADOS CARRUSEL ── */
-.results-carousel{position:relative;overflow:hidden;margin-bottom:28px}
-.results-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+.results-carousel{margin-bottom:28px}
+.results-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .results-track::-webkit-scrollbar{display:none}
-.result-card-home{scroll-snap-align:start;flex:0 0 calc(50% - 6px);border-radius:10px;overflow:hidden}
-.result-card-home img{width:100%;display:block}
+.result-card-home{scroll-snap-align:start;flex:0 0 calc(50% - 5px);min-width:0;border-radius:10px;overflow:hidden;line-height:0}
+.result-card-home img{width:100%;height:auto;display:block}
 .results-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
-.results-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);transition:background .3s;cursor:pointer}
+.results-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);transition:all .3s;cursor:pointer;display:inline-block}
 .results-dots span.active{background:var(--cyan);width:18px;border-radius:3px}
 @media(min-width:901px){
-  .result-card-home{flex:0 0 calc(33.333% - 8px)}
+  .result-card-home{flex:0 0 calc(33.333% - 7px)}
 }
 
 /* ── REVIEWS ── */
