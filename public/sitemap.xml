@@ -32,6 +32,68 @@
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+  <!-- PÁGINAS DE SEDES -->
+  <url>
+    <loc>https://metodohebe.cl/clinica-estetica-corporal-vitacura</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/clinica-estetica-corporal-concon</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/clinica-estetica-corporal-los-angeles</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- BLOG -->
+  <url>
+    <loc>https://metodohebe.cl/blog/celulitis-tipos-grados-tratamientos</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/blog/flacidez-corporal-tratamiento</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/blog/guatita-delantal-tratamiento-sin-cirugia</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/blog/grasa-localizada-eliminar-sin-cirugia</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/blog/ized-ultrasonido-corporal</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/blog/estrias-tratamiento-sin-cirugia</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/blog/lipo-sin-cirugia-metodo-hebe-3d</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <!-- PÁGINAS POR NECESIDAD -->
   <url>
     <loc>https://metodohebe.cl/celulitis/</loc>
