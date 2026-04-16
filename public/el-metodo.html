@@ -178,21 +178,31 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .6s ease both}
 
+/* ── TOP BAR ── */
+.topbar{background:var(--bg-dark);padding:8px 0;font-size:12px;font-weight:500;letter-spacing:.3px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.topbar-l{display:flex;align-items:center;gap:10px;color:#8CBEBE}
+.topbar-l strong{color:#1CC5C5}
+.topbar-sede{color:#8CBEBE}
+.topbar-sep{color:#2A4545}
+.topbar-r{display:flex;align-items:center;gap:10px;color:#8CBEBE}
+.topbar-phone a{color:#8CBEBE;transition:color .2s}
+.topbar-phone a:hover{color:#1CC5C5}
+
 /* ── NAV ── */
-.nav{position:sticky;top:0;z-index:100;background:rgba(254,254,254,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06);transition:box-shadow .3s}
+.nav{position:sticky;top:0;z-index:100;background:rgba(254,254,254,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,197,197,.08);transition:box-shadow .3s}
 .nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-svg{display:block;height:40px;width:auto}
-.nav-badge{background:linear-gradient(135deg,var(--cyan),var(--cyan-d));border-radius:4px;padding:3px 8px;font-size:9px;color:#fff;font-weight:700;letter-spacing:.8px;display:inline-flex;align-items:center;gap:4px;text-transform:uppercase}
-.nav-links{display:flex;gap:24px;font-size:13px;font-weight:500;color:var(--ink-3);letter-spacing:.3px}
-.nav-links a{transition:color .2s}
-.nav-links a:hover{color:var(--cyan)}
-.nav-links a.active{color:var(--cyan);font-weight:600}
-.nav-cta{background:var(--cyan);color:#fff;padding:10px 24px;border-radius:6px;font-size:14px;font-weight:600;letter-spacing:.3px;transition:all .2s;box-shadow:0 2px 8px rgba(28,197,197,.25)}
-.nav-cta:hover{background:var(--cyan-d);transform:translateY(-1px);box-shadow:0 4px 16px rgba(28,197,197,.3)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;padding:8px;background:none;border:none;cursor:pointer}
-.nav-hamburger span{width:22px;height:2px;background:var(--ink-2);border-radius:2px;transition:all .3s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.nav-logo{display:flex;align-items:baseline;gap:5px;text-decoration:none;line-height:1}
+.nav-logo-script{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:14px;font-weight:400;color:var(--cyan);letter-spacing:.5px}
+.nav-logo-bold{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:800;color:var(--cyan);letter-spacing:3px}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:13.5px;font-weight:500;color:var(--ink-2)}
+.nav-links a{transition:color .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
+.nav-cta{background:var(--cyan);color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;transition:background .2s,transform .15s;white-space:nowrap;text-decoration:none}
+.nav-cta:hover{background:var(--cyan-d);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
 
 /* ── BREADCRUMB ── */
 .breadcrumb{padding:16px 0;font-size:13px;color:var(--ink-muted);border-bottom:1px solid rgba(0,0,0,.04)}
@@ -280,16 +290,15 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .cta-trust svg{width:14px;height:14px;color:var(--cyan);flex-shrink:0}
 
 /* ── FOOTER ── */
-.footer{background:var(--bg-dark);padding:clamp(40px,5vw,56px) 0 24px;color:var(--ink-light);font-size:14px}
-.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:clamp(24px,3vw,40px);margin-bottom:32px}
-.footer h4{font-family:var(--serif);font-size:16px;color:#fff;font-weight:600;margin-bottom:16px}
-.footer a{color:var(--ink-light);transition:color .2s}
+.footer{background:var(--bg-dark);padding:clamp(40px,6vw,64px) 0 24px;color:rgba(255,255,255,.5);font-size:13.5px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);margin-bottom:36px}
+.footer-brand{font-family:var(--serif);font-size:22px;color:#fff;margin-bottom:10px}
+.footer-brand i{color:var(--cyan)}
+.footer h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:600;margin-bottom:14px}
+.footer a{color:rgba(255,255,255,.5);transition:color .2s;display:block;margin-bottom:6px}
 .footer a:hover{color:var(--cyan)}
 .footer p{margin-bottom:8px;line-height:1.6}
-.footer-brand{font-family:var(--serif);font-size:20px;color:#fff;margin-bottom:12px}
-.footer-brand i{font-style:italic;font-weight:400;color:var(--ink-light)}
-.footer-brand b{font-weight:700;letter-spacing:1px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-muted);flex-wrap:wrap;gap:12px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px}
 
 /* ── MOBILE STICKY CTA ── */
 .mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(11,30,30,.97);backdrop-filter:blur(12px);padding:12px 16px;text-align:center;border-top:1px solid rgba(28,197,197,.15)}
@@ -297,44 +306,59 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .mobile-sticky-cta .trust-text{font-size:11px;color:var(--ink-muted);margin-top:6px}
 
 /* ── RESPONSIVE ── */
-@media(max-width:768px){
-  .nav-links{display:none}
+@media(max-width:900px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(28,197,197,.1);flex-direction:column;padding:16px 20px;gap:0;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+  .nav-links a{padding:12px 0;border-bottom:1px solid var(--bg-section);font-size:15px}
+  .nav-links.open{display:flex}
   .nav-hamburger{display:flex}
-  .nav-cta{display:none}
-  .nav-logo-svg{height:36px}
+  .nav{position:relative}
   .treatment-grid,.process-grid{grid-template-columns:1fr}
   .audience-list{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-grid{grid-template-columns:1fr 1fr}
   .article-meta{flex-wrap:wrap;gap:12px 20px}
   .mobile-sticky-cta{display:block}
   body{padding-bottom:90px}
 }
-@media(max-width:480px){
+@media(max-width:600px){
   .footer-grid{grid-template-columns:1fr}
-  .nav-logo-svg{height:32px}
-  .nav-badge{display:none}
+  .topbar .wrap{flex-direction:column;gap:4px;text-align:center}
+  .topbar-r{display:none}
 }
 </style>
 </head>
 <body>
 
+<!-- ═══ TOP BAR ═══ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-l">
+      <strong>3 sedes</strong>
+      <span class="topbar-sede">Vitacura</span><span class="topbar-sep">·</span>
+      <span class="topbar-sede">Concón</span><span class="topbar-sep">·</span>
+      <span class="topbar-sede">Los Ángeles</span>
+    </div>
+    <div class="topbar-r">
+      <span class="topbar-hours">Lun–Sáb 9:00–19:00</span>
+      <span class="topbar-sep" style="color:#2A4545">|</span>
+      <span class="topbar-phone"><a href="tel:+56963222683">+56 9 6322 2683</a></span>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="navbar" aria-label="Navegación principal">
   <div class="wrap">
     <a href="/" class="nav-logo" aria-label="Método Hebe — Inicio">
-      <svg class="nav-logo-svg" width="140" height="44" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Método Hebe"><style>@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Playfair+Display:wght@800&display=swap');</style><text x="50%" y="32" text-anchor="middle" font-family="'Dancing Script',cursive" font-weight="500" font-size="32" fill="#1CC5C5">Método</text><text x="50%" y="76" text-anchor="middle" font-family="'Playfair Display',serif" font-weight="800" font-size="48" fill="#1CC5C5" letter-spacing="6">HEBE</text></svg>
-      <span class="nav-badge">🇰🇷 Tecnología Coreana</span>
+      <span class="nav-logo-script">Método</span>
+      <span class="nav-logo-bold">HEBE</span>
     </a>
     <div class="nav-links" role="navigation">
       <a href="/">Inicio</a>
-      <a href="/el-metodo" class="active">El Método</a>
-      <a href="/celulitis">Celulitis</a>
-      <a href="/flacidez">Flacidez</a>
-      <a href="/grasa-localizada">Grasa Localizada</a>
-      <a href="/tonificar">Tonificación</a>
+      <a href="/planes/">Planes</a>
+      <a href="/resultados/">Resultados</a>
     </div>
     <a href="https://www.metodohebe.cl/evaluacion" class="nav-cta" aria-label="Agenda tu evaluación diagnóstica gratuita">Agenda tu evaluación</a>
-    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Abrir menú de navegación" aria-expanded="false">
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -534,17 +558,17 @@ button{font-family:var(--sans);cursor:pointer;border:none}
       </div>
       <div>
         <h4>El Método</h4>
-        <p><a href="/el-metodo">Conoce el Método</a></p>
-        <p><a href="/#necesidades">Planes Corporales</a></p>
-        <p><a href="/resultados">Resultados</a></p>
-        <p><a href="/el-metodo#faq">Preguntas Frecuentes</a></p>
+        <a href="/el-metodo">Conoce el Método</a>
+        <a href="/planes/">Planes y Precios</a>
+        <a href="/resultados/">Resultados</a>
+        <a href="/el-metodo#faq">Preguntas Frecuentes</a>
       </div>
       <div>
         <h4>Necesidades</h4>
-        <p><a href="/celulitis">Celulitis</a></p>
-        <p><a href="/flacidez">Flacidez</a></p>
-        <p><a href="/grasa-localizada">Grasa Localizada</a></p>
-        <p><a href="/tonificar">Tonificación</a></p>
+        <a href="/planes/#celulitis">Celulitis</a>
+        <a href="/planes/#flacidez">Flacidez</a>
+        <a href="/planes/#grasa">Grasa Localizada</a>
+        <a href="/planes/#tonificacion">Tonificación</a>
       </div>
       <div>
         <h4>Sedes</h4>
