@@ -80,7 +80,7 @@ Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, 
 - Comuna: Concón, Región de Valparaíso, Chile
 
 ### Los Ángeles (Biobío)
-- Dirección: Av. Gabriela Mistral 355
+- Dirección: Av. Gabriela Mistral 269
 - Comuna: Los Ángeles, Región del Biobío, Chile
 
 ## Estructura del sitio web
