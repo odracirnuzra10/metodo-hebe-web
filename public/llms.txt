@@ -87,6 +87,7 @@ Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, 
 
 ### Páginas principales
 - Home (corto, con acceso rápido a las 3 secciones): https://metodohebe.cl/
+- El Método (qué es, cómo funciona, para quién): https://metodohebe.cl/el-metodo
 - Planes Corporales (detalle completo de los 4 planes, precios, sesiones y tecnologías): https://metodohebe.cl/planes/
 - Resultados Antes/Después (casos reales por zona — celulitis, grasa, flacidez, tonificación): https://metodohebe.cl/resultados/
 - Evaluación Gratuita (formulario de diagnóstico online): https://metodohebe.cl/evaluacion

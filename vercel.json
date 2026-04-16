@@ -3,6 +3,10 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/casos", "destination": "/resultados", "statusCode": 301 },
+    { "source": "/que-es-el-metodo-hebe", "destination": "/el-metodo", "statusCode": 301 }
+  ],
   "headers": [
     {
       "source": "/(.*)",
