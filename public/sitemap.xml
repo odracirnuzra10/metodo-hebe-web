@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- HOME -->
   <url>
     <loc>https://metodohebe.cl/</loc>
@@ -124,5 +124,24 @@
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+  <!-- BLOG -->
+  <url>
+    <loc>https://metodohebe.cl/blog/sede-los-angeles</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://metodohebe.cl/img/blog/sede-los-angeles/fachada-clinica-metodo-hebe-los-angeles.jpg</image:loc>
+      <image:caption>Fachada de la clínica Método Hebe en Los Ángeles, Biobío</image:caption>
+    </image:image>
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://metodohebe.cl/img/blog/sede-los-angeles/recepcion-metodo-hebe-los-angeles.jpg</image:loc>
+      <image:caption>Recepción de Método Hebe Los Ángeles</image:caption>
+    </image:image>
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://metodohebe.cl/img/blog/sede-los-angeles/stella-cucorpo-ized-pro-metodo-hebe-los-angeles.jpg</image:loc>
+      <image:caption>Equipos Stella CuCorpo e iZED Pro en Método Hebe Los Ángeles</image:caption>
+    </image:image>
   </url>
 </urlset>
