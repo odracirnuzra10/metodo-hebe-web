@@ -981,11 +981,18 @@
 
       html,
       body {
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
         height: auto;
+        width: 100%;
+        max-width: 100vw;
+        position: relative;
       }
 
       .page {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
         flex-direction: column;
         min-height: 100dvh;
       }
@@ -1009,13 +1016,32 @@
       }
 
       .step {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
         padding: 0.8rem 1.2rem;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
         text-align: center;
         gap: 0.8rem;
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .step.active {
+        display: flex;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+      }
+
+      .step.exit-left,
+      .step.exit-right {
+        display: none;
       }
 
       .sede-card {
@@ -1026,6 +1052,11 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        height: auto;
       }
 
       .progress-bar {
