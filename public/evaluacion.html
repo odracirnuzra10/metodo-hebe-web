@@ -1667,9 +1667,11 @@
 
       // Generar event_id único ANTES de disparar
       const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      window.__currentEventId = eventId;  // ✅ expuesto para GTM wrapper (dedup unificado)
 
       // Meta Pixel — Lead (paso 3 → confirmación)
       if (typeof fbq === 'function') {
+        // ✅ eventID va en el 2do argumento (options), NO dentro de custom data
         fbq('track', 'Lead', {
           content_name: 'Método Hebe',
           content_category: 'corporal',
@@ -1677,9 +1679,8 @@
           sede: sedeKey,
           value: 10,
           currency: 'USD',
-          content_ids: ['hebe_evaluacion_p3'],
-          eventID: eventId
-        });
+          content_ids: ['hebe_evaluacion_p3']
+        }, { eventID: eventId });
       }
 
       // ===== Meta CAPI — capturar fbc / fbp / user agent =====
@@ -1731,14 +1732,83 @@
     }
   </script>
 
+<script>
+/**
+ * GTM Wrapper consolidado — un único bloque reemplaza los 3 duplicados anteriores.
+ * - Reusa window.__currentEventId que genera handleSubmit, para que Pixel+CAPI+GTM compartan event_id.
+ * - Push de dataLayer para: eval_select_sede, eval_select_schedule, eval_submit_form, eval_confirm_whatsapp
+ */
+(function(){
+  if(window.location.pathname.indexOf("/evaluacion") === -1) return;
+  window.dataLayer = window.dataLayer || [];
 
-<script type="text/javascript" id="" charset="">(function(){function d(){var a=document.querySelector(".sede-card.selected, .sede-option.selected, [data-value].selected, .sede-btn.active");return a?a.getAttribute("data-value")||a.textContent.trim().toLowerCase():""}function e(){var a=document.querySelector(".day-btn.selected, [data-day].selected, .day-option.active");return a?a.getAttribute("data-day")||a.textContent.trim():""}function f(){var a=document.querySelector(".slot-btn.selected, .time-slot.selected, .slot-option.active");return a?a.textContent.trim():
-""}window.dataLayer=window.dataLayer||[];if(typeof window.selectSede==="function"){var k=window.selectSede;window.selectSede=function(){k.apply(this,arguments);setTimeout(function(){dataLayer.push({event:"eval_select_sede",sede:d()})},100)}}if(typeof window.checkStep2==="function"){var l=window.checkStep2;window.checkStep2=function(){l.apply(this,arguments);setTimeout(function(){var a=d(),b=e(),c=f();a&&b&&c&&dataLayer.push({event:"eval_select_schedule",sede:a,day:b,slot:c})},100)}}if(typeof window.handleSubmit===
-"function"){var m=window.handleSubmit;window.handleSubmit=function(){var a=d(),b=e(),c=f(),n="eval_"+Date.now()+"_"+Math.random().toString(36).substr(2,6);dataLayer.push({event:"eval_submit_form",sede:a,day:b,slot:c,event_id:n});return m.apply(this,arguments)}}var g=document.getElementById("successWaLink");if(g)g.addEventListener("click",function(){var a="",b=document.querySelector("input[name\x3dnombre], input[name\x3dname], #nombre");b&&(a=b.value);dataLayer.push({event:"eval_confirm_whatsapp",
-sede:d(),nombre:a})});else{var h=new MutationObserver(function(){var a=document.getElementById("successWaLink");a&&(h.disconnect(),a.addEventListener("click",function(){var b="",c=document.querySelector("input[name\x3dnombre], input[name\x3dname], #nombre");c&&(b=c.value);dataLayer.push({event:"eval_confirm_whatsapp",sede:d(),nombre:b})}))});h.observe(document.body,{childList:!0,subtree:!0})}})();</script><script type="text/javascript" id="" charset="">(function(){function d(){var a=document.querySelector(".sede-card.selected, .sede-card.active");return a&&(a=a.querySelector("h3"))?a.textContent.trim().toLowerCase():""}function f(){var a=document.querySelector(".day-btn.selected, .day-btn.active");return a?a.getAttribute("data-day")||a.textContent.trim():""}function g(a){a.addEventListener("click",function(){var c="",b=document.querySelector("input[name\x3dnombre],input[name\x3dname],#nombre,input[placeholder*\x3dombre]");b&&(c=b.value);dataLayer.push({event:"eval_confirm_whatsapp",
-sede:d(),nombre:c})})}if(window.location.pathname.indexOf("/evaluacion")!==-1){window.dataLayer=window.dataLayer||[];if(typeof window.selectSede==="function"){var m=window.selectSede;window.selectSede=function(){m.apply(this,arguments);setTimeout(function(){dataLayer.push({event:"eval_select_sede",sede:d()})},150)}}document.addEventListener("click",function(a){var c=a.target.closest(".slot-btn, .time-slot");c&&setTimeout(function(){var b=d(),e=f(),h=c.textContent.trim();b&&e&&h&&dataLayer.push({event:"eval_select_schedule",
-sede:b,day:e,slot:h})},150)});if(typeof window.handleSubmit==="function"){var n=window.handleSubmit;window.handleSubmit=function(){var a=d(),c=f();var b=(b=document.querySelector(".slot-btn.selected, .slot-btn.active, .time-slot.selected"))?b.textContent.trim():"";var e="eval_"+Date.now()+"_"+Math.random().toString(36).substr(2,6);dataLayer.push({event:"eval_submit_form",sede:a,day:c,slot:b,event_id:e});return n.apply(this,arguments)}}var k=document.getElementById("successWaLink");if(k)g(k);else{var l=
-new MutationObserver(function(){var a=document.getElementById("successWaLink");a&&(l.disconnect(),g(a))});l.observe(document.body,{childList:!0,subtree:!0})}}})();</script><script type="text/javascript" id="" charset="">(function(){function d(){var a=document.querySelector(".sede-card.selected, .sede-card.active");return a&&(a=a.querySelector("h3"))?a.textContent.trim().toLowerCase():""}function f(){var a=document.querySelector(".day-btn.selected, .day-btn.active");return a?a.getAttribute("data-day")||a.textContent.trim():""}function g(a){a.addEventListener("click",function(){var c="",b=document.querySelector("input[name\x3dnombre],input[name\x3dname],#nombre,input[placeholder*\x3dombre]");b&&(c=b.value);dataLayer.push({event:"eval_confirm_whatsapp",
-sede:d(),nombre:c})})}if(window.location.pathname.indexOf("/evaluacion")!==-1){window.dataLayer=window.dataLayer||[];if(typeof window.selectSede==="function"){var m=window.selectSede;window.selectSede=function(){m.apply(this,arguments);setTimeout(function(){dataLayer.push({event:"eval_select_sede",sede:d()})},150)}}document.addEventListener("click",function(a){var c=a.target.closest(".slot-btn, .time-slot");c&&setTimeout(function(){var b=d(),e=f(),h=c.textContent.trim();b&&e&&h&&dataLayer.push({event:"eval_select_schedule",
-sede:b,day:e,slot:h})},150)});if(typeof window.handleSubmit==="function"){var n=window.handleSubmit;window.handleSubmit=function(){var a=d(),c=f();var b=(b=document.querySelector(".slot-btn.selected, .slot-btn.active, .time-slot.selected"))?b.textContent.trim():"";var e="eval_"+Date.now()+"_"+Math.random().toString(36).substr(2,6);dataLayer.push({event:"eval_submit_form",sede:a,day:c,slot:b,event_id:e});return n.apply(this,arguments)}}var k=document.getElementById("successWaLink");if(k)g(k);else{var l=
-new MutationObserver(function(){var a=document.getElementById("successWaLink");a&&(l.disconnect(),g(a))});l.observe(document.body,{childList:!0,subtree:!0})}}})();</script></body></html>
+  function _sede(){
+    var a = document.querySelector(".sede-card.selected");
+    return a && (a = a.querySelector("h3")) ? a.textContent.trim().toLowerCase() : "";
+  }
+  function _day(){
+    var a = document.querySelector(".day-btn.selected");
+    return a ? (a.getAttribute("data-day") || a.textContent.trim()) : "";
+  }
+  function _slot(){
+    var a = document.querySelector(".slot-btn.selected");
+    return a ? a.textContent.trim() : "";
+  }
+
+  // Wrapper selectSede → push eval_select_sede
+  if(typeof window.selectSede === "function"){
+    var _origSede = window.selectSede;
+    window.selectSede = function(){
+      _origSede.apply(this, arguments);
+      setTimeout(function(){
+        dataLayer.push({ event: "eval_select_sede", sede: _sede() });
+      }, 100);
+    };
+  }
+
+  // Listener click en slot-btn → push eval_select_schedule (cuando día+slot listos)
+  document.addEventListener("click", function(e){
+    var c = e.target.closest(".slot-btn");
+    if(!c) return;
+    setTimeout(function(){
+      var s = _sede(), d = _day(), sl = _slot();
+      if(s && d && sl) dataLayer.push({ event: "eval_select_schedule", sede: s, day: d, slot: sl });
+    }, 150);
+  });
+
+  // Wrapper handleSubmit → push eval_submit_form CON el mismo event_id que Pixel+CAPI
+  if(typeof window.handleSubmit === "function"){
+    var _origSubmit = window.handleSubmit;
+    window.handleSubmit = function(){
+      var result = _origSubmit.apply(this, arguments);
+      // __currentEventId es seteado por handleSubmit ANTES de disparar el Pixel
+      var eid = window.__currentEventId || ("eval_" + Date.now());
+      dataLayer.push({ event: "eval_submit_form", sede: _sede(), day: _day(), slot: _slot(), event_id: eid });
+      return result;
+    };
+  }
+
+  // Wrapper click botón WhatsApp post-submit
+  function _bindWa(a){
+    a.addEventListener("click", function(){
+      var n = document.getElementById('inputNombre');
+      dataLayer.push({
+        event: "eval_confirm_whatsapp",
+        sede: _sede(),
+        nombre: n ? n.value : "",
+        event_id: window.__currentEventId || ""
+      });
+    });
+  }
+  var _wa = document.getElementById("successWaLink");
+  if(_wa) _bindWa(_wa);
+  else {
+    var _obs = new MutationObserver(function(){
+      var a = document.getElementById("successWaLink");
+      if(a){ _obs.disconnect(); _bindWa(a); }
+    });
+    _obs.observe(document.body, { childList: true, subtree: true });
+  }
+})();
+</script>
+</body></html>
