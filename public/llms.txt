@@ -1,6 +1,36 @@
-# Método Hebe — llms.txt
-# Información estructurada para modelos de lenguaje (LLMs)
-# Última actualización: 2026-04-15
+# Método Hebe
+
+> Clínica Corporal Metabólica en Chile. Tratamientos no invasivos para reducción de grasa, flacidez, celulitis y tonificación. Tres sedes: Vitacura (Santiago), Concón (Valparaíso), Los Ángeles (Biobío).
+
+## Propuesta única
+
+Protocolo de 3 fases: diagnóstico metabólico → coaching nutricional → tecnología coreana. Alternativa no invasiva a cirugía estética con respaldo médico y nutricional. Eslogan: "No adivinamos, medimos."
+
+## Tratamientos principales
+
+- [Lipoescultura sin cirugía](https://metodohebe.cl/lipoescultura-sin-cirugia/): protocolo combinado para reducción de grasa localizada
+- [Criolipólisis](https://metodohebe.cl/criolipolisis/): eliminación de grasa por frío controlado
+- [Guatita de delantal](https://metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/): solución no quirúrgica al pannus abdominal
+- [Celulitis](https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/): RF fraccionada + HIEMS
+- [Flacidez corporal](https://metodohebe.cl/flacidez/): SkinWave MAX + Carbox CK + CorpoLift
+
+## Planes
+
+- Plan Zero Rollito — grasa localizada, 12 sesiones, $1.799.990 CLP
+- Plan Zero Celulitis — 20 sesiones, $1.977.990 CLP
+- Plan Zero Flacidez — 20 sesiones, $1.977.990 CLP
+- Plan Trifásico — tonificación, 24 sesiones, $1.977.990 CLP
+
+## Contacto
+
+- WhatsApp: +56 9 6322 2683
+- Web: https://metodohebe.cl
+- Evaluación P3: https://metodohebe.cl/evaluacion
+
+---
+
+# Información extendida para LLMs
+# Última actualización: 2026-04-23
 
 ## Identidad
 

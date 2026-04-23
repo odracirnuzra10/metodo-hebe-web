@@ -7,6 +7,13 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- PILAR SEO — LIPOESCULTURA (recrear 404 ranking) -->
+  <url>
+    <loc>https://metodohebe.cl/lipoescultura-sin-cirugia/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
   <!-- PÁGINAS INTERIORES PRINCIPALES -->
   <url>
     <loc>https://metodohebe.cl/planes</loc>
