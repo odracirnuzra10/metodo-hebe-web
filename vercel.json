@@ -5,7 +5,14 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/casos", "destination": "/resultados", "statusCode": 301 },
-    { "source": "/que-es-el-metodo-hebe", "destination": "/el-metodo", "statusCode": 301 }
+    { "source": "/que-es-el-metodo-hebe", "destination": "/el-metodo", "statusCode": 301 },
+    { "source": "/tag/guatita-delantal", "destination": "/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo", "statusCode": 301 },
+    { "source": "/tag/guatita-delantal/", "destination": "/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo", "statusCode": 301 },
+    { "source": "/tag/celulitis", "destination": "/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido", "statusCode": 301 },
+    { "source": "/tag/celulitis/", "destination": "/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido", "statusCode": 301 },
+    { "source": "/tag/(.*)", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/category/(.*)", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/author/(.*)", "destination": "/", "statusCode": 301 }
   ],
   "headers": [
     {

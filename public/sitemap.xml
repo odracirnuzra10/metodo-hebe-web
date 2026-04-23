@@ -7,12 +7,37 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- PILAR SEO — LIPOESCULTURA (recrear 404 ranking) -->
+  <!-- PILARES SEO/AEO (2026-04-23) -->
   <url>
     <loc>https://metodohebe.cl/lipoescultura-sin-cirugia/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/criolipolisis/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <!-- HUB GUATITA — satélites -->
+  <url>
+    <loc>https://metodohebe.cl/ejercicios-para-guatita-de-delantal/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/guatita-de-delantal-operacion-vs-tratamiento/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/guatita-de-delantal-auge-y-ley/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <!-- PÁGINAS INTERIORES PRINCIPALES -->
   <url>
