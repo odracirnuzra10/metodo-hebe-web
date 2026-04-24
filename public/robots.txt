@@ -57,4 +57,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://metodohebe.cl/sitemap.xml
+Sitemap: https://www.metodohebe.cl/sitemap.xml
