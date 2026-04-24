@@ -173,6 +173,43 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .mobile-sticky-cta button{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px}
 .mobile-sticky-cta .trust-text{font-size:11px;color:rgba(255,255,255,.45);margin-top:5px}
 
+/* ── SAAS PRICING GRID (for /planes and similar pages) ── */
+.pricing-grid-section{padding:clamp(56px,7vw,88px) 0;background:var(--bg)}
+.pricing-grid-head{text-align:center;max-width:680px;margin:0 auto 48px}
+.pricing-grid-head h2{font-size:clamp(26px,3.5vw,38px);font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.15;letter-spacing:-.02em}
+.pricing-grid-head p{font-size:16px;color:var(--ink-3);line-height:1.6}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.price-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px 26px;display:flex;flex-direction:column;position:relative;transition:all .3s}
+.price-card:hover{border-color:var(--cyan);box-shadow:0 8px 32px rgba(0,0,0,.04);transform:translateY(-2px)}
+.price-card.featured{border:2px solid var(--cyan-dd);box-shadow:0 12px 36px rgba(11,94,94,.12)}
+.price-popular{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--cyan);font-size:10px;letter-spacing:1.3px;padding:7px 16px;border-radius:20px;font-weight:700;text-transform:uppercase;white-space:nowrap}
+.price-card h3{font-size:18px;font-weight:600;margin-bottom:14px;color:var(--ink);letter-spacing:-.01em}
+.price-amt{font-size:34px;font-weight:800;color:var(--ink);letter-spacing:-.03em;margin-bottom:10px;line-height:1;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price-amt .per{font-size:13px;color:var(--ink-3);font-weight:500}
+.price-desc{font-size:13.5px;color:var(--ink-3);line-height:1.55;margin-bottom:18px;min-height:42px}
+.price-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.chip{font-size:11px;padding:5px 11px;background:var(--cyan-soft);color:var(--cyan-dd);border-radius:20px;font-weight:600;letter-spacing:.3px;display:inline-flex;align-items:center;gap:5px}
+.chip.muted{background:var(--bg);color:var(--ink-4);border:1px solid var(--line)}
+.price-section-label{font-size:10.5px;letter-spacing:1.5px;color:var(--ink-4);text-transform:uppercase;font-weight:700;margin-bottom:14px}
+.price-feat-list{list-style:none;padding:0;margin:0 0 26px;flex-grow:1}
+.price-feat-list li{padding:7px 0 7px 22px;position:relative;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.price-feat-list li::before{content:'';position:absolute;left:0;top:13px;width:12px;height:12px;background:var(--cyan-soft);border-radius:50%}
+.price-feat-list li::after{content:'';position:absolute;left:3px;top:15.5px;width:6px;height:3px;border-left:1.5px solid var(--cyan-dd);border-bottom:1.5px solid var(--cyan-dd);transform:rotate(-45deg)}
+.price-cta{display:flex;flex-direction:column;gap:8px}
+.price-cta .btn-primary{width:100%;justify-content:center;padding:13px 20px;background:var(--ink);color:var(--paper);border-radius:10px;font-size:13.5px;font-weight:600;transition:.2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer}
+.price-cta .btn-primary:hover{background:var(--cyan-dd)}
+.price-card.featured .btn-primary{background:var(--cyan-dd)}
+.price-card.featured .btn-primary:hover{background:var(--ink)}
+.btn-ghost{display:block;text-align:center;padding:11px 20px;font-size:13px;color:var(--ink-3);background:transparent;border:1px solid var(--line-2);border-radius:10px;font-weight:600;transition:.2s;text-decoration:none}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan-dd)}
+@media(max-width:1100px){
+  .pricing-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .price-card{padding:28px 22px}
+}
+@media(max-width:640px){
+  .pricing-grid{grid-template-columns:1fr}
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .footer-grid{grid-template-columns:1fr 1fr 1fr}

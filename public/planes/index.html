@@ -461,264 +461,107 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   </div>
 </div>
 
-<!-- ═══ PLANES ═══ -->
-<div class="plans-body">
+<!-- ═══ PRICING GRID (SaaS style) ═══ -->
+<section class="pricing-grid-section">
   <div class="wrap">
+    <div class="pricing-grid">
 
-    <!-- PLAN 1: CELULITIS -->
-    <section class="plan-section" id="celulitis">
-      <div class="plan-header">
-        <div>
-          <div class="plan-tag">Plan Zero Celulitis</div>
-          <h2 class="plan-title">Trata la celulitis desde su causa real</h2>
-          <p class="plan-subtitle">Protocolo clínico de 20 sesiones que aborda los tres frentes de la celulitis: metabolismo, circulación y tejido subcutáneo. Tecnología coreana + coaching nutricional. Sin cirugía.</p>
+      <article class="price-card" id="grasa">
+        <h3>Plan Zero Rollito</h3>
+        <div class="price-amt">$1.799.990<span class="per">CLP / plan</span></div>
+        <p class="price-desc">Para grasa localizada resistente a dieta y ejercicio en zonas específicas.</p>
+        <div class="price-chips">
+          <span class="chip">12 sesiones</span>
+          <span class="chip">3 meses</span>
         </div>
-        <div class="plan-price-box">
-          <div class="plan-price-label">Precio plan completo</div>
-          <div class="plan-price">$1.977.990</div>
-          <div class="plan-price-sub">CLP · IVA incluido</div>
-          <div class="plan-sessions-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            20 sesiones incluidas
-          </div>
-          <span class="plan-duration">Duración estimada: 5 meses</span>
+        <div class="price-section-label">Incluye</div>
+        <ul class="price-feat-list">
+          <li>iZED · Criolipólisis avanzada</li>
+          <li>SkinWave MAX · Radiofrecuencia</li>
+          <li>Adipolite · Ondas lipolíticas</li>
+          <li>Diagnóstico metabólico + Reto Hebe 21 días</li>
+          <li>Coaching nutricional personalizado</li>
+          <li>Seguimiento clínico continuo</li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'grasa',location:'pricing_grid'})">Agenda evaluación</a>
+          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Zero%20Rollito" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'grasa',location:'pricing_grid'})">Pregunta por WhatsApp</a>
         </div>
-      </div>
+      </article>
 
-      <div class="plan-info-label">Tecnologías coreanas incluidas</div>
-      <div class="tech-stack">
-        <div class="tech-card">
-          <h3>Corpo Hera</h3>
-          <p>Esferas 360° para masaje mecánico profundo: rompe nódulos fibrosos, moviliza tejido adiposo subcutáneo y mejora el drenaje linfático local.</p>
+      <article class="price-card featured" id="celulitis">
+        <div class="price-popular">Más elegido</div>
+        <h3>Plan Zero Celulitis</h3>
+        <div class="price-amt">$1.977.990<span class="per">CLP / plan</span></div>
+        <p class="price-desc">Trata la celulitis desde su causa real: metabolismo, circulación y tejido subcutáneo.</p>
+        <div class="price-chips">
+          <span class="chip">20 sesiones</span>
+          <span class="chip">5 meses</span>
         </div>
-        <div class="tech-card">
-          <h3>Carbox CK</h3>
-          <p>Carboxiterapia médica: infiltración subcutánea de CO₂ que mejora la microcirculación, oxigena el tejido y estimula la síntesis de colágeno.</p>
+        <div class="price-section-label">Incluye</div>
+        <ul class="price-feat-list">
+          <li>Corpo Hera · Masaje mecánico profundo</li>
+          <li>Carbox CK · Carboxiterapia médica</li>
+          <li>Presoterapia secuencial</li>
+          <li>Diagnóstico metabólico + Reto Hebe 21 días</li>
+          <li>Coaching nutricional + seguimiento médico</li>
+          <li>Plan de mantenimiento incluido</li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'celulitis',location:'pricing_grid'})">Agenda evaluación</a>
+          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Zero%20Celulitis" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'celulitis',location:'pricing_grid'})">Pregunta por WhatsApp</a>
         </div>
-        <div class="tech-card">
-          <h3>Presoterapia</h3>
-          <p>Compresión secuencial programada que activa el sistema linfático y reduce la retención de líquidos asociada a la fase edematosa de la celulitis.</p>
-        </div>
-      </div>
+      </article>
 
-      <div class="plan-info-label">Incluye en el plan</div>
-      <div class="included-grid">
-        <div class="included-item">20 sesiones de tratamiento</div>
-        <div class="included-item">Diagnóstico metabólico</div>
-        <div class="included-item">Coaching nutricional</div>
-        <div class="included-item">Reto Hebe 21 días</div>
-        <div class="included-item">Seguimiento médico continuo</div>
-        <div class="included-item">Plan de mantenimiento</div>
-      </div>
+      <article class="price-card" id="flacidez">
+        <h3>Plan Zero Flacidez</h3>
+        <div class="price-amt">$1.977.990<span class="per">CLP / plan</span></div>
+        <p class="price-desc">Estimula colágeno y reafirma tejido en abdomen, brazos o muslos sin cirugía.</p>
+        <div class="price-chips">
+          <span class="chip">20 sesiones</span>
+          <span class="chip">5 meses</span>
+        </div>
+        <div class="price-section-label">Incluye</div>
+        <ul class="price-feat-list">
+          <li>SkinWave MAX · Radiofrecuencia fraccionada</li>
+          <li>Corpo Lift · Reafirmación cutánea</li>
+          <li>Carbox CK · Bioestimulación</li>
+          <li>Diagnóstico metabólico + Reto Hebe 21 días</li>
+          <li>Coaching nutricional personalizado</li>
+          <li>Plan de mantenimiento incluido</li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'flacidez',location:'pricing_grid'})">Agenda evaluación</a>
+          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Zero%20Flacidez" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'flacidez',location:'pricing_grid'})">Pregunta por WhatsApp</a>
+        </div>
+      </article>
 
-      <div class="plan-cta">
-        <div class="plan-cta-text">
-          <h4>¿Este plan encaja con tu caso?</h4>
-          <p>Evaluación P3 sin costo · Respuesta inmediata · 3 sedes en Chile</p>
+      <article class="price-card" id="tonificacion">
+        <h3>Plan Trifásico</h3>
+        <div class="price-amt">$1.977.990<span class="per">CLP / plan</span></div>
+        <p class="price-desc">Tonificación integral: músculo, metabolismo y piel en un único protocolo.</p>
+        <div class="price-chips">
+          <span class="chip">24 sesiones</span>
+          <span class="chip">6 meses</span>
         </div>
-        <div class="plan-cta-buttons">
-          <a href="https://www.metodohebe.cl/evaluacion" class="btn-plan-cta" onclick="hebeTrack('evaluacion_click',{plan:'celulitis',location:'plan_section'})">
-            Agenda Evaluación P3
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20Zero%20Celulitis" class="btn-plan-wa" onclick="hebeTrack('cta_click',{plan:'celulitis',location:'plan_section'})" rel="noopener">
-            WhatsApp
-          </a>
+        <div class="price-section-label">Incluye</div>
+        <ul class="price-feat-list">
+          <li>Sculpt DD · HIEMS (electroestimulación)</li>
+          <li>iZED · Criolipólisis complementaria</li>
+          <li>Carbox CK + SkinWave MAX</li>
+          <li>Diagnóstico metabólico + Reto Hebe 21 días</li>
+          <li>Coaching nutricional personalizado</li>
+          <li>Seguimiento clínico extendido</li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'tonificacion',location:'pricing_grid'})">Agenda evaluación</a>
+          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Trif%C3%A1sico" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'tonificacion',location:'pricing_grid'})">Pregunta por WhatsApp</a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- PLAN 2: FLACIDEZ -->
-    <section class="plan-section alt" id="flacidez">
-      <div class="plan-header">
-        <div>
-          <div class="plan-tag">Plan Zero Flacidez</div>
-          <h2 class="plan-title">Reafirma la piel y <em>recupera firmeza</em></h2>
-          <p class="plan-subtitle">Protocolo de 20 sesiones para estimular colágeno y reafirmar tejido en profundidad en abdomen, brazos, muslos u otras zonas con flacidez cutánea. Sin cirugía.</p>
-        </div>
-        <div class="plan-price-box">
-          <div class="plan-price-label">Precio plan completo</div>
-          <div class="plan-price">$1.977.990</div>
-          <div class="plan-price-sub">CLP · IVA incluido</div>
-          <div class="plan-sessions-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            20 sesiones incluidas
-          </div>
-          <span class="plan-duration">Duración estimada: 5 meses</span>
-        </div>
-      </div>
-
-      <div class="plan-info-label">Tecnologías coreanas incluidas</div>
-      <div class="tech-stack">
-        <div class="tech-card">
-          <h3>SkinWave MAX</h3>
-          <p>Ultrasonido focalizado que activa fibroblastos y estimula producción nueva de colágeno y elastina en dermis profunda.</p>
-        </div>
-        <div class="tech-card">
-          <h3>Corpo Lift</h3>
-          <p>Reafirmación cutánea superficial para abdomen, brazos y muslos: mejora tono y textura del tejido debilitado por cambios de peso o edad.</p>
-        </div>
-        <div class="tech-card">
-          <h3>Radiofrecuencia fraccionada</h3>
-          <p>Microelectrodos que generan calor controlado en dermis: contraen fibras existentes e inducen neocolagénesis progresiva (3-6 meses).</p>
-        </div>
-      </div>
-
-      <div class="plan-info-label">Incluye en el plan</div>
-      <div class="included-grid">
-        <div class="included-item">20 sesiones de tratamiento</div>
-        <div class="included-item">Diagnóstico metabólico</div>
-        <div class="included-item">Coaching nutricional</div>
-        <div class="included-item">Reto Hebe 21 días</div>
-        <div class="included-item">Seguimiento médico continuo</div>
-        <div class="included-item">Plan de mantenimiento</div>
-      </div>
-
-      <div class="plan-cta">
-        <div class="plan-cta-text">
-          <h4>¿Este plan encaja con tu caso?</h4>
-          <p>Evaluación P3 sin costo · Respuesta inmediata · 3 sedes en Chile</p>
-        </div>
-        <div class="plan-cta-buttons">
-          <a href="https://www.metodohebe.cl/evaluacion" class="btn-plan-cta" onclick="hebeTrack('evaluacion_click',{plan:'flacidez',location:'plan_section'})">
-            Agenda Evaluación P3
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20Zero%20Flacidez" class="btn-plan-wa" onclick="hebeTrack('cta_click',{plan:'flacidez',location:'plan_section'})" rel="noopener">
-            WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLAN 3: GRASA LOCALIZADA -->
-    <section class="plan-section" id="grasa">
-      <div class="plan-header">
-        <div>
-          <div class="plan-tag">Plan Zero Rollito</div>
-          <h2 class="plan-title">Grasa localizada, <em>sin cirugía</em></h2>
-          <p class="plan-subtitle">12 sesiones de criolipólisis avanzada (iZED) más tecnología complementaria para eliminar cúmulos de grasa de forma progresiva, sin dieta extrema ni tiempo de recuperación.</p>
-        </div>
-        <div class="plan-price-box">
-          <div class="plan-price-label">Precio plan completo</div>
-          <div class="plan-price">$1.799.990</div>
-          <div class="plan-price-sub">CLP · IVA incluido</div>
-          <div class="plan-sessions-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            12 sesiones incluidas
-          </div>
-          <span class="plan-duration">Duración estimada: 3 meses</span>
-        </div>
-      </div>
-
-      <div class="plan-info-label">Tecnologías coreanas incluidas</div>
-      <div class="tech-stack">
-        <div class="tech-card">
-          <h3>iZED (criolipólisis avanzada)</h3>
-          <p>Inducción de apoptosis adiposa por frío controlado. Las células grasas eliminadas no regeneran: reducción permanente del volumen local en la zona tratada.</p>
-        </div>
-        <div class="tech-card">
-          <h3>SkinWave MAX</h3>
-          <p>Retensa la piel posterior a la reducción volumétrica, evitando el aspecto flácido que puede quedar tras eliminar grasa en zonas amplias. Contorno más definido.</p>
-        </div>
-        <div class="tech-card">
-          <h3>Adipolite</h3>
-          <p>Luz terapéutica (fotobiomodulación) que acelera la metabolización y eliminación linfática de los lípidos liberados durante el protocolo.</p>
-        </div>
-      </div>
-
-      <div class="plan-info-label">Incluye en el plan</div>
-      <div class="included-grid">
-        <div class="included-item">12 sesiones de tratamiento</div>
-        <div class="included-item">Diagnóstico metabólico</div>
-        <div class="included-item">Coaching nutricional</div>
-        <div class="included-item">Reto Hebe 21 días</div>
-        <div class="included-item">Seguimiento médico continuo</div>
-        <div class="included-item">Plan de mantenimiento</div>
-      </div>
-
-      <div class="plan-cta">
-        <div class="plan-cta-text">
-          <h4>¿Este plan encaja con tu caso?</h4>
-          <p>Evaluación P3 sin costo · Respuesta inmediata · 3 sedes en Chile</p>
-        </div>
-        <div class="plan-cta-buttons">
-          <a href="https://www.metodohebe.cl/evaluacion" class="btn-plan-cta" onclick="hebeTrack('evaluacion_click',{plan:'grasa',location:'plan_section'})">
-            Agenda Evaluación P3
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20Zero%20Rollito" class="btn-plan-wa" onclick="hebeTrack('cta_click',{plan:'grasa',location:'plan_section'})" rel="noopener">
-            WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLAN 4: TONIFICACIÓN -->
-    <section class="plan-section alt" id="tonificacion">
-      <div class="plan-header">
-        <div>
-          <div class="plan-tag">Plan Trifásico</div>
-          <h2 class="plan-title">Define tu cuerpo: músculo + metabolismo + piel</h2>
-          <p class="plan-subtitle">24 sesiones que combinan desarrollo muscular, quema de grasa y recomposición metabólica en un solo protocolo. Diseñado para hombres y mujeres que buscan tono y definición.</p>
-        </div>
-        <div class="plan-price-box">
-          <div class="plan-price-label">Precio plan completo</div>
-          <div class="plan-price">$1.977.990</div>
-          <div class="plan-price-sub">CLP · IVA incluido</div>
-          <div class="plan-sessions-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            24 sesiones incluidas
-          </div>
-          <span class="plan-duration">Duración estimada: 6 meses</span>
-        </div>
-      </div>
-
-      <div class="plan-info-label">Tecnologías coreanas incluidas</div>
-      <div class="tech-stack">
-        <div class="tech-card">
-          <h3>Sculpt DD</h3>
-          <p>Electroestimulación de alta intensidad: induce hasta 20.000 contracciones musculares por sesión, desarrollando fibra muscular y favoreciendo metabolización lipídica simultánea.</p>
-        </div>
-        <div class="tech-card">
-          <h3>iZED (criolipólisis)</h3>
-          <p>Elimina la grasa subcutánea que oculta la definición muscular lograda con Sculpt DD. Reducción volumétrica localizada y permanente.</p>
-        </div>
-        <div class="tech-card">
-          <h3>Carbox CK + SkinWave MAX</h3>
-          <p>Vascularización (Carbox CK) más tensado y remodelación de la piel sobre la nueva musculatura (SkinWave MAX). Acabado firme y natural.</p>
-        </div>
-      </div>
-
-      <div class="plan-info-label">Incluye en el plan</div>
-      <div class="included-grid">
-        <div class="included-item">24 sesiones de tratamiento</div>
-        <div class="included-item">Diagnóstico metabólico</div>
-        <div class="included-item">Coaching nutricional</div>
-        <div class="included-item">Reto Hebe 21 días</div>
-        <div class="included-item">Seguimiento médico continuo</div>
-        <div class="included-item">Plan de mantenimiento</div>
-      </div>
-
-      <div class="plan-cta">
-        <div class="plan-cta-text">
-          <h4>¿Este plan encaja con tu caso?</h4>
-          <p>Evaluación P3 sin costo · Respuesta inmediata · 3 sedes en Chile</p>
-        </div>
-        <div class="plan-cta-buttons">
-          <a href="https://www.metodohebe.cl/evaluacion" class="btn-plan-cta" onclick="hebeTrack('evaluacion_click',{plan:'tonificacion',location:'plan_section'})">
-            Agenda Evaluación P3
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://wa.me/56963222683?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20Trif%C3%A1sico" class="btn-plan-wa" onclick="hebeTrack('cta_click',{plan:'tonificacion',location:'plan_section'})" rel="noopener">
-            WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
+    </div>
   </div>
-</div>
+</section>
 
 <!-- ═══ COMPARATIVA ═══ -->
 <section class="comp-section">
