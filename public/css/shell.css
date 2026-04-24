@@ -1,4 +1,17 @@
 /* ═══ MÉTODO HEBE · SHELL v1 (shared across home + interior pages) ═══ */
+
+/* ── NO ITALIC IN TITLES (override inline styles that set h1-h6 italic) ── */
+h1, h2, h3, h4, h5, h6 {
+  font-style: normal !important;
+  font-family: var(--sans), 'Inter', -apple-system, system-ui, sans-serif !important;
+}
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+  font-style: normal !important;
+  font-family: inherit !important;
+  color: var(--cyan-dd);
+  font-weight: 600;
+}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --cyan:#1CC5C5;--cyan-d:#0FA8A8;--cyan-dd:#0B5E5E;--cyan-soft:#E4F7F7;
