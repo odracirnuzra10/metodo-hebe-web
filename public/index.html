@@ -19,11 +19,13 @@
 <meta property="og:url" content="https://metodohebe.cl/">
 <meta property="og:site_name" content="Método Hebe">
 <meta property="og:locale" content="es_CL">
+<meta property="og:image" content="https://metodohebe.cl/img/angelica-testimonio.png">
 
 <!-- ═══ Twitter Card ═══ -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Método Hebe — Clínica Corporal Metabólica en Chile">
 <meta name="twitter:description" content="Tu cuerpo cambia cuando tu metabolismo cambia. Protocolo clínico + tecnología coreana. Sin cirugía, sin rebote.">
+<meta name="twitter:image" content="https://metodohebe.cl/img/angelica-testimonio.png">
 
 <!-- ═══ Hreflang ═══ -->
 <link rel="alternate" hreflang="es-CL" href="https://metodohebe.cl/">
@@ -34,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 
 <!-- ═══ Favicon ═══ -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a8e82'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='18' fill='white' font-style='italic'%3EH%3C/text%3E%3C/svg%3E">
@@ -105,7 +107,7 @@
       "isPartOf": {"@id": "https://metodohebe.cl/#website"},
       "about": {"@id": "https://metodohebe.cl/#organization"},
       "datePublished": "2024-01-01",
-      "dateModified": "2026-04-14",
+      "dateModified": "2026-04-23",
       "inLanguage": "es-CL"
     },
     {
@@ -170,7 +172,7 @@
         {
           "@type": "Question",
           "name": "¿Cuánto cuestan los planes de Método Hebe?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Plan Zero Celulitis $1.977.990 CLP (20 sesiones), Plan Zero Flacidez $1.977.990 CLP (20 sesiones), Plan Zero Rollito $1.799.990 CLP (12 sesiones), Plan Trifásico $1.977.990 CLP (24 sesiones). Todos incluyen coaching nutricional y Reto Hebe 21 días. La Evaluación P3."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Plan Zero Celulitis $1.977.990 CLP (20 sesiones), Plan Zero Flacidez $1.977.990 CLP (20 sesiones), Plan Zero Rollito $1.799.990 CLP (12 sesiones), Plan Trifásico $1.977.990 CLP (24 sesiones). Todos incluyen coaching nutricional y Reto Hebe 21 días. La Evaluación P3 es sin costo."}
         },
         {
           "@type": "Question",
@@ -204,228 +206,247 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=271117138864148&ev=PageView&noscript=1"/></noscript>
 
 <style>
-/* ═══════════════════════════════════════════
-   MÉTODO HEBE — HOME v4 (short + 3 inner pages)
-   ═══════════════════════════════════════════ */
+/* ═══ MÉTODO HEBE — HOME v6 (clean & legible) ═══ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cyan:#1CC5C5;--cyan-d:#0FA8A8;--cyan-dd:#0D8F8F;
-  --cyan-glow:rgba(28,197,197,.12);--cyan-subtle:rgba(28,197,197,.06);
-  --bg:#FEFEFE;--bg-warm:#FAFBFB;--bg-section:#F6F9F9;
-  --bg-dark:#0B1E1E;--bg-dark-2:#0F2828;
-  --ink:#14201F;--ink-2:#2B4343;--ink-3:#4A6B6B;
-  --ink-muted:#7A9595;--ink-light:#A3BABA;
-  --wa:#25D366;
+  --cyan:#1CC5C5;--cyan-d:#0FA8A8;--cyan-dd:#0B5E5E;--cyan-soft:#E4F7F7;
+  --bg:#FAFBFB;--paper:#FFFFFF;--line:#E8ECEC;--line-2:#CDD4D4;
+  --ink:#0F1A1A;--ink-2:#36474A;--ink-3:#65797A;--ink-4:#9AA8A8;
+  --gold:#D4A853;--wa:#25D366;
   --serif:'Playfair Display',Georgia,serif;
-  --sans:'DM Sans',system-ui,-apple-system,sans-serif;
-  --radius:12px;
-  --section-y:clamp(56px,7vw,88px);
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
 }
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
-.section{padding:var(--section-y) 0}
-.section-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2.5px;color:var(--cyan);text-transform:uppercase;font-weight:600;margin-bottom:12px}
-.section-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--cyan);border-radius:1px}
-.section-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);font-weight:500;line-height:1.15;color:var(--ink);margin-bottom:12px}
-.section-title em{color:var(--cyan);font-style:italic}
-.section-desc{font-size:clamp(15px,1.6vw,17px);color:var(--ink-3);line-height:1.7;max-width:560px}
-.section-header{margin-bottom:clamp(28px,4vw,48px)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,3vw,32px)}
+.eyebrow{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--cyan-dd);font-weight:600;display:inline-flex;align-items:center;gap:8px;margin-bottom:14px}
+.eyebrow::before{content:'';width:24px;height:1.5px;background:var(--cyan);display:inline-block}
 
-/* ── TOP BAR ── */
-.topbar{background:var(--bg-dark);padding:8px 0;font-size:12px;font-weight:500;letter-spacing:.3px}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.topbar-l{display:flex;align-items:center;gap:10px;color:#8CBEBE}
-.topbar-l strong{color:#1CC5C5}
-.topbar-sede{color:#8CBEBE}
-.topbar-sep{color:#2A4545}
-.topbar-r{display:flex;align-items:center;gap:10px;color:#8CBEBE}
-.topbar-phone a{color:#8CBEBE;transition:color .2s}
-.topbar-phone a:hover{color:#1CC5C5}
-
-/* ── NAV ── */
-.nav{position:sticky;top:0;z-index:100;background:rgba(254,254,254,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,197,197,.08);transition:box-shadow .3s}
-.nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
-.nav-logo{display:flex;align-items:baseline;gap:5px;text-decoration:none;line-height:1}
-.nav-logo-script{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:14px;font-weight:400;color:var(--cyan);letter-spacing:.5px}
-.nav-logo-bold{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:800;color:var(--cyan);letter-spacing:3px}
-.nav-links{display:flex;align-items:center;gap:28px;font-size:13.5px;font-weight:500;color:var(--ink-2)}
-.nav-links a{transition:color .2s;white-space:nowrap}
-.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
-.nav-cta{background:var(--cyan);color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;transition:background .2s,transform .15s;white-space:nowrap}
-.nav-cta:hover{background:var(--cyan-d);transform:translateY(-1px)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
-.nav-hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
-
-/* ── HERO ── */
-.hero{padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,72px);background:var(--bg)}
-.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
-.hero-eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.hero-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--cyan)}
-h1{font-family:var(--serif);font-size:clamp(32px,4.5vw,54px);font-weight:500;line-height:1.1;color:var(--ink);margin-bottom:20px}
-h1 em{color:var(--cyan);font-style:italic}
-.hero-sub{font-size:clamp(15px,1.6vw,17px);color:var(--ink-3);line-height:1.75;margin-bottom:28px;max-width:520px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
-.btn-hero{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 16px rgba(28,197,197,.28)}
-.btn-hero:hover{background:var(--cyan-d);transform:translateY(-2px);box-shadow:0 6px 24px rgba(28,197,197,.36)}
-.btn-hero-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink-2);border:1.5px solid rgba(28,197,197,.35);cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:500;padding:14px 24px;border-radius:10px;transition:all .2s}
-.btn-hero-outline:hover{border-color:var(--cyan);color:var(--cyan)}
-.hero-trust{font-size:12.5px;color:var(--ink-muted);display:flex;align-items:center;gap:8px;margin-bottom:24px}
-.hero-trust svg{width:14px;height:14px;stroke:var(--cyan)}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.hero-stat{text-align:center;padding:14px 8px;background:var(--bg-section);border-radius:10px;border:1px solid rgba(28,197,197,.08)}
-.hero-stat-n{font-family:var(--serif);font-size:clamp(18px,2vw,24px);font-weight:600;color:var(--cyan)}
-.hero-stat-l{font-size:11px;color:var(--ink-muted);margin-top:2px;line-height:1.3}
-.hero-r{position:relative}
-.hero-testimonial-card{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.1)}
-.hero-testimonial-img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.hero-testimonial-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(11,30,30,.92) 40%);padding:28px 20px 20px}
-.hero-testimonial-quote svg{margin-bottom:8px}
-.hero-testimonial-quote p{font-size:13px;color:rgba(255,255,255,.88);line-height:1.6;margin-bottom:12px;font-style:italic}
-.hero-testimonial-author strong{display:block;font-size:13px;color:#fff;font-weight:600}
-.hero-testimonial-author span{font-size:11.5px;color:rgba(255,255,255,.55)}
-
-/* ── METABOLIC STRIP ── */
-.metabolic-strip{background:var(--bg-dark);padding:20px 0}
-.metabolic-strip .wrap{display:flex;align-items:flex-start;gap:20px}
-.metabolic-strip-label{white-space:nowrap;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);font-weight:600;padding-top:3px}
-.metabolic-strip-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.6;max-width:760px}
-.metabolic-strip-desc strong{color:rgba(255,255,255,.9)}
-
-/* ── PILARES ── */
-.pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px)}
-.pilar-card{padding:clamp(24px,3vw,32px);background:var(--bg);border:1px solid rgba(28,197,197,.1);border-radius:var(--radius);transition:transform .3s,box-shadow .3s,border-color .3s}
-.pilar-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(28,197,197,.1);border-color:rgba(28,197,197,.25)}
-.pilar-number{font-family:var(--serif);font-size:40px;font-weight:600;color:var(--cyan-glow);line-height:1;margin-bottom:12px;background:linear-gradient(135deg,var(--cyan),var(--cyan-d));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.pilar-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:8px}
-.pilar-title{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px}
-.pilar-quote{font-size:13px;color:var(--ink-muted);font-style:italic;margin-bottom:10px}
-.pilar-desc{font-size:14px;color:var(--ink-3);line-height:1.65}
-
-/* ── NECESIDADES SNIPPET ── */
-.necesidades-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px);margin-bottom:32px}
-.necesidad-card{padding:clamp(20px,2.5vw,28px);background:var(--bg);border:1px solid rgba(28,197,197,.1);border-radius:var(--radius);transition:all .3s}
-.necesidad-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(28,197,197,.1);border-color:rgba(28,197,197,.25)}
-.necesidad-icon{font-size:24px;margin-bottom:10px;color:var(--cyan)}
-.necesidad-title{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--ink);margin-bottom:6px}
-.necesidad-stat{font-size:11px;letter-spacing:.5px;color:var(--cyan);font-weight:600;text-transform:uppercase;margin-bottom:8px}
-.necesidad-desc{font-size:14px;color:var(--ink-3);line-height:1.65;margin-bottom:10px}
-.necesidad-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--cyan);transition:gap .2s}
-.necesidad-link:hover{gap:10px}
-.section-link-row{text-align:center}
-.btn-section-link{display:inline-flex;align-items:center;gap:8px;background:var(--bg-section);color:var(--ink-2);border:1.5px solid rgba(28,197,197,.2);cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;padding:12px 28px;border-radius:10px;transition:all .2s;text-decoration:none}
-.btn-section-link:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-subtle)}
-
-/* ── RESULTADOS CARRUSEL ── */
-.results-carousel{margin-bottom:28px}
-.results-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.results-track::-webkit-scrollbar{display:none}
-.result-card-home{scroll-snap-align:start;flex:0 0 calc(50% - 5px);min-width:0;border-radius:10px;overflow:hidden;line-height:0}
-.result-card-home img{width:100%;height:auto;display:block}
-.results-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
-.results-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.25);transition:all .3s;cursor:pointer;display:inline-block}
-.results-dots span.active{background:var(--cyan);width:18px;border-radius:3px}
-@media(min-width:901px){
-  .result-card-home{flex:0 0 calc(33.333% - 7px)}
-}
-
-/* ── REVIEWS ── */
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
-.review-card{padding:clamp(20px,2.5vw,28px);background:var(--bg);border:1px solid rgba(28,197,197,.08);border-radius:var(--radius);transition:transform .3s,box-shadow .3s}
-.review-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,0,0,.06)}
-.review-stars{color:#D4A853;font-size:16px;margin-bottom:12px;letter-spacing:2px}
-.review-text{font-size:14px;color:var(--ink-2);line-height:1.7;font-style:italic;margin-bottom:12px}
-.review-result{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:14px}
-.review-author{display:flex;align-items:center;gap:10px}
-.review-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--cyan-dd));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff;flex-shrink:0}
-.review-name{font-size:13px;font-weight:600;color:var(--ink)}
-.review-sede{font-size:11.5px;color:var(--ink-muted)}
-
-/* ── FAQ ── */
-.faq-list{max-width:760px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(28,197,197,.1);overflow:hidden}
-.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:500;color:var(--ink);padding:20px 40px 20px 0;position:relative;transition:color .2s;line-height:1.4}
-.faq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:20px;color:var(--cyan);font-weight:300;transition:transform .3s}
-.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
-.faq-q:hover{color:var(--cyan)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
-.faq-a p{font-size:14.5px;color:var(--ink-3);line-height:1.75;padding-bottom:20px}
-.faq-item.open .faq-a{max-height:400px}
-
-/* ── SEDES ── */
-.sedes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px)}
-.sede-card{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(28,197,197,.08);transition:transform .3s,box-shadow .3s}
-.sede-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.08)}
-.sede-body{padding:clamp(16px,2vw,24px)}
-.sede-city{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px}
-.sede-addr{font-size:13.5px;color:var(--ink-3);line-height:1.6;margin-bottom:12px}
-.sede-link{font-size:13px;font-weight:600;color:var(--cyan);display:inline-flex;align-items:center;gap:4px;transition:gap .2s}
-.sede-link:hover{gap:8px}
-
-/* ── CTA BAND ── */
-.cta-band{background:linear-gradient(135deg,var(--bg-dark) 0%,var(--bg-dark-2) 100%);padding:clamp(40px,6vw,72px) 0;text-align:center}
-.cta-band h3{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:500;color:#fff;margin-bottom:10px}
-.cta-band h3 em{color:var(--cyan);font-style:italic}
-.cta-band p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:24px}
-.cta-band>div>div{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-cta-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);border:none;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;padding:14px 28px;border-radius:10px;transition:all .2s}
-.btn-cta-white:hover{background:var(--bg-section);transform:translateY(-2px)}
-.btn-cta-wa{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;padding:14px 24px;border-radius:10px;transition:all .2s}
-.btn-cta-wa:hover{background:#1db954;transform:translateY(-2px)}
-.cta-trust-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:rgba(255,255,255,.4)}
-
-/* ── FOOTER ── */
-.footer{background:var(--bg-dark);padding:clamp(40px,6vw,64px) 0 24px;color:rgba(255,255,255,.5);font-size:13.5px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);margin-bottom:36px}
-.footer-brand{font-family:var(--serif);font-size:22px;color:#fff;margin-bottom:10px}
-.footer-brand i{color:var(--cyan)}
-.footer h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:600;margin-bottom:14px}
-.footer a{color:rgba(255,255,255,.5);transition:color .2s;display:block;margin-bottom:6px}
-.footer a:hover{color:var(--cyan)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px}
-
-/* ── MOBILE STICKY CTA ── */
-.mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;padding:10px 16px 14px;background:rgba(11,30,30,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(18,140,126,.25);text-align:center;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
-.mobile-sticky-cta.visible{transform:translateY(0)}
-.mobile-sticky-cta button{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#128C7E;color:#fff;border:none;cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px}
-.trust-text{font-size:10px;color:rgba(255,255,255,.3);margin-top:5px}
-
-/* ── FADE ANIMATIONS ── */
+@keyframes blink{50%{opacity:.35}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .7s ease both}
 .fade-up-d1{animation:fadeUp .7s .1s ease both}
 .fade-up-d2{animation:fadeUp .7s .2s ease both}
 .fade-up-d3{animation:fadeUp .7s .3s ease both}
-.fade-up-d4{animation:fadeUp .7s .4s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--ink);color:#9CB8B8;font-size:12px;padding:9px 0}
+.topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
+.topbar-l{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.topbar-l .dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;display:inline-block;margin-right:7px;animation:blink 2s infinite;vertical-align:middle}
+.topbar-r{display:flex;gap:18px;flex-wrap:wrap}
+.topbar-r a{transition:color .2s}
+.topbar-r a:hover{color:var(--cyan)}
+
+/* ── NAV ── */
+.nav{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 0;position:sticky;top:0;z-index:60;transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.05)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{display:flex;align-items:center}
+.nav-logo img{height:46px;width:auto;display:block}
+.footer-logo img{height:64px;width:auto;display:block;margin-bottom:14px}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--ink-2)}
+.nav-links a{padding:6px 0;border-bottom:2px solid transparent;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{border-color:var(--cyan);color:var(--ink)}
+.nav-r{display:flex;gap:10px;align-items:center}
+.btn-cta{background:var(--ink);color:var(--paper);padding:11px 20px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.2s;font-family:inherit;border-radius:8px}
+.btn-cta:hover{background:var(--cyan-dd)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+
+/* ── HERO ── */
+.hero{padding:48px 0 56px;background:var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.h-chips{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.h-chip{font-size:11px;letter-spacing:.5px;padding:6px 11px;background:var(--paper);color:var(--ink-3);border-radius:20px;font-weight:500;border:1px solid var(--line)}
+.h-chip.live{background:var(--ink);color:var(--cyan);border-color:var(--ink)}
+.h-chip.live::before{content:'';display:inline-block;width:6px;height:6px;background:var(--cyan);border-radius:50%;margin-right:7px;animation:blink 2s infinite;vertical-align:middle}
+.hero h1{font-size:clamp(34px,4.5vw,54px);font-weight:600;line-height:1.08;letter-spacing:-.025em;margin-bottom:20px;color:var(--ink)}
+.hero h1 em{font-family:var(--serif);font-style:italic;color:var(--cyan-dd);font-weight:500}
+.hero-sub{font-size:17px;color:var(--ink-2);line-height:1.6;margin-bottom:28px;max-width:540px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.btn-primary{background:var(--ink);color:var(--paper);padding:14px 24px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:.2s;font-family:inherit;border-radius:10px}
+.btn-primary:hover{background:var(--cyan-dd);transform:translateY(-1px)}
+.btn-outline{background:var(--paper);color:var(--ink);border:1.5px solid var(--line-2);padding:13px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s;display:inline-flex;align-items:center;border-radius:10px}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan-dd)}
+.hero-trust{font-size:13px;color:var(--ink-3);display:flex;gap:18px;flex-wrap:wrap}
+.hero-trust span{display:flex;align-items:center;gap:6px}
+.hero-trust span::before{content:'✓';color:var(--cyan-dd);font-weight:700}
+
+/* ── PATIENT CARD ── */
+.patient{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.04)}
+.patient-photo{position:relative;aspect-ratio:3/3.6;overflow:hidden;background:#1A2828}
+.patient-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.patient-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,20,20,.85) 100%)}
+.photo-badge{position:absolute;top:14px;right:14px;background:rgba(28,197,197,.18);color:var(--cyan);padding:6px 11px;font-size:11px;font-weight:600;letter-spacing:.5px;backdrop-filter:blur(6px);border:1px solid rgba(28,197,197,.4);border-radius:20px;z-index:2}
+.photo-quote{position:absolute;bottom:0;left:0;right:0;padding:24px 22px 22px;z-index:2;color:#fff}
+.photo-quote p{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.55;margin-bottom:14px;color:rgba(255,255,255,.95)}
+.photo-quote-author{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid rgba(255,255,255,.18);font-size:12px}
+.photo-quote-author b{color:#fff;font-weight:600;font-size:13px}
+.photo-quote-author span{color:rgba(255,255,255,.6)}
+
+/* ── SECTIONS ── */
+.section{padding:80px 0}
+.section.alt{background:var(--paper)}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 48px}
+.sec-head .eyebrow{margin-bottom:16px}
+.sec-title{font-size:clamp(28px,3.5vw,40px);font-weight:600;line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
+.sec-title em{font-family:var(--serif);font-style:italic;color:var(--cyan-dd);font-weight:500}
+.sec-desc{font-size:16px;color:var(--ink-3);line-height:1.65}
+
+/* ── 3 FASES (simple) ── */
+.fases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fase-c{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:32px 26px;transition:.3s}
+.fase-c:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.04)}
+.fase-c .num{font-family:var(--serif);font-size:42px;font-style:italic;color:var(--cyan);line-height:1;margin-bottom:16px;font-weight:600}
+.fase-c .tag{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--cyan-dd);font-weight:600;margin-bottom:10px}
+.fase-c h3{font-size:21px;font-weight:600;line-height:1.25;margin-bottom:10px;letter-spacing:-.01em}
+.fase-c p{font-size:14.5px;color:var(--ink-3);line-height:1.65}
+
+/* ── TECNOLOGÍA dark (simple) ── */
+.tech-section{background:var(--ink);color:var(--paper)}
+.tech-section .sec-title{color:#fff}
+.tech-section .sec-title em{color:var(--cyan)}
+.tech-section .sec-desc{color:rgba(255,255,255,.6)}
+.tech-section .eyebrow{color:var(--cyan)}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tech-c{background:#152222;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:0;transition:.3s;overflow:hidden;display:flex;flex-direction:column}
+.tech-c:hover{background:#1A2929;border-color:rgba(28,197,197,.3);transform:translateY(-2px)}
+.tech-c-img{aspect-ratio:4/3;background:#0E1A1A;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+.tech-c-img img{width:100%;height:100%;object-fit:contain;padding:18px;transition:transform .4s}
+.tech-c:hover .tech-c-img img{transform:scale(1.05)}
+.tech-c-body{padding:22px}
+.tech-c .flag{font-size:11px;color:var(--cyan);letter-spacing:.5px;margin-bottom:10px;font-weight:500}
+.tech-c h3{font-size:20px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+.tech-c h3 em{font-family:var(--serif);font-style:italic;color:var(--cyan);font-weight:500}
+.tech-c .type{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.5px;margin-bottom:10px;text-transform:uppercase;font-weight:500}
+.tech-c p{font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.6}
+.tech-meta{margin-top:32px;text-align:center;padding:22px 28px;background:#152222;border:1px solid rgba(28,197,197,.18);border-radius:12px;display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.tech-meta-row{display:flex;justify-content:center;margin-top:32px}
+.tech-meta b{font-size:24px;font-weight:700;color:var(--cyan);letter-spacing:-.01em}
+.tech-meta span{font-size:13px;color:rgba(255,255,255,.65);max-width:380px;line-height:1.5}
+
+/* ── PLANES ── */
+.planes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.plan-c{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 22px;display:flex;flex-direction:column;transition:.3s;text-decoration:none;color:inherit;position:relative}
+.plan-c:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.06)}
+.plan-c.featured{background:var(--ink);color:#fff;border-color:var(--ink)}
+.plan-c.featured:hover{border-color:var(--cyan)}
+.plan-badge{position:absolute;top:-1px;right:18px;background:var(--cyan);color:var(--ink);font-size:10px;padding:5px 10px;letter-spacing:.5px;font-weight:700;border-radius:0 0 6px 6px}
+.plan-c .tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan-dd);font-weight:600;margin-bottom:12px}
+.plan-c.featured .tag{color:var(--cyan)}
+.plan-c h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px;line-height:1.15}
+.plan-c h3 em{font-family:var(--serif);font-style:italic;color:var(--cyan-dd);font-weight:500}
+.plan-c.featured h3 em{color:var(--cyan)}
+.plan-c .for{font-size:13.5px;color:var(--ink-3);line-height:1.5;margin-bottom:20px;flex-grow:1}
+.plan-c.featured .for{color:rgba(255,255,255,.7)}
+.plan-c .price{font-size:24px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+.plan-c.featured .price{color:var(--cyan)}
+.plan-c .price small{display:block;font-size:11px;color:var(--ink-3);font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.plan-c.featured .price small{color:rgba(255,255,255,.6)}
+
+/* ── EVIDENCIA ── */
+.evid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.evid-c{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s}
+.evid-c:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.evid-img{aspect-ratio:2/1.05;background:#1A2828;position:relative;overflow:hidden}
+.evid-img img{width:100%;height:100%;object-fit:cover}
+.evid-img::after{content:attr(data-lbl);position:absolute;top:12px;left:12px;font-size:10px;background:rgba(10,20,20,.85);color:#fff;padding:5px 10px;letter-spacing:.5px;border-radius:4px;font-weight:600}
+.evid-meta{padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.evid-meta-l b{font-size:14px;font-weight:600;display:block;letter-spacing:-.01em}
+.evid-meta-l span{font-size:12px;color:var(--ink-3);margin-top:2px;display:block}
+.evid-meta-r{font-size:11px;color:var(--cyan-dd);font-weight:600;letter-spacing:.5px;text-transform:uppercase;background:var(--cyan-soft);padding:5px 11px;border-radius:20px}
+
+/* ── REVIEWS ── */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.review-c{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;transition:.3s}
+.review-c:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.review-stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+.review-text{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--ink-2);line-height:1.6;margin-bottom:20px;flex-grow:1}
+.review-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.review-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--ink)}
+.review-avatar img{width:100%;height:100%;object-fit:cover}
+.review-name{font-size:14px;font-weight:600;color:var(--ink)}
+.review-sede{font-size:12px;color:var(--ink-3);margin-top:2px}
+
+/* ── FAQ ── */
+.faq-list{max-width:760px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:last-child{border:none}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;font-family:inherit;font-size:15.5px;font-weight:500;color:var(--ink);padding:22px 50px 22px 24px;position:relative;transition:color .2s;line-height:1.4}
+.faq-q::after{content:'+';position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--cyan);font-weight:300;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-q:hover{color:var(--cyan-dd)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{font-size:15px;color:var(--ink-3);line-height:1.7;padding:0 24px 24px}
+.faq-item.open .faq-a{max-height:300px}
+
+/* ── SEDES ── */
+.sedes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sede-c{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.sede-c:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.sede-img{aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--line)}
+.sede-img img{width:100%;height:100%;object-fit:cover}
+.sede-body{padding:22px;flex-grow:1;display:flex;flex-direction:column}
+.sede-c h3{font-size:20px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+.sede-c .addr{font-size:14px;color:var(--ink-3);line-height:1.55;margin-bottom:18px;flex-grow:1}
+.sede-c a.maps{color:var(--cyan-dd);font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.sede-c a.maps:hover{gap:8px;transition:gap .2s}
+
+/* ── CTA FINAL ── */
+.cta-final{background:var(--ink);color:#fff;padding:80px 0;text-align:center}
+.cta-final h2{font-size:clamp(30px,4vw,46px);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
+.cta-final h2 em{font-family:var(--serif);font-style:italic;color:var(--cyan);font-weight:500}
+.cta-final p{color:rgba(255,255,255,.7);font-size:16px;margin-bottom:30px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-final-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.cta-final .btn-primary{background:var(--cyan);color:var(--ink)}
+.cta-final .btn-primary:hover{background:#fff}
+.btn-wa{background:var(--wa);color:#fff;padding:14px 22px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;font-family:inherit;text-decoration:none;border-radius:10px}
+.btn-wa:hover{background:#1db954}
+
+/* ── FOOTER ── */
+.footer{background:var(--bg);padding:56px 0 24px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-3)}
+.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer h4{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink);margin-bottom:14px;font-weight:700}
+.footer h4 .stars{color:var(--cyan);margin-left:6px}
+.footer a{display:block;padding:4px 0;color:var(--ink-3);transition:color .2s}
+.footer a:hover{color:var(--cyan-dd)}
+.footer-brand-block p{font-size:13.5px;color:var(--ink-3);line-height:1.65;margin-top:14px;max-width:300px}
+.footer-brand-block .footer-contact{margin-top:14px}
+.footer-brand-block .footer-contact a{padding:2px 0}
+.footer-bottom{padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--ink-4);flex-wrap:wrap;gap:10px}
+.footer-bottom a{display:inline}
+
+/* ── MOBILE STICKY CTA ── */
+.mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;padding:10px 16px 14px;background:rgba(15,26,26,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(28,197,197,.25);text-align:center;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mobile-sticky-cta.visible{transform:translateY(0)}
+.mobile-sticky-cta button{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px}
+.trust-text{font-size:11px;color:rgba(255,255,255,.4);margin-top:5px}
 
 /* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .hero .wrap{grid-template-columns:1fr}
-  .hero-r{display:block;margin-top:24px}
-  .hero-testimonial-img{aspect-ratio:4/3}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .pilares-grid{grid-template-columns:1fr}
-  .necesidades-grid{grid-template-columns:1fr}
-  .results-grid-home{grid-template-columns:repeat(2,1fr)}
-  .reviews-grid{grid-template-columns:1fr}
-  .sedes-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .mobile-sticky-cta{display:block;}
-  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(28,197,197,.1);flex-direction:column;padding:16px 20px;gap:0;box-shadow:0 8px 24px rgba(0,0,0,.06)}
-  .nav-links a{padding:12px 0;border-bottom:1px solid var(--bg-section);font-size:15px}
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .fases-grid,.tech-grid,.sedes-grid,.reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .planes-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:640px){
+  .topbar-r{display:none}
+  .topbar-l{justify-content:center;width:100%}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;padding:16px 24px;gap:0;box-shadow:0 8px 24px rgba(0,0,0,.06);z-index:60}
   .nav-links.open{display:flex}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--bg);font-size:15px}
   .nav-hamburger{display:flex}
   .nav{position:relative}
-}
-@media(max-width:600px){
-  .results-grid-home{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .topbar .wrap{flex-direction:column;gap:4px;text-align:center}
-  .topbar-r{display:none}
-  .hero-stats{grid-template-columns:repeat(2,1fr)}
-  .btn-hero-outline{display:none}
+  .fases-grid,.tech-grid,.sedes-grid,.reviews-grid,.evid-grid,.planes-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-brand-block{grid-column:1/-1}
+  .mobile-sticky-cta{display:block}
+  body{padding-bottom:68px}
+  .section{padding:60px 0}
+  .nav-r .btn-cta{font-size:12px;padding:10px 14px}
 }
 </style>
 </head>
@@ -434,19 +455,16 @@ h1 em{color:var(--cyan);font-style:italic}
 <!-- ═══ GTM NOSCRIPT ═══ -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZC56NQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- ═══ TOP BAR ═══ -->
-<div class="topbar" data-cro="topbar">
+<!-- ═══ TOPBAR ═══ -->
+<div class="topbar">
   <div class="wrap">
     <div class="topbar-l">
-      <strong>3 sedes</strong>
-      <span class="topbar-sede">Vitacura</span><span class="topbar-sep">·</span>
-      <span class="topbar-sede">Concón</span><span class="topbar-sep">·</span>
-      <span class="topbar-sede">Los Ángeles</span>
+      <span><i class="dot"></i>3 sedes activas en Chile</span>
+      <span>Vitacura · Concón · Los Ángeles</span>
     </div>
     <div class="topbar-r">
-      <span class="topbar-hours">Lun–Sáb 9:00–19:00</span>
-      <span class="topbar-sep" style="color:#2A4545">|</span>
-      <span class="topbar-phone"><a href="tel:+56963222683">+56 9 6322 2683</a></span>
+      <a href="tel:+56963222683" onclick="hebeTrack('phone_click',{location:'topbar'})">+56 9 6322 2683</a>
+      <a href="mailto:contacto@metodohebe.cl">contacto@metodohebe.cl</a>
     </div>
   </div>
 </div>
@@ -455,295 +473,373 @@ h1 em{color:var(--cyan);font-style:italic}
 <nav class="nav" id="navbar" aria-label="Navegación principal">
   <div class="wrap">
     <a href="/" class="nav-logo" aria-label="Método Hebe — Inicio">
-      <span class="nav-logo-script">Método</span>
-      <span class="nav-logo-bold">HEBE</span>
+      <img src="/img/logo-metodo-hebe.png" alt="Método Hebe" width="160" height="46">
     </a>
     <div class="nav-links" role="navigation">
       <a href="/" class="active">Inicio</a>
+      <a href="/el-metodo">El Método</a>
       <a href="/planes/">Planes</a>
       <a href="/resultados/">Resultados</a>
+      <a href="/blog/">Blog</a>
     </div>
-    <button class="nav-cta" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n%20P3','_blank');hebeTrack('whatsapp_click',{location:'nav'})" aria-label="Agenda tu evaluación P3">Agenda tu evaluación</button>
-    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-r">
+      <button class="btn-cta" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'nav'})">Agenda evaluación</button>
+      <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <!-- ═══ HERO ═══ -->
-<header class="hero" data-cro="hero">
+<header class="hero">
   <div class="wrap">
-    <div class="hero-l">
-      <div class="hero-eyebrow fade-up"><span>Clínica corporal metabólica · 3 sedes en Chile</span></div>
-      <h1 class="fade-up-d1">Tu cuerpo cambia cuando<br>tu <em>metabolismo cambia</em></h1>
-      <p class="hero-sub fade-up-d2">Protocolo clínico de 3 fases — diagnóstico metabólico, hábitos y tecnología coreana — para resultados permanentes sin cirugía.</p>
-      <div class="hero-actions fade-up-d3">
-        <button class="btn-hero" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'hero'})" data-cro="hero-cta">
-          Agenda tu evaluación
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <a href="/planes/" class="btn-hero-outline" data-cro="hero-planes" onclick="hebeTrack('cta_click',{location:'hero',type:'planes'})">Ver planes y precios</a>
-      </div>
-      <div class="hero-stats fade-up-d4">
-        <div class="hero-stat"><div class="hero-stat-n">+30.000</div><div class="hero-stat-l">Pacientes tratados</div></div>
-        <div class="hero-stat"><div class="hero-stat-n">94%</div><div class="hero-stat-l">Satisfacción</div></div>
-        <div class="hero-stat"><div class="hero-stat-n">6</div><div class="hero-stat-l">Tecnologías importadas</div></div>
-        <div class="hero-stat"><div class="hero-stat-n">3</div><div class="hero-stat-l">Sedes en Chile</div></div>
-      </div>
-    </div>
-    <div class="hero-r fade-up-d2">
-      <div class="hero-testimonial-card">
-        <img src="/img/angelica.png" alt="Angélica Gallardo, paciente de Método Hebe — testimonio real de eliminación de celulitis" loading="eager" width="500" height="667" class="hero-testimonial-img">
-        <div class="hero-testimonial-overlay">
-          <div class="hero-testimonial-quote">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(28,197,197,.6)"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p>"Con el Método Hebe no solo logré eliminar la celulitis casi a cero, sino que también mejoré mi salud y mi silueta a nivel general."</p>
-          </div>
-          <div class="hero-testimonial-author">
-            <strong>Angélica Gallardo</strong>
-            <span>52 años · Pudahuel, Santiago</span>
-          </div>
+    <div class="hero-grid">
+      <div>
+        <div class="h-chips fade-up">
+          <span class="h-chip live">Agendas hoy</span>
+          <span class="h-chip">+30.000 pacientes</span>
+          <span class="h-chip">+30 tecnologías</span>
+        </div>
+        <h1 class="fade-up-d1">Tu cuerpo cambia cuando<br>tu <em>metabolismo</em> cambia.</h1>
+        <p class="hero-sub fade-up-d2">Primera red de clínicas corporales en Chile especializada en salud metabólica. Protocolo de 3 fases + tecnología coreana, sin cirugía.</p>
+        <div class="hero-actions fade-up-d2">
+          <button class="btn-primary" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'hero'})">
+            Agenda tu evaluación
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </button>
+          <a href="/planes/" class="btn-outline" onclick="hebeTrack('cta_click',{location:'hero',type:'planes'})">Ver planes</a>
+        </div>
+        <div class="hero-trust fade-up-d3">
+          <span>Sin cirugía</span>
+          <span>Sin rebote</span>
+          <span>Evaluación gratis</span>
         </div>
       </div>
+
+      <aside class="patient fade-up-d1">
+        <div class="patient-photo">
+          <img src="/img/angelica-testimonio.png" alt="Angélica Gallardo, paciente Método Hebe — resultado real" loading="eager" width="500" height="600">
+          <span class="photo-badge">Zero Celulitis</span>
+          <div class="photo-quote">
+            <p>"Con el Método Hebe no solo logré eliminar la celulitis casi a cero — también mejoré mi salud y mi silueta."</p>
+            <div class="photo-quote-author">
+              <b>Angélica Gallardo</b>
+              <span>52 · Pudahuel</span>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 </header>
 
-<!-- ═══ EL MÉTODO ═══ -->
-<section class="section" id="metodo" aria-labelledby="metodo-title">
+<!-- ═══ EL MÉTODO — 3 FASES ═══ -->
+<section class="section alt" id="metodo">
   <div class="wrap">
-    <div class="section-header">
-      <div class="section-eyebrow"><span>Protocolo clínico de 3 fases</span></div>
-      <h2 class="section-title" id="metodo-title">La salud es el <em>origen</em> de la estética</h2>
+    <div class="sec-head">
+      <div class="eyebrow">El Método</div>
+      <h2 class="sec-title">Protocolo clínico de <em>3 fases</em></h2>
+      <p class="sec-desc">La salud es el origen de la estética. Tres pasos consecutivos, medibles y auditables.</p>
     </div>
-    <div class="pilares-grid">
-      <article class="pilar-card">
-        <div class="pilar-number">01</div>
-        <div class="pilar-tag">Fase 1 — Diagnóstico</div>
-        <h3 class="pilar-title">Análisis Metabólico Completo</h3>
-        <div class="pilar-quote">"No adivinamos, medimos."</div>
-        <p class="pilar-desc">Bioimpedancia y análisis corporal para definir tu perfil metabólico real.</p>
+    <div class="fases-grid">
+      <article class="fase-c">
+        <div class="num">i.</div>
+        <div class="tag">Fase 01 · Diagnóstico</div>
+        <h3>Análisis metabólico</h3>
+        <p>Bioimpedancia y perfil corporal completo. Tu mapa metabólico real antes de cualquier plan.</p>
       </article>
-      <article class="pilar-card">
-        <div class="pilar-number">02</div>
-        <div class="pilar-tag">Fase 2 — Reprogramación</div>
-        <h3 class="pilar-title">Coaching Nutricional</h3>
-        <div class="pilar-quote">"Cambios sostenibles, no temporales."</div>
-        <p class="pilar-desc">Plan nutricional personalizado con Reto Hebe 21 días para crear hábitos reales.</p>
+      <article class="fase-c">
+        <div class="num">ii.</div>
+        <div class="tag">Fase 02 · Reprogramación</div>
+        <h3>Coaching nutricional</h3>
+        <p>Reto Hebe 21 días: reinstalamos hábitos metabólicos con seguimiento semanal.</p>
       </article>
-      <article class="pilar-card">
-        <div class="pilar-number">03</div>
-        <div class="pilar-tag">Fase 3 — Potenciación</div>
-        <h3 class="pilar-title">Tecnología Coreana</h3>
-        <div class="pilar-quote">"Aceleramos el resultado clínico."</div>
-        <p class="pilar-desc">6 equipos importados de Corea del Sur para potenciar lo que tu cuerpo ya logró.</p>
+      <article class="fase-c">
+        <div class="num">iii.</div>
+        <div class="tag">Fase 03 · Potenciación</div>
+        <h3>Tecnología coreana</h3>
+        <p>+30 equipos médicos importados. Sin cirugía, sin recuperación.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ═══ PLANES SNIPPET ═══ -->
-<section class="section" style="background:var(--bg-section)" aria-labelledby="necesidades-title">
+<!-- ═══ TECNOLOGÍA ═══ -->
+<section class="section tech-section" id="tecnologia">
   <div class="wrap">
-    <div class="section-header">
-      <div class="section-eyebrow"><span>Planes según tu necesidad</span></div>
-      <h2 class="section-title" id="necesidades-title">¿Qué quieres resolver? Hay un <em>plan para ti</em></h2>
+    <div class="sec-head">
+      <div class="eyebrow">Tecnología</div>
+      <h2 class="sec-title">+30 tecnologías médicas. <em>Estas son las principales.</em></h2>
+      <p class="sec-desc">Importamos equipos directo de fábrica desde Corea del Sur, EE.UU. y Europa. Cada protocolo combina la tecnología precisa para tu necesidad clínica.</p>
     </div>
-    <div class="necesidades-grid">
-      <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
-        <div class="necesidad-icon">◎</div>
-        <h3 class="necesidad-title" itemprop="name">Celulitis</h3>
-        <p class="necesidad-desc" itemprop="description">Plan Zero Celulitis — 20 sesiones con Corpo Hera, Carbox CK y presoterapia.</p>
-        <a href="/planes/#celulitis" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'celulitis'})">Ver plan completo · $1.977.990 →</a>
+    <div class="tech-grid">
+      <article class="tech-c">
+        <div class="tech-c-img"><img src="/img/tech-corpo-hera.png" alt="Corpo Hera — equipo de masaje mecánico profundo" loading="lazy"></div>
+        <div class="tech-c-body">
+          <div class="flag">🇰🇷 Seoul · Flagship</div>
+          <h3>Corpo <em>Hera</em></h3>
+          <div class="type">Masaje mecánico</div>
+          <p>Rompe nódulos de celulitis y estimula drenaje linfático profundo.</p>
+        </div>
       </article>
-      <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
-        <div class="necesidad-icon">◎</div>
-        <h3 class="necesidad-title" itemprop="name">Flacidez</h3>
-        <p class="necesidad-desc" itemprop="description">Plan Zero Flacidez — 20 sesiones con SkinWave MAX, Corpo Lift y RF fraccionada.</p>
-        <a href="/planes/#flacidez" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'flacidez'})">Ver plan completo · $1.977.990 →</a>
+      <article class="tech-c">
+        <div class="tech-c-img"><img src="/img/tech-skinwave.png" alt="SkinWave MAX — radiofrecuencia fraccionada" loading="lazy"></div>
+        <div class="tech-c-body">
+          <div class="flag">🇰🇷 Seoul</div>
+          <h3>SkinWave <em>MAX</em></h3>
+          <div class="type">Radiofrecuencia</div>
+          <p>Reactiva colágeno y elastina. Combate flacidez sin lesión.</p>
+        </div>
       </article>
-      <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
-        <div class="necesidad-icon">◎</div>
-        <h3 class="necesidad-title" itemprop="name">Grasa Localizada</h3>
-        <p class="necesidad-desc" itemprop="description">Plan Zero Rollito — 12 sesiones con iZED, SkinWave MAX y Adipolite.</p>
-        <a href="/planes/#grasa" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'grasa'})">Ver plan completo · $1.799.990 →</a>
+      <article class="tech-c">
+        <div class="tech-c-img"><img src="/img/tech-ized.png" alt="iZED — electroestimulación muscular" loading="lazy"></div>
+        <div class="tech-c-body">
+          <div class="flag">🇰🇷 Seoul</div>
+          <h3><em>i</em>ZED</h3>
+          <div class="type">Electroestimulación</div>
+          <p>Contracciones profundas equivalentes a horas de entrenamiento.</p>
+        </div>
       </article>
-      <article class="necesidad-card" itemscope itemtype="https://schema.org/MedicalCondition">
-        <div class="necesidad-icon">◎</div>
-        <h3 class="necesidad-title" itemprop="name">Tonificación</h3>
-        <p class="necesidad-desc" itemprop="description">Plan Trifásico — 24 sesiones con iZED, Sculpt DD y Carbox CK.</p>
-        <a href="/planes/#tonificacion" class="necesidad-link" onclick="hebeTrack('cta_click',{plan:'tonificacion'})">Ver plan completo · $1.977.990 →</a>
+      <article class="tech-c">
+        <div class="tech-c-img"><img src="/img/tech-carbox.png" alt="Carbox CK — carboxiterapia médica" loading="lazy"></div>
+        <div class="tech-c-body">
+          <div class="flag">🇰🇷 Seoul</div>
+          <h3>Carbox <em>CK</em></h3>
+          <div class="type">Carboxiterapia</div>
+          <p>CO₂ medicinal que oxigena tejido y mejora microcirculación.</p>
+        </div>
+      </article>
+      <article class="tech-c">
+        <div class="tech-c-img"><img src="/img/tech-adipolite.png" alt="Adipolite — criolipólisis selectiva" loading="lazy"></div>
+        <div class="tech-c-body">
+          <div class="flag">🇰🇷 Seoul</div>
+          <h3><em>Adipo</em>lite</h3>
+          <div class="type">Criolipólisis</div>
+          <p>Congela adipocitos de grasa localizada de forma selectiva.</p>
+        </div>
+      </article>
+      <article class="tech-c">
+        <div class="tech-c-img"><img src="/img/tech-corpolift.png" alt="Corpo Lift — HIFU focalizado" loading="lazy"></div>
+        <div class="tech-c-body">
+          <div class="flag">🇰🇷 Seoul</div>
+          <h3>Corpo <em>Lift</em></h3>
+          <div class="type">HIFU focalizado</div>
+          <p>Ultrasonido que tensa desde capas profundas. Flacidez avanzada.</p>
+        </div>
       </article>
     </div>
-    <div class="section-link-row">
-      <a href="/planes/" class="btn-section-link" onclick="hebeTrack('cta_click',{location:'home_planes_link'})">
-        Ver todos los planes con precios y sesiones detalladas →
-      </a>
+    <div class="tech-meta-row">
+      <div class="tech-meta">
+        <b>+ 30 tecnologías más en sala</b>
+        <span>Combinamos la tecnología que tu cuerpo necesita en cada sesión, según tu perfil metabólico.</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ RESULTADOS SNIPPET ═══ -->
-<section class="section" id="resultados" aria-labelledby="results-title" style="background:var(--bg-dark)">
+<!-- ═══ PLANES ═══ -->
+<section class="section alt" id="planes">
   <div class="wrap">
-    <div class="section-header">
-      <div class="section-eyebrow"><span>Resultados comprobados</span></div>
-      <h2 class="section-title" id="results-title" style="color:#fff">Resultados <em>reales</em></h2>
+    <div class="sec-head">
+      <div class="eyebrow">Planes</div>
+      <h2 class="sec-title">¿Qué quieres <em>resolver?</em></h2>
+      <p class="sec-desc">Cuatro rutas. Una misma lógica: tratar la causa metabólica.</p>
     </div>
-    <div class="results-carousel">
-      <div class="results-track" id="results-track">
-        <figure class="result-card-home"><img src="/img/resultado-abdomen-cintura.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
-        <figure class="result-card-home"><img src="/img/resultado-celulitis-gluteos.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
-        <figure class="result-card-home"><img src="/img/resultado-flacidez-abdomen.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
-        <figure class="result-card-home"><img src="/img/resultado-lateral-cintura.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
-        <figure class="result-card-home"><img src="/img/resultado-abdomen-muslos.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
-        <figure class="result-card-home"><img src="/img/resultado-contorno-corporal.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
-        <figure class="result-card-home"><img src="/img/resultado-lateral-abdomen.webp" alt="Antes y después — Método Hebe" loading="lazy"></figure>
-      </div>
-      <div class="results-dots" id="results-dots">
-        <span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </div>
-    <div class="section-link-row">
-      <a href="/resultados/" class="btn-section-link" style="color:#fff;border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07)" onclick="hebeTrack('cta_click',{location:'home_resultados_link'})">
-        Ver todos los resultados →
+    <div class="planes-grid">
+      <a href="/planes/#celulitis" class="plan-c" onclick="hebeTrack('cta_click',{plan:'celulitis',location:'home_planes'})">
+        <div class="tag">Plan 01</div>
+        <h3>Zero <em>Celulitis</em></h3>
+        <p class="for">Nódulos visibles y piel de naranja persistente.</p>
+        <div class="price">$1.977.990<small>20 sesiones</small></div>
       </a>
+      <a href="/planes/#flacidez" class="plan-c featured" onclick="hebeTrack('cta_click',{plan:'flacidez',location:'home_planes'})">
+        <span class="plan-badge">MÁS ELEGIDO</span>
+        <div class="tag">Plan 02</div>
+        <h3>Zero <em>Flacidez</em></h3>
+        <p class="for">Piel que perdió firmeza, con laxitud visible.</p>
+        <div class="price">$1.977.990<small>20 sesiones</small></div>
+      </a>
+      <a href="/planes/#grasa" class="plan-c" onclick="hebeTrack('cta_click',{plan:'grasa',location:'home_planes'})">
+        <div class="tag">Plan 03</div>
+        <h3>Zero <em>Rollito</em></h3>
+        <p class="for">Grasa localizada resistente a dieta y ejercicio.</p>
+        <div class="price">$1.799.990<small>12 sesiones</small></div>
+      </a>
+      <a href="/planes/#tonificacion" class="plan-c" onclick="hebeTrack('cta_click',{plan:'tonificacion',location:'home_planes'})">
+        <div class="tag">Plan 04</div>
+        <h3><em>Trifásico</em></h3>
+        <p class="for">Tonificación integral y cambio metabólico.</p>
+        <div class="price">$1.977.990<small>24 sesiones</small></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="/planes/" class="btn-outline" onclick="hebeTrack('cta_click',{location:'home_planes_link'})">Ver todos los planes →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EVIDENCIA ═══ -->
+<section class="section" id="resultados">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Resultados</div>
+      <h2 class="sec-title">Evidencia <em>real</em>, sin retoques</h2>
+      <p class="sec-desc">Mismo ángulo, misma luz. Imágenes consentidas de pacientes.</p>
+    </div>
+    <div class="evid-grid">
+      <article class="evid-c">
+        <div class="evid-img" data-lbl="Antes / Después"><img src="/img/resultado-abdomen-cintura.webp" alt="Resultado real Plan Zero Celulitis" loading="lazy"></div>
+        <div class="evid-meta">
+          <div class="evid-meta-l"><b>Angélica · 52</b><span>20 sesiones · 5 meses</span></div>
+          <div class="evid-meta-r">Zero Celulitis</div>
+        </div>
+      </article>
+      <article class="evid-c">
+        <div class="evid-img" data-lbl="Antes / Después"><img src="/img/resultado-flacidez-abdomen.webp" alt="Resultado real Plan Zero Flacidez" loading="lazy"></div>
+        <div class="evid-meta">
+          <div class="evid-meta-l"><b>Fran · 38</b><span>20 sesiones · 5 meses</span></div>
+          <div class="evid-meta-r">Zero Flacidez</div>
+        </div>
+      </article>
+      <article class="evid-c">
+        <div class="evid-img" data-lbl="Antes / Después"><img src="/img/resultado-lateral-abdomen.webp" alt="Resultado real Plan Zero Rollito" loading="lazy"></div>
+        <div class="evid-meta">
+          <div class="evid-meta-l"><b>Rebeca · 44</b><span>12 sesiones · 3 meses</span></div>
+          <div class="evid-meta-r">Zero Rollito</div>
+        </div>
+      </article>
+      <article class="evid-c">
+        <div class="evid-img" data-lbl="Antes / Después"><img src="/img/resultado-contorno-corporal.webp" alt="Resultado real Plan Trifásico" loading="lazy"></div>
+        <div class="evid-meta">
+          <div class="evid-meta-l"><b>Cecilia · 47</b><span>24 sesiones · 6 meses</span></div>
+          <div class="evid-meta-r">Trifásico</div>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="/resultados/" class="btn-outline" onclick="hebeTrack('cta_click',{location:'home_resultados_link'})">Ver todos los resultados →</a>
     </div>
   </div>
 </section>
 
 <!-- ═══ REVIEWS ═══ -->
-<section class="section" aria-labelledby="reviews-title">
+<section class="section alt">
   <div class="wrap">
-    <div class="section-header">
-      <div class="section-eyebrow"><span>Lo que dicen nuestras pacientes</span></div>
-      <h2 class="section-title" id="reviews-title">Experiencias <em>reales</em></h2>
+    <div class="sec-head">
+      <div class="eyebrow">Testimonios</div>
+      <h2 class="sec-title">Lo que dicen nuestras <em>pacientes</em></h2>
+      <p class="sec-desc">4.9 ★ promedio · 120+ reseñas en Google.</p>
     </div>
     <div class="reviews-grid">
-      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+      <article class="review-c" itemscope itemtype="https://schema.org/Review">
         <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="review-text" itemprop="reviewBody">"En tres meses con Zero Celulitis, estoy impresionada con los resultados. La apariencia de la celulitis en mis glúteos y piernas ha disminuido notablemente."</p>
-        <div class="review-result">Plan Zero Celulitis · 3 meses</div>
+        <p class="review-text" itemprop="reviewBody">"En tres meses noté una gran mejora. La celulitis disminuyó notablemente y mi piel está más firme."</p>
         <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-          <div class="review-avatar">F</div>
+          <div class="review-avatar"><img src="/img/fran-z.webp" alt="Fran Zúñiga" loading="lazy"></div>
           <div><div class="review-name" itemprop="name">Fran Zúñiga</div><div class="review-sede">Sede Vitacura</div></div>
         </div>
       </article>
-      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+      <article class="review-c" itemscope itemtype="https://schema.org/Review">
         <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="review-text" itemprop="reviewBody">"La reducción de grasa localizada ha sido un desafío, pero gracias a Método Hebe estoy viendo resultados increíbles. La clave está en la constancia."</p>
-        <div class="review-result">Plan Zero Rollito</div>
+        <p class="review-text" itemprop="reviewBody">"La reducción de grasa localizada fue un desafío. Con Método Hebe vi resultados reales y medibles."</p>
         <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-          <div class="review-avatar">R</div>
+          <div class="review-avatar"><img src="/img/rebeca-n.webp" alt="Rebeca Navarro" loading="lazy"></div>
           <div><div class="review-name" itemprop="name">Rebeca Navarro</div><div class="review-sede">Sede Concón</div></div>
         </div>
       </article>
-      <article class="review-card" itemscope itemtype="https://schema.org/Review">
+      <article class="review-c" itemscope itemtype="https://schema.org/Review">
         <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="review-text" itemprop="reviewBody">"Gracias al Método Hebe, en pocos meses noté una gran mejora: mis abdominales están más definidos y me siento más enérgico."</p>
-        <div class="review-result">Plan Trifásico · Tonificación</div>
+        <p class="review-text" itemprop="reviewBody">"En pocos meses mis abdominales están más definidos y me siento con más energía. Muy recomendado."</p>
         <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-          <div class="review-avatar">C</div>
+          <div class="review-avatar"><img src="/img/cecilia-g.webp" alt="Cecilia Gimenez" loading="lazy"></div>
           <div><div class="review-name" itemprop="name">Cecilia Gimenez</div><div class="review-sede">Sede Vitacura</div></div>
         </div>
       </article>
     </div>
-    <div style="text-align:center;margin-top:20px">
-      <a href="https://g.page/metodohebe/review" target="_blank" rel="noopener" style="font-size:13px;color:var(--cyan);font-weight:600;display:inline-flex;align-items:center;gap:6px">⭐ Ver todas las reseñas en Google →</a>
-    </div>
   </div>
 </section>
 
-<!-- ═══ CTA BAND ═══ -->
-<div class="cta-band" data-cro="mid-cta">
-  <div class="wrap">
-    <h3>¿Lista para ver resultados <em>desde la primera sesión?</em></h3>
-    <p>Sin compromiso · 3 sedes en Chile</p>
-    <div>
-      <button class="btn-cta-white" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'cta_band'})" data-cro="cta-primary">
-        Agenda tu evaluación
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-      <button class="btn-cta-wa" onclick="window.open('https://wa.me/56963222683','_blank')">💬 WhatsApp directo</button>
-    </div>
-    <div class="cta-trust-row"><span>🛡️ Sin compromiso</span><span>⚡ Respuesta inmediata</span><span>📍 Vitacura · Concón · Los Ángeles</span></div>
-  </div>
-</div>
-
 <!-- ═══ FAQ ═══ -->
-<section class="section" id="faq" aria-labelledby="faq-title">
+<section class="section" id="faq">
   <div class="wrap">
-    <div class="section-header" style="text-align:center">
-      <div class="section-eyebrow" style="justify-content:center"><span>Preguntas frecuentes</span></div>
-      <h2 class="section-title" id="faq-title" style="text-align:center">Preguntas <em>frecuentes</em></h2>
+    <div class="sec-head">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2 class="sec-title">Resolvamos tus <em>dudas</em></h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-q" itemprop="name" aria-expanded="false">¿Qué es el Método Hebe y en qué se diferencia de otras clínicas?</button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Protocolo clínico de 3 fases: diagnóstico metabólico, coaching nutricional y 6 tecnologías coreanas. Tratamos la causa, no el síntoma. +30.000 pacientes, 94% satisfacción.</p>
-        </div>
+      <div class="faq-item open" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-q" itemprop="name" aria-expanded="true">¿Qué es el Método Hebe y en qué se diferencia?</button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Protocolo clínico de 3 fases: diagnóstico metabólico, coaching nutricional y 6 tecnologías coreanas. Tratamos la causa, no solo el síntoma.</p></div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-q" itemprop="name" aria-expanded="false">¿Cuánto cuestan los planes de Método Hebe?</button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Zero Celulitis y Zero Flacidez $1.977.990 (20 sesiones). Zero Rollito $1.799.990 (12 sesiones). Trifásico $1.977.990 (24 sesiones). Todos incluyen coaching nutricional.</p>
-        </div>
+        <button class="faq-q" itemprop="name" aria-expanded="false">¿Cuánto cuestan los planes?</button>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Zero Celulitis y Zero Flacidez $1.977.990 (20 sesiones). Zero Rollito $1.799.990 (12 sesiones). Trifásico $1.977.990 (24 sesiones). Todos incluyen coaching nutricional.</p></div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Cuándo se ven los resultados?</button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Desde la primera sesión. El plan completo varía entre 12 y 24 sesiones según la condición.</p>
-        </div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Desde la primera sesión. El plan completo varía entre 12 y 24 sesiones según la condición a tratar.</p></div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Qué incluye la evaluación inicial?</button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Bioimpedancia, perfil metabólico y recomendación personalizada de plan. Sin compromiso. Agenda al +56 9 6322 2683.</p>
-        </div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Bioimpedancia, perfil metabólico y plan recomendado en PDF. 60 minutos. Sin compromiso, sin costo.</p></div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Es mejor que la liposucción?</button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Sin cirugía, sin anestesia, sin recuperación. Resultados permanentes porque trata la causa metabólica. La liposucción da resultados inmediatos pero sin cambio metabólico la grasa puede volver.</p>
-        </div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Sin cirugía, sin anestesia, sin recuperación. Trata la causa metabólica, por lo que el resultado es permanente.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ SEDES ═══ -->
-<section class="section" id="sedes" style="background:var(--bg-section)" aria-labelledby="sedes-title">
+<section class="section alt" id="sedes">
   <div class="wrap">
-    <div class="section-header">
-      <div class="section-eyebrow"><span>Nuestras 3 sedes en Chile</span></div>
-      <h2 class="section-title" id="sedes-title">Nuestras <em>3 sedes</em></h2>
+    <div class="sec-head">
+      <div class="eyebrow">Sedes</div>
+      <h2 class="sec-title">Tres sedes en <em>Chile</em></h2>
+      <p class="sec-desc">Mismo protocolo, mismo estándar clínico, en cada ciudad.</p>
     </div>
     <div class="sedes-grid">
-      <article class="sede-card" itemscope itemtype="https://schema.org/LocalBusiness">
-        <div style="background:var(--bg-section);height:180px;overflow:hidden"><img src="/img/VITACURA.avif" alt="Clínica Método Hebe Vitacura" loading="lazy" width="400" height="225" style="width:100%;height:180px;object-fit:cover"></div>
+      <article class="sede-c" itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="sede-img"><img src="/img/VITACURA.avif" alt="Hebe Vitacura" loading="lazy"></div>
         <div class="sede-body">
-          <h3 class="sede-city" itemprop="name">📍 Hebe Vitacura</h3>
-          <p class="sede-addr" itemprop="address">Los Abedules 3085, Of. 105<br>Vitacura, Santiago</p>
-          <a href="https://maps.google.com/?q=Los+Abedules+3085+Vitacura" target="_blank" rel="noopener" class="sede-link">Ver en Google Maps →</a>
+          <h3 itemprop="name">Hebe Vitacura</h3>
+          <p class="addr" itemprop="address">Los Abedules 3085, Of. 105<br>Vitacura · Santiago</p>
+          <a href="https://maps.google.com/?q=Los+Abedules+3085+Vitacura" target="_blank" rel="noopener" class="maps">Ver en Google Maps →</a>
         </div>
       </article>
-      <article class="sede-card" itemscope itemtype="https://schema.org/LocalBusiness">
-        <div style="background:var(--bg-section);height:180px;overflow:hidden"><img src="/img/CONCON.avif" alt="Clínica Método Hebe Concón" loading="lazy" width="400" height="225" style="width:100%;height:180px;object-fit:cover"></div>
+      <article class="sede-c" itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="sede-img"><img src="/img/CONCON.avif" alt="Hebe Concón" loading="lazy"></div>
         <div class="sede-body">
-          <h3 class="sede-city" itemprop="name">📍 Hebe Concón</h3>
-          <p class="sede-addr" itemprop="address">Las Pelargonias 842, Of. 1114<br>Concón, Valparaíso</p>
-          <a href="https://maps.google.com/?q=Las+Pelargonias+842+Concon" target="_blank" rel="noopener" class="sede-link">Ver en Google Maps →</a>
+          <h3 itemprop="name">Hebe Concón</h3>
+          <p class="addr" itemprop="address">Las Pelargonias 842, Of. 1114<br>Concón · Valparaíso</p>
+          <a href="https://maps.google.com/?q=Las+Pelargonias+842+Concon" target="_blank" rel="noopener" class="maps">Ver en Google Maps →</a>
         </div>
       </article>
-      <article class="sede-card" itemscope itemtype="https://schema.org/LocalBusiness">
-        <div style="background:var(--bg-section);height:180px;overflow:hidden"><img src="/img/LOS ANGELES.avif" alt="Clínica Método Hebe Los Ángeles" loading="lazy" width="400" height="225" style="width:100%;height:180px;object-fit:cover"></div>
+      <article class="sede-c" itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="sede-img"><img src="/img/LOS ANGELES.avif" alt="Hebe Los Ángeles" loading="lazy"></div>
         <div class="sede-body">
-          <h3 class="sede-city" itemprop="name">📍 Hebe Los Ángeles</h3>
-          <p class="sede-addr" itemprop="address">Av. Gabriela Mistral 269<br>Los Ángeles, Biobío</p>
-          <a href="https://maps.google.com/?q=Gabriela+Mistral+355+Los+Angeles+Chile" target="_blank" rel="noopener" class="sede-link">Ver en Google Maps →</a>
+          <h3 itemprop="name">Hebe Los Ángeles</h3>
+          <p class="addr" itemprop="address">Av. Gabriela Mistral 269<br>Los Ángeles · Biobío</p>
+          <a href="https://maps.google.com/?q=Av+Gabriela+Mistral+269+Los+Angeles" target="_blank" rel="noopener" class="maps">Ver en Google Maps →</a>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Tu cuerpo cambia cuando<br>tu <em>metabolismo</em> cambia.</h2>
+    <p>Comienza con una evaluación metabólica gratis. Sin compromiso, respuesta inmediata.</p>
+    <div class="cta-final-actions">
+      <button class="btn-primary" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'cta_final'})">
+        Agenda tu evaluación
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+      </button>
+      <a href="https://wa.me/56963222683" target="_blank" rel="noopener" class="btn-wa" onclick="hebeTrack('whatsapp_click',{location:'cta_final_wa'})">💬 WhatsApp directo</a>
     </div>
   </div>
 </section>
@@ -752,13 +848,18 @@ h1 em{color:var(--cyan);font-style:italic}
 <footer class="footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
-        <div class="footer-brand"><i>Método</i> <b>HEBE</b></div>
-        <p>Red de clínicas corporales especializadas en salud metabólica con tecnología coreana importada. +30.000 pacientes tratados en Chile.</p>
-        <p style="margin-top:12px"><a href="mailto:contacto@metodohebe.cl">contacto@metodohebe.cl</a><br><a href="tel:+56963222683">+56 9 6322 2683</a></p>
+      <div class="footer-brand-block">
+        <a href="/" class="footer-logo" aria-label="Método Hebe">
+          <img src="/img/logo-metodo-hebe.png" alt="Método Hebe" width="180" height="64">
+        </a>
+        <p>Red de clínicas corporales especializadas en salud metabólica. +30.000 pacientes en Chile.</p>
+        <div class="footer-contact">
+          <a href="mailto:contacto@metodohebe.cl">contacto@metodohebe.cl</a>
+          <a href="tel:+56963222683">+56 9 6322 2683</a>
+        </div>
       </div>
       <div>
-        <h4>El Método</h4>
+        <h4>El método</h4>
         <a href="/el-metodo">Conoce el Método</a>
         <a href="/planes/">Planes y Precios</a>
         <a href="/resultados/">Resultados</a>
@@ -766,23 +867,30 @@ h1 em{color:var(--cyan);font-style:italic}
       </div>
       <div>
         <h4>Tratamientos</h4>
-        <a href="/lipoescultura-sin-cirugia/">Lipoescultura sin cirugía</a>
+        <a href="/lipoescultura-sin-cirugia/">Lipoescultura</a>
         <a href="/criolipolisis/">Criolipólisis</a>
         <a href="/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/">Guatita de delantal</a>
         <a href="/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/">Celulitis</a>
       </div>
       <div>
         <h4>Sedes</h4>
-        <p>Vitacura · Los Abedules 3085</p>
-        <p>Concón · Las Pelargonias 842</p>
-        <p>Los Ángeles · Av. G. Mistral 269</p>
-        <h4 style="margin-top:16px">Horario</h4>
-        <p>Lun–Vie 10:00–20:00<br>Sáb 09:00–19:00</p>
+        <a href="/clinica-estetica-corporal-vitacura">Vitacura</a>
+        <a href="/clinica-estetica-corporal-concon">Concón</a>
+        <a href="/clinica-estetica-corporal-los-angeles">Los Ángeles</a>
+      </div>
+      <div>
+        <h4>Recursos clínicos</h4>
+        <a href="/tratamiento-para-estrias">Tratamiento para estrías</a>
+        <a href="/flacidez-abdominal">Flacidez abdominal</a>
+        <a href="/bono-pad-guatita-de-delantal">Bono PAD guatita delantal</a>
+        <a href="/guatita-de-delantal-auge-y-ley">Ley 21.438 (Saín)</a>
+        <a href="/llms.txt" target="_blank" rel="noopener" style="opacity:.65;font-size:.9em">llms.txt ✦</a>
+        <a href="/llms-full.txt" target="_blank" rel="noopener" style="opacity:.65;font-size:.9em">llms-full.txt ✦</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 · Método Hebe · Todos los derechos reservados</span>
-      <span>Potenciado por <a href="https://clinera.io" target="_blank" rel="noopener">Clinera.io</a></span>
+      <span>© 2026 MÉTODO HEBE SpA · Todos los derechos reservados</span>
+      <span>Potenciado por <a href="https://clinera.io" target="_blank" rel="noopener" style="color:var(--cyan-dd);font-weight:600">Clinera.io</a></span>
     </div>
   </div>
 </footer>
@@ -790,45 +898,16 @@ h1 em{color:var(--cyan);font-style:italic}
 <!-- ═══ MOBILE STICKY CTA ═══ -->
 <div class="mobile-sticky-cta" id="mobile-sticky">
   <button onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'mobile_sticky'})">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Agenda tu evaluación
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    Agenda tu evaluación · Gratis
   </button>
   <div class="trust-text">Sin compromiso · Respuesta inmediata</div>
 </div>
 
 <script>
-// Navbar scroll
 const nav=document.getElementById('navbar');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)});
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
 
-// Carrusel resultados — dots
-(function(){
-  const track=document.getElementById('results-track');
-  const dots=document.querySelectorAll('#results-dots span');
-  if(!track||!dots.length)return;
-  track.addEventListener('scroll',function(){
-    const idx=Math.round(track.scrollLeft/(track.scrollWidth/dots.length));
-    dots.forEach((d,i)=>{d.classList.toggle('active',i===idx)});
-  },{passive:true});
-  dots.forEach((d,i)=>{
-    d.addEventListener('click',function(){
-      const w=track.scrollWidth/dots.length;
-      track.scrollTo({left:w*i,behavior:'smooth'});
-    });
-  });
-})();
-
-// Mobile sticky CTA — aparece al scrollear 300px
-(function(){
-  const sticky=document.getElementById('mobile-sticky');
-  if(!sticky)return;
-  window.addEventListener('scroll',function(){
-    if(window.scrollY>300){sticky.classList.add('visible')}
-    else{sticky.classList.remove('visible')}
-  },{passive:true});
-})();
-
-// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const item=btn.parentElement;
@@ -839,36 +918,29 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
   });
 });
 
-// ── ViewContent: scroll al fondo (≥90%) ──────────────────────────────
+(function(){
+  const sticky=document.getElementById('mobile-sticky');
+  if(!sticky)return;
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>300)sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+  },{passive:true});
+})();
+
 (function(){
   var fired=false;
   window.addEventListener('scroll',function(){
     if(fired)return;
-    var scrolled=(window.scrollY+window.innerHeight)/(document.documentElement.scrollHeight||1);
-    if(scrolled>=0.9){
-      fired=true;
-      // GA4 / GTM
-      gtag('event','view_content',{page:'home',method:'scroll_bottom'});
-      // Meta Pixel
-      if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Home',content_category:'landing'});
-    }
+    var s=(window.scrollY+window.innerHeight)/(document.documentElement.scrollHeight||1);
+    if(s>=0.9){fired=true;gtag('event','view_content',{page:'home',method:'scroll_bottom'});if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Home'})}
   },{passive:true});
 })();
 
-// ── ViewContent: tiempo en página (30s) ──────────────────────────────
-(function(){
-  setTimeout(function(){
-    gtag('event','view_content',{page:'home',method:'time_30s'});
-    if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Home',content_category:'time_engaged'});
-  },30000);
-})();
+setTimeout(function(){gtag('event','view_content',{page:'home',method:'time_30s'});if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Home',content_category:'time_engaged'})},30000);
 
-// Scroll animations
 if('IntersectionObserver' in window){
-  const els=document.querySelectorAll('.pilar-card,.necesidad-card,.review-card,.sede-card,.faq-item');
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}});
-  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  const els=document.querySelectorAll('.fase-c,.tech-c,.review-c,.sede-c,.evid-c,.plan-c');
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
   els.forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition=`opacity .5s ease ${i%4*.08}s, transform .5s ease ${i%4*.08}s`;obs.observe(el)});
 }
 </script>
