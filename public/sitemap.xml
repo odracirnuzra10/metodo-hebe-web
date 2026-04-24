@@ -39,6 +39,44 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://metodohebe.cl/bono-pad-guatita-de-delantal/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/guatita-de-delantal-fonasa-isapre/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- PILAR FLACIDEZ ABDOMINAL (2026-04-23) -->
+  <url>
+    <loc>https://metodohebe.cl/flacidez-abdominal/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <!-- PILAR + HUB ESTRÍAS (2026-04-23) -->
+  <url>
+    <loc>https://metodohebe.cl/tratamiento-para-estrias/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/estrias-rojas-tratamiento/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://metodohebe.cl/estrias-embarazo-prevencion-tratamiento/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <!-- PÁGINAS INTERIORES PRINCIPALES -->
   <url>
     <loc>https://metodohebe.cl/planes</loc>

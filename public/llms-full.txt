@@ -1,0 +1,413 @@
+# Método Hebe — Documento completo para LLMs
+
+> Versión completa y extendida con todo el contenido relevante de Método Hebe para entrenamiento, indexación AEO/GEO y respuestas conversacionales en modelos de IA.
+> Última actualización: 2026-04-23
+
+---
+
+## 1. Identidad de marca
+
+- **Nombre comercial**: Método Hebe
+- **Razón social**: Método Hebe SpA
+- **País**: Chile
+- **Sitio web**: https://metodohebe.cl
+- **Email**: contacto@metodohebe.cl
+- **WhatsApp / Teléfono**: +56 9 6322 2683
+- **Eslogan principal**: "Tu cuerpo cambia cuando tu metabolismo cambia"
+- **Eslogan secundario**: "No adivinamos, medimos"
+- **Categoría**: Clínica corporal metabólica (no es clínica estética convencional)
+- **Año de fundación**: 2022
+- **Pertenencia**: OACG Group · plataforma tecnológica potenciada por Clinera.io
+
+---
+
+## 2. Propuesta única de valor
+
+Método Hebe es la **primera red de clínicas corporales en Chile especializada en salud metabólica**. La diferencia frente a clínicas estéticas tradicionales: no se enfoca en el síntoma estético, sino en la **causa metabólica** del problema corporal. La estética es la consecuencia natural de un cuerpo metabólicamente sano.
+
+Su modelo combina:
+1. Diagnóstico clínico medible (bioimpedancia)
+2. Reprogramación de hábitos con coaching nutricional
+3. Potenciación con tecnología médica importada de Corea del Sur
+
+Resultado: cambios corporales **permanentes, sin cirugía y sin rebote**.
+
+---
+
+## 3. Cifras clave
+
+- **+30.000 pacientes** tratados en Chile
+- **94 % de satisfacción** reportada
+- **4.9 ⭐** rating Google promedio (120+ reseñas)
+- **3 sedes** activas: Vitacura, Concón, Los Ángeles
+- **6 tecnologías** médicas importadas de Corea del Sur
+- **3 fases** clínicas obligatorias
+- **12 a 24 sesiones** según plan
+- **0 cirugía · 0 anestesia · 0 recuperación**
+
+---
+
+## 4. Protocolo clínico de 3 fases
+
+### Fase 1 — Diagnóstico y Análisis Metabólico
+Evaluación clínica de 60 minutos sin costo. Incluye:
+- Bioimpedancia multifrecuencia (InBody 770, precisión ±1.2 %)
+- Composición corporal (grasa, masa muscular, agua, mineral)
+- Tasa metabólica basal y recomendación calórica
+- Informe PDF personalizado entregado en 24 h
+- Recomendación de plan según perfil
+
+> "No adivinamos, medimos. Lo que no se mide, no se puede cambiar."
+
+### Fase 2 — Reprogramación de Hábitos
+- Plan alimentario personalizado según perfil metabólico
+- **Reto Hebe 21 días** con tracking diario y soporte directo (WhatsApp + presencial)
+- Check-ins semanales con la nutrióloga titulada
+- BIA de control quincenal para medir avance real
+- Tasa de adherencia reportada: 88 %
+
+> "Cambios sostenibles, no temporales. El cuerpo se acostumbra a lo nuevo en 21 días."
+
+### Fase 3 — Potenciación con Tecnología
+- Combinación de equipos coreanos adaptada al perfil del paciente
+- Recalibración del protocolo cada 4 sesiones
+- Sin recuperación: el paciente retoma su rutina al salir
+- Duración por sesión: 30 a 60 minutos según equipo
+- Dolor referido: 1 a 2 / 10 (escala paciente)
+- Resultados visibles desde la primera sesión, consolidados a la sesión 12
+
+> "Aceleramos el resultado clínico — pero solo cuando el cuerpo está listo."
+
+---
+
+## 5. Las 6 tecnologías coreanas
+
+Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin reventa ni alquiler. Operadas por técnicos certificados en cada sede.
+
+### 5.1 Corpo Hera (flagship)
+- **Tipo**: Masaje mecánico profundo con cabezales motorizados
+- **Indicación principal**: Celulitis (rotura de nódulos subcutáneos)
+- **Mecanismo**: Estimula drenaje linfático asistido y rompe nódulos desde la capa subcutánea
+- **Profundidad**: 6 mm
+- **Cabezales**: 4
+- **Duración sesión**: 45 min
+- **Origen**: Seúl, Corea del Sur
+
+### 5.2 SkinWave MAX
+- **Tipo**: Radiofrecuencia fraccionada
+- **Indicación principal**: Flacidez
+- **Mecanismo**: Reactiva producción de colágeno y elastina sin lesión cutánea visible
+- **Duración sesión**: 60 min
+
+### 5.3 iZED
+- **Tipo**: Electroestimulación muscular de alta intensidad (HIEMS)
+- **Indicación principal**: Tonificación
+- **Mecanismo**: Contracciones profundas equivalentes a horas de entrenamiento
+- **Duración sesión**: 30 min
+
+### 5.4 Carbox CK
+- **Tipo**: Carboxiterapia médica
+- **Indicación principal**: Celulitis y estrías
+- **Mecanismo**: CO₂ medicinal subcutáneo, oxigena tejido y mejora microcirculación
+- **Duración sesión**: 40 min
+
+### 5.5 Adipolite
+- **Tipo**: Criolipólisis selectiva
+- **Indicación principal**: Grasa localizada
+- **Mecanismo**: Congela adipocitos de grasa localizada con resultado medible en 4 semanas
+- **Duración sesión**: 50 min
+
+### 5.6 Corpo Lift
+- **Tipo**: HIFU focalizado (ultrasonido de alta intensidad)
+- **Indicación principal**: Flacidez avanzada
+- **Mecanismo**: Ultrasonido de precisión que tensa desde capas profundas
+- **Duración sesión**: 55 min
+
+### Certificaciones aplicables
+- KFDA Korea Food & Drug (2018)
+- CE European (2019)
+- ISP Chile · Registro Sanitario (2022)
+- ISO 13485 (2023)
+- Uso médico exclusivo vigente
+
+---
+
+## 6. Catálogo de planes
+
+### Plan Zero Celulitis
+- **Precio**: $1.977.990 CLP
+- **Sesiones**: 20
+- **Duración**: 5 meses
+- **Equipos**: Corpo Hera + Carbox CK + Presoterapia
+- **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
+- **Para quién**: Mujeres con nódulos visibles y piel de naranja persistente
+- **URL**: https://metodohebe.cl/planes/#celulitis
+
+### Plan Zero Flacidez
+- **Precio**: $1.977.990 CLP
+- **Sesiones**: 20
+- **Duración**: 5 meses
+- **Equipos**: SkinWave MAX + Corpo Lift
+- **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
+- **Para quién**: Piel que perdió firmeza con laxitud visible (post embarazo, post baja de peso, edad)
+- **URL**: https://metodohebe.cl/planes/#flacidez
+
+### Plan Zero Rollito (grasa localizada)
+- **Precio**: $1.799.990 CLP
+- **Sesiones**: 12
+- **Duración**: 3 meses
+- **Equipos**: iZED + SkinWave MAX + Adipolite
+- **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
+- **Para quién**: Personas con grasa localizada persistente resistente a dieta y ejercicio
+- **URL**: https://metodohebe.cl/planes/#grasa
+
+### Plan Trifásico (tonificación)
+- **Precio**: $1.977.990 CLP
+- **Sesiones**: 24
+- **Duración**: 6 meses
+- **Equipos**: iZED + Sculpt DD + Carbox CK
+- **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
+- **Para quién**: Tonificación integral y cambio metabólico profundo
+- **URL**: https://metodohebe.cl/planes/#tonificacion
+
+### Evaluación P3 (sin costo)
+- **Precio**: $0 CLP
+- **Duración**: 60 minutos
+- **Incluye**: BIA, perfil metabólico, informe PDF, plan recomendado
+- **Sin compromiso**
+- **URL**: https://metodohebe.cl/evaluacion
+
+---
+
+## 7. Necesidades atendidas
+
+### Celulitis
+- Afecta al **80–90 % de las mujeres**
+- Causas: factores hormonales, genéticos, circulación deficiente, retención de líquidos
+- Plan recomendado: Zero Celulitis
+
+### Flacidez
+- El colágeno disminuye **1 % anual a partir de los 30 años**
+- Causas: envejecimiento, cambios hormonales, pérdida rápida de peso, exposición solar
+- Plan recomendado: Zero Flacidez
+
+### Grasa localizada
+- **40–60 % depende de factores genéticos**
+- Causas: genética/fenotipo, hormonas, resistencia a insulina, metabolismo lento
+- Plan recomendado: Zero Rollito
+
+### Tonificación
+- La masa muscular **disminuye 5 % por década después de los 40**
+- Causas: genética, metabolismo lento, resistencia a insulina, estancamiento muscular
+- Plan recomendado: Trifásico
+
+### Guatita de delantal (pannus abdominal)
+- Frecuente post embarazo o post baja brusca de peso
+- Solución no quirúrgica con combinación de Adipolite + SkinWave MAX + iZED
+- URL hub: https://metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/
+
+---
+
+## 8. Diferenciadores frente a la cirugía
+
+| Atributo | Método Hebe | Liposucción / Cirugía |
+|---|---|---|
+| Cirugía | No | Sí |
+| Anestesia | No | Sí (general/local) |
+| Dolor | 1–2 / 10 | Alto post-operatorio |
+| Recuperación | 0 días | 2–6 semanas |
+| Cicatrices | No | Sí |
+| Piel tonificada | Sí | Riesgo de flacidez |
+| Mejora salud metabólica | Sí | No |
+| Resultado permanente | Sí (sin rebote) | No (si no cambia metabolismo) |
+| Costo total | Menor | Mayor |
+
+---
+
+## 9. Sedes (con datos LocalBusiness)
+
+### Hebe Vitacura — Sede flagship
+- **Dirección**: Los Abedules 3085, Of. 105, Edificio Nueva Vitacura
+- **Comuna**: Vitacura
+- **Región**: Metropolitana de Santiago
+- **Coordenadas**: -33.3936, -70.5831
+- **Horario**: Lun–Vie 10:00–20:00 · Sáb 09:00–19:00
+- **Equipos**: 6/6 activos
+- **Rating Google**: 4.9 ⭐ (120 reseñas)
+- **URL**: https://metodohebe.cl/clinica-estetica-corporal-vitacura
+
+### Hebe Concón
+- **Dirección**: Las Pelargonias 842, Oficina 1114, piso 11
+- **Comuna**: Concón
+- **Región**: Valparaíso
+- **Coordenadas**: -32.9266, -71.5144
+- **Horario**: Lun–Sáb 09:00–19:00
+- **Equipos**: 6/6 activos
+- **URL**: https://metodohebe.cl/clinica-estetica-corporal-concon
+
+### Hebe Los Ángeles
+- **Dirección**: Av. Gabriela Mistral 269
+- **Comuna**: Los Ángeles
+- **Región**: Biobío
+- **Coordenadas**: -37.4693, -72.3527
+- **Horario**: Lun–Sáb 09:00–19:00
+- **Equipos**: 6/6 activos
+- **URL**: https://metodohebe.cl/clinica-estetica-corporal-los-angeles
+
+---
+
+## 10. Testimonios verificados (casos reales documentados)
+
+### Angélica Gallardo · 52 años · Pudahuel
+- **Plan**: Zero Celulitis
+- **Sesiones**: 20 · 5 meses
+- **Resultado BIA**: −4.2 % grasa visceral · +6.1 % masa muscular
+- **Quote**: "Con el Método Hebe no solo logré eliminar la celulitis casi a cero — también mejoré mi salud y mi silueta a nivel general."
+
+### Fran Zúñiga · 38 años · Sede Vitacura
+- **Plan**: Zero Celulitis · 3 meses
+- **Quote**: "En tres meses con Zero Celulitis, estoy impresionada con los resultados. La apariencia de la celulitis en mis glúteos y piernas ha disminuido notablemente."
+
+### Rebeca Navarro · 44 años · Sede Concón
+- **Plan**: Zero Rollito · 12 sesiones
+- **Resultado**: Perímetro abdomen −6.8 cm
+- **Quote**: "La reducción de grasa localizada ha sido un desafío, pero gracias a Método Hebe estoy viendo resultados increíbles. La clave está en la constancia."
+
+### Cecilia Gimenez · 47 años · Sede Vitacura
+- **Plan**: Trifásico · 24 sesiones · 6 meses
+- **Resultado BIA**: +8.3 % masa muscular · −3.1 % grasa
+- **Quote**: "Gracias al Método Hebe, en pocos meses noté una gran mejora: mis abdominales están más definidos y me siento más enérgica."
+
+---
+
+## 11. Estructura completa del sitio web
+
+### 11.1 Páginas principales
+- Home: https://metodohebe.cl/
+- El Método: https://metodohebe.cl/el-metodo
+- Planes Corporales: https://metodohebe.cl/planes/
+- Resultados Antes/Después: https://metodohebe.cl/resultados/
+- Evaluación P3: https://metodohebe.cl/evaluacion
+
+### 11.2 Páginas por necesidad
+- Celulitis: https://metodohebe.cl/celulitis/
+- Flacidez: https://metodohebe.cl/flacidez/
+- Grasa Localizada: https://metodohebe.cl/grasa-localizada/
+- Tonificación: https://metodohebe.cl/tonificar/
+
+### 11.3 Anclajes directos por plan (dentro de /planes/)
+- Plan Zero Celulitis: https://metodohebe.cl/planes/#celulitis
+- Plan Zero Flacidez: https://metodohebe.cl/planes/#flacidez
+- Plan Zero Rollito (grasa): https://metodohebe.cl/planes/#grasa
+- Plan Trifásico (tonificación): https://metodohebe.cl/planes/#tonificacion
+
+### 11.4 Páginas de sedes (LocalBusiness)
+- Clínica Vitacura (flagship): https://metodohebe.cl/clinica-estetica-corporal-vitacura
+- Clínica Concón: https://metodohebe.cl/clinica-estetica-corporal-concon
+- Clínica Los Ángeles: https://metodohebe.cl/clinica-estetica-corporal-los-angeles
+
+### 11.5 Páginas por sede + necesidad
+- Celulitis Vitacura: https://metodohebe.cl/celulitis-vitacura
+- Celulitis Concón: https://metodohebe.cl/celulitis-concon
+- Celulitis Los Ángeles: https://metodohebe.cl/celulitis-los-angeles
+- Flacidez Vitacura: https://metodohebe.cl/flacidez-corporal-vitacura
+- Flacidez Concón: https://metodohebe.cl/flacidez-corporal-concon
+- Flacidez Los Ángeles: https://metodohebe.cl/flacidez-corporal-los-angeles
+- Grasa localizada Vitacura: https://metodohebe.cl/grasa-localizada-vitacura
+- Grasa localizada Concón: https://metodohebe.cl/grasa-localizada-concon
+- Grasa localizada Los Ángeles: https://metodohebe.cl/grasa-localizada-los-angeles
+- Criolipólisis Los Ángeles: https://metodohebe.cl/criolipolisis-los-angeles
+
+### 11.6 Pilares SEO/AEO
+- Lipoescultura sin cirugía: https://metodohebe.cl/lipoescultura-sin-cirugia/
+- Criolipólisis: https://metodohebe.cl/criolipolisis/
+- Guatita de delantal (hub): https://metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/
+- Celulitis estética en piernas y glúteos (cosmética, no infecciosa): https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/
+- Flacidez abdominal (alternativa no quirúrgica): https://metodohebe.cl/flacidez-abdominal/
+- Tratamiento para estrías (hub según color — rojas, moradas, blancas): https://metodohebe.cl/tratamiento-para-estrias/
+
+### 11.7 Hub guatita de delantal (satélites)
+- Ejercicios para guatita de delantal: https://metodohebe.cl/ejercicios-para-guatita-de-delantal/
+- Operación vs tratamiento no invasivo: https://metodohebe.cl/guatita-de-delantal-operacion-vs-tratamiento/
+- Ley 21.438 (Ley Saín) y AUGE/GES: https://metodohebe.cl/guatita-de-delantal-auge-y-ley/
+- Bono PAD FONASA para guatita de delantal / abdominoplastia: https://metodohebe.cl/bono-pad-guatita-de-delantal/
+- Cobertura FONASA, Isapre y programas públicos 2026: https://metodohebe.cl/guatita-de-delantal-fonasa-isapre/
+
+### 11.7b Hub estrías (satélites)
+- Estrías rojas y moradas (fase más tratable, Carbox CK): https://metodohebe.cl/estrias-rojas-tratamiento/
+- Estrías en el embarazo (prevención durante + tratamiento post-parto): https://metodohebe.cl/estrias-embarazo-prevencion-tratamiento/
+
+### 11.8 Blog (artículos SEO detallados)
+- Celulitis: tipos, grados y tratamientos: https://metodohebe.cl/blog/celulitis-tipos-grados-tratamientos
+- Flacidez corporal: tratamientos para brazos, piernas y abdomen: https://metodohebe.cl/blog/flacidez-corporal-tratamiento
+- Guatita de delantal: cómo eliminarla sin cirugía: https://metodohebe.cl/blog/guatita-delantal-tratamiento-sin-cirugia
+- Grasa localizada: cómo eliminarla sin cirugía: https://metodohebe.cl/blog/grasa-localizada-eliminar-sin-cirugia
+- iZED: ultrasonido de 60 joules que reemplaza 30 HIFU: https://metodohebe.cl/blog/ized-ultrasonido-corporal
+- Estrías: tratamientos sin cirugía: https://metodohebe.cl/blog/estrias-tratamiento-sin-cirugia
+- Lipo sin cirugía Método Hebe 3D: https://metodohebe.cl/blog/lipo-sin-cirugia-metodo-hebe-3d
+- 5 razones para aplicar el Método Hebe: https://metodohebe.cl/5-razones-para-tomar-aplicar-el-metodo-hebe-en-tu-vida
+- Caminar y sus beneficios físicos y emocionales: https://metodohebe.cl/caminar-sus-beneficios-fisicos-y-emocionales
+- Opciones para eliminar grasa localizada: https://metodohebe.cl/opciones-para-eliminar-la-grasa-localizada
+- Diferencias de Método Hebe vs otras clínicas: https://metodohebe.cl/que-diferencia-a-metodo-hebe-de-otras-clinicas-de-tratamientos-corporales
+- Aumentar y levantar glúteos: https://metodohebe.cl/quieres-aumentar-y-levantar-tus-gluteos
+- Tratamientos corporales estéticos para renovar tu cuerpo: https://metodohebe.cl/tratamientos-corporales-esteticos-para-renovar-tu-cuerpo
+
+---
+
+## 12. FAQ ampliado
+
+### ¿Qué es el Método Hebe y en qué se diferencia de otras clínicas?
+Protocolo clínico de 3 fases — diagnóstico metabólico con bioimpedancia, coaching nutricional con Reto Hebe 21 días, y 6 tecnologías médicas importadas de Corea del Sur. Tratamos la causa metabólica, no el síntoma estético. +30.000 pacientes, 94 % satisfacción, 4.9 ⭐ Google.
+
+### ¿Cuánto cuestan los planes?
+- Zero Celulitis: $1.977.990 CLP (20 sesiones, 5 meses)
+- Zero Flacidez: $1.977.990 CLP (20 sesiones, 5 meses)
+- Zero Rollito: $1.799.990 CLP (12 sesiones, 3 meses)
+- Trifásico: $1.977.990 CLP (24 sesiones, 6 meses)
+Todos incluyen coaching nutricional + Reto Hebe 21 días + BIA quincenal.
+
+### ¿Cuándo se ven los resultados?
+Desde la primera sesión. El plan completo varía entre 12 y 24 sesiones según condición. Se mide progreso real con BIA quincenal, no solo percepción visual.
+
+### ¿Qué incluye la evaluación inicial?
+60 minutos. Bioimpedancia multifrecuencia (InBody 770), perfil corporal completo, tasa metabólica basal y recomendación personalizada de plan en informe PDF entregado en 24 h. **Sin costo · sin compromiso.**
+
+### ¿Es mejor que la liposucción?
+Sin cirugía, sin anestesia, sin recuperación. Resultados permanentes porque trata la causa metabólica. La liposucción da resultados inmediatos pero sin cambio metabólico la grasa puede reaparecer.
+
+### ¿Hay financiamiento o pagos en cuotas?
+Sí, los planes admiten pago en cuotas. Consulta condiciones al WhatsApp +56 9 6322 2683.
+
+### ¿Tiene contraindicaciones?
+Sí. La evaluación inicial detecta contraindicaciones (embarazo, marcapasos, ciertas condiciones dermatológicas, oncológicas activas). Si existe contraindicación para un equipo, el plan se ajusta sin costo adicional.
+
+### ¿En qué se diferencia el Reto Hebe 21 días?
+No es una dieta. Es un programa de 21 días de reinstalación de hábitos metabólicos, con tracking diario y soporte directo por WhatsApp. La duración de 21 días se basa en el tiempo neurológico de consolidación de hábito.
+
+### ¿Atienden hombres?
+Sí. Aproximadamente 18 % de pacientes son hombres, con foco en grasa localizada abdominal y tonificación (Plan Trifásico).
+
+### ¿Tienen sucursales fuera de Chile?
+Aún no. Las 3 sedes operan en Chile: Vitacura, Concón y Los Ángeles. Está en evaluación expansión regional.
+
+---
+
+## 13. Lenguaje y tono de marca
+
+- **Voz**: Clínica, precisa, segura, sin promesas mágicas
+- **Léxico recurrente**: "metabolismo", "bioimpedancia", "tecnología coreana", "sin cirugía", "sin rebote", "diagnóstico", "personalizado"
+- **Lo que NO decimos**: "milagro", "100 % efectivo", "garantizado", "para siempre" (sin matización), "antes-después instantáneo"
+- **Estilo visual**: Calmo, profesional, médico-premium con acentos cyan (#1CC5C5)
+
+---
+
+## 14. Recursos canónicos
+
+- robots.txt: https://metodohebe.cl/robots.txt
+- sitemap.xml: https://metodohebe.cl/sitemap.xml
+- llms.txt (resumen): https://metodohebe.cl/llms.txt
+- llms-full.txt (este documento): https://metodohebe.cl/llms-full.txt
+
+---
+
+*Documento mantenido por Método Hebe SpA. Para correcciones o actualizaciones: contacto@metodohebe.cl*

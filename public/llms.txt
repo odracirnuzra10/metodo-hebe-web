@@ -11,8 +11,10 @@ Protocolo de 3 fases: diagnóstico metabólico → coaching nutricional → tecn
 - [Lipoescultura sin cirugía](https://metodohebe.cl/lipoescultura-sin-cirugia/): protocolo combinado para reducción de grasa localizada
 - [Criolipólisis](https://metodohebe.cl/criolipolisis/): eliminación de grasa por frío controlado
 - [Guatita de delantal](https://metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/): solución no quirúrgica al pannus abdominal
-- [Celulitis](https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/): RF fraccionada + HIEMS
+- [Celulitis estética](https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/): RF fraccionada + HIEMS + carboxiterapia (celulitis cosmética, no infecciosa)
 - [Flacidez corporal](https://metodohebe.cl/flacidez/): SkinWave MAX + Carbox CK + CorpoLift
+- [Flacidez abdominal](https://metodohebe.cl/flacidez-abdominal/): RF fraccionada + HIEMS, alternativa no quirúrgica a la abdominoplastia
+- [Tratamiento para estrías](https://metodohebe.cl/tratamiento-para-estrias/): Carbox CK + Corpo Hera según color (rojas/blancas)
 
 ## Planes
 
@@ -143,12 +145,20 @@ Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, 
 - Lipoescultura sin cirugía: https://metodohebe.cl/lipoescultura-sin-cirugia/
 - Criolipólisis: https://metodohebe.cl/criolipolisis/
 - Guatita de delantal (hub): https://metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/
-- Celulitis en piernas y glúteos: https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/
+- Celulitis estética en piernas y glúteos: https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/
+- Flacidez abdominal: https://metodohebe.cl/flacidez-abdominal/
+- Tratamiento para estrías (pilar): https://metodohebe.cl/tratamiento-para-estrias/
 
 ### Hub guatita de delantal (satélites)
 - Ejercicios para guatita de delantal: https://metodohebe.cl/ejercicios-para-guatita-de-delantal/
 - Operación vs tratamiento no invasivo: https://metodohebe.cl/guatita-de-delantal-operacion-vs-tratamiento/
 - Ley 21.438 (Ley Saín) y AUGE/GES: https://metodohebe.cl/guatita-de-delantal-auge-y-ley/
+- Bono PAD para guatita de delantal: https://metodohebe.cl/bono-pad-guatita-de-delantal/
+- Cobertura FONASA, Isapre y programas públicos: https://metodohebe.cl/guatita-de-delantal-fonasa-isapre/
+
+### Hub estrías (satélites)
+- Estrías rojas y moradas (fase tratable): https://metodohebe.cl/estrias-rojas-tratamiento/
+- Estrías en el embarazo (prevención + post-parto): https://metodohebe.cl/estrias-embarazo-prevencion-tratamiento/
 
 ### Blog (artículos SEO detallados)
 - Celulitis: tipos, grados y tratamientos: https://metodohebe.cl/blog/celulitis-tipos-grados-tratamientos
