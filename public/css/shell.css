@@ -14,12 +14,14 @@ h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cyan:#1CC5C5;--cyan-d:#0FA8A8;--cyan-dd:#0B5E5E;--cyan-soft:#E4F7F7;
+  --cyan:#00C3E3;--cyan-d:#00A8C5;--cyan-dd:#00697A;--cyan-soft:#E0F6FB;
   --bg:#FAFBFB;--paper:#FFFFFF;--line:#E8ECEC;--line-2:#CDD4D4;
   --ink:#0F1A1A;--ink-2:#36474A;--ink-3:#65797A;--ink-4:#9AA8A8;
   --gold:#D4A853;--wa:#25D366;
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --logo-script:'Sacramento',cursive;
+  --logo-display:'Marcellus','Cinzel',Georgia,serif;
 }
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
