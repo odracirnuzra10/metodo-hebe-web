@@ -276,6 +276,57 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .btn-plan-wa:hover{background:var(--wa);border-color:var(--wa)}
 .plan-cta-buttons{display:flex;gap:10px;flex-wrap:wrap}
 
+/* Reviews strip */
+.reviews-strip{padding:clamp(32px,4vw,48px) 0;background:var(--bg-warm);border-top:1px solid rgba(28,197,197,.08)}
+.reviews-strip .wrap{max-width:1100px}
+.reviews-strip-head{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.reviews-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(28,197,197,.12);padding:8px 14px;border-radius:999px;box-shadow:var(--shadow-card);font-size:13px;color:var(--ink-3)}
+.reviews-badge strong{color:var(--ink);font-size:14px}
+.reviews-strip-title{font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);color:var(--ink);font-weight:600}
+.reviews-strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.review-mini{background:#fff;border:1px solid rgba(28,197,197,.1);border-radius:var(--radius-lg);padding:20px 22px;box-shadow:var(--shadow-card)}
+.review-mini-stars{color:#fbbc04;font-size:14px;margin-bottom:10px;letter-spacing:2px}
+.review-mini p{font-size:14px;color:var(--ink-2);line-height:1.65;margin-bottom:16px;font-style:italic}
+.review-mini-author{display:flex;align-items:center;gap:12px}
+.review-mini-author img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.review-mini-name{font-size:14px;font-weight:600;color:var(--ink)}
+.review-mini-meta{font-size:12px;color:var(--ink-muted)}
+@media(max-width:720px){.reviews-strip-grid{grid-template-columns:1fr}.reviews-strip-head{flex-direction:column;align-items:flex-start}}
+
+/* Geo paragraph */
+.geo-section{padding:clamp(28px,4vw,44px) 0;background:var(--bg-warm);border-top:1px solid rgba(28,197,197,.06)}
+.geo-section .wrap{max-width:820px}
+.geo-paragraph{font-size:15px;color:var(--ink-3);line-height:1.8;text-align:center}
+.geo-paragraph a{color:var(--cyan-dd);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.geo-paragraph a:hover{color:var(--cyan)}
+
+/* Quick plan selector */
+.selector-section{padding:clamp(32px,4vw,48px) 0;background:#fff;border-top:1px solid rgba(28,197,197,.08);border-bottom:1px solid rgba(28,197,197,.08)}
+.selector-section .wrap{max-width:880px}
+.selector-head{text-align:center;margin-bottom:24px}
+.selector-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2.5px;color:var(--cyan);text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.selector-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--cyan)}
+.selector-head h2{font-family:var(--serif);font-size:clamp(22px,2.8vw,30px);font-weight:600;color:var(--ink);line-height:1.25}
+.selector-head h2 em{color:var(--cyan);font-style:italic}
+.selector-head p{font-size:14.5px;color:var(--ink-3);margin-top:8px}
+.selector-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.selector-card{background:#fff;border:1px solid rgba(28,197,197,.14);border-radius:var(--radius-lg);padding:18px 16px;text-align:center;text-decoration:none;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:10px}
+.selector-card:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 10px 28px rgba(28,197,197,.12)}
+.selector-card-icon{width:44px;height:44px;border-radius:50%;background:var(--cyan-subtle);display:flex;align-items:center;justify-content:center;color:var(--cyan-dd)}
+.selector-card-icon svg{width:22px;height:22px}
+.selector-card-q{font-size:13px;color:var(--ink-3);line-height:1.45}
+.selector-card-plan{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink);margin-top:auto}
+.selector-card-arrow{font-size:12px;color:var(--cyan-dd);font-weight:600;letter-spacing:.3px}
+@media(max-width:720px){.selector-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Antes/después thumb in price card */
+.price-result{display:flex;align-items:center;gap:10px;padding:10px 12px;margin:14px 0 0;background:var(--bg-section);border-radius:var(--radius);text-decoration:none;border:1px solid rgba(28,197,197,.08);transition:all .2s}
+.price-result:hover{border-color:rgba(28,197,197,.28);background:#fff}
+.price-result img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.price-result-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.price-result-label{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan-dd);font-weight:600}
+.price-result-link{font-size:12.5px;color:var(--ink-2);font-weight:500;line-height:1.3}
+
 /* Comparison table */
 .comp-section{padding:clamp(40px,5vw,64px) 0;background:var(--bg-warm);border-top:1px solid rgba(28,197,197,.08)}
 .comp-section .wrap{max-width:1000px}
@@ -461,10 +512,42 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   </div>
 </div>
 
-<figure style="margin:40px 0;max-width:540px;margin-left:auto;margin-right:auto;border-radius:14px;overflow:hidden">
-  <img src="/img/clinica-recepcion-paciente.webp" alt="Paciente en recepción de Método Hebe con productos Lumina" loading="lazy" style="width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 10px 32px rgba(0,0,0,.08)">
-  
-</figure>
+<!-- ═══ QUICK PLAN SELECTOR ═══ -->
+<section class="selector-section">
+  <div class="wrap">
+    <div class="selector-head">
+      <div class="selector-eyebrow">¿Cuál plan es para ti?</div>
+      <h2>Elige según tu <em>objetivo principal</em></h2>
+      <p>Si tienes más de una indicación, el equipo clínico combina tecnologías en la Evaluación P3.</p>
+    </div>
+    <div class="selector-grid">
+      <a href="#celulitis" class="selector-card">
+        <div class="selector-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v4M16 3v4M3 11h18M5 7h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/></svg></div>
+        <div class="selector-card-q">Me preocupa la <strong>piel de naranja</strong> en piernas y glúteos</div>
+        <div class="selector-card-plan">Zero Celulitis</div>
+        <div class="selector-card-arrow">Ver plan →</div>
+      </a>
+      <a href="#flacidez" class="selector-card">
+        <div class="selector-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <div class="selector-card-q">Mi piel está <strong>flácida</strong> (post-parto, dieta o edad)</div>
+        <div class="selector-card-plan">Zero Flacidez</div>
+        <div class="selector-card-arrow">Ver plan →</div>
+      </a>
+      <a href="#grasa" class="selector-card">
+        <div class="selector-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <div class="selector-card-q">Tengo <strong>grasa localizada</strong> que no cede con dieta</div>
+        <div class="selector-card-plan">Zero Rollito</div>
+        <div class="selector-card-arrow">Ver plan →</div>
+      </a>
+      <a href="#tonificacion" class="selector-card">
+        <div class="selector-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v18M18 3v18M3 8h6M3 16h6M15 8h6M15 16h6"/></svg></div>
+        <div class="selector-card-q">Quiero <strong>tonificar y recomponer</strong> (músculo + piel)</div>
+        <div class="selector-card-plan">Plan Trifásico</div>
+        <div class="selector-card-arrow">Ver plan →</div>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ PRICING GRID (SaaS style) ═══ -->
 <section class="pricing-grid-section">
@@ -488,6 +571,13 @@ button{font-family:var(--sans);cursor:pointer;border:none}
           <li>Coaching nutricional personalizado</li>
           <li>Seguimiento clínico continuo</li>
         </ul>
+        <a href="/resultados/" class="price-result">
+          <img src="/img/resultado-abdomen-cintura.webp" alt="Antes y después de tratamiento corporal de grasa localizada">
+          <div class="price-result-text">
+            <span class="price-result-label">Caso real</span>
+            <span class="price-result-link">Ver antes/después de abdomen →</span>
+          </div>
+        </a>
         <div class="price-cta">
           <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'grasa',location:'pricing_grid'})">Agenda evaluación</a>
           <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Zero%20Rollito" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'grasa',location:'pricing_grid'})">Pregunta por WhatsApp</a>
@@ -512,6 +602,13 @@ button{font-family:var(--sans);cursor:pointer;border:none}
           <li>Coaching nutricional + seguimiento médico</li>
           <li>Plan de mantenimiento incluido</li>
         </ul>
+        <a href="/resultados/" class="price-result">
+          <img src="/img/resultado-celulitis-antes-despues.webp" alt="Antes y después de tratamiento de celulitis">
+          <div class="price-result-text">
+            <span class="price-result-label">Caso real</span>
+            <span class="price-result-link">Ver antes/después de celulitis →</span>
+          </div>
+        </a>
         <div class="price-cta">
           <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'celulitis',location:'pricing_grid'})">Agenda evaluación</a>
           <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Zero%20Celulitis" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'celulitis',location:'pricing_grid'})">Pregunta por WhatsApp</a>
@@ -535,6 +632,13 @@ button{font-family:var(--sans);cursor:pointer;border:none}
           <li>Coaching nutricional personalizado</li>
           <li>Plan de mantenimiento incluido</li>
         </ul>
+        <a href="/resultados/" class="price-result">
+          <img src="/img/resultado-flacidez-abdomen.webp" alt="Antes y después de tratamiento de flacidez abdominal">
+          <div class="price-result-text">
+            <span class="price-result-label">Caso real</span>
+            <span class="price-result-link">Ver antes/después de flacidez →</span>
+          </div>
+        </a>
         <div class="price-cta">
           <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'flacidez',location:'pricing_grid'})">Agenda evaluación</a>
           <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Zero%20Flacidez" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'flacidez',location:'pricing_grid'})">Pregunta por WhatsApp</a>
@@ -558,6 +662,13 @@ button{font-family:var(--sans);cursor:pointer;border:none}
           <li>Coaching nutricional personalizado</li>
           <li>Seguimiento clínico extendido</li>
         </ul>
+        <a href="/resultados/" class="price-result">
+          <img src="/img/resultado-tonificacion-hombre.webp" alt="Antes y después de tratamiento de tonificación corporal">
+          <div class="price-result-text">
+            <span class="price-result-label">Caso real</span>
+            <span class="price-result-link">Ver antes/después de tonificación →</span>
+          </div>
+        </a>
         <div class="price-cta">
           <a href="https://www.metodohebe.cl/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{plan:'tonificacion',location:'pricing_grid'})">Agenda evaluación</a>
           <a href="https://wa.me/56963222683?text=Hola,%20quiero%20info%20sobre%20el%20Plan%20Trif%C3%A1sico" class="btn-ghost" rel="noopener" onclick="hebeTrack('whatsapp_click',{plan:'tonificacion',location:'pricing_grid'})">Pregunta por WhatsApp</a>
@@ -568,10 +679,63 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   </div>
 </section>
 
-<figure style="margin:40px 0;border-radius:14px;overflow:hidden">
-  <img src="/img/tecnologia-coreana-equipo.webp" alt="Equipo de tecnología coreana importada usado en los planes Método Hebe" loading="lazy" style="width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 10px 32px rgba(0,0,0,.08)">
-  <figcaption style="font-size:13px;color:var(--ink-3);text-align:center;margin-top:12px;font-style:italic">Las 6 tecnologías coreanas importadas que potencian cada plan.</figcaption>
-</figure>
+<!-- ═══ TESTIMONIALS STRIP ═══ -->
+<section class="reviews-strip">
+  <div class="wrap">
+    <div class="reviews-strip-head">
+      <div class="reviews-badge">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#fbbc04" d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+        <strong>4,9 ★</strong>
+        <span>promedio · +1.000 reseñas en Google</span>
+      </div>
+      <div class="reviews-strip-title">Pacientes que ya eligieron su plan</div>
+    </div>
+    <div class="reviews-strip-grid">
+      <article class="review-mini" itemscope itemtype="https://schema.org/Review">
+        <div class="review-mini-stars" aria-label="5 estrellas">★★★★★</div>
+        <p itemprop="reviewBody">"En tres meses noté una gran mejora. La celulitis disminuyó notablemente y mi piel está más firme."</p>
+        <div class="review-mini-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <img src="/img/fran-z.webp" alt="Fran Zúñiga" loading="lazy">
+          <div>
+            <div class="review-mini-name" itemprop="name">Fran Zúñiga</div>
+            <div class="review-mini-meta">Plan Zero Celulitis · Sede Vitacura</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-mini" itemscope itemtype="https://schema.org/Review">
+        <div class="review-mini-stars" aria-label="5 estrellas">★★★★★</div>
+        <p itemprop="reviewBody">"La reducción de grasa localizada fue un desafío. Con Método Hebe vi resultados reales y medibles."</p>
+        <div class="review-mini-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <img src="/img/rebeca-n.webp" alt="Rebeca Navarro" loading="lazy">
+          <div>
+            <div class="review-mini-name" itemprop="name">Rebeca Navarro</div>
+            <div class="review-mini-meta">Plan Zero Rollito · Sede Concón</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-mini" itemscope itemtype="https://schema.org/Review">
+        <div class="review-mini-stars" aria-label="5 estrellas">★★★★★</div>
+        <p itemprop="reviewBody">"En pocos meses mis abdominales están más definidos y me siento con más energía. Muy recomendado."</p>
+        <div class="review-mini-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <img src="/img/cecilia-g.webp" alt="Cecilia Gimenez" loading="lazy">
+          <div>
+            <div class="review-mini-name" itemprop="name">Cecilia Gimenez</div>
+            <div class="review-mini-meta">Plan Trifásico · Sede Vitacura</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GEO PARAGRAPH ═══ -->
+<section class="geo-section">
+  <div class="wrap">
+    <p class="geo-paragraph">
+      Atendemos los 4 planes en nuestras 3 sedes en Chile: <a href="/clinica-estetica-corporal-vitacura"><strong>Vitacura</strong></a> (Santiago oriente · cercano a Las Condes, Lo Barnechea y Providencia), <a href="/clinica-estetica-corporal-concon"><strong>Concón</strong></a> (V Región · cercano a Viña del Mar, Reñaca y Quilpué) y <a href="/clinica-estetica-corporal-los-angeles"><strong>Los Ángeles</strong></a> (Biobío · cercano a Chillán y Angol). El plan específico y la sede se definen contigo en la Evaluación P3 según tu diagnóstico y cercanía.
+    </p>
+  </div>
+</section>
 
 <!-- ═══ COMPARATIVA ═══ -->
 <section class="comp-section">
