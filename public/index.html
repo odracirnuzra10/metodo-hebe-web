@@ -233,6 +233,27 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TZC56NQ5');</script>
+<!-- Evento WhatsApp 2026 -->
+<script>
+(function(){
+  if (typeof window === 'undefined') return;
+  document.addEventListener('click', function(e){
+    var link = e.target && e.target.closest && e.target.closest('a[href*="whatsapp"], a[href*="wa.me"]');
+    if (!link) return;
+    var label = (link.textContent || '').replace(/[^\p{L}\p{N} ]/gu, '').trim();
+    var section = link.closest('section, [data-section], main');
+    var location = (section && (section.id || (section.dataset && section.dataset.section))) || 'home';
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'contacto_whatsapp_2026',
+      cta_label: label || 'WhatsApp directo',
+      cta_type: 'whatsapp',
+      click_location: location,
+      clinica: 'hebe'
+    });
+  }, true);
+})();
+</script>
 <!-- End Google Tag Manager -->
 
 <!-- GA4 G-NGW7210RXB -->
