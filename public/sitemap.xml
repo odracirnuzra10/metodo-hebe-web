@@ -170,6 +170,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://www.metodohebe.cl/blog/transformacion-corporal-renata-metodo-hebe</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <!-- PÁGINAS POR NECESIDAD -->
   <url>
     <loc>https://www.metodohebe.cl/celulitis</loc>
