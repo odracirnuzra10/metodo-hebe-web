@@ -91,23 +91,19 @@
     window.hebeTrack=function(n,p){gtag('event',n,p||{});if(typeof fbq!=='undefined'){var m={'evaluacion_click':'Lead','whatsapp_click':'Contact','cta_click':'Lead'};if(m[n])fbq('track',m[n],p||{});}};
   </script>
   <!-- Meta Pixel 271117138864148 -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','271117138864148');fbq('track','PageView');</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=271117138864148&ev=PageView&noscript=1"/></noscript>
-<!-- Meta Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments);
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
       t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '271117138864148');
-    fbq('track', 'PageView', {value: 1, currency: 'USD'});
+    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=271117138864148&ev=PageView&noscript=1" /></noscript>
@@ -704,14 +700,54 @@
       transition: border-color 0.25s, box-shadow 0.25s;
     }
 
+    .phone-input-wrap {
+      display: flex;
+      align-items: stretch;
+      gap: 0.55rem;
+    }
+
+    .phone-prefix {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      padding: 0 0.9rem;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 10px;
+      background: #f5f7f7;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+    }
+
+    .phone-field {
+      flex: 1;
+      min-width: 0;
+    }
+
     .form-group input:focus {
       border-color: var(--teal);
       box-shadow: 0 0 0 3px rgba(26, 142, 130, 0.1);
     }
 
+    .phone-input-wrap:focus-within .phone-prefix {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(26, 142, 130, 0.1);
+      background: #fff;
+    }
+
     .form-group input.error {
       border-color: #e74c3c;
       animation: shake 0.4s ease;
+    }
+
+    .phone-input-wrap.error .phone-prefix,
+    .phone-input-wrap.error .phone-field {
+      border-color: #e74c3c;
     }
 
     .wa-btn {
@@ -1111,20 +1147,9 @@
         overflow: hidden;
         position: relative;
         flex-shrink: 0;
-      }
-
-      .mobile-hero .mobile-carousel img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 0.7s;
-      }
-
-      .mobile-hero .mobile-carousel img.active {
-        opacity: 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
       .mobile-hero .mobile-info {
@@ -1196,6 +1221,15 @@
 
       .form-group {
         margin-bottom: 0.5rem;
+      }
+
+      .phone-input-wrap {
+        gap: 0.45rem;
+      }
+
+      .phone-prefix {
+        min-width: 66px;
+        padding: 0 0.8rem;
       }
 
       .sede-card .emoji {
@@ -1300,12 +1334,12 @@
     <!-- LEFT COLUMN (Desktop) -->
     <div class="left-col">
       <div class="logo">
-        <img src="/img/logo-metodo-hebe.png" alt="Método Hebe" width="180" height="60" decoding="async" style="width: 180px; height: auto; display: block;">
+        <img src="/img/logo-hebe-stacked.svg" alt="Método Hebe" width="156" height="121" decoding="async" fetchpriority="high" style="width: 156px; height: auto; display: block;">
       </div>
       <div class="carousel-wrap">
         <div class="carousel" id="carouselDesktop">
           <img class="carousel-img" src="/img/eval-caso-1.webp" alt="Caso 1" width="600" height="600" loading="lazy" decoding="async">
-          <img class="carousel-img active" src="/img/eval-caso-2.webp" alt="Caso 2" width="600" height="600" decoding="async">
+          <img class="carousel-img active" src="/img/eval-caso-2.webp" alt="Caso 2" width="600" height="600" decoding="async" fetchpriority="high">
           <img class="carousel-img" src="/img/eval-caso-3.webp" alt="Caso 3" width="600" height="600" loading="lazy" decoding="async">
           <img class="carousel-img" src="/img/eval-caso-4.webp" alt="Caso 4" width="600" height="600" loading="lazy" decoding="async">
         </div>
@@ -1349,14 +1383,9 @@
     <div class="right-col">
       <div class="mobile-header-wrapper">
         <div class="mobile-hero">
-          <div class="mobile-carousel" id="carouselMobile">
-            <img class="" src="/img/eval-caso-1.webp" alt="Caso 1" width="600" height="600" loading="lazy" decoding="async">
-            <img src="/img/eval-caso-2.webp" alt="Caso 2" class="active" width="600" height="600" decoding="async">
-            <img src="/img/eval-caso-3.webp" alt="Caso 3" class="" width="600" height="600" loading="lazy" decoding="async">
-            <img src="/img/eval-caso-4.webp" alt="Caso 4" class="" width="600" height="600" loading="lazy" decoding="async">
-          </div>
+          <div class="mobile-carousel" id="carouselMobile" aria-hidden="true" style="background-image:url('/img/eval-caso-2.webp')"></div>
           <div class="mobile-info">
-            <img src="/img/logo-metodo-hebe.png" alt="Método Hebe" width="110" height="37" decoding="async" loading="lazy" style="width: 110px; height: auto; margin-bottom: 8px;">
+            <img src="/img/logo-hebe-stacked.svg" alt="Método Hebe" width="96" height="74" decoding="async" style="width: 96px; height: auto; margin-bottom: 8px;">
             <div class="m-price-new" style="font-size: 0.85rem; font-family: &#39;Outfit&#39;, sans-serif; text-transform: none; line-height: 1.2; margin-top: 4px; font-weight: 600;">
               la mejor tecnología<br>coreana del país</div>
             <div class="m-spots">
@@ -1472,7 +1501,10 @@
             </div>
             <div class="form-group">
               <label>Celular</label>
-              <input type="tel" id="inputCelular" value="+56 9 " placeholder="+56 9 XXXX XXXX" autocomplete="tel" oninput="formatPhone(this); checkForm()" onfocus="if(this.value===&#39;&#39;) this.value=&#39;+56 9 &#39;; setTimeout(()=&gt;this.setSelectionRange(7,7),0)" onkeydown="formKeyDown(event, &#39;inputCorreo&#39;)">
+              <div class="phone-input-wrap" id="inputCelularWrap">
+                <span class="phone-prefix" aria-hidden="true">+56</span>
+                <input class="phone-field" type="tel" id="inputCelular" placeholder="9 XXXX XXXX" autocomplete="tel-national" inputmode="numeric" maxlength="11" oninput="formatPhone(this); checkForm()" onkeydown="formKeyDown(event, &#39;inputCorreo&#39;)">
+              </div>
             </div>
             <div class="form-group">
               <label>Correo</label>
@@ -1515,8 +1547,14 @@
     let selectedSede = '';
     let selectedDay = '';
     let selectedSlot = '';
-    let carouselIndex = 0;
+    let carouselIndex = 1;
     const captions = ['Caso exitoso N°117', 'Caso exitoso N°204', 'Caso exitoso N°89', 'Caso exitoso N°156'];
+    const carouselSources = [
+      '/img/eval-caso-1.webp',
+      '/img/eval-caso-2.webp',
+      '/img/eval-caso-3.webp',
+      '/img/eval-caso-4.webp'
+    ];
 
     // Mapeo de sedes → slug para Meta Pixel
     const sedeSlug = {
@@ -1530,8 +1568,12 @@
       document.querySelectorAll('#carouselDesktop .carousel-img').forEach((img, i) => img.classList.toggle('active', i === idx));
       document.querySelectorAll('#dotsDesktop .dot').forEach((d, i) => d.classList.toggle('active', i === idx));
       document.getElementById('carouselCaption').textContent = captions[idx];
-      document.querySelectorAll('#carouselMobile img').forEach((img, i) => img.classList.toggle('active', i === idx));
+      const mobileCarousel = document.getElementById('carouselMobile');
+      if (mobileCarousel) {
+        mobileCarousel.style.backgroundImage = 'url("' + carouselSources[idx] + '")';
+      }
     }
+    updateCarousel(carouselIndex);
     setInterval(() => updateCarousel((carouselIndex + 1) % 4), 3500);
     document.querySelectorAll('#dotsDesktop .dot').forEach(d => d.addEventListener('click', () => updateCarousel(+d.dataset.i)));
 
@@ -1636,30 +1678,41 @@
       }
     }
 
+    function normalizePhoneDigits(rawValue) {
+      let digits = rawValue.replace(/\D/g, '');
+      if (digits.startsWith('569')) digits = digits.substring(2);
+      else if (digits.startsWith('56')) digits = digits.substring(2);
+      if (digits && !digits.startsWith('9')) digits = '9' + digits;
+      return digits.substring(0, 9);
+    }
+
+    function formatLocalPhoneValue(digits) {
+      if (!digits) return '';
+      let formatted = digits.substring(0, 1);
+      if (digits.length > 1) formatted += ' ' + digits.substring(1, 5);
+      if (digits.length > 5) formatted += ' ' + digits.substring(5, 9);
+      return formatted;
+    }
+
+    function getPhoneDigits() {
+      return normalizePhoneDigits(document.getElementById('inputCelular').value);
+    }
+
+    function getFullPhoneNumber() {
+      const digits = getPhoneDigits();
+      return digits.length === 9 ? '+56 ' + formatLocalPhoneValue(digits) : '';
+    }
+
     function formatPhone(input) {
-      let val = input.value.replace(/\D/g, '');
-      if (val.startsWith('569')) val = val.substring(3);
-      else if (val.startsWith('56')) val = val.substring(2);
-      val = val.substring(0, 8);
-
-      let f = '+56 9 ';
-      if (val.length > 0) {
-        f += val.substring(0, 4);
-        if (val.length > 4) f += ' ' + val.substring(4);
-      }
-      input.value = f;
-
-      // Prevent cursor from being inside the prefix
-      if (input.selectionStart < 7) {
-        input.setSelectionRange(7, 7);
-      }
+      const digits = normalizePhoneDigits(input.value);
+      input.value = formatLocalPhoneValue(digits);
     }
 
     function checkForm() {
       const n = document.getElementById('inputNombre').value.trim();
-      const c = document.getElementById('inputCelular').value.replace(/\D/g, '');
+      const c = getPhoneDigits();
       const e = document.getElementById('inputCorreo').value.trim();
-      document.getElementById('btnSubmit').className = 'wa-btn ' + (n && c.length === 11 && e.includes('@') ? 'enabled' : 'disabled');
+      document.getElementById('btnSubmit').className = 'wa-btn ' + (n && c.length === 9 && c.startsWith('9') && e.includes('@') ? 'enabled' : 'disabled');
     }
 
     function formKeyDown(e, nextId) {
@@ -1668,19 +1721,26 @@
 
     function handleSubmit() {
       const nombre = document.getElementById('inputNombre').value.trim();
-      const celular = document.getElementById('inputCelular').value.trim();
+      const celularDigits = getPhoneDigits();
+      const celular = getFullPhoneNumber();
       const correo = document.getElementById('inputCorreo').value.trim();
       let hasError = false;
       ['inputNombre', 'inputCelular', 'inputCorreo'].forEach(id => {
         const el = document.getElementById(id);
+        const wrap = id === 'inputCelular' ? document.getElementById('inputCelularWrap') : null;
         const v = el.value.trim();
-        if (!v || (id === 'inputCorreo' && !v.includes('@')) || (id === 'inputCelular' && v.replace(/\D/g, '').length !== 11)) {
+        const invalid = !v || (id === 'inputCorreo' && !v.includes('@')) || (id === 'inputCelular' && (celularDigits.length !== 9 || !celularDigits.startsWith('9')));
+        if (invalid) {
           el.classList.add('error');
+          if (wrap) wrap.classList.add('error');
           if (!hasError) { el.focus(); hasError = true; }
-          setTimeout(() => el.classList.remove('error'), 600);
+          setTimeout(() => {
+            el.classList.remove('error');
+            if (wrap) wrap.classList.remove('error');
+          }, 600);
         }
       });
-      if (hasError) return;
+      if (hasError) return false;
 
       const sede = selectedSede || 'Por confirmar';
       const sedeKey = sedeSlug[selectedSede] || selectedSede;
@@ -1750,6 +1810,7 @@
       const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp);
       document.getElementById('successWaLink').href = 'https://wa.me/56963222683?text=' + waMsg;
       document.getElementById('successOverlay').classList.add('visible');
+      return true;
     }
   </script>
 
@@ -1802,9 +1863,11 @@
     var _origSubmit = window.handleSubmit;
     window.handleSubmit = function(){
       var result = _origSubmit.apply(this, arguments);
-      // __currentEventId es seteado por handleSubmit ANTES de disparar el Pixel
-      var eid = window.__currentEventId || ("eval_" + Date.now());
-      dataLayer.push({ event: "eval_submit_form", sede: _sede(), day: _day(), slot: _slot(), event_id: eid });
+      if(result === true){
+        // __currentEventId es seteado por handleSubmit ANTES de disparar el Pixel
+        var eid = window.__currentEventId || ("eval_" + Date.now());
+        dataLayer.push({ event: "eval_submit_form", sede: _sede(), day: _day(), slot: _slot(), event_id: eid });
+      }
       return result;
     };
   }
