@@ -429,8 +429,8 @@ body.lightbox-open{overflow:hidden}
   .zone-gallery{grid-template-columns:1fr;gap:14px}
   .result-section + .result-section{margin-top:8px}
   .photo-card{cursor:default}
-  .photo-card-media{aspect-ratio:1/1}
-  .photo-card.is-mobile-ba .photo-card-media img{width:200%;max-width:none;transform:translateX(0);transition:transform .35s ease}
+  .photo-card.is-mobile-ba .photo-card-media{aspect-ratio:1/2;background:#f3f3f3}
+  .photo-card.is-mobile-ba .photo-card-media img{width:200%;height:100%;max-width:none;object-fit:cover;transform:translateX(0);transition:transform .35s ease}
   .photo-card.is-mobile-ba.is-after .photo-card-media img{transform:translateX(-50%)}
   .photo-state-labels{display:flex;position:absolute;inset:12px 12px auto 12px;justify-content:space-between;pointer-events:none;z-index:2}
   .photo-state-label{display:inline-flex;align-items:center;justify-content:center;min-width:72px;padding:6px 10px;border-radius:999px;background:rgba(11,30,30,.58);color:rgba(255,255,255,.76);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;backdrop-filter:blur(6px)}
