@@ -426,17 +426,14 @@ body.lightbox-open{overflow:hidden}
   .mobile-sticky-cta{display:block}
   body{padding-bottom:108px}
   .article-body h2{font-size:22px}
-  .zone-gallery{grid-template-columns:1fr;gap:14px}
+  .zone-gallery{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;padding:2px 4px 10px 0;margin-right:-4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-padding-left:0}
+  .zone-gallery::-webkit-scrollbar{display:none}
   .result-section + .result-section{margin-top:8px}
-  .photo-card{cursor:default}
-  .photo-card.is-mobile-ba .photo-card-media{aspect-ratio:1/2;background:#f3f3f3}
-  .photo-card.is-mobile-ba .photo-card-media img{width:200%;height:100%;max-width:none;object-fit:cover;transform:translateX(0);transition:transform .35s ease}
-  .photo-card.is-mobile-ba.is-after .photo-card-media img{transform:translateX(-50%)}
-  .photo-state-labels{display:flex;position:absolute;inset:12px 12px auto 12px;justify-content:space-between;pointer-events:none;z-index:2}
-  .photo-state-label{display:inline-flex;align-items:center;justify-content:center;min-width:72px;padding:6px 10px;border-radius:999px;background:rgba(11,30,30,.58);color:rgba(255,255,255,.76);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;backdrop-filter:blur(6px)}
-  .photo-card:not(.is-after) .photo-state-label--before,
-  .photo-card.is-after .photo-state-label--after{background:rgba(11,30,30,.82);color:#fff}
-  .photo-state-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:10px 12px;border-top:1px solid rgba(20,181,167,.1);background:#fff;color:var(--cyan-dd);font-size:12.5px;font-weight:700;letter-spacing:.2px}
+  .photo-card{cursor:zoom-in;flex:0 0 min(86vw,360px);scroll-snap-align:start}
+  .photo-card:hover{transform:none;box-shadow:var(--shadow-card)}
+  .photo-card-media{aspect-ratio:auto;min-height:0}
+  .photo-card img{width:100%;height:auto;object-fit:contain}
+  .photo-caption{font-size:13px}
 }
 @media(max-width:600px){
   .footer-grid{grid-template-columns:1fr}
@@ -935,7 +932,6 @@ const faqItems=document.querySelectorAll('.faq-item');
 const stickyCta=document.querySelector('.mobile-sticky-cta');
 const footer=document.querySelector('.footer');
 let activeCard=null;
-const mobileMq=window.matchMedia('(max-width: 767px)');
 
 const loadPicture=(picture)=>{
   if(!picture || picture.dataset.loaded==='true') return;
@@ -948,16 +944,6 @@ const loadPicture=(picture)=>{
     image.removeAttribute('data-src');
   }
   picture.dataset.loaded='true';
-};
-
-const setBeforeAfterState=(card,state)=>{
-  const nextState=state==='after'?'after':'before';
-  card.classList.toggle('is-after',nextState==='after');
-  card.setAttribute('data-state',nextState);
-};
-
-const toggleBeforeAfterState=(card)=>{
-  setBeforeAfterState(card,card.classList.contains('is-after')?'before':'after');
 };
 
 const openLightbox=(card)=>{
@@ -987,20 +973,16 @@ const closeLightbox=()=>{
 photoCards.forEach((card)=>{
   const image=card.querySelector('img');
   const label=image&&image.alt?`Ampliar foto: ${image.alt}`:'Ampliar foto';
-  const media=card.querySelector('.photo-card-media');
-  const toggle=card.querySelector('.photo-state-toggle');
   let touchStartX=0;
-  let touchActive=false;
+  let touchStartY=0;
+  let moved=false;
 
-  card.classList.add('is-mobile-ba');
-  setBeforeAfterState(card,'before');
   card.setAttribute('role','button');
   card.setAttribute('tabindex','0');
   card.setAttribute('aria-label',label);
   card.addEventListener('click',(event)=>{
-    if(mobileMq.matches){
-      event.preventDefault();
-      toggleBeforeAfterState(card);
+    if(moved){
+      moved=false;
       return;
     }
     openLightbox(card);
@@ -1008,36 +990,19 @@ photoCards.forEach((card)=>{
   card.addEventListener('keydown',(event)=>{
     if(event.key==='Enter' || event.key===' '){
       event.preventDefault();
-      if(mobileMq.matches){
-        toggleBeforeAfterState(card);
-        return;
-      }
       openLightbox(card);
     }
   });
-  if(toggle){
-    toggle.addEventListener('click',(event)=>{
-      event.preventDefault();
-      event.stopPropagation();
-      toggleBeforeAfterState(card);
-    });
-  }
-  if(media){
-    media.addEventListener('touchstart',(event)=>{
-      if(!mobileMq.matches) return;
-      touchStartX=event.changedTouches[0].clientX;
-      touchActive=true;
-    },{passive:true});
-    media.addEventListener('touchend',(event)=>{
-      if(!mobileMq.matches || !touchActive) return;
-      const touchEndX=event.changedTouches[0].clientX;
-      const deltaX=touchEndX-touchStartX;
-      if(Math.abs(deltaX)>24){
-        setBeforeAfterState(card,deltaX<0?'after':'before');
-      }
-      touchActive=false;
-    },{passive:true});
-  }
+  card.addEventListener('touchstart',(event)=>{
+    touchStartX=event.changedTouches[0].clientX;
+    touchStartY=event.changedTouches[0].clientY;
+    moved=false;
+  },{passive:true});
+  card.addEventListener('touchmove',(event)=>{
+    const deltaX=Math.abs(event.changedTouches[0].clientX-touchStartX);
+    const deltaY=Math.abs(event.changedTouches[0].clientY-touchStartY);
+    if(deltaX>12 || deltaY>12) moved=true;
+  },{passive:true});
 });
 
 lightboxClose.addEventListener('click',closeLightbox);
