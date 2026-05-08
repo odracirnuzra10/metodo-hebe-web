@@ -189,12 +189,25 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .disclaimer-note strong{color:var(--ink);font-weight:600}
 
 .zone-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,18px);margin:20px 0 28px}
-.photo-card{border-radius:var(--radius-lg);overflow:hidden;position:relative;background:#ebebeb;box-shadow:var(--shadow-card);transition:transform .3s, box-shadow .3s}
+.photo-card{border-radius:var(--radius-lg);overflow:hidden;position:relative;background:#ebebeb;box-shadow:var(--shadow-card);transition:transform .3s, box-shadow .3s;cursor:zoom-in}
 .photo-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
 .photo-card img{width:100%;display:block;object-fit:contain;background:#ebebeb}
+.photo-card:focus-visible{outline:3px solid rgba(20,181,167,.38);outline-offset:4px}
 .photo-badges{position:absolute;top:10px;left:10px;display:flex;gap:6px}
 .badge-ba{background:rgba(11,30,30,.78);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;text-transform:uppercase;backdrop-filter:blur(4px)}
 .photo-caption{padding:10px 14px 14px;font-size:13px;color:var(--ink-3);line-height:1.5;background:#fff}
+
+.lightbox{position:fixed;inset:0;z-index:220;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,32px);background:rgba(11,30,30,.92);backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity .25s ease}
+.lightbox.is-open{opacity:1;pointer-events:auto}
+.lightbox-dialog{position:relative;width:min(100%,960px);max-height:100%;display:flex;flex-direction:column;gap:12px}
+.lightbox-close{position:absolute;top:max(env(safe-area-inset-top),8px);right:max(env(safe-area-inset-right),8px);z-index:3;width:46px;height:46px;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:28px;line-height:1;backdrop-filter:blur(6px);transition:background .2s, transform .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.24);transform:scale(1.03)}
+.lightbox-close:focus-visible{outline:2px solid rgba(255,255,255,.8);outline-offset:3px}
+.lightbox-figure{margin:0;background:transparent;display:flex;flex-direction:column;gap:12px}
+.lightbox-media-wrap{border-radius:18px;overflow:hidden;background:rgba(255,255,255,.05);box-shadow:0 20px 60px rgba(0,0,0,.28)}
+.lightbox-image{display:block;width:100%;max-height:min(78vh,920px);object-fit:contain;background:#091515}
+.lightbox-caption{align-self:center;max-width:min(92vw,760px);padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.1);color:#fff;font-size:14px;line-height:1.55;text-align:center}
+body.lightbox-open{overflow:hidden}
 
 .zone-cta{margin:8px 0 8px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .zone-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--cyan);color:var(--cyan-dd);padding:11px 22px;border-radius:8px;font-size:14.5px;font-weight:600;transition:all .2s}
@@ -249,6 +262,11 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   .topbar .wrap{flex-direction:column;gap:4px;text-align:center}
   .topbar-r{display:none}
   .photo-caption{font-size:12.5px;padding:8px 10px 12px}
+  .lightbox{padding:12px}
+  .lightbox-dialog{width:100%}
+  .lightbox-close{top:max(env(safe-area-inset-top),6px);right:max(env(safe-area-inset-right),6px);width:44px;height:44px}
+  .lightbox-image{max-height:min(70vh,640px)}
+  .lightbox-caption{width:100%;font-size:13px;padding:10px 12px}
 }
 </style>
 <link rel="stylesheet" href="/css/shell.css">
@@ -280,7 +298,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
       <a href="/">Inicio</a>
       <a href="/el-metodo">El Método</a>
       <a href="/planes">Planes</a>
-      <a href="/resultados">Resultados</a>
+      <a href="/resultados">Antes y Después</a>
       <a href="/blog">Blog</a>
     </div>
     <div class="nav-r">
@@ -296,7 +314,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 <div class="breadcrumb">
   <div class="wrap">
     <a href="/">Inicio</a><span>›</span>
-    <strong>Resultados</strong>
+    <strong>Antes y Después</strong>
   </div>
 </div>
 
@@ -477,6 +495,18 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   </div>
 </section>
 
+<div class="lightbox" id="resultsLightbox" aria-hidden="true">
+  <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen ampliada">×</button>
+    <figure class="lightbox-figure">
+      <div class="lightbox-media-wrap">
+        <img src="" alt="" class="lightbox-image" id="lightboxImage">
+      </div>
+      <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
@@ -495,7 +525,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
         <h4>El método</h4>
         <a href="/el-metodo">Conoce el Método</a>
         <a href="/planes">Planes y Precios</a>
-        <a href="/resultados">Resultados</a>
+        <a href="/resultados">Antes y Después</a>
         <a href="/blog">Blog</a>
       </div>
       <div>
@@ -539,6 +569,60 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 <script>
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)});
+
+const photoCards=document.querySelectorAll('.photo-card');
+const lightbox=document.getElementById('resultsLightbox');
+const lightboxImage=document.getElementById('lightboxImage');
+const lightboxCaption=document.getElementById('lightboxCaption');
+const lightboxClose=document.getElementById('lightboxClose');
+let activeCard=null;
+
+const openLightbox=(card)=>{
+  const image=card.querySelector('img');
+  const captionEl=card.querySelector('.photo-caption');
+  if(!image) return;
+  activeCard=card;
+  lightboxImage.src=image.currentSrc||image.src;
+  lightboxImage.alt=image.alt||'Imagen ampliada';
+  lightboxCaption.textContent=captionEl?captionEl.textContent.trim():(image.alt||'');
+  lightbox.classList.add('is-open');
+  lightbox.setAttribute('aria-hidden','false');
+  document.body.classList.add('lightbox-open');
+  lightboxClose.focus();
+};
+
+const closeLightbox=()=>{
+  lightbox.classList.remove('is-open');
+  lightbox.setAttribute('aria-hidden','true');
+  lightboxImage.src='';
+  lightboxImage.alt='';
+  lightboxCaption.textContent='';
+  document.body.classList.remove('lightbox-open');
+  if(activeCard) activeCard.focus();
+};
+
+photoCards.forEach((card)=>{
+  const image=card.querySelector('img');
+  const label=image&&image.alt?`Ampliar foto: ${image.alt}`:'Ampliar foto';
+  card.setAttribute('role','button');
+  card.setAttribute('tabindex','0');
+  card.setAttribute('aria-label',label);
+  card.addEventListener('click',()=>openLightbox(card));
+  card.addEventListener('keydown',(event)=>{
+    if(event.key==='Enter' || event.key===' '){
+      event.preventDefault();
+      openLightbox(card);
+    }
+  });
+});
+
+lightboxClose.addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',(event)=>{
+  if(event.target===lightbox) closeLightbox();
+});
+document.addEventListener('keydown',(event)=>{
+  if(event.key==='Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+});
 
 if('IntersectionObserver' in window){
   const els=document.querySelectorAll('.photo-card,.disclaimer-note,.zone-cta');
