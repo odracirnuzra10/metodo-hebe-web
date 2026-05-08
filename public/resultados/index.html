@@ -576,6 +576,7 @@ body.lightbox-open{overflow:hidden}
       <button type="button" class="zone-gallery-control zone-gallery-prev" aria-label="Ver caso anterior">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
       </button>
+      <span class="zone-gallery-status" aria-live="polite">1 de 2</span>
       <button type="button" class="zone-gallery-control zone-gallery-next" aria-label="Ver siguiente caso">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
       </button>
@@ -629,6 +630,7 @@ body.lightbox-open{overflow:hidden}
       <button type="button" class="zone-gallery-control zone-gallery-prev" aria-label="Ver caso anterior">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
       </button>
+      <span class="zone-gallery-status" aria-live="polite">1 de 3</span>
       <button type="button" class="zone-gallery-control zone-gallery-next" aria-label="Ver siguiente caso">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
       </button>
@@ -695,6 +697,7 @@ body.lightbox-open{overflow:hidden}
       <button type="button" class="zone-gallery-control zone-gallery-prev" aria-label="Ver caso anterior">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
       </button>
+      <span class="zone-gallery-status" aria-live="polite">1 de 5</span>
       <button type="button" class="zone-gallery-control zone-gallery-next" aria-label="Ver siguiente caso">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
       </button>
@@ -1091,10 +1094,16 @@ galleryShells.forEach((shell)=>{
       if(status) status.textContent=`${viewIndex+1} de 3`;
       return;
     }
+    const offsets=getCardOffsets();
+    const currentScroll=gallery.scrollLeft;
+    let activeIndex=0;
+    offsets.forEach((offset,index)=>{
+      if(offset<=currentScroll+24) activeIndex=index;
+    });
     const maxScroll=Math.max(0,gallery.scrollWidth-gallery.clientWidth-4);
     prev.disabled=gallery.scrollLeft<=4;
     next.disabled=gallery.scrollLeft>=maxScroll;
-    if(status) status.textContent='';
+    if(status) status.textContent=`${activeIndex+1} de ${cards.length}`;
   };
 
   const goToCard=(direction)=>{
