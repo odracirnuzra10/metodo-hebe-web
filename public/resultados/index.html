@@ -430,8 +430,10 @@ body.lightbox-open{overflow:hidden}
   .article-body h2{font-size:22px}
   .zone-gallery-shell{display:grid;gap:10px}
   .zone-gallery-controls{display:flex;justify-content:flex-end;gap:10px}
-  .zone-gallery-control{width:42px;height:42px;border-radius:999px;border:1px solid rgba(20,181,167,.18);background:#fff;color:var(--cyan-dd);display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-card);transition:transform .2s ease,background .2s ease,color .2s ease,opacity .2s ease}
+  .zone-gallery-control{width:52px;height:52px;padding:0;border-radius:999px;border:1px solid rgba(20,181,167,.18);background:#fff;color:var(--cyan-dd);display:inline-flex;align-items:center;justify-content:center;box-shadow:var(--shadow-card);transition:transform .2s ease,background .2s ease,color .2s ease,opacity .2s ease;touch-action:manipulation;-webkit-tap-highlight-color:transparent;flex-shrink:0;position:relative;z-index:2}
   .zone-gallery-control:hover{background:var(--cyan);color:#fff;transform:translateY(-1px)}
+  .zone-gallery-control:active{transform:scale(.98)}
+  .zone-gallery-control:focus-visible{outline:3px solid rgba(20,181,167,.24);outline-offset:2px}
   .zone-gallery-control[disabled]{opacity:.38;transform:none;pointer-events:none}
   .zone-gallery{display:flex;grid-template-columns:none;gap:14px;overflow:hidden;padding:2px 4px 10px 0;margin-right:-4px;scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding-left:0;touch-action:pan-y}
   .result-section + .result-section{margin-top:8px}
@@ -1057,14 +1059,11 @@ galleryShells.forEach((shell)=>{
   const prev=shell.querySelector('.zone-gallery-prev');
   const next=shell.querySelector('.zone-gallery-next');
   if(!gallery || !prev || !next) return;
+  const cards=Array.from(gallery.querySelectorAll('.photo-card'));
+  if(!cards.length) return;
 
-  const getStep=()=>{
-    const card=gallery.querySelector('.photo-card');
-    if(!card) return gallery.clientWidth;
-    const cardWidth=card.getBoundingClientRect().width;
-    const styles=window.getComputedStyle(gallery);
-    const gap=parseFloat(styles.columnGap || styles.gap || 0) || 0;
-    return cardWidth + gap;
+  const getCardOffsets=()=>{
+    return cards.map((card)=>card.offsetLeft);
   };
 
   const syncButtons=()=>{
@@ -1073,16 +1072,36 @@ galleryShells.forEach((shell)=>{
     next.disabled=gallery.scrollLeft>=maxScroll;
   };
 
-  prev.addEventListener('click',()=>{
-    gallery.scrollBy({left:-getStep(),behavior:'smooth'});
-  });
+  const goToCard=(direction)=>{
+    const offsets=getCardOffsets();
+    const currentScroll=gallery.scrollLeft;
+    let targetOffset=offsets[0];
 
-  next.addEventListener('click',()=>{
-    gallery.scrollBy({left:getStep(),behavior:'smooth'});
-  });
+    if(direction>0){
+      targetOffset=offsets.find((offset)=>offset>currentScroll+24) ?? offsets[offsets.length-1];
+    }else{
+      const previous=offsets.filter((offset)=>offset<currentScroll-24);
+      targetOffset=previous.length?previous[previous.length-1]:offsets[0];
+    }
+
+    gallery.scrollTo({left:targetOffset,behavior:'smooth'});
+    window.setTimeout(syncButtons,260);
+  };
+
+  const bindGalleryButton=(button,direction)=>{
+    const handler=(event)=>{
+      event.preventDefault();
+      event.stopPropagation();
+      goToCard(direction);
+    };
+    button.addEventListener('click',handler);
+  };
+
+  bindGalleryButton(prev,-1);
+  bindGalleryButton(next,1);
 
   gallery.addEventListener('scroll',syncButtons,{passive:true});
-  window.addEventListener('resize',syncButtons);
+  window.addEventListener('resize',()=>window.requestAnimationFrame(syncButtons));
   syncButtons();
 });
 
