@@ -5,6 +5,7 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/casos", "destination": "/resultados", "statusCode": 301 },
+    { "source": "/online", "destination": "/resultados", "statusCode": 301 },
     { "source": "/que-es-el-metodo-hebe", "destination": "/el-metodo", "statusCode": 301 },
     { "source": "/tag/guatita-delantal", "destination": "/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo", "statusCode": 301 },
     { "source": "/tag/guatita-delantal/", "destination": "/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo", "statusCode": 301 },
