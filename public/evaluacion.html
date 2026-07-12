@@ -88,7 +88,7 @@
   <script>
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
     gtag('js',new Date());gtag('config','G-NGW7210RXB',{send_page_view:true});
-    window.hebeTrack=function(n,p){gtag('event',n,p||{});if(typeof fbq!=='undefined'){var m={'evaluacion_click':'Lead','whatsapp_click':'Contact','cta_click':'Lead'};if(m[n])fbq('track',m[n],p||{});}};
+    window.hebeTrack=function(n,p){gtag('event',n,p||{});if(typeof fbq!=='undefined'){var m={'whatsapp_click':'Contact'};if(m[n])fbq('track',m[n],p||{});else fbq('trackCustom',n,p||{});}};
   </script>
   <!-- Meta Pixel 271117138864148 -->
   <script>
