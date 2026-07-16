@@ -81,6 +81,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 32 32&#39;%3E%3Crect width=&#39;32&#39; height=&#39;32&#39; rx=&#39;6&#39; fill=&#39;%231a8e82&#39;/%3E%3Ctext x=&#39;16&#39; y=&#39;22&#39; text-anchor=&#39;middle&#39; font-family=&#39;serif&#39; font-size=&#39;18&#39; fill=&#39;white&#39; font-style=&#39;italic&#39;%3EH%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   
   <!-- GA4 G-NGW7210RXB -->
@@ -677,6 +678,22 @@
       opacity: 0.9;
     }
 
+    /* Recap de selección (paso 3) */
+    .recap-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      align-self: flex-start;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      border: 1px solid rgba(26, 142, 130, 0.25);
+      border-radius: 999px;
+      padding: 0.4rem 0.95rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+    }
+
     /* Form */
     .form-group {
       margin-bottom: 0.8rem;
@@ -1145,8 +1162,8 @@
       }
 
       .mobile-hero .mobile-carousel {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
         aspect-ratio: 1;
         border-radius: 8px;
         overflow: hidden;
@@ -1251,6 +1268,42 @@
 
       .day-btn .day-num {
         font-size: 1rem;
+      }
+
+      /* Header compacto en pasos 2-3: libera pantalla para el formulario */
+      .mobile-header-wrapper.compact .mobile-carousel {
+        display: none;
+      }
+
+      .mobile-header-wrapper.compact .mobile-hero {
+        padding: 0.45rem 0.8rem;
+      }
+
+      .mobile-header-wrapper.compact .mobile-info {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+
+      .mobile-header-wrapper.compact .mobile-info > img {
+        width: 56px !important;
+        margin-bottom: 0 !important;
+      }
+
+      .mobile-header-wrapper.compact .mobile-info .m-price-new {
+        display: none;
+      }
+
+      .mobile-header-wrapper.compact .m-spots {
+        margin-top: 0;
+      }
+
+      .form-group label {
+        text-align: left;
+      }
+
+      .recap-chip {
+        align-self: center;
       }
     }
 
@@ -1426,9 +1479,8 @@
           <!-- STEP 1 -->
           <div class="step active" id="step1">
             <div class="viewers">
-              <span>👁</span>
-              <span class="viewers-count" id="viewersCount" style="opacity: 1;">2</span>
-              <span>personas viendo esta oferta</span>
+              <span>✨</span>
+              <span>+200 casos reales en nuestras 3 sedes</span>
             </div>
             <div class="step-label">PASO 1 DE 3</div>
             <div class="step-title">¿DÓNDE TE GUSTARÍA <em>EVALUARTE</em>?</div>
@@ -1499,29 +1551,31 @@
             </button>
             <div class="step-label">PASO 3 DE 3</div>
             <div class="step-title">TUS DATOS DE <em>CONTACTO</em></div>
-            <div class="step-sub">Para confirmar tu evaluación P3 por WhatsApp.</div>
+            <div class="step-sub">Déjanos tus datos y te escribimos por WhatsApp para coordinar tu evaluación P3.</div>
+            <div class="recap-chip" id="recapChip" style="display:none"></div>
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" id="inputNombre" placeholder="Tu nombre completo" autocomplete="name" oninput="checkForm()" onkeydown="formKeyDown(event, &#39;inputCelular&#39;)">
+              <input type="text" id="inputNombre" placeholder="Tu nombre completo" autocomplete="name" onkeydown="formKeyDown(event, &#39;inputCelular&#39;)">
             </div>
             <div class="form-group">
               <label>Celular</label>
               <div class="phone-input-wrap" id="inputCelularWrap">
                 <span class="phone-prefix" aria-hidden="true">+56</span>
-                <input class="phone-field" type="tel" id="inputCelular" placeholder="9 XXXX XXXX" autocomplete="tel-national" inputmode="numeric" maxlength="11" oninput="formatPhone(this); checkForm()" onkeydown="formKeyDown(event, &#39;inputCorreo&#39;)">
+                <input class="phone-field" type="tel" id="inputCelular" placeholder="9 XXXX XXXX" autocomplete="tel-national" inputmode="numeric" maxlength="11" oninput="formatPhone(this)" onkeydown="formKeyDown(event, &#39;inputCorreo&#39;)">
               </div>
             </div>
             <div class="form-group">
               <label>Correo</label>
-              <input type="email" id="inputCorreo" placeholder="tu@correo.com" autocomplete="email" oninput="checkForm()" onkeydown="formKeyDown(event, null)">
+              <input type="email" id="inputCorreo" placeholder="tu@correo.com" autocomplete="email" onkeydown="formKeyDown(event, null)">
             </div>
-            <button class="wa-btn disabled" id="btnSubmit" onclick="handleSubmit()">
+            <button class="wa-btn enabled" id="btnSubmit" onclick="handleSubmit()">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
               </svg>
-              Confirmar por WhatsApp
+              Enviar y agendar mi hora
             </button>
-            <div class="form-note">Sin compromiso · Sin presión · Atención personalizada</div>
+            <div class="form-note">Sin compromiso · Te respondemos en minutos</div>
+            <div class="form-note" style="margin-top: 0.3rem; opacity: 0.75;">🔒 Tus datos están protegidos y solo se usan para coordinar tu evaluación (Ley 19.628)</div>
           </div>
         </div>
       </div>
@@ -1582,16 +1636,18 @@
     setInterval(() => updateCarousel((carouselIndex + 1) % 4), 3500);
     document.querySelectorAll('#dotsDesktop .dot').forEach(d => d.addEventListener('click', () => updateCarousel(+d.dataset.i)));
 
-    const viewersEl = document.getElementById('viewersCount');
-    let viewerCount = 3;
-    setInterval(() => {
-      const dir = Math.random() > 0.5 ? 1 : -1;
-      viewerCount = Math.min(8, Math.max(2, viewerCount + dir));
-      viewersEl.style.opacity = '0';
-      setTimeout(() => { viewersEl.textContent = viewerCount; viewersEl.style.opacity = '1'; }, 300);
-    }, 5000);
-
     function goToStep(num, direction) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const hdr = document.querySelector('.mobile-header-wrapper');
+      if (hdr) hdr.classList.toggle('compact', num > 1);
+      if (num === 3) {
+        const chip = document.getElementById('recapChip');
+        if (chip) {
+          const parts = [(selectedSede || '').split(' — ')[0], selectedDay, selectedSlot].filter(Boolean);
+          chip.textContent = '📍 ' + parts.join(' · ');
+          chip.style.display = parts.length ? 'inline-flex' : 'none';
+        }
+      }
       const prev = document.getElementById('step' + currentStep);
       const next = document.getElementById('step' + num);
       prev.classList.remove('active');
@@ -1599,7 +1655,11 @@
       next.classList.remove('exit-left', 'exit-right');
       next.style.transform = direction === 'back' ? 'translateX(-60px)' : 'translateX(60px)';
       next.style.opacity = '0';
-      requestAnimationFrame(() => { next.classList.add('active'); next.style.transform = ''; next.style.opacity = ''; });
+      requestAnimationFrame(() => {
+        // Garantiza un solo paso activo aunque un rAF anterior haya quedado diferido (tab en background)
+        document.querySelectorAll('.step.active').forEach(s => { if (s !== next) s.classList.remove('active'); });
+        next.classList.add('active'); next.style.transform = ''; next.style.opacity = '';
+      });
       currentStep = num;
       updateProgress();
       setTimeout(() => prev.classList.remove('exit-left', 'exit-right'), 500);
@@ -1713,13 +1773,6 @@
       input.value = formatLocalPhoneValue(digits);
     }
 
-    function checkForm() {
-      const n = document.getElementById('inputNombre').value.trim();
-      const c = getPhoneDigits();
-      const e = document.getElementById('inputCorreo').value.trim();
-      document.getElementById('btnSubmit').className = 'wa-btn ' + (n && c.length === 9 && c.startsWith('9') && e.includes('@') ? 'enabled' : 'disabled');
-    }
-
     function formKeyDown(e, nextId) {
       if (e.key === 'Enter') { e.preventDefault(); nextId ? document.getElementById(nextId).focus() : handleSubmit(); }
     }
@@ -1746,6 +1799,13 @@
         }
       });
       if (hasError) return false;
+
+      // Guard anti doble-envío: un solo lead por sesión
+      if (window.__leadSubmitted) {
+        document.getElementById('successOverlay').classList.add('visible');
+        return false;
+      }
+      window.__leadSubmitted = true;
 
       const sede = selectedSede || 'Por confirmar';
       const sedeKey = sedeSlug[selectedSede] || selectedSede;
@@ -1812,9 +1872,12 @@
         body: JSON.stringify(payload)
       }).catch(e => console.error(e));
 
-      const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp);
-      document.getElementById('successWaLink').href = 'https://wa.me/56963222683?text=' + waMsg;
+      const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3 en Método Hebe\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp);
+      const waLink = document.getElementById('successWaLink');
+      waLink.href = 'https://wa.me/56963222683?text=' + waMsg;
       document.getElementById('successOverlay').classList.add('visible');
+      // Abre WhatsApp de inmediato (mismo gesto del usuario); el overlay queda como respaldo
+      waLink.click();
       return true;
     }
   </script>
