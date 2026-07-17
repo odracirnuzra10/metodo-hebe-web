@@ -1,0 +1,374 @@
+import json, re, os, re, time, urllib.request, urllib.error
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+BR = "http://baserow-baserow-1"
+REFRESH = os.environ["BASEROW_REFRESH"]
+WS = os.environ.get("WORKSPACE_ID", "work")
+TITLE = os.environ.get("PANEL_TITLE", "OACG Work")
+NEXT_DEF = os.environ.get("LOGIN_NEXT", "/work/")
+MEMBERS_ENABLED = os.environ.get("MEMBERS_ENABLED", "1") == "1"
+COOKIE_NAME = "oacg_sess"
+COOKIE_DOMAIN = ".oacg.cl"
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "ricardo@oacg.cl").lower()
+def _es_admin(handler):
+    em = (handler.headers.get("X-Forwarded-Email") or handler.headers.get("X-Auth-Request-Email") or "").lower()
+    return em == ADMIN_EMAIL
+OAUTH_CHECK = os.environ.get("OAUTH_CHECK_URL", "")
+GOOGLE_LOGIN = os.environ.get("GOOGLE_LOGIN_URL", "")
+TABLAS_PERMITIDAS = {"150","152","155","156","326","327","328","329","330","331","567","611","612","563","564","568","569","570","571","572","573","574","575","576","577","578","579","580","581","582","583","584","585","586","587","588","589","590","591","592","593","594","595","596","597","598","599","600","601","602","603","604","605","606","607","608","609","610","939","940","950","951","952","954","957"}
+TIPOS = {"text","long_text","number","date","single_select","url","email","phone_number","boolean","rating","formula","file"}
+_tok = {"v": None, "t": 0}
+
+import hmac, hashlib
+from urllib.parse import parse_qs, quote
+
+SECRET = os.environ["WORK_SECRET"].encode()
+WORK_PASS = os.environ["WORK_PASS"]
+COOKIE_DIAS = 30
+
+def firmar(exp, grants): return hmac.new(SECRET, (str(exp) + "." + grants).encode(), hashlib.sha256).hexdigest()
+def _parse_sess(header):
+    for parte in (header or "").split(";"):
+        k, _, v = parte.strip().partition("=")
+        if k == COOKIE_NAME:
+            try:
+                exp, grants, sig = v.split("|")
+                if int(exp) > time.time() and hmac.compare_digest(sig, firmar(exp, grants)):
+                    return int(exp), set(g for g in grants.split("+") if g)
+            except Exception: pass
+    return None
+def _oauth_ok(header):
+    if not OAUTH_CHECK:
+        return False
+    try:
+        rq = urllib.request.Request(OAUTH_CHECK, headers={"Cookie": header or ""})
+        with urllib.request.urlopen(rq, timeout=3) as x:
+            return 200 <= x.status < 300
+    except Exception:
+        return False
+def cookie_valida(header):
+    s = _parse_sess(header)
+    if s and WS in s[1]:
+        return True
+    return _oauth_ok(header)
+
+LOGIN_HTML = """<!DOCTYPE html><html lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>__TITLE__ — Acceso</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel=stylesheet>
+<style>body{margin:0;font-family:Outfit,sans-serif;background:#FBFBFA;min-height:100dvh;display:flex;align-items:center;justify-content:center}
+.card{background:#fff;border:1px solid #EAEAEA;border-radius:16px;padding:40px;width:340px}
+h1{font-size:22px;margin:0 0 4px}p{color:#6B6B6B;font-size:14px;margin:0 0 22px}
+input{width:100%;box-sizing:border-box;border:1px solid #EAEAEA;border-radius:10px;padding:12px;font-size:15px;font-family:inherit;outline:none}
+input:focus{border-color:#7C3AED}button{width:100%;margin-top:14px;background:#111;color:#fff;border:0;border-radius:10px;padding:12px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#7C3AED;margin-right:8px}.err{color:#991B1B;font-size:13px;margin-top:10px}</style></head>
+<body><form class=card method=POST action="/work-api/login">
+<h1><span class=dot></span>__TITLE__</h1><p>Clave de equipo — la sesi\u00f3n dura 30 d\u00edas en este navegador.</p>
+<input type=password name=pass placeholder="Clave de equipo" autofocus>
+<input type=hidden name=next value="__NEXT__">__ERR__
+<button>Entrar</button>__GOOGLE__</form></body></html>"""
+
+
+def jwt():
+    if _tok["v"] and time.time() - _tok["t"] < 240:
+        return _tok["v"]
+    r = urllib.request.Request(BR + "/api/user/token-refresh/",
+        data=json.dumps({"refresh_token": REFRESH}).encode(),
+        headers={"Content-Type": "application/json", "Host": "core.oacg.cl"})
+    _tok["v"] = json.loads(urllib.request.urlopen(r, timeout=30).read())["token"]
+    _tok["t"] = time.time()
+    return _tok["v"]
+
+def fwd(method, path, body=None, _retry=True):
+    r = urllib.request.Request(BR + path,
+        data=json.dumps(body).encode() if body is not None else None,
+        headers={"Authorization": "JWT " + jwt(), "Content-Type": "application/json", "Host": "core.oacg.cl"},
+        method=method)
+    try:
+        with urllib.request.urlopen(r, timeout=60) as x:
+            return x.status, x.read()
+    except urllib.error.HTTPError as e:
+        if e.code == 401 and _retry:
+            _tok["v"] = None
+            return fwd(method, path, body, _retry=False)
+        return e.code, e.read()
+
+class H(BaseHTTPRequestHandler):
+    def _ruta(self):
+        if self.path.startswith("/work-api/") or self.path == "/work-api":
+            self.path = self.path[len("/work-api"):] or "/"
+
+    def _send(self, code, data):
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json")
+        self.end_headers()
+        self.wfile.write(data if isinstance(data, bytes) else json.dumps(data).encode())
+    def _body(self):
+        ln = int(self.headers.get("Content-Length", 0))
+        return json.loads(self.rfile.read(ln) or b"{}")
+    def log_message(self, *a): pass
+
+    def do_GET(self):
+        self._ruta()
+
+        if self.path == "/logout":
+            self.send_response(302)
+            self.send_header("Set-Cookie", f"{COOKIE_NAME}=; Domain={COOKIE_DOMAIN}; Path=/; Max-Age=0; Secure; HttpOnly; SameSite=Lax")
+            self.send_header("Location", "/work-api/login-page")
+            self.end_headers()
+            return
+
+        if self.path == "/members":
+            if not MEMBERS_ENABLED:
+                return self._send(200, {"users": [], "invitations": []})
+            try:
+                import urllib.request as _u
+                def _get(p):
+                    r = _u.Request(BR + p, headers={"Authorization": "JWT " + jwt(), "Host": "core.oacg.cl"})
+                    return json.loads(_u.urlopen(r, timeout=30).read())
+                try: users = _get("/api/workspaces/users/workspace/30/")
+                except Exception: users = []
+                try: invs = _get("/api/workspaces/invitations/workspace/30/")
+                except Exception: invs = []
+                return self._send(200, {"users": [{"id": u.get("id"), "name": u.get("name") or (u.get("user") or {}).get("first_name", ""), "email": u.get("email") or (u.get("user") or {}).get("email", "")} for u in (users if isinstance(users, list) else [])], "invitations": [{"id": i.get("id"), "email": i.get("email", "")} for i in (invs if isinstance(invs, list) else [])]})
+            except Exception as e:
+                return self._send(200, {"users": [], "invitations": [], "err": str(e)})
+
+        if self.path == "/auth":
+            if cookie_valida(self.headers.get("Cookie")):
+                return self._send(200, {"ok": True})
+            proto = self.headers.get("X-Forwarded-Proto", "https")
+            host = self.headers.get("X-Forwarded-Host", "core.oacg.cl")
+            uri = self.headers.get("X-Forwarded-Uri", NEXT_DEF)
+            destino = f"{proto}://{host}{uri}"
+            self.send_response(302)
+            self.send_header("Location", f"https://{host}/work-api/login-page?next={quote(destino)}")
+            self.end_headers()
+            return
+        if self.path.startswith("/login-page"):
+            q = parse_qs(self.path.partition("?")[2])
+            nxt = (q.get("next") or [NEXT_DEF])[0]
+            err = "<div class=err>Clave incorrecta</div>" if q.get("err") else ""
+            g = ""
+            if GOOGLE_LOGIN:
+                host = self.headers.get("X-Forwarded-Host", "clinic.oacg.cl")
+                rd = quote(f"https://{host}{nxt}")
+                g = f'<a href="{GOOGLE_LOGIN}?rd={rd}" style="display:block;text-align:center;margin-top:10px;border:1px solid #EAEAEA;border-radius:10px;padding:11px;font-size:14px;font-weight:600;color:#111;text-decoration:none">Entrar con Google (@oacg.cl)</a>'
+            html = LOGIN_HTML.replace("__TITLE__", TITLE).replace("__NEXT__", nxt.replace('"', "")).replace("__ERR__", err).replace("__GOOGLE__", g)
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(html.encode())
+            return
+        if self.path == "/prefs":
+            try:
+                with open("/data/prefs.json", "rb") as f:
+                    return self._send(200, f.read())
+            except Exception:
+                return self._send(200, {})
+        if self.path == "/layout":
+            try:
+                with open("/data/layout.json", "rb") as f:
+                    return self._send(200, f.read())
+            except Exception:
+                return self._send(200, {"folders": None})
+
+        m = re.match(r"^/schema/(\d+)/?$", self.path)
+        if m and m.group(1) in TABLAS_PERMITIDAS:
+            code, data = fwd("GET", f"/api/database/fields/table/{m.group(1)}/")
+            return self._send(code, data)
+        m = re.match(r"^/tables/(\d+)/?$", self.path)
+        if m and m.group(1) in TABLAS_PERMITIDAS:
+            code, data = fwd("GET", f"/api/database/tables/{m.group(1)}/")
+            return self._send(code, data)
+        self._send(404, {"error": "not found"})
+
+    def do_POST(self):
+        self._ruta()
+
+        # Aviso de onboarding completado (aprobación de Mitzi) -> webhook/n8n -> correo a ricardo@oacg.cl.
+        # Devuelve siempre 200 con {ok}: el panel NO debe romper la aprobación si el correo falla.
+        if self.path == "/notify-complete":
+            try:
+                ln = int(self.headers.get("Content-Length", 0))
+                body = json.loads(self.rfile.read(ln) or b"{}")
+                url = os.environ.get("NOTIFY_WEBHOOK_URL", "")
+                if not url:
+                    return self._send(200, {"ok": False, "reason": "NOTIFY_WEBHOOK_URL no configurado en la VM"})
+                payload = json.dumps({
+                    "to": "ricardo@oacg.cl",
+                    "subject": "Onboarding completado: %s" % (body.get("name") or body.get("slug") or "cliente"),
+                    "cliente": body.get("name"), "slug": body.get("slug"),
+                    "fecha_entrega": body.get("fecha"), "encargado": body.get("encargado"),
+                    "nota": body.get("nota"),
+                }).encode()
+                rq = urllib.request.Request(url, data=payload,
+                    headers={"Content-Type": "application/json"}, method="POST")
+                try:
+                    with urllib.request.urlopen(rq, timeout=15) as x:
+                        x.read()
+                    return self._send(200, {"ok": True})
+                except Exception as e:
+                    return self._send(200, {"ok": False, "reason": "webhook: %s" % str(e)[:140]})
+            except Exception as e:
+                return self._send(200, {"ok": False, "reason": str(e)[:140]})
+
+
+        if self.path == "/members":
+            if not MEMBERS_ENABLED:
+                return self._send(403, {"error": "gestion de miembros solo en work"})
+            try:
+                ln = int(self.headers.get("Content-Length", 0))
+                body = json.loads(self.rfile.read(ln) or b"{}")
+                email = (body.get("email") or "").strip().lower()
+                if not email or "@" not in email:
+                    return self._send(400, {"error": "email inválido"})
+                st, data = fwd("POST", "/api/workspaces/invitations/workspace/30/",
+                    {"email": email, "permissions": "MEMBER", "base_url": "https://core.oacg.cl",
+                     "message": "Únete a OACG Work"})
+                return self._send(st, json.loads(data or b"{}"))
+            except Exception as e:
+                return self._send(500, {"error": str(e)})
+
+        if self.path == "/upload":
+            try:
+                ln = int(self.headers.get("Content-Length", 0))
+                # 100MB: los videos de pantalla de una solicitud pasan los 15MB con facilidad.
+                # El cuerpo se lee entero en memoria, por eso no subimos mas de esto (VM 4GB).
+                if ln > 100 * 1024 * 1024:
+                    return self._send(400, {"error": "archivo muy grande (max 100MB)"})
+                raw = self.rfile.read(ln)
+                ct = self.headers.get("Content-Type", "application/octet-stream")
+                def _up():
+                    rq = urllib.request.Request(BR + "/api/user-files/upload-file/", data=raw,
+                        headers={"Authorization": "JWT " + jwt(), "Content-Type": ct, "Host": "core.oacg.cl"}, method="POST")
+                    with urllib.request.urlopen(rq, timeout=120) as x:
+                        return x.status, x.read()
+                try:
+                    code, data = _up()
+                except urllib.error.HTTPError as e:
+                    if e.code == 401:
+                        _tok["v"] = None
+                        code, data = _up()
+                    else:
+                        return self._send(e.code, e.read())
+                return self._send(code, data)
+            except Exception as e:
+                return self._send(500, {"error": str(e)})
+
+        if self.path == "/prefs":
+            try:
+                ln = int(self.headers.get("Content-Length", 0))
+                if ln > 131072:
+                    return self._send(400, {"error": "prefs muy grandes"})
+                body = json.loads(self.rfile.read(ln) or b"{}")
+                key = str(body.get("key", ""))
+                if not re.match(r"^[A-Za-z0-9._:-]{1,64}$", key) or not isinstance(body.get("prefs"), dict):
+                    return self._send(400, {"error": "formato invalido"})
+                try:
+                    with open("/data/prefs.json") as f:
+                        data = json.load(f)
+                except Exception:
+                    data = {}
+                data[key] = body["prefs"]
+                tmp = "/data/prefs.json.tmp"
+                with open(tmp, "w") as f:
+                    json.dump(data, f, ensure_ascii=False)
+                os.replace(tmp, "/data/prefs.json")
+                return self._send(200, {"ok": True})
+            except Exception as e:
+                return self._send(500, {"error": str(e)})
+
+        if self.path == "/layout":
+            if not _es_admin(self):
+                return self._send(403, {"error": "solo el administrador puede modificar los paneles"})
+            try:
+                ln = int(self.headers.get("Content-Length", 0))
+                if ln > 65536:
+                    return self._send(400, {"error": "layout muy grande"})
+                data = json.loads(self.rfile.read(ln) or b"{}")
+                if not isinstance(data.get("folders"), list) or not isinstance(data.get("root"), list):
+                    return self._send(400, {"error": "formato invalido"})
+                tmp = "/data/layout.json.tmp"
+                with open(tmp, "w") as f:
+                    json.dump(data, f, ensure_ascii=False)
+                os.replace(tmp, "/data/layout.json")
+                return self._send(200, {"ok": True})
+            except Exception as e:
+                return self._send(500, {"error": str(e)})
+
+        if self.path == "/login":
+            ln = int(self.headers.get("Content-Length", 0))
+            form = parse_qs(self.rfile.read(ln).decode())
+            clave = (form.get("pass") or [""])[0]
+            nxt = (form.get("next") or [NEXT_DEF])[0]
+            if clave == WORK_PASS:
+                prev = _parse_sess(self.headers.get("Cookie"))
+                grants = (prev[1] if prev else set()) | {WS}
+                gstr = "+".join(sorted(grants))
+                exp = int(time.time()) + COOKIE_DIAS * 86400
+                self.send_response(302)
+                self.send_header("Set-Cookie", f"{COOKIE_NAME}={exp}|{gstr}|{firmar(exp, gstr)}; Domain={COOKIE_DOMAIN}; Max-Age={COOKIE_DIAS*86400}; Path=/; Secure; HttpOnly; SameSite=Lax")
+                self.send_header("Location", nxt)
+                self.end_headers()
+                return
+            self.send_response(302)
+            self.send_header("Location", f"/work-api/login-page?err=1&next={quote(nxt)}")
+            self.end_headers()
+            return
+        m = re.match(r"^/fields/(\d+)/?$", self.path)
+        if m and m.group(1) in TABLAS_PERMITIDAS:
+            if not _es_admin(self):
+                return self._send(403, {"error": "solo el administrador puede crear columnas"})
+            body = self._body()
+            if body.get("type") not in TIPOS:
+                return self._send(400, {"error": "tipo no permitido"})
+            code, data = fwd("POST", f"/api/database/fields/table/{m.group(1)}/", body)
+            return self._send(code, data)
+        self._send(404, {"error": "not found"})
+
+    def do_PATCH(self):
+        self._ruta()
+        if (self.path.startswith("/fields/") or self.path.startswith("/tables/")) and not _es_admin(self):
+            return self._send(403, {"error": "solo el administrador puede modificar la estructura"})
+        m = re.match(r"^/fields/(\d+)/?$", self.path)
+        if m:
+            code, data = fwd("PATCH", f"/api/database/fields/{m.group(1)}/", self._body())
+            return self._send(code, data)
+        m = re.match(r"^/tables/(\d+)/?$", self.path)
+        if m and m.group(1) in TABLAS_PERMITIDAS:
+            body = self._body()
+            name = str(body.get("name", "")).strip()
+            if not name:
+                return self._send(400, {"error": "nombre vacio"})
+            code, data = fwd("PATCH", f"/api/database/tables/{m.group(1)}/", {"name": name})
+            return self._send(code, data)
+        self._send(404, {"error": "not found"})
+
+    def do_DELETE(self):
+        self._ruta()
+        if not _es_admin(self):
+            return self._send(403, {"error": "solo el administrador puede eliminar"})
+
+        m = re.match(r"^/members/user/(\d+)$", self.path)
+        if m:
+            try:
+                import urllib.request as _u
+                r = _u.Request(BR + "/api/workspaces/users/workspace/30/", headers={"Authorization": "JWT " + jwt(), "Host": "core.oacg.cl"})
+                users = json.loads(_u.urlopen(r, timeout=30).read())
+                obj = next((u for u in users if str(u.get("id")) == m.group(1)), None)
+                if obj and (obj.get("email") or "").lower() == "ricardo@oacg.cl":
+                    return self._send(403, {"error": "no puedes eliminar al administrador"})
+            except Exception:
+                pass
+            st, data = fwd("DELETE", "/api/workspaces/users/" + m.group(1) + "/")
+            return self._send(200 if st in (200, 204) else st, {"ok": st in (200, 204)})
+        m = re.match(r"^/members/invitation/(\d+)$", self.path)
+        if m:
+            st, data = fwd("DELETE", "/api/workspaces/invitations/" + m.group(1) + "/")
+            return self._send(200 if st in (200, 204) else st, {"ok": st in (200, 204)})
+        m = re.match(r"^/fields/(\d+)/?$", self.path)
+        if m:
+            code, data = fwd("DELETE", f"/api/database/fields/{m.group(1)}/")
+            return self._send(code, data)
+        self._send(404, {"error": "not found"})
+
+ThreadingHTTPServer(("0.0.0.0", 8080), H).serve_forever()

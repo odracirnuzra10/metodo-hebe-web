@@ -1,0 +1,27 @@
+[
+ {
+  "slug": "amedias",
+  "campo": "Embed hits 30d",
+  "motivo": "null en el contrato → check en 🚫 N/A"
+ },
+ {
+  "slug": "amedias",
+  "campo": "Cobros medio configurado",
+  "motivo": "null en el contrato → check en 🚫 N/A"
+ },
+ {
+  "slug": "tzmala",
+  "campo": "Timezone consistente",
+  "motivo": "timezone = default del selector (Argentina GMT-3) pero país = CL. Los recordatorios y difusiones salen a la hora equivocada."
+ },
+ {
+  "slug": "vacia",
+  "campo": "Agente texto modo",
+  "motivo": "null en el contrato → check en 🚫 N/A"
+ },
+ {
+  "slug": "vacia",
+  "campo": "Agente texto respaldo",
+  "motivo": "null en el contrato → check en 🚫 N/A"
+ }
+]

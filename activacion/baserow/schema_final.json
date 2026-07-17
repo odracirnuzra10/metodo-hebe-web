@@ -1,0 +1,998 @@
+[
+ {
+  "id": 10828,
+  "name": "Name",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10852,
+  "name": "Slug Clinera",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10853,
+  "name": "Nombre cliente",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10854,
+  "name": "Email cuenta",
+  "type": "email",
+  "formula": null
+ },
+ {
+  "id": 10855,
+  "name": "Teléfono",
+  "type": "phone_number",
+  "formula": null
+ },
+ {
+  "id": 10856,
+  "name": "País",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10857,
+  "name": "Stripe Subscription ID",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10858,
+  "name": "Encargado",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10859,
+  "name": "Fecha Ingreso (D0)",
+  "type": "date",
+  "formula": null
+ },
+ {
+  "id": 10860,
+  "name": "Plan",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10861,
+  "name": "Precio plan USD",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10862,
+  "name": "Implementación USD",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10863,
+  "name": "Créditos/mes",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10864,
+  "name": "Sucursales declaradas",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10865,
+  "name": "Profesionales declarados",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10866,
+  "name": "Tratamientos declarados",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10867,
+  "name": "Pacientes declarados",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10868,
+  "name": "Denominadores congelados",
+  "type": "boolean",
+  "formula": null
+ },
+ {
+  "id": 10869,
+  "name": "Logo cargado",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10870,
+  "name": "Color personalizado",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10871,
+  "name": "Timezone consistente",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10872,
+  "name": "Moneda consistente",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10873,
+  "name": "Timezone leída",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10874,
+  "name": "WhatsApp status",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10875,
+  "name": "WhatsApp número",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10876,
+  "name": "Sucursales cargadas",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10877,
+  "name": "Sucursales con horarios",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10878,
+  "name": "Usuarios cargados",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10879,
+  "name": "Usuarios con rol",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10880,
+  "name": "Profesionales cargados",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10881,
+  "name": "Profesionales activos",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10882,
+  "name": "Tratamientos cargados",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10883,
+  "name": "Tratamientos con precio",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10884,
+  "name": "Tratamientos con duración",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10885,
+  "name": "Pacientes cargados",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10886,
+  "name": "Citas futuras",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10887,
+  "name": "Ficha plantilla configurada",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10888,
+  "name": "Consentimiento cargado",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10889,
+  "name": "Agente texto activo",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10890,
+  "name": "Agente texto bloques",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10891,
+  "name": "Agente texto modo",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10892,
+  "name": "Agente texto respaldo",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10893,
+  "name": "CAMILA disponible",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10894,
+  "name": "CAMILA activa",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10895,
+  "name": "Plantillas cargadas",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10896,
+  "name": "Plantillas aprobadas Meta",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10897,
+  "name": "Automatizaciones activas",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10898,
+  "name": "Enviados 24h",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10899,
+  "name": "Errores 24h",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10900,
+  "name": "Difusiones audiencias",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10901,
+  "name": "Difusiones enviadas",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10902,
+  "name": "Difusiones 30d",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10903,
+  "name": "Embed hits 30d",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10904,
+  "name": "Cobros medio configurado",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10905,
+  "name": "E1 · Capacitación",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10906,
+  "name": "E1 · Grabación",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10907,
+  "name": "E2 · Video ¡Eureka!",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10908,
+  "name": "E3 · Verificación Mitzi",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10909,
+  "name": "Nota Mitzi",
+  "type": "long_text",
+  "formula": null
+ },
+ {
+  "id": 10910,
+  "name": "Citas por IA (total)",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10911,
+  "name": "Citas IA últimas 4 sem",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10912,
+  "name": "Fecha primera cita IA",
+  "type": "date",
+  "formula": null
+ },
+ {
+  "id": 10913,
+  "name": "AHA verificado Mitzi",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10914,
+  "name": "📅 Entrega formal",
+  "type": "date",
+  "formula": null
+ },
+ {
+  "id": 10915,
+  "name": "Uso IA 30d US$",
+  "type": "number",
+  "formula": null
+ },
+ {
+  "id": 10916,
+  "name": "Cliente activo",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10917,
+  "name": "Última sync",
+  "type": "date",
+  "formula": null
+ },
+ {
+  "id": 10918,
+  "name": "📝 Actualizaciones",
+  "type": "long_text",
+  "formula": null
+ },
+ {
+  "id": 10919,
+  "name": "Monday ID",
+  "type": "text",
+  "formula": null
+ },
+ {
+  "id": 10920,
+  "name": "Tramo 1 · Venta US$30",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10921,
+  "name": "Tramo 2 · Config US$40",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10922,
+  "name": "Tramo 3 · Adopción US$50",
+  "type": "single_select",
+  "formula": null
+ },
+ {
+  "id": 10923,
+  "name": "C1 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10924,
+  "name": "C2 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10925,
+  "name": "C3 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10926,
+  "name": "C4 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10927,
+  "name": "C5 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10928,
+  "name": "M1 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10929,
+  "name": "M2 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10930,
+  "name": "M3 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10931,
+  "name": "M4 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10932,
+  "name": "M5 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10933,
+  "name": "A1 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10934,
+  "name": "A2 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10935,
+  "name": "A3 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10936,
+  "name": "A4 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10937,
+  "name": "A5 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10938,
+  "name": "A6 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10939,
+  "name": "A7 📸",
+  "type": "file",
+  "formula": null
+ },
+ {
+  "id": 10940,
+  "name": "C1 · Datos base",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Slug Clinera'))), and(not(is_null(field('Logo cargado'))), and(not(is_null(field('Color personalizado'))), and(not(is_null(field('Timezone consistente'))), not(is_null(field('Moneda consistente'))))))), if(and(totext(field('Logo cargado')) = '✅ Sí', and(totext(field('Color personalizado')) = '✅ Sí', and(totext(field('Timezone consistente')) = '✅ Sí', totext(field('Moneda consistente')) = '✅ Sí'))), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10941,
+  "name": "C2 · WhatsApp",
+  "type": "formula",
+  "formula": "if(not(is_null(field('WhatsApp status'))), if(totext(field('WhatsApp status')) = 'CONNECTED', '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10942,
+  "name": "C3 · Sucursales",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Sucursales cargadas'))), not(is_null(field('Sucursales declaradas')))), if(field('Sucursales cargadas') >= field('Sucursales declaradas'), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10943,
+  "name": "C4 · Horarios",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Sucursales con horarios'))), not(is_null(field('Sucursales cargadas')))), if(field('Sucursales con horarios') = field('Sucursales cargadas'), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10944,
+  "name": "C5 · Usuarios y permisos",
+  "type": "formula",
+  "formula": "if(not(is_null(field('Usuarios con rol'))), if(field('Usuarios con rol') >= 2, '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10945,
+  "name": "M1 · Profesionales",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Profesionales activos'))), not(is_null(field('Profesionales declarados')))), if(field('Profesionales activos') >= field('Profesionales declarados'), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10946,
+  "name": "M2 · Tratamientos",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Tratamientos cargados'))), and(not(is_null(field('Tratamientos declarados'))), and(not(is_null(field('Tratamientos con precio'))), not(is_null(field('Tratamientos con duración')))))), if(and(field('Tratamientos cargados') >= field('Tratamientos declarados'), and(field('Tratamientos con precio') = field('Tratamientos cargados'), field('Tratamientos con duración') = field('Tratamientos cargados'))), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10947,
+  "name": "M3 · Pacientes",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Pacientes cargados'))), not(is_null(field('Pacientes declarados')))), if(field('Pacientes cargados') >= field('Pacientes declarados') * 0.95, '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10948,
+  "name": "M4 · Citas futuras",
+  "type": "formula",
+  "formula": "if(not(is_null(field('Citas futuras'))), if(field('Citas futuras') > 0, '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10949,
+  "name": "M5 · Ficha y consentimientos",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Ficha plantilla configurada'))), not(is_null(field('Consentimiento cargado')))), if(and(totext(field('Ficha plantilla configurada')) = '✅ Sí', totext(field('Consentimiento cargado')) = '✅ Sí'), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10950,
+  "name": "A1 · Agente texto",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Agente texto activo'))), and(not(is_null(field('Agente texto bloques'))), and(not(is_null(field('Agente texto modo'))), not(is_null(field('Agente texto respaldo')))))), if(and(totext(field('Agente texto activo')) = '✅ Sí', and(field('Agente texto bloques') = 3, and(totext(field('Agente texto modo')) != '', totext(field('Agente texto respaldo')) != ''))), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10951,
+  "name": "A2 · Agente voz · CAMILA",
+  "type": "formula",
+  "formula": "if(or(not(or(totext(field('Plan')) = 'Atlas', totext(field('Plan')) = 'Summit')), or(is_null(field('CAMILA disponible')), totext(field('CAMILA disponible')) = '❌ No')), '🚫 N/A', if(not(is_null(field('CAMILA activa'))), if(totext(field('CAMILA activa')) = '✅ Sí', '✅ Listo', '⏳ Pendiente'), '🚫 N/A'))"
+ },
+ {
+  "id": 10952,
+  "name": "A3 · Plantillas",
+  "type": "formula",
+  "formula": "if(not(is_null(field('Plantillas aprobadas Meta'))), if(field('Plantillas aprobadas Meta') >= 3, '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10953,
+  "name": "A4 · Automatizaciones",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Automatizaciones activas'))), and(not(is_null(field('Enviados 24h'))), not(is_null(field('Errores 24h'))))), if(and(field('Automatizaciones activas') >= 2, and(field('Enviados 24h') > 0, field('Errores 24h') / field('Enviados 24h') < 0.05)), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10954,
+  "name": "A5 · Difusiones",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Difusiones audiencias'))), not(is_null(field('Difusiones enviadas')))), if(and(field('Difusiones audiencias') >= 1, field('Difusiones enviadas') >= 1), '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10955,
+  "name": "A6 · Embed",
+  "type": "formula",
+  "formula": "if(not(is_null(field('Embed hits 30d'))), if(field('Embed hits 30d') > 0, '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10956,
+  "name": "A7 · Cobros y pagos",
+  "type": "formula",
+  "formula": "if(not(is_null(field('Cobros medio configurado'))), if(totext(field('Cobros medio configurado')) = '✅ Sí', '✅ Listo', '⏳ Pendiente'), '🚫 N/A')"
+ },
+ {
+  "id": 10957,
+  "name": "E1 · Check",
+  "type": "formula",
+  "formula": "if(and(totext(field('E1 · Capacitación')) = '✅ Completada', count(field('E1 · Grabación')) > 0), '✅ Listo', '⏳ Pendiente')"
+ },
+ {
+  "id": 10958,
+  "name": "E2 · Check",
+  "type": "formula",
+  "formula": "if(count(field('E2 · Video ¡Eureka!')) > 0, '✅ Listo', '⏳ Pendiente')"
+ },
+ {
+  "id": 10959,
+  "name": "E3 · Check",
+  "type": "formula",
+  "formula": "if(totext(field('E3 · Verificación Mitzi')) = '✅ Conforme', '✅ Listo', '⏳ Pendiente')"
+ },
+ {
+  "id": 10960,
+  "name": "ok_C1",
+  "type": "formula",
+  "formula": "if(totext(field('C1 · Datos base')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10961,
+  "name": "ap_C1",
+  "type": "formula",
+  "formula": "if(totext(field('C1 · Datos base')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10962,
+  "name": "ok_C2",
+  "type": "formula",
+  "formula": "if(totext(field('C2 · WhatsApp')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10963,
+  "name": "ap_C2",
+  "type": "formula",
+  "formula": "if(totext(field('C2 · WhatsApp')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10964,
+  "name": "ok_C3",
+  "type": "formula",
+  "formula": "if(totext(field('C3 · Sucursales')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10965,
+  "name": "ap_C3",
+  "type": "formula",
+  "formula": "if(totext(field('C3 · Sucursales')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10966,
+  "name": "ok_C4",
+  "type": "formula",
+  "formula": "if(totext(field('C4 · Horarios')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10967,
+  "name": "ap_C4",
+  "type": "formula",
+  "formula": "if(totext(field('C4 · Horarios')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10968,
+  "name": "ok_C5",
+  "type": "formula",
+  "formula": "if(totext(field('C5 · Usuarios y permisos')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10969,
+  "name": "ap_C5",
+  "type": "formula",
+  "formula": "if(totext(field('C5 · Usuarios y permisos')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10970,
+  "name": "ok_M1",
+  "type": "formula",
+  "formula": "if(totext(field('M1 · Profesionales')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10971,
+  "name": "ap_M1",
+  "type": "formula",
+  "formula": "if(totext(field('M1 · Profesionales')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10972,
+  "name": "ok_M2",
+  "type": "formula",
+  "formula": "if(totext(field('M2 · Tratamientos')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10973,
+  "name": "ap_M2",
+  "type": "formula",
+  "formula": "if(totext(field('M2 · Tratamientos')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10974,
+  "name": "ok_M3",
+  "type": "formula",
+  "formula": "if(totext(field('M3 · Pacientes')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10975,
+  "name": "ap_M3",
+  "type": "formula",
+  "formula": "if(totext(field('M3 · Pacientes')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10976,
+  "name": "ok_M4",
+  "type": "formula",
+  "formula": "if(totext(field('M4 · Citas futuras')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10977,
+  "name": "ap_M4",
+  "type": "formula",
+  "formula": "if(totext(field('M4 · Citas futuras')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10978,
+  "name": "ok_M5",
+  "type": "formula",
+  "formula": "if(totext(field('M5 · Ficha y consentimientos')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10979,
+  "name": "ap_M5",
+  "type": "formula",
+  "formula": "if(totext(field('M5 · Ficha y consentimientos')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10980,
+  "name": "ok_A1",
+  "type": "formula",
+  "formula": "if(totext(field('A1 · Agente texto')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10981,
+  "name": "ap_A1",
+  "type": "formula",
+  "formula": "if(totext(field('A1 · Agente texto')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10982,
+  "name": "ok_A2",
+  "type": "formula",
+  "formula": "if(totext(field('A2 · Agente voz · CAMILA')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10983,
+  "name": "ap_A2",
+  "type": "formula",
+  "formula": "if(totext(field('A2 · Agente voz · CAMILA')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10984,
+  "name": "ok_A3",
+  "type": "formula",
+  "formula": "if(totext(field('A3 · Plantillas')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10985,
+  "name": "ap_A3",
+  "type": "formula",
+  "formula": "if(totext(field('A3 · Plantillas')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10986,
+  "name": "ok_A4",
+  "type": "formula",
+  "formula": "if(totext(field('A4 · Automatizaciones')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10987,
+  "name": "ap_A4",
+  "type": "formula",
+  "formula": "if(totext(field('A4 · Automatizaciones')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10988,
+  "name": "ok_A5",
+  "type": "formula",
+  "formula": "if(totext(field('A5 · Difusiones')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10989,
+  "name": "ap_A5",
+  "type": "formula",
+  "formula": "if(totext(field('A5 · Difusiones')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10990,
+  "name": "ok_A6",
+  "type": "formula",
+  "formula": "if(totext(field('A6 · Embed')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10991,
+  "name": "ap_A6",
+  "type": "formula",
+  "formula": "if(totext(field('A6 · Embed')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10992,
+  "name": "ok_A7",
+  "type": "formula",
+  "formula": "if(totext(field('A7 · Cobros y pagos')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10993,
+  "name": "ap_A7",
+  "type": "formula",
+  "formula": "if(totext(field('A7 · Cobros y pagos')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10994,
+  "name": "ok_E1",
+  "type": "formula",
+  "formula": "if(totext(field('E1 · Check')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10995,
+  "name": "ap_E1",
+  "type": "formula",
+  "formula": "if(totext(field('E1 · Check')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10996,
+  "name": "ok_E2",
+  "type": "formula",
+  "formula": "if(totext(field('E2 · Check')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10997,
+  "name": "ap_E2",
+  "type": "formula",
+  "formula": "if(totext(field('E2 · Check')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 10998,
+  "name": "ok_E3",
+  "type": "formula",
+  "formula": "if(totext(field('E3 · Check')) = '✅ Listo', 1, 0)"
+ },
+ {
+  "id": 10999,
+  "name": "ap_E3",
+  "type": "formula",
+  "formula": "if(totext(field('E3 · Check')) = '🚫 N/A', 0, 1)"
+ },
+ {
+  "id": 11000,
+  "name": "Etapa 1 · Conexión",
+  "type": "formula",
+  "formula": "if(and(field('ap_C1') + field('ap_C2') + field('ap_C3') + field('ap_C4') + field('ap_C5') > 0, field('ok_C1') + field('ok_C2') + field('ok_C3') + field('ok_C4') + field('ok_C5') = field('ap_C1') + field('ap_C2') + field('ap_C3') + field('ap_C4') + field('ap_C5')), '✅ Completada', '🟡 En proceso')"
+ },
+ {
+  "id": 11001,
+  "name": "Etapa 2 · Migración",
+  "type": "formula",
+  "formula": "if(and(field('ap_M1') + field('ap_M2') + field('ap_M3') + field('ap_M4') + field('ap_M5') > 0, field('ok_M1') + field('ok_M2') + field('ok_M3') + field('ok_M4') + field('ok_M5') = field('ap_M1') + field('ap_M2') + field('ap_M3') + field('ap_M4') + field('ap_M5')), '✅ Completada', '🟡 En proceso')"
+ },
+ {
+  "id": 11002,
+  "name": "Etapa 3 · Activación",
+  "type": "formula",
+  "formula": "if(and(field('ap_A1') + field('ap_A2') + field('ap_A3') + field('ap_A4') + field('ap_A5') + field('ap_A6') + field('ap_A7') > 0, field('ok_A1') + field('ok_A2') + field('ok_A3') + field('ok_A4') + field('ok_A5') + field('ok_A6') + field('ok_A7') = field('ap_A1') + field('ap_A2') + field('ap_A3') + field('ap_A4') + field('ap_A5') + field('ap_A6') + field('ap_A7')), '✅ Completada', '🟡 En proceso')"
+ },
+ {
+  "id": 11003,
+  "name": "AHA detectado",
+  "type": "formula",
+  "formula": "if(is_null(field('Citas por IA (total)')), '⏳ Sin datos', if(field('Citas por IA (total)') > 0, '✅ Detectado', '⏳ Sin citas IA'))"
+ },
+ {
+  "id": 11004,
+  "name": "Etapa 4 · Entrega",
+  "type": "formula",
+  "formula": "if(and(field('ok_E1') = 1, and(field('ok_E3') = 1, and(totext(field('AHA detectado')) = '✅ Detectado', totext(field('AHA verificado Mitzi')) = '✅ Verificado'))), '✅ Completada', '🟡 En proceso')"
+ },
+ {
+  "id": 11005,
+  "name": "Plan · detalle",
+  "type": "formula",
+  "formula": "concat(totext(field('Plan')), ' · US$', totext(field('Precio plan USD')), '/mes + US$', totext(field('Implementación USD')), ' implementación · ', totext(field('Créditos/mes')), ' créditos/mes')"
+ },
+ {
+  "id": 11006,
+  "name": "Checks verdes",
+  "type": "formula",
+  "formula": "field('ok_C1') + field('ok_C2') + field('ok_C3') + field('ok_C4') + field('ok_C5') + field('ok_M1') + field('ok_M2') + field('ok_M3') + field('ok_M4') + field('ok_M5') + field('ok_A1') + field('ok_A2') + field('ok_A3') + field('ok_A4') + field('ok_A5') + field('ok_A6') + field('ok_A7') + field('ok_E1') + field('ok_E2') + field('ok_E3')"
+ },
+ {
+  "id": 11007,
+  "name": "Checks aplicables",
+  "type": "formula",
+  "formula": "field('ap_C1') + field('ap_C2') + field('ap_C3') + field('ap_C4') + field('ap_C5') + field('ap_M1') + field('ap_M2') + field('ap_M3') + field('ap_M4') + field('ap_M5') + field('ap_A1') + field('ap_A2') + field('ap_A3') + field('ap_A4') + field('ap_A5') + field('ap_A6') + field('ap_A7') + field('ap_E1') + field('ap_E2') + field('ap_E3')"
+ },
+ {
+  "id": 11008,
+  "name": "Progreso",
+  "type": "formula",
+  "formula": "concat(totext(field('Checks verdes')), '/', totext(field('Checks aplicables')))"
+ },
+ {
+  "id": 11009,
+  "name": "Error automatizaciones %",
+  "type": "formula",
+  "formula": "if(and(not(is_null(field('Enviados 24h'))), field('Enviados 24h') > 0), field('Errores 24h') / field('Enviados 24h') * 100, 0)"
+ },
+ {
+  "id": 11010,
+  "name": "Días desde D0",
+  "type": "formula",
+  "formula": "if(is_null(field('Fecha Ingreso (D0)')), 0, date_diff('day', field('Fecha Ingreso (D0)'), today()))"
+ },
+ {
+  "id": 11011,
+  "name": "🚦 Estado",
+  "type": "formula",
+  "formula": "if(totext(field('Cliente activo')) = '❌ Inactivo', '⛔ CANCELADO', if(and(totext(field('Etapa 1 · Conexión')) = '✅ Completada', and(totext(field('Etapa 2 · Migración')) = '✅ Completada', and(totext(field('Etapa 3 · Activación')) = '✅ Completada', totext(field('Etapa 4 · Entrega')) = '✅ Completada'))), '✅ ENTREGADO', '🟡 EN PROCESO'))"
+ },
+ {
+  "id": 11012,
+  "name": "SLA",
+  "type": "formula",
+  "formula": "if(not(is_null(field('📅 Entrega formal'))), '✅ Entregado', if(field('Días desde D0') > 10, '🔴 Vencido', if(field('Días desde D0') > 7, '🟡 En riesgo', '🟢 En plazo')))"
+ },
+ {
+  "id": 11013,
+  "name": "D+60 adopción",
+  "type": "formula",
+  "formula": "if(is_null(field('📅 Entrega formal')), todate('', 'YYYY-MM-DD'), field('📅 Entrega formal') + date_interval('60 days'))"
+ },
+ {
+  "id": 11014,
+  "name": "Gate tramo 2",
+  "type": "formula",
+  "formula": "if(totext(field('Etapa 3 · Activación')) != '✅ Completada', '⏳ Etapa 3 abierta', if(field('Días desde D0') <= 10, '✅ Pagar US$40', if(field('Días desde D0') <= 20, '⚠️ Pagar US$20 (atraso)', '❌ Vencido — US$0')))"
+ },
+ {
+  "id": 11015,
+  "name": "Gate tramo 3",
+  "type": "formula",
+  "formula": "if(is_null(field('📅 Entrega formal')), '⏳ Sin entrega formal', if(today() < field('D+60 adopción'), concat('⏳ Faltan ', totext(date_diff('day', today(), field('D+60 adopción'))), ' días'), if(and(totext(field('Cliente activo')) = '✅ Activo', and(field('Citas IA últimas 4 sem') >= 4, and(field('Error automatizaciones %') < 5, field('Difusiones 30d') >= 1))), '✅ Pagar US$50', '❌ No cumple adopción')))"
+ },
+ {
+  "id": 11016,
+  "name": "Comisión total US$",
+  "type": "formula",
+  "formula": "if(totext(field('Tramo 1 · Venta US$30')) = '✅ Pagado', 30, 0) + if(totext(field('Tramo 2 · Config US$40')) = '✅ Pagado', 40, 0) + if(totext(field('Tramo 3 · Adopción US$50')) = '✅ Pagado', 50, 0)"
+ }
+]

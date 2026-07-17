@@ -1,0 +1,82 @@
+{
+  "clinica": {
+    "slug": "completa",
+    "plan": "Atlas",
+    "pais": "CL",
+    "timezone": "America/Santiago",
+    "currency": "CLP",
+    "logo": "https://cdn.clinera.io/completa/logo.png",
+    "color_primario": "#6c47ff",
+    "created_at": "2026-07-08T10:00:00Z"
+  },
+  "whatsapp": {
+    "status": "CONNECTED",
+    "numero": "+56 9 1234 5678"
+  },
+  "sucursales": {
+    "count": 2,
+    "con_horarios": 2
+  },
+  "usuarios": {
+    "count": 4,
+    "con_rol": 4
+  },
+  "profesionales": {
+    "count": 6,
+    "activos": 6
+  },
+  "tratamientos": {
+    "count": 24,
+    "con_precio": 24,
+    "con_duracion": 24
+  },
+  "pacientes": {
+    "count": 3390
+  },
+  "citas_futuras": {
+    "count": 120
+  },
+  "fichas": {
+    "plantilla_configurada": true,
+    "consentimiento_cargado": true
+  },
+  "agente_texto": {
+    "activo": true,
+    "bloques_completos": 3,
+    "modo": "asistido",
+    "mensaje_respaldo": "Te respondemos a la brevedad",
+    "promos_activas": true
+  },
+  "agente_voz": {
+    "disponible": true,
+    "activo": true
+  },
+  "plantillas": {
+    "count": 6,
+    "aprobadas_meta": 4
+  },
+  "automatizaciones": {
+    "activas": 3,
+    "enviados_24h": 512,
+    "errores_24h": 2
+  },
+  "difusiones": {
+    "audiencias": 2,
+    "enviadas": 3,
+    "ultima": "2026-07-15"
+  },
+  "embeds": {
+    "default_generado": true,
+    "personalizados": 1,
+    "hits_30d": 340
+  },
+  "cobros": {
+    "medio_configurado": true
+  },
+  "citas_ia": {
+    "total": 7,
+    "ultimos_30d": 7,
+    "primera": "2026-07-12",
+    "ultimas_4_semanas": 6
+  }
+}

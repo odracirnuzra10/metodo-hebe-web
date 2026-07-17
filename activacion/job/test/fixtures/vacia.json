@@ -1,0 +1,82 @@
+{
+  "clinica": {
+    "slug": "vacia",
+    "plan": "Atlas",
+    "pais": "CL",
+    "timezone": "America/Santiago",
+    "currency": "CLP",
+    "logo": null,
+    "color_primario": null,
+    "created_at": "2026-07-08T10:00:00Z"
+  },
+  "whatsapp": {
+    "status": "DISCONNECTED",
+    "numero": null
+  },
+  "sucursales": {
+    "count": 0,
+    "con_horarios": 0
+  },
+  "usuarios": {
+    "count": 0,
+    "con_rol": 0
+  },
+  "profesionales": {
+    "count": 0,
+    "activos": 0
+  },
+  "tratamientos": {
+    "count": 0,
+    "con_precio": 0,
+    "con_duracion": 0
+  },
+  "pacientes": {
+    "count": 0
+  },
+  "citas_futuras": {
+    "count": 0
+  },
+  "fichas": {
+    "plantilla_configurada": false,
+    "consentimiento_cargado": false
+  },
+  "agente_texto": {
+    "activo": false,
+    "bloques_completos": 0,
+    "modo": null,
+    "mensaje_respaldo": null,
+    "promos_activas": false
+  },
+  "agente_voz": {
+    "disponible": true,
+    "activo": false
+  },
+  "plantillas": {
+    "count": 0,
+    "aprobadas_meta": 0
+  },
+  "automatizaciones": {
+    "activas": 0,
+    "enviados_24h": 0,
+    "errores_24h": 0
+  },
+  "difusiones": {
+    "audiencias": 0,
+    "enviadas": 0,
+    "ultima": null
+  },
+  "embeds": {
+    "default_generado": false,
+    "personalizados": 0,
+    "hits_30d": 0
+  },
+  "cobros": {
+    "medio_configurado": false
+  },
+  "citas_ia": {
+    "total": 0,
+    "ultimos_30d": 0,
+    "primera": null,
+    "ultimas_4_semanas": 0
+  }
+}
