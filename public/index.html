@@ -251,6 +251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
   gtag('js',new Date());gtag('config','G-NGW7210RXB',{send_page_view:true});
   window.hebeTrack=function(n,p){gtag('event',n,p||{});if(typeof fbq!=='undefined'){var m={'whatsapp_click':'Contact'};if(m[n])fbq('track',m[n],p||{});else fbq('trackCustom',n,p||{});}};
+  window.hebeAttr=function(){try{var K='hebe_attr',s=window.sessionStorage,c=s.getItem(K);if(c)return JSON.parse(c);var q=new URLSearchParams(location.search),d={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','msclkid'].forEach(function(p){var v=q.get(p);if(v)d[p]=v});d.landing_page=location.pathname;d.landing_referrer=document.referrer||'';s.setItem(K,JSON.stringify(d));return d}catch(e){return{}}};window.hebeAttr();
 </script>
 
 <!-- Meta Pixel 271117138864148 -->

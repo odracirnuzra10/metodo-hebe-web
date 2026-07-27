@@ -90,6 +90,7 @@
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
     gtag('js',new Date());gtag('config','G-NGW7210RXB',{send_page_view:true});
     window.hebeTrack=function(n,p){gtag('event',n,p||{});if(typeof fbq!=='undefined'){var m={'whatsapp_click':'Contact'};if(m[n])fbq('track',m[n],p||{});else fbq('trackCustom',n,p||{});}};
+    window.hebeAttr=function(){try{var K='hebe_attr',s=window.sessionStorage,c=s.getItem(K);if(c)return JSON.parse(c);var q=new URLSearchParams(location.search),d={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','msclkid'].forEach(function(p){var v=q.get(p);if(v)d[p]=v});d.landing_page=location.pathname;d.landing_referrer=document.referrer||'';s.setItem(K,JSON.stringify(d));return d}catch(e){return{}}};window.hebeAttr();
   </script>
   <!-- Meta Pixel 271117138864148 -->
   <script>
@@ -1870,6 +1871,19 @@
       const _userAgent = navigator.userAgent || '';
       const _eventTime = Math.floor(Date.now() / 1000);
 
+      // Atribución de origen: primer toque de la sesión (capturado por hebeAttr en
+      // cada página) + último toque (la página desde la que se llegó acá).
+      // `fuente` se mantiene constante a propósito para no romper el flujo n8n
+      // existente; la atribución real viaja en los campos nuevos de abajo.
+      const _attr = (typeof window.hebeAttr === 'function' ? window.hebeAttr() : {}) || {};
+      const _prevPage = document.referrer || '';
+      let _prevPath = '';
+      try {
+        if (_prevPage && new URL(_prevPage).host === window.location.host) {
+          _prevPath = new URL(_prevPage).pathname;
+        }
+      } catch (e) {}
+
       // Webhook n8n — payload enriquecido con atribución Meta
       const payload = {
         nombre,
@@ -1889,7 +1903,20 @@
         fbp: _fbp,
         user_agent: _userAgent,
         event_source_url: window.location.href,
-        event_time: _eventTime
+        event_time: _eventTime,
+        // Atribución de origen — qué contenido trajo el lead
+        pagina_origen: _prevPath,
+        referrer: _prevPage,
+        landing_page: _attr.landing_page || '',
+        landing_referrer: _attr.landing_referrer || '',
+        utm_source: _attr.utm_source || '',
+        utm_medium: _attr.utm_medium || '',
+        utm_campaign: _attr.utm_campaign || '',
+        utm_content: _attr.utm_content || '',
+        utm_term: _attr.utm_term || '',
+        gclid: _attr.gclid || '',
+        attr_fbclid: _attr.fbclid || '',
+        msclkid: _attr.msclkid || ''
       };
       fetch('https://n8n.oacg.cl/webhook/lead-capture', {
         method: 'POST',

@@ -169,11 +169,21 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .footer-bottom{padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--ink-4);flex-wrap:wrap;gap:10px}
 .footer-bottom a{display:inline}
 
-/* ── MOBILE STICKY CTA ── */
-.mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;padding:10px 16px 14px;background:rgba(15,26,26,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(28,197,197,.25);text-align:center;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
-.mobile-sticky-cta.visible{transform:translateY(0)}
-.mobile-sticky-cta button{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px}
-.mobile-sticky-cta .trust-text{font-size:11px;color:rgba(255,255,255,.45);margin-top:5px}
+/* ── MOBILE STICKY CTA ──
+   Sin estilos aquí a propósito. Cada página define su propio `.mobile-sticky-cta`
+   en su <style> inline, y shell.css se carga DESPUÉS de ese bloque, así que
+   cualquier declaración en este archivo gana por orden de cascada y pisa el
+   diseño de la página. Las reglas que vivían aquí dejaban el componente
+   permanentemente fuera de pantalla:
+
+     .mobile-sticky-cta{display:none; ...; transform:translateY(100%)}
+     .mobile-sticky-cta.visible{transform:translateY(0)}
+
+   El reset del transform dependía de una clase `.visible` que ningún script del
+   sitio llegaba a aplicar, así que el CTA quedaba desplazado el 100% de su alto
+   hacia abajo en las 47 páginas que lo incluyen. Si en el futuro se necesitan
+   estilos compartidos para este componente, agregarlos aquí volverá a pisar el
+   CSS por página: conviene primero quitar el bloque inline de las páginas. */
 
 /* ── SAAS PRICING GRID (for /planes and similar pages) ── */
 .pricing-grid-section{padding:clamp(56px,7vw,88px) 0;background:var(--bg)}
@@ -227,8 +237,6 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
   .footer-brand-block{grid-column:1/-1}
   .article-meta{flex-wrap:wrap;gap:12px 20px}
-  .mobile-sticky-cta{display:block}
-  body{padding-bottom:68px}
   .inline-cta-buttons{flex-direction:column}
   .inline-cta .btn-primary,.inline-cta .btn-wa{width:100%;justify-content:center}
 }
