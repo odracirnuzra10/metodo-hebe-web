@@ -32,11 +32,12 @@ concluyentes: solo se reportan los que ocurren sobre color sólido.
 | Áreas táctiles < 44 px | 24 | 10 |
 | Reglas `:focus` | **0** | **0** |
 | Contraste del CTA primario | **2,56 : 1** | **2,71 : 1** |
-| Formularios de captura | 3 pasos | **0** |
+| Formularios de captura | 3 pasos | 3 pasos, solo en `/evaluacion` |
+| Enlaces públicos al wizard | 158 (50 páginas) | **0** |
 | Enlaces `tel:` | 2 | **0** |
 
-Los dos sitios fallan en cosas opuestas: Hebe tiene el funnel construido pero lo hunde el peso; Lumina es liviano y
-está mejor diseñado, pero no tiene dónde dejar un dato.
+Los dos sitios fallan en cosas opuestas: a Hebe lo hunde el peso; Lumina es liviano y está mejor diseñado, pero su
+contraste de marca no sobrevive a los fondos claros y su wizard vive aislado del recorrido orgánico.
 
 ---
 
@@ -155,16 +156,26 @@ el plan de entrada no sea el peor negocio.
 
 ## Protocolo Lumina
 
-### 11 · CRÍTICO — Cero formularios: el 100 % de la conversión sale a WhatsApp
+### 11 · CORREGIDO — El wizard existe; lo que no existe es un camino orgánico hacia él
 
-Las 5 páginas contienen **0 elementos `<form>`** y **0 enlaces `tel:`**. Entre 5 y 11 CTA por página, todos al mismo
-enlace de WhatsApp. Sin captura de lead, sin correo, sin teléfono, sin agenda en el dominio.
+> **Corrección.** La primera versión de este informe afirmaba que Lumina no tenía ningún formulario en todo el
+> sitio. Era falso: se verificó solo en 4 de las 5 páginas. `protocololumina.cl/evaluacion` **sí tiene el wizard de
+> 3 pasos**, con los mismos campos que el de Hebe (`inputNombre`, `inputCelular`, `inputCorreo`) y la misma
+> estructura «PASO 1 DE 3».
 
-No existe base de datos de interesados, no se puede hacer remarketing por correo, no hay evento `Lead` que optimizar
-en Meta, y toda conversación entra sin saber de qué página ni campaña vino.
+Lo verificable es más acotado: las 4 páginas públicas (`/`, `/planes`, `/resultados`, `/tratamientos`) tienen
+**0 enlaces a `/evaluacion`**. El wizard solo recibe tráfico de campañas pagadas. Entre 5 y 11 CTA por página apuntan
+al mismo enlace de WhatsApp, y no hay ningún enlace `tel:` en el sitio.
 
-**Arreglo:** portar el wizard de 3 pasos de Hebe, que ya está construido y probado. WhatsApp queda como salida
-secundaria, no como la única.
+**Esto es una decisión de funnel, no un defecto:** el tráfico orgánico que llega al home se deriva a WhatsApp a
+propósito, y el de campañas entra al wizard. Con ese diseño, el evento `Lead` y la captura de datos siguen
+existiendo donde importan para optimizar Meta.
+
+**Lo que sí conviene revisar:** `/planes` es la página donde alguien compara precios y decide, y hoy solo ofrece
+WhatsApp. Es la candidata natural para enlazar el wizard sin tocar el resto del funnel.
+
+**Nota heredada:** el wizard de Lumina arrastra el mismo defecto que el de Hebe (hallazgo 08) — no está envuelto en
+un `<form>`, sin `label for` ni `required`.
 
 ### 12 · CRÍTICO — El acento de marca falla contraste en las cuatro páginas
 
@@ -280,16 +291,46 @@ página que existe para mostrar resultados— es la única que no lo dice ni adv
 
 | # | Acción | Esfuerzo | Severidad |
 |---|---|---|---|
-| 1 | Invertir el texto del CTA sticky de Hebe a tinta sobre teal (2,56 → 6,53 : 1) | 20 min | Crítico |
-| 2 | Apuntar los cuatro CTA de la home de Hebe a `/evaluacion` | 45 min | Crítico |
+| 1 | ~~Invertir el texto del CTA sticky de Hebe a tinta sobre teal (2,56 → 6,53 : 1)~~ | ✅ hecho | Crítico |
+| 2 | ~~CTA de la home como enlaces reales~~ (destino WhatsApp, por diseño de funnel) | ✅ hecho | Crítico |
 | 3 | Separar el GTM y el WhatsApp de las dos marcas | 1 h | Crítico |
 | 4 | Convertir el LCP de Hebe a AVIF y borrar el duplicado (−2,6 MB) | 1,5 h | Crítico |
 | 5 | Crear el acento rosa oscuro de Lumina para fondos claros | 1 h | Crítico |
-| 6 | Regla global de `:focus-visible` en ambos sitios | 15 min | Alto |
-| 7 | Portar el wizard de 3 pasos de Hebe a Lumina | 1 día | Crítico |
+| 6 | ~~Regla global de `:focus-visible`~~ (Hebe; falta Lumina) | ✅ Hebe | Alto |
+| 7 | Enlazar el wizard de Lumina desde `/planes` (ya existe en `/evaluacion`) | 30 min | Alto |
 | 8 | Cuota mensual bajo cada precio, en ambas marcas | 40 min | Alto |
 | 9 | Unificar cifras de prueba social y alinear el badge «Más elegido» | 25 min | Alto |
 | 10 | CTA sticky en `/planes` de Lumina y precio antes de los 900 px | 1 h | Alto |
+
+---
+
+## Estado de implementación
+
+Aplicado en Método Hebe y verificado renderizando 12 páginas en Chromium a 390×844:
+
+| Página | Fallos de contraste antes | Después |
+|---|---|---|
+| `/planes` | 13 | **0** |
+| `/celulitis` | 9 | **0** |
+| `/blog` | 7 | **0** |
+| `/resultados` | 6 | **0** |
+| `/` (home) | 6 | **0** |
+| `/evaluacion` | 3 | **0** |
+| `/flacidez`, `/grasa-localizada`, `/tonificar`, `/el-metodo`, `/criolipolisis`, `/…-vitacura` | — | **0** |
+
+También verificado: `button[onclick="window.open"]` en 0 páginas, regla `:focus-visible` presente en las 51 páginas,
+bloque `prefers-reduced-motion` en las 51, y el paso 1 de `/evaluacion` completable con teclado (Enter selecciona
+sede).
+
+**Un falso positivo descartado:** `.badge-ba` en `/resultados` aparecía como 1,19 : 1. Su fondo es
+`rgba(11,30,30,.78)` sobre una foto, y el detector lo ignoró por tener alpha bajo el umbral de 0,85. Componiendo el
+alpha real da **8,44 : 1 en el peor caso** (foto blanca debajo). No requiere cambio.
+
+**Una regresión detectada y corregida durante el trabajo:** al oscurecer la escala de grises, `.trust-text` —que vive
+sobre la barra sticky oscura— cayó a 3,16 : 1. Se le asignó un gris claro propio (`#C4D2D0`) en lugar del token
+general.
+
+**Pendiente en Lumina:** todos los arreglos de contraste y foco. Requiere acceso de escritura al repo `lumina-web`.
 
 ---
 
