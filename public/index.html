@@ -264,7 +264,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 :root{
   --cyan:#14B5A7;--cyan-d:#0FA094;--cyan-dd:#0A6B65;--cyan-soft:#D8F2EF;
   --bg:#FAFBFB;--paper:#FFFFFF;--line:#E8ECEC;--line-2:#CDD4D4;
-  --ink:#0F1A1A;--ink-2:#36474A;--ink-3:#65797A;--ink-4:#9AA8A8;
+  --ink:#0F1A1A;--ink-2:#36474A;--ink-3:#5A6D6E;--ink-4:#647677;
   --gold:#D4A853;--wa:#25D366;
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
@@ -306,7 +306,7 @@ img{max-width:100%;display:block}
 .nav-links a{padding:6px 0;border-bottom:2px solid transparent;transition:all .2s}
 .nav-links a:hover,.nav-links a.active{border-color:var(--cyan);color:var(--ink)}
 .nav-r{display:flex;gap:10px;align-items:center}
-.btn-cta{background:var(--ink);color:var(--paper);padding:11px 20px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.2s;font-family:inherit;border-radius:8px}
+.btn-cta{background:var(--ink);color:var(--paper);padding:11px 20px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.2s;font-family:inherit;border-radius:8px;display:inline-flex;align-items:center;text-decoration:none}
 .btn-cta:hover{background:var(--cyan-dd)}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .nav-hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
@@ -322,10 +322,10 @@ img{max-width:100%;display:block}
 .hero h1 em{font-family:var(--serif);font-style:italic;color:var(--cyan-dd);font-weight:500}
 .hero-sub{font-size:17px;color:var(--ink-2);line-height:1.6;margin-bottom:28px;max-width:540px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
-.btn-primary{background:var(--ink);color:var(--paper);padding:14px 24px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:.2s;font-family:inherit;border-radius:10px}
+.btn-primary{background:var(--ink);color:var(--paper);padding:14px 24px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:.2s;font-family:inherit;border-radius:10px;text-decoration:none}
 .btn-primary:hover{background:var(--cyan-dd);transform:translateY(-1px)}
 .btn-outline{background:var(--paper);color:var(--ink);border:1.5px solid var(--line-2);padding:13px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s;display:inline-flex;align-items:center;border-radius:10px}
-.btn-outline:hover{border-color:var(--cyan);color:var(--cyan-dd)}
+.btn-outline:hover{border-color:var(--cyan-dd);color:var(--cyan-dd)}
 .hero-trust{font-size:13px;color:var(--ink-3);display:flex;gap:18px;flex-wrap:wrap}
 .hero-trust span{display:flex;align-items:center;gap:6px}
 .hero-trust span::before{content:'✓';color:var(--cyan-dd);font-weight:700}
@@ -355,7 +355,7 @@ img{max-width:100%;display:block}
 .fases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .fase-c{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:32px 26px;transition:.3s}
 .fase-c:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.04)}
-.fase-c .num{font-family:var(--serif);font-size:42px;font-style:italic;color:var(--cyan);line-height:1;margin-bottom:16px;font-weight:600}
+.fase-c .num{font-family:var(--serif);font-size:42px;font-style:italic;color:var(--cyan-dd);line-height:1;margin-bottom:16px;font-weight:600}
 .fase-c .tag{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--cyan-dd);font-weight:600;margin-bottom:10px}
 .fase-c h3{font-size:21px;font-weight:600;line-height:1.25;margin-bottom:10px;letter-spacing:-.01em}
 .fase-c p{font-size:14.5px;color:var(--ink-3);line-height:1.65}
@@ -418,7 +418,7 @@ img{max-width:100%;display:block}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .review-c{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;transition:.3s}
 .review-c:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.05)}
-.review-stars{color:var(--gold);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+.review-stars{color:#8A6100;font-size:15px;letter-spacing:2px;margin-bottom:14px}
 .review-text{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--ink-2);line-height:1.6;margin-bottom:20px;flex-grow:1}
 .review-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
 .review-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--ink)}
@@ -458,7 +458,7 @@ img{max-width:100%;display:block}
 .cta-final-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .cta-final .btn-primary{background:var(--cyan);color:var(--ink)}
 .cta-final .btn-primary:hover{background:#fff}
-.btn-wa{background:var(--wa);color:#fff;padding:14px 22px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;font-family:inherit;text-decoration:none;border-radius:10px}
+.btn-wa{background:var(--wa);color:var(--ink);padding:14px 22px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;font-family:inherit;text-decoration:none;border-radius:10px}
 .btn-wa:hover{background:#1db954}
 
 /* ── FOOTER ── */
@@ -477,7 +477,7 @@ img{max-width:100%;display:block}
 /* ── MOBILE STICKY CTA ── */
 .mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;padding:10px 16px 14px;background:rgba(15,26,26,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(28,197,197,.25);text-align:center;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .mobile-sticky-cta.visible{transform:translateY(0)}
-.mobile-sticky-cta button{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px}
+.mobile-sticky-cta button,.mobile-sticky-cta a.sticky-btn{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:var(--ink);border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px;text-decoration:none}
 .trust-text{font-size:11px;color:rgba(255,255,255,.4);margin-top:5px}
 
 /* ── RESPONSIVE ── */
@@ -502,6 +502,13 @@ img{max-width:100%;display:block}
   body{padding-bottom:68px}
   .section{padding:60px 0}
   .nav-r .btn-cta{font-size:12px;padding:10px 14px}
+}
+
+/* Foco visible por teclado (WCAG 2.4.7 AA). Inline porque esta página no carga shell.css */
+:where(a,button,[role="button"],input,select,textarea,summary):focus-visible{outline:3px solid var(--cyan-dd);outline-offset:3px;border-radius:4px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
@@ -538,7 +545,7 @@ img{max-width:100%;display:block}
       <a href="/blog">Blog</a>
     </div>
     <div class="nav-r">
-      <button class="btn-cta" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'nav'})">Agenda evaluación</button>
+      <a class="btn-cta" href="https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n" target="_blank" rel="noopener" onclick="hebeTrack('whatsapp_click',{location:'nav'})">Agenda evaluación</a>
       <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
@@ -557,10 +564,10 @@ img{max-width:100%;display:block}
         <h1 class="fade-up-d1">Tu cuerpo cambia cuando<br>tu <em>metabolismo</em> cambia.</h1>
         <p class="hero-sub fade-up-d2">Primera red de clínicas corporales en Chile especializada en salud metabólica. Protocolo de 3 fases + tecnología coreana, sin cirugía.</p>
         <div class="hero-actions fade-up-d2">
-          <button class="btn-primary" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'hero'})">
+          <a class="btn-primary" href="https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n" target="_blank" rel="noopener" onclick="hebeTrack('whatsapp_click',{location:'hero'})">
             Agenda tu evaluación
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-          </button>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
           <a href="/planes" class="btn-outline" onclick="hebeTrack('cta_click',{location:'hero',type:'planes'})">Ver planes</a>
         </div>
         <div class="hero-trust fade-up-d3">
@@ -700,14 +707,14 @@ img{max-width:100%;display:block}
       <p class="sec-desc">Cuatro rutas. Una misma lógica: tratar la causa metabólica.</p>
     </div>
     <div class="planes-grid">
-      <a href="/planes/#celulitis" class="plan-c" onclick="hebeTrack('cta_click',{plan:'celulitis',location:'home_planes'})">
+      <a href="/planes/#celulitis" class="plan-c featured" onclick="hebeTrack('cta_click',{plan:'celulitis',location:'home_planes'})">
+        <span class="plan-badge">MÁS ELEGIDO</span>
         <div class="tag">Plan 01</div>
         <h3>Zero <em>Celulitis</em></h3>
         <p class="for">Nódulos visibles y piel de naranja persistente.</p>
         <div class="price">$1.977.990<small>20 sesiones</small></div>
       </a>
-      <a href="/planes/#flacidez" class="plan-c featured" onclick="hebeTrack('cta_click',{plan:'flacidez',location:'home_planes'})">
-        <span class="plan-badge">MÁS ELEGIDO</span>
+      <a href="/planes/#flacidez" class="plan-c" onclick="hebeTrack('cta_click',{plan:'flacidez',location:'home_planes'})">
         <div class="tag">Plan 02</div>
         <h3>Zero <em>Flacidez</em></h3>
         <p class="for">Piel que perdió firmeza, con laxitud visible.</p>
@@ -894,10 +901,10 @@ img{max-width:100%;display:block}
     <h2>Tu cuerpo cambia cuando<br>tu <em>metabolismo</em> cambia.</h2>
     <p>Comienza con una evaluación metabólica gratis. Sin compromiso, respuesta inmediata.</p>
     <div class="cta-final-actions">
-      <button class="btn-primary" onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'cta_final'})">
+      <a class="btn-primary" href="https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n" target="_blank" rel="noopener" onclick="hebeTrack('whatsapp_click',{location:'cta_final'})">
         Agenda tu evaluación
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-      </button>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+      </a>
       <a href="https://wa.me/56963222683" target="_blank" rel="noopener" class="btn-wa" onclick="hebeTrack('whatsapp_click',{location:'cta_final_wa'})">💬 WhatsApp directo</a>
     </div>
   </div>
@@ -957,10 +964,10 @@ img{max-width:100%;display:block}
 
 <!-- ═══ MOBILE STICKY CTA ═══ -->
 <div class="mobile-sticky-cta" id="mobile-sticky">
-  <button onclick="window.open('https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n','_blank');hebeTrack('whatsapp_click',{location:'mobile_sticky'})">
+  <a class="sticky-btn" href="https://wa.me/56963222683?text=Hola,%20quiero%20agendar%20mi%20evaluaci%C3%B3n" target="_blank" rel="noopener" onclick="hebeTrack('whatsapp_click',{location:'mobile_sticky'})">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
     Agenda tu evaluación · Gratis
-  </button>
+  </a>
   <div class="trust-text">Sin compromiso · Respuesta inmediata</div>
 </div>
 

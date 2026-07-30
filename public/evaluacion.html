@@ -119,7 +119,7 @@
     }
 
     :root {
-      --teal: #1a8e82;
+      --teal: #14706a;
       --teal-dark: #14706a;
       --teal-darker: #0f5c54;
       --teal-light: #e8f5f3;
@@ -449,7 +449,7 @@
     }
 
     .greviews .stars {
-      color: #FBBC04;
+      color: #8A6100;
       font-size: 0.8rem;
       letter-spacing: 1px;
       line-height: 1;
@@ -898,7 +898,7 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--wa-green);
-      color: #fff;
+      color: #14201F;
       padding: 0.95rem 2rem;
       border-radius: 12px;
       border: none;
@@ -1400,6 +1400,24 @@
         transform: scale(1);
       }
     }
+
+    /* Foco visible por teclado (WCAG 2.4.7 AA).
+       Inline porque esta página no carga shell.css. Las tarjetas de sede
+       del paso 1 son div[onclick], por eso se incluyen explícitamente. */
+    :where(a, button, [role="button"], input, select, textarea, .sede-card):focus-visible {
+      outline: 3px solid var(--teal-darker);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 
@@ -1501,18 +1519,18 @@
           <div class="step active" id="step1">
             <div class="viewers">
               <span>✨</span>
-              <span>+20.000 personas atendidas en nuestras 3 sedes</span>
+              <span>+30.000 pacientes atendidas en nuestras 3 sedes</span>
             </div>
             <div class="greviews">
               <svg viewBox="0 0 48 48" width="13" height="13" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
               <span class="stars">★★★★★</span>
-              <span>5/5 en Google Reviews</span>
+              <span>4,9/5 en Google · +1.000 reseñas</span>
             </div>
             <div class="step-label">PASO 1 DE 3</div>
             <div class="step-title">¿DÓNDE TE GUSTARÍA <em>EVALUARTE</em>?</div>
             <div class="step-sub">Elige la sede más cercana a ti.</div>
             <div class="sede-cards">
-              <div class="sede-card" data-sede="Concón — Las Pelargonias 842" onclick="selectSede(this)">
+              <div class="sede-card" role="button" tabindex="0" data-sede="Concón — Las Pelargonias 842" onclick="selectSede(this)" onkeydown="if(event.key===&apos;Enter&apos;||event.key===&apos; &apos;){event.preventDefault();selectSede(this)}">
                 <div class="emoji">🌊</div>
                 <div class="info">
                   <h3>Concón</h3>
@@ -1522,7 +1540,7 @@
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg></div>
               </div>
-              <div class="sede-card" data-sede="Los Ángeles — Av. Gabriela Mistral 269" onclick="selectSede(this)">
+              <div class="sede-card" role="button" tabindex="0" data-sede="Los Ángeles — Av. Gabriela Mistral 269" onclick="selectSede(this)" onkeydown="if(event.key===&apos;Enter&apos;||event.key===&apos; &apos;){event.preventDefault();selectSede(this)}">
                 <div class="emoji">🏔️</div>
                 <div class="info">
                   <h3>Los Ángeles</h3>
@@ -1532,7 +1550,7 @@
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg></div>
               </div>
-              <div class="sede-card" data-sede="Vitacura — Los Abedules 3085" onclick="selectSede(this)">
+              <div class="sede-card" role="button" tabindex="0" data-sede="Vitacura — Los Abedules 3085" onclick="selectSede(this)" onkeydown="if(event.key===&apos;Enter&apos;||event.key===&apos; &apos;){event.preventDefault();selectSede(this)}">
                 <div class="emoji">🏙️</div>
                 <div class="info">
                   <h3>Vitacura</h3>

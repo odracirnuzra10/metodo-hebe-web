@@ -16,7 +16,7 @@ h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
 :root{
   --cyan:#14B5A7;--cyan-d:#0FA094;--cyan-dd:#0A6B65;--cyan-soft:#D8F2EF;
   --bg:#FAFBFB;--paper:#FFFFFF;--line:#E8ECEC;--line-2:#CDD4D4;
-  --ink:#0F1A1A;--ink-2:#36474A;--ink-3:#65797A;--ink-4:#9AA8A8;
+  --ink:#0F1A1A;--ink-2:#36474A;--ink-3:#5A6D6E;--ink-4:#647677;
   --gold:#D4A853;--wa:#25D366;
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
@@ -115,7 +115,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .inline-cta .btn-primary{background:var(--ink);color:var(--paper);padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:.2s;text-decoration:none}
 .inline-cta .btn-primary:hover{background:var(--cyan-dd)}
 .inline-cta .btn-wa{background:var(--paper);color:var(--ink);border:1.5px solid var(--line-2);padding:11.5px 22px;border-radius:10px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:.2s;text-decoration:none}
-.inline-cta .btn-wa:hover{border-color:var(--cyan);color:var(--cyan-dd)}
+.inline-cta .btn-wa:hover{border-color:var(--cyan-dd);color:var(--cyan-dd)}
 
 /* ── TECH STACK (interior cards) ── */
 .tech-stack{display:grid;gap:14px;margin:24px 0 32px}
@@ -213,7 +213,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .price-card.featured .btn-primary{background:var(--cyan-dd)}
 .price-card.featured .btn-primary:hover{background:var(--ink)}
 .btn-ghost{display:block;text-align:center;padding:11px 20px;font-size:13px;color:var(--ink-3);background:transparent;border:1px solid var(--line-2);border-radius:10px;font-weight:600;transition:.2s;text-decoration:none}
-.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan-dd)}
+.btn-ghost:hover{border-color:var(--cyan-dd);color:var(--cyan-dd)}
 @media(max-width:1100px){
   .pricing-grid{grid-template-columns:repeat(2,1fr);gap:14px}
   .price-card{padding:28px 22px}
@@ -239,4 +239,26 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   .article-meta{flex-wrap:wrap;gap:12px 20px}
   .inline-cta-buttons{flex-direction:column}
   .inline-cta .btn-primary,.inline-cta .btn-wa{width:100%;justify-content:center}
+}
+
+/* ── Foco visible por teclado (WCAG 2.4.7 AA) ─────────────────────────
+   Antes de esto no existía ninguna regla :focus en el sitio: la
+   navegación por teclado era invisible. Cubre las 47 páginas que
+   cargan shell.css; index.html y evaluacion.html lo llevan inline
+   porque no lo cargan. */
+:where(a, button, [role="button"], input, select, textarea, summary,
+       .sede-card, .faq-q):focus-visible{
+  outline: 3px solid var(--cyan-dd);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Respeto a prefers-reduced-motion ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
