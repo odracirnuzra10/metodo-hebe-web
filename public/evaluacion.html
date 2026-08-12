@@ -597,6 +597,188 @@
       opacity: 1;
     }
 
+    /* ===== Filtro de presupuesto (Paso 3) ===== */
+    .budget-ask {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .budget-range {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.1rem;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--teal);
+      border-radius: var(--radius);
+      background: var(--teal-light);
+      text-align: center;
+    }
+
+    .budget-range-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--text-sec);
+    }
+
+    .budget-range-nums {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.05rem, 3.4vw, 1.3rem);
+      color: var(--teal);
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .budget-range-nums em {
+      font-style: normal;
+      opacity: 0.45;
+      margin: 0 0.2rem;
+    }
+
+    .budget-question {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--text);
+      text-align: center;
+      margin: 0.8rem 0 0.85rem;
+    }
+
+    .budget-question strong {
+      font-weight: 600;
+    }
+
+    .budget-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .budget-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #e8e8e8;
+      border-radius: var(--radius);
+      background: #fff;
+      font-family: 'Outfit', sans-serif;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .budget-btn-icon {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--teal-light);
+      color: var(--teal);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .budget-btn-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .budget-btn-text strong {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .budget-btn-text small {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: var(--text-sec);
+    }
+
+    .budget-btn.yes:hover,
+    .budget-btn.yes.selected {
+      border-color: var(--teal);
+      background: var(--teal-light);
+    }
+
+    .budget-btn.yes.selected .budget-btn-icon {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .budget-btn.no .budget-btn-icon {
+      background: #f2f2f2;
+      color: var(--text-sec);
+    }
+
+    .budget-btn.no:hover {
+      border-color: #d8d8d8;
+      background: #fafafa;
+    }
+
+    .budget-decline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0.4rem 0.2rem;
+    }
+
+    .budget-decline-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .budget-decline h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 1.02rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .budget-decline p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--text-sec);
+      margin-bottom: 1rem;
+      max-width: 34ch;
+    }
+
+    .budget-back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      border: 1.5px solid var(--teal);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--teal);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .budget-back-btn:hover {
+      background: var(--teal-light);
+    }
+
     /* Day grid */
     .day-grid {
       display: flex;
@@ -1495,6 +1677,7 @@
           <div class="progress-seg active" id="seg1"></div>
           <div class="progress-seg" id="seg2"></div>
           <div class="progress-seg" id="seg3"></div>
+          <div class="progress-seg" id="seg4"></div>
         </div>
         <div class="steps-viewport">
           <!-- STEP 1 -->
@@ -1508,7 +1691,7 @@
               <span class="stars">★★★★★</span>
               <span>5/5 en Google Reviews</span>
             </div>
-            <div class="step-label">PASO 1 DE 3</div>
+            <div class="step-label">PASO 1 DE 4</div>
             <div class="step-title">¿DÓNDE TE GUSTARÍA <em>EVALUARTE</em>?</div>
             <div class="step-sub">Elige la sede más cercana a ti.</div>
             <div class="sede-cards">
@@ -1553,7 +1736,7 @@
               </svg>
               Volver
             </button>
-            <div class="step-label">PASO 2 DE 3</div>
+            <div class="step-label">PASO 2 DE 4</div>
             <div class="step-title">¿QUÉ DÍA Y HORARIO <em>PREFIERES</em>?</div>
             <div class="step-sub">Selecciona tu preferencia y te lo confirmamos.</div>
             <div class="day-grid" id="dayGrid"><button class="day-btn" data-day="MIÉ 15"><div class="day-name">MIÉ</div><div class="day-num">15</div></button><button class="day-btn" data-day="JUE 16"><div class="day-name">JUE</div><div class="day-num">16</div></button><button class="day-btn" data-day="VIE 17"><div class="day-name">VIE</div><div class="day-num">17</div></button><button class="day-btn" data-day="SÁB 18"><div class="day-name">SÁB</div><div class="day-num">18</div></button><button class="day-btn" data-day="LUN 20"><div class="day-name">LUN</div><div class="day-num">20</div></button></div>
@@ -1567,7 +1750,7 @@
             </div>
           </div>
 
-          <!-- STEP 3 -->
+          <!-- STEP 3 — Filtro de presupuesto -->
           <div class="step" id="step3">
             <button class="back-btn" onclick="goToStep(2, &#39;back&#39;)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1575,7 +1758,49 @@
               </svg>
               Volver
             </button>
-            <div class="step-label">PASO 3 DE 3</div>
+            <div class="step-label">PASO 3 DE 4</div>
+            <div class="step-title">HABLEMOS DE <em>INVERSIÓN</em></div>
+            <div class="step-sub">Preferimos ser transparentes contigo antes de agendar tu hora.</div>
+            <div class="budget-ask" id="budgetAsk">
+              <div class="budget-range">
+                <span class="budget-range-label">Nuestros planes</span>
+                <span class="budget-range-nums">$997.990 <em>—</em> $2.790.990</span>
+              </div>
+              <p class="budget-question">Nuestros planes inician desde <strong>$997.990</strong> hasta los <strong>$2.790.990</strong>. ¿Estás de acuerdo con seguir agendando una evaluación con nosotros?</p>
+              <div class="budget-options">
+                <button class="budget-btn yes" data-budget="Sí" onclick="selectBudget(this)">
+                  <span class="budget-btn-icon">✓</span>
+                  <span class="budget-btn-text">
+                    <strong>Sí, estoy de acuerdo</strong>
+                    <small>Quiero agendar mi evaluación</small>
+                  </span>
+                </button>
+                <button class="budget-btn no" data-budget="No" onclick="selectBudget(this)">
+                  <span class="budget-btn-icon">✕</span>
+                  <span class="budget-btn-text">
+                    <strong>No, por ahora no</strong>
+                    <small>Está fuera de mi presupuesto</small>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="budget-decline" id="budgetDecline" style="display:none">
+              <div class="budget-decline-icon">🤍</div>
+              <h3>Gracias por tu honestidad</h3>
+              <p>Preferimos ser claros antes de agendar y no hacerte perder el tiempo. Cuando sea el momento adecuado para ti, aquí estaremos.</p>
+              <button class="budget-back-btn" onclick="resetBudget()">Volver a la pregunta</button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step" id="step4">
+            <button class="back-btn" onclick="goToStep(3, &#39;back&#39;)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Volver
+            </button>
+            <div class="step-label">PASO 4 DE 4</div>
             <div class="step-title">TUS DATOS DE <em>CONTACTO</em></div>
             <div class="step-sub">Déjanos tus datos y te escribimos por WhatsApp para coordinar tu evaluación P3.</div>
             <div class="recap-chip" id="recapChip" style="display:none"></div>
@@ -1632,6 +1857,7 @@
     let selectedSede = '';
     let selectedDay = '';
     let selectedSlot = '';
+    let selectedBudget = '';
     let carouselIndex = 1;
     const captions = ['Caso exitoso N°117', 'Caso exitoso N°204', 'Caso exitoso N°89', 'Caso exitoso N°156'];
     const carouselSources = [
@@ -1666,7 +1892,9 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
       const hdr = document.querySelector('.mobile-header-wrapper');
       if (hdr) hdr.classList.toggle('compact', num > 1);
-      if (num === 3) {
+      // Si vuelve al filtro de presupuesto tras haber declinado, restaura la pregunta
+      if (num === 3 && selectedBudget === 'No') resetBudget();
+      if (num === 4) {
         const chip = document.getElementById('recapChip');
         if (chip) {
           const parts = [(selectedSede || '').split(' — ')[0], selectedDay, selectedSlot].filter(Boolean);
@@ -1694,7 +1922,8 @@
     function updateProgress() {
       document.getElementById('seg1').className = 'progress-seg ' + (currentStep > 1 ? 'done' : 'active');
       document.getElementById('seg2').className = 'progress-seg ' + (currentStep > 2 ? 'done' : currentStep === 2 ? 'active' : '');
-      document.getElementById('seg3').className = 'progress-seg ' + (currentStep === 3 ? 'active' : '');
+      document.getElementById('seg3').className = 'progress-seg ' + (currentStep > 3 ? 'done' : currentStep === 3 ? 'active' : '');
+      document.getElementById('seg4').className = 'progress-seg ' + (currentStep === 4 ? 'active' : '');
     }
 
     function selectSede(el) {
@@ -1767,6 +1996,50 @@
         }
         setTimeout(() => goToStep(3, 'forward'), 400);
       }
+    }
+
+    // ===== Filtro de presupuesto (paso 3) =====
+    // Rango informado al lead. Si cambian los planes, actualizar acá y en el HTML del paso 3.
+    const BUDGET_RANGE = '$997.990 – $2.790.990';
+
+    function selectBudget(el) {
+      const answer = el.dataset.budget;
+      const accepted = answer === 'Sí';
+      document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedBudget = answer;
+
+      // Meta Pixel — evento custom para segmentar y excluir audiencias no calificadas
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', accepted ? 'BudgetQualified' : 'BudgetDeclined', {
+          content_name: 'Método Hebe',
+          content_category: 'corporal',
+          clinica: 'hebe',
+          sede: sedeSlug[selectedSede] || selectedSede,
+          presupuesto: BUDGET_RANGE
+        });
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: accepted ? 'eval_budget_accept' : 'eval_budget_decline',
+        sede: (selectedSede || '').split(' — ')[0].toLowerCase(),
+        presupuesto: BUDGET_RANGE
+      });
+
+      if (accepted) {
+        setTimeout(() => goToStep(4, 'forward'), 400);
+      } else {
+        document.getElementById('budgetAsk').style.display = 'none';
+        document.getElementById('budgetDecline').style.display = 'flex';
+      }
+    }
+
+    function resetBudget() {
+      selectedBudget = '';
+      document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('selected'));
+      document.getElementById('budgetDecline').style.display = 'none';
+      document.getElementById('budgetAsk').style.display = '';
     }
 
     function normalizePhoneDigits(rawValue) {
@@ -1894,6 +2167,8 @@
         fuente: 'Landing Evaluación P3',
         clinica: 'hebe',
         sede_slug: sedeKey,
+        presupuesto_aceptado: selectedBudget || 'Sin responder',
+        rango_presupuesto: BUDGET_RANGE,
         event_id: eventId,
         'landing url': window.location.href,
         'fecha de creacion': new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' }),
@@ -1924,7 +2199,7 @@
         body: JSON.stringify(payload)
       }).catch(e => console.error(e));
 
-      const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3 en Método Hebe\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp);
+      const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3 en Método Hebe\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp + '\nPresupuesto: acepta rango ' + BUDGET_RANGE);
       const waLink = document.getElementById('successWaLink');
       waLink.href = 'https://wa.me/56963222683?text=' + waMsg;
       document.getElementById('successOverlay').classList.add('visible');
@@ -1986,7 +2261,8 @@
       if(result === true){
         // __currentEventId es seteado por handleSubmit ANTES de disparar el Pixel
         var eid = window.__currentEventId || ("eval_" + Date.now());
-        dataLayer.push({ event: "eval_submit_form", sede: _sede(), day: _day(), slot: _slot(), event_id: eid });
+        var _presup = (typeof selectedBudget !== "undefined") ? selectedBudget : "";
+        dataLayer.push({ event: "eval_submit_form", sede: _sede(), day: _day(), slot: _slot(), presupuesto_aceptado: _presup, event_id: eid });
       }
       return result;
     };
