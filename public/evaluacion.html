@@ -601,6 +601,7 @@
     .budget-ask {
       display: flex;
       flex-direction: column;
+      gap: 0.85rem;
     }
 
     .budget-range {
@@ -646,7 +647,7 @@
       line-height: 1.55;
       color: var(--text);
       text-align: center;
-      margin: 0.8rem 0 0.85rem;
+      margin: 0;
     }
 
     .budget-question strong {
@@ -672,6 +673,13 @@
       text-align: left;
       cursor: pointer;
       transition: all 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    /* En touch no hay hover: el feedback lo da :active */
+    .budget-btn:active {
+      transform: scale(0.985);
     }
 
     .budget-btn-icon {
@@ -1444,6 +1452,63 @@
         margin-bottom: 0.6rem;
       }
 
+      /* Área táctil de 44px para "Volver" sin ocupar alto extra en el layout */
+      .back-btn {
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+
+      .back-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -0.5rem;
+        transform: translateY(-50%);
+        width: calc(100% + 1rem);
+        min-width: 88px;
+        height: 44px;
+      }
+
+      /* ===== Filtro de presupuesto — compactado para que ambas opciones
+         queden sobre el fold incluso en pantallas de 320×640 ===== */
+      #step3 .step-sub {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+
+      .budget-ask {
+        gap: 0.6rem;
+      }
+
+      .budget-range {
+        padding: 0.6rem 0.8rem;
+      }
+
+      .budget-range-nums {
+        font-size: 1.15rem;
+      }
+
+      .budget-question {
+        font-size: 0.9rem;
+        line-height: 1.45;
+      }
+
+      .budget-btn {
+        padding: 0.8rem 0.9rem;
+      }
+
+      .budget-decline p {
+        font-size: 0.88rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .budget-back-btn {
+        min-height: 44px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+
       .form-group {
         margin-bottom: 0.5rem;
       }
@@ -1507,6 +1572,47 @@
 
       .recap-chip {
         align-self: center;
+      }
+    }
+
+    /* Pantallas muy angostas (≤360px): prioriza que la pregunta y las dos
+       opciones queden visibles sin scroll. El subtítulo es decorativo — el
+       rango sigue estando en el badge y dentro de la pregunta. */
+    @media (max-width: 360px) {
+      #step3 .step-title {
+        font-size: 1.15rem;
+      }
+
+      #step3 .step-sub {
+        display: none;
+      }
+
+      .budget-ask {
+        gap: 0.5rem;
+      }
+
+      .budget-range {
+        padding: 0.5rem 0.7rem;
+      }
+
+      .budget-question {
+        font-size: 0.86rem;
+      }
+
+      .budget-options {
+        gap: 0.5rem;
+      }
+
+      .budget-btn {
+        padding: 0.7rem 0.85rem;
+      }
+
+      .budget-btn-text strong {
+        font-size: 0.88rem;
+      }
+
+      .budget-btn-text small {
+        font-size: 0.74rem;
       }
     }
 
@@ -1760,7 +1866,7 @@
             </button>
             <div class="step-label">PASO 3 DE 4</div>
             <div class="step-title">HABLEMOS DE <em>INVERSIÓN</em></div>
-            <div class="step-sub">Preferimos ser transparentes contigo antes de agendar tu hora.</div>
+            <div class="step-sub">Preferimos ser transparentes contigo.</div>
             <div class="budget-ask" id="budgetAsk">
               <div class="budget-range">
                 <span class="budget-range-label">Nuestros planes</span>
