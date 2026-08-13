@@ -1870,9 +1870,9 @@
             <div class="budget-ask" id="budgetAsk">
               <div class="budget-range">
                 <span class="budget-range-label">Nuestros planes</span>
-                <span class="budget-range-nums">$997.990 <em>—</em> $2.790.990</span>
+                <span class="budget-range-nums">Desde $897.990</span>
               </div>
-              <p class="budget-question">Nuestros planes inician desde <strong>$997.990</strong> hasta los <strong>$2.790.990</strong>. ¿Estás de acuerdo con seguir agendando una evaluación con nosotros?</p>
+              <p class="budget-question">Nuestros planes personalizados comienzan desde <strong>$897.990</strong>. ¿Estás de acuerdo en seguir?</p>
               <div class="budget-options">
                 <button class="budget-btn yes" data-budget="Sí" onclick="selectBudget(this)">
                   <span class="budget-btn-icon">✓</span>
@@ -2105,8 +2105,8 @@
     }
 
     // ===== Filtro de presupuesto (paso 3) =====
-    // Rango informado al lead. Si cambian los planes, actualizar acá y en el HTML del paso 3.
-    const BUDGET_RANGE = '$997.990 – $2.790.990';
+    // Precio informado al lead. Si cambian los planes, actualizar acá y en el HTML del paso 3.
+    const BUDGET_RANGE = 'desde $897.990';
 
     function selectBudget(el) {
       const answer = el.dataset.budget;
@@ -2305,7 +2305,7 @@
         body: JSON.stringify(payload)
       }).catch(e => console.error(e));
 
-      const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3 en Método Hebe\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp + '\nPresupuesto: acepta rango ' + BUDGET_RANGE);
+      const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3 en Método Hebe\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp + '\nPresupuesto: acepta planes ' + BUDGET_RANGE);
       const waLink = document.getElementById('successWaLink');
       waLink.href = 'https://wa.me/56963222683?text=' + waMsg;
       document.getElementById('successOverlay').classList.add('visible');
