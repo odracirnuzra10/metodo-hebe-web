@@ -1881,20 +1881,7 @@
                     <small>Quiero agendar mi evaluación</small>
                   </span>
                 </button>
-                <button class="budget-btn no" data-budget="No" onclick="selectBudget(this)">
-                  <span class="budget-btn-icon">✕</span>
-                  <span class="budget-btn-text">
-                    <strong>No, por ahora no</strong>
-                    <small>Está fuera de mi presupuesto</small>
-                  </span>
-                </button>
               </div>
-            </div>
-            <div class="budget-decline" id="budgetDecline" style="display:none">
-              <div class="budget-decline-icon">🤍</div>
-              <h3>Gracias por tu honestidad</h3>
-              <p>Preferimos ser claros antes de agendar y no hacerte perder el tiempo. Cuando sea el momento adecuado para ti, aquí estaremos.</p>
-              <button class="budget-back-btn" onclick="resetBudget()">Volver a la pregunta</button>
             </div>
           </div>
 
@@ -1998,8 +1985,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
       const hdr = document.querySelector('.mobile-header-wrapper');
       if (hdr) hdr.classList.toggle('compact', num > 1);
-      // Si vuelve al filtro de presupuesto tras haber declinado, restaura la pregunta
-      if (num === 3 && selectedBudget === 'No') resetBudget();
       if (num === 4) {
         const chip = document.getElementById('recapChip');
         if (chip) {
@@ -2109,15 +2094,12 @@
     const BUDGET_RANGE = 'desde $897.990';
 
     function selectBudget(el) {
-      const answer = el.dataset.budget;
-      const accepted = answer === 'Sí';
-      document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('selected'));
       el.classList.add('selected');
-      selectedBudget = answer;
+      selectedBudget = 'Sí';
 
-      // Meta Pixel — evento custom para segmentar y excluir audiencias no calificadas
+      // Meta Pixel — evento custom para segmentar audiencias calificadas
       if (typeof fbq === 'function') {
-        fbq('trackCustom', accepted ? 'BudgetQualified' : 'BudgetDeclined', {
+        fbq('trackCustom', 'BudgetQualified', {
           content_name: 'Método Hebe',
           content_category: 'corporal',
           clinica: 'hebe',
@@ -2128,24 +2110,12 @@
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: accepted ? 'eval_budget_accept' : 'eval_budget_decline',
+        event: 'eval_budget_accept',
         sede: (selectedSede || '').split(' — ')[0].toLowerCase(),
         presupuesto: BUDGET_RANGE
       });
 
-      if (accepted) {
-        setTimeout(() => goToStep(4, 'forward'), 400);
-      } else {
-        document.getElementById('budgetAsk').style.display = 'none';
-        document.getElementById('budgetDecline').style.display = 'flex';
-      }
-    }
-
-    function resetBudget() {
-      selectedBudget = '';
-      document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('selected'));
-      document.getElementById('budgetDecline').style.display = 'none';
-      document.getElementById('budgetAsk').style.display = '';
+      setTimeout(() => goToStep(4, 'forward'), 400);
     }
 
     function normalizePhoneDigits(rawValue) {
