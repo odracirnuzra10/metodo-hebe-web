@@ -931,6 +931,36 @@
       animation: fadeUp 0.5s ease 0.6s both;
     }
 
+    /* Aviso de costo antes del formulario: filtra a quien no viene dispuesto a pagar */
+    .price-notice {
+      border: 1px solid var(--teal);
+      background: var(--teal-light);
+      border-radius: 10px;
+      padding: 0.7rem 0.9rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .price-notice-head {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--teal-darker);
+      line-height: 1.3;
+    }
+
+    .price-notice-head strong {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .price-notice-sub {
+      font-size: 0.78rem;
+      color: var(--text-sec);
+      line-height: 1.4;
+      margin-top: 0.25rem;
+    }
+
     /* Pantalla de confirmación de costo + pago */
     .pay-overlay {
       position: fixed;
@@ -1720,6 +1750,11 @@
             <div class="step-title">TUS DATOS DE <em>CONTACTO</em></div>
             <div class="step-sub">Déjanos tus datos y te escribimos por WhatsApp para coordinar tu evaluación P3.</div>
             <div class="recap-chip" id="recapChip" style="display:none"></div>
+            <div class="price-notice">
+              <div class="price-notice-head">La evaluación P3 tiene un costo de <strong>$27.990</strong></div>
+              <div class="price-notice-sub">Incluye el análisis 3D de tu cuerpo para definir el mejor programa para
+                remodelarlo. Se paga al confirmar tu hora.</div>
+            </div>
             <div class="form-group">
               <label>Nombre</label>
               <input type="text" id="inputNombre" placeholder="Tu nombre completo" autocomplete="name" onkeydown="formKeyDown(event, &#39;inputCelular&#39;)">
@@ -2127,11 +2162,11 @@
       let sent = false;
       if (navigator.sendBeacon) {
         try {
-          sent = navigator.sendBeacon('https://n8n.oacg.cl/webhook/lead-capture', new Blob([payBody], { type: 'application/json' }));
+          sent = navigator.sendBeacon('https://n8n.oacg.cl/webhook/pago-evaluacion', new Blob([payBody], { type: 'application/json' }));
         } catch (e) { sent = false; }
       }
       if (!sent) {
-        fetch('https://n8n.oacg.cl/webhook/lead-capture', {
+        fetch('https://n8n.oacg.cl/webhook/pago-evaluacion', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: payBody,
