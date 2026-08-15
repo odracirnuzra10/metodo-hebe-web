@@ -931,6 +931,46 @@
       animation: fadeUp 0.5s ease 0.6s both;
     }
 
+    /* Botón de la pantalla dedicada de costo */
+    .confirm-btn {
+      display: block;
+      width: 100%;
+      background: var(--teal);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      border: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: normal;
+      cursor: pointer;
+      margin-top: 1.2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .confirm-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+    }
+
+    /* En su pantalla propia el aviso manda: más aire y texto más grande */
+    .price-notice--solo {
+      padding: 1.4rem 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .price-notice--solo .price-notice-head {
+      font-size: 1.15rem;
+      line-height: 1.35;
+    }
+
+    .price-notice--solo .price-notice-sub {
+      font-size: 0.9rem;
+      margin-top: 0.6rem;
+    }
+
     /* Aviso de costo antes del formulario: filtra a quien no viene dispuesto a pagar */
     .price-notice {
       border: 1px solid var(--teal);
@@ -1738,9 +1778,28 @@
             </div>
           </div>
 
+          <!-- PANTALLA DE COSTO — entre el horario y el formulario -->
+          <div class="step" id="stepPrecio">
+            <button class="back-btn" onclick="goToStep(2, &#39;back&#39;)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Volver
+            </button>
+            <div class="step-label">ANTES DE CONTINUAR</div>
+            <div class="step-title">TU EVALUACIÓN <em>P3</em></div>
+            <div class="recap-chip" id="recapChipPrecio" style="display:none"></div>
+            <div class="price-notice price-notice--solo">
+              <div class="price-notice-head">La evaluación P3 tiene un costo de <strong>$27.990</strong></div>
+              <div class="price-notice-sub">Incluye el análisis 3D de tu cuerpo para definir el mejor programa para remodelarlo. Se paga al confirmar tu hora.</div>
+            </div>
+            <button class="confirm-btn" onclick="goToStep(3, &#39;forward&#39;)">Confirmo</button>
+            <div class="form-note">Confirmar no genera ningún cobro: primero dejas tus datos.</div>
+          </div>
+
           <!-- STEP 3 -->
           <div class="step" id="step3">
-            <button class="back-btn" onclick="goToStep(2, &#39;back&#39;)">
+            <button class="back-btn" onclick="goToStep(2.5, &#39;back&#39;)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
@@ -1750,11 +1809,6 @@
             <div class="step-title">TUS DATOS DE <em>CONTACTO</em></div>
             <div class="step-sub">Déjanos tus datos y te escribimos por WhatsApp para coordinar tu evaluación P3.</div>
             <div class="recap-chip" id="recapChip" style="display:none"></div>
-            <div class="price-notice">
-              <div class="price-notice-head">La evaluación P3 tiene un costo de <strong>$27.990</strong></div>
-              <div class="price-notice-sub">Incluye el análisis 3D de tu cuerpo para definir el mejor programa para
-                remodelarlo. Se paga al confirmar tu hora.</div>
-            </div>
             <div class="form-group">
               <label>Nombre</label>
               <input type="text" id="inputNombre" placeholder="Tu nombre completo" autocomplete="name" onkeydown="formKeyDown(event, &#39;inputCelular&#39;)">
@@ -1852,20 +1906,26 @@
     setInterval(() => updateCarousel((carouselIndex + 1) % 4), 3500);
     document.querySelectorAll('#dotsDesktop .dot').forEach(d => d.addEventListener('click', () => updateCarousel(+d.dataset.i)));
 
+    const idDePaso = n => (n === 2.5 ? 'stepPrecio' : 'step' + n);
+
     function goToStep(num, direction) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       const hdr = document.querySelector('.mobile-header-wrapper');
       if (hdr) hdr.classList.toggle('compact', num > 1);
-      if (num === 3) {
-        const chip = document.getElementById('recapChip');
-        if (chip) {
-          const parts = [(selectedSede || '').split(' — ')[0], selectedDay, selectedSlot].filter(Boolean);
+      // 2.5 = pantalla de costo, entre el horario y el formulario. Se usa un número
+      // fraccionario a propósito: así siguen valiendo las comparaciones de la barra de
+      // progreso (num > 1, currentStep > 2) sin tener que renumerar los pasos.
+      if (num === 3 || num === 2.5) {
+        const parts = [(selectedSede || '').split(' — ')[0], selectedDay, selectedSlot].filter(Boolean);
+        ['recapChip', 'recapChipPrecio'].forEach(id => {
+          const chip = document.getElementById(id);
+          if (!chip) return;
           chip.textContent = '📍 ' + parts.join(' · ');
           chip.style.display = parts.length ? 'inline-flex' : 'none';
-        }
+        });
       }
-      const prev = document.getElementById('step' + currentStep);
-      const next = document.getElementById('step' + num);
+      const prev = document.getElementById(idDePaso(currentStep));
+      const next = document.getElementById(idDePaso(num));
       prev.classList.remove('active');
       prev.classList.add(direction === 'back' ? 'exit-right' : 'exit-left');
       next.classList.remove('exit-left', 'exit-right');
@@ -1884,7 +1944,7 @@
     function updateProgress() {
       document.getElementById('seg1').className = 'progress-seg ' + (currentStep > 1 ? 'done' : 'active');
       document.getElementById('seg2').className = 'progress-seg ' + (currentStep > 2 ? 'done' : currentStep === 2 ? 'active' : '');
-      document.getElementById('seg3').className = 'progress-seg ' + (currentStep === 3 ? 'active' : '');
+      document.getElementById('seg3').className = 'progress-seg ' + (currentStep >= 2.5 ? 'active' : '');
     }
 
     function selectSede(el) {
@@ -1955,7 +2015,7 @@
             currency: 'USD'
           });
         }
-        setTimeout(() => goToStep(3, 'forward'), 400);
+        setTimeout(() => goToStep(2.5, 'forward'), 400);
       }
     }
 
