@@ -931,6 +931,129 @@
       animation: fadeUp 0.5s ease 0.6s both;
     }
 
+    /* Pantalla de confirmación de costo + pago */
+    .pay-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1001;
+      background: linear-gradient(170deg, #1a8e82 0%, #0f5c54 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    .pay-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .pay-badge {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.5s ease 0.15s both;
+    }
+
+    .pay-overlay h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: #fff;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 0.2rem;
+      animation: fadeUp 0.5s ease 0.25s both;
+    }
+
+    .pay-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.6rem;
+      line-height: 1;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      animation: scaleBounce 0.6s ease 0.3s both;
+    }
+
+    .pay-copy {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      text-align: center;
+      max-width: 380px;
+      margin-bottom: 1.6rem;
+      font-weight: 300;
+      animation: fadeUp 0.5s ease 0.4s both;
+    }
+
+    .pay-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #fff;
+      color: var(--teal-darker);
+      padding: 1rem 2.2rem;
+      border-radius: 12px;
+      border: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: fadeUp 0.5s ease 0.5s both;
+    }
+
+    .pay-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .pay-note {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.75rem;
+      text-align: center;
+      max-width: 340px;
+      margin-top: 1.2rem;
+      line-height: 1.5;
+      animation: fadeUp 0.5s ease 0.6s both;
+    }
+
+    /* Salida alternativa, deliberadamente discreta: el pago es la ruta principal */
+    .pay-wa-link {
+      display: inline-block;
+      margin-top: 2.4rem;
+      color: rgba(255, 255, 255, 0.38);
+      font-size: 0.7rem;
+      font-weight: 300;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      padding-bottom: 1px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      animation: fadeUp 0.5s ease 0.8s both;
+    }
+
+    .pay-wa-link:hover {
+      color: rgba(255, 255, 255, 0.7);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
     /* Marquesina de tratamientos */
     .ticker-wrap {
       display: flex;
@@ -1626,6 +1749,20 @@
     </div>
   </div>
 
+  <!-- Payment Overlay — confirmación de costo de la evaluación P3 -->
+  <div class="pay-overlay" id="payOverlay">
+    <div class="pay-badge">Último paso</div>
+    <h2>TU EVALUACIÓN P3</h2>
+    <div class="pay-price">$27.990</div>
+    <p class="pay-copy">La evaluación P3 tiene un costo de $27.990. En ella realizaremos un análisis 3D de tu cuerpo
+      para ver el mejor programa para remodelar tu cuerpo.</p>
+    <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
+      onclick="handlePayClick()">Confirmar y pagar $27.990</a>
+    <div class="pay-note">🔒 Pago seguro a través de MercadoPago. Al confirmar, dejamos tu hora reservada y te
+      escribimos por WhatsApp para coordinar los detalles.</div>
+    <a class="pay-wa-link" href="#" onclick="skipToWhatsapp(); return false;">Prefiero coordinar por WhatsApp</a>
+  </div>
+
   <!-- Success Overlay -->
   <div class="success-overlay" id="successOverlay">
     <div class="success-check">
@@ -1846,7 +1983,7 @@
 
       // Guard anti doble-envío: un solo lead por sesión
       if (window.__leadSubmitted) {
-        document.getElementById('successOverlay').classList.add('visible');
+        document.getElementById('payOverlay').classList.add('visible');
         return false;
       }
       window.__leadSubmitted = true;
@@ -1942,13 +2079,83 @@
         body: JSON.stringify(payload)
       }).catch(e => console.error(e));
 
+      // Reutilizado por handlePayClick() para no releer el DOM al confirmar el pago
+      window.__leadPayload = payload;
+
       const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3 en Método Hebe\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp);
       const waLink = document.getElementById('successWaLink');
       waLink.href = 'https://wa.me/56963222683?text=' + waMsg;
-      document.getElementById('successOverlay').classList.add('visible');
-      // Abre WhatsApp de inmediato (mismo gesto del usuario); el overlay queda como respaldo
-      waLink.click();
+      // Pantalla de costo de la evaluación; el pago es la ruta principal y WhatsApp la alternativa
+      document.getElementById('payOverlay').classList.add('visible');
       return true;
+    }
+
+    // Clic en "Confirmar y pagar": marca al lead como calificado y deja que el href
+    // navegue solo a MercadoPago (sin preventDefault, para conservar el gesto del usuario).
+    function handlePayClick() {
+      if (window.__payClicked) return true;
+      window.__payClicked = true;
+
+      const lead = window.__leadPayload || {};
+      const payEventId = 'pago_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      window.__payEventId = payEventId;
+
+      // Meta Pixel — Purchase (intención de pago: se dispara al clic, no al pago confirmado)
+      if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+          content_name: 'Método Hebe',
+          content_category: 'corporal',
+          clinica: 'hebe',
+          sede: lead.sede_slug || '',
+          content_ids: ['hebe_evaluacion_p3'],
+          value: 27990,
+          currency: 'CLP'
+        }, { eventID: payEventId });
+      }
+
+      // n8n → Clinera. sendBeacon/keepalive porque la pestaña pierde foco al ir a MercadoPago.
+      const payPayload = Object.assign({}, lead, {
+        etiqueta: 'pago evaluacion',
+        monto: 27990,
+        moneda: 'CLP',
+        metodo_pago: 'mercadopago',
+        lead_event_id: lead.event_id || window.__currentEventId || '',
+        event_id: payEventId,
+        timestamp: Date.now()
+      });
+      const payBody = JSON.stringify(payPayload);
+      let sent = false;
+      if (navigator.sendBeacon) {
+        try {
+          sent = navigator.sendBeacon('https://n8n.oacg.cl/webhook/lead-capture', new Blob([payBody], { type: 'application/json' }));
+        } catch (e) { sent = false; }
+      }
+      if (!sent) {
+        fetch('https://n8n.oacg.cl/webhook/lead-capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payBody,
+          keepalive: true
+        }).catch(e => console.error(e));
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'eval_pago_evaluacion',
+        sede: lead.sede_slug || '',
+        event_id: payEventId,
+        lead_event_id: lead.event_id || window.__currentEventId || '',
+        value: 27990,
+        currency: 'CLP'
+      });
+      return true;
+    }
+
+    // Ruta alternativa: quien prefiere coordinar por WhatsApp en vez de pagar en línea
+    function skipToWhatsapp() {
+      document.getElementById('payOverlay').classList.remove('visible');
+      document.getElementById('successOverlay').classList.add('visible');
+      document.getElementById('successWaLink').click();
     }
   </script>
 
