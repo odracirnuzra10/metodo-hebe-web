@@ -971,6 +971,34 @@
       margin-top: 0.6rem;
     }
 
+    /* El descuento: convierte el pago en anticipo, no en costo extra */
+    .descuento {
+      display: block;
+      margin-top: 0.7rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed var(--teal);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--teal-darker);
+      line-height: 1.4;
+    }
+
+    .pay-descuento {
+      display: inline-block;
+      margin-bottom: 1.4rem;
+      padding: 0.6rem 1rem;
+      border: 1px dashed rgba(255, 255, 255, 0.45);
+      border-radius: 10px;
+      max-width: 380px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-align: center;
+      animation: fadeUp 0.5s ease 0.45s both;
+    }
+
     /* Aviso de costo antes del formulario: filtra a quien no viene dispuesto a pagar */
     .price-notice {
       border: 1px solid var(--teal);
@@ -1792,6 +1820,7 @@
             <div class="price-notice price-notice--solo">
               <div class="price-notice-head">La evaluación P3 tiene un costo de <strong>$27.990</strong></div>
               <div class="price-notice-sub">Incluye el análisis 3D de tu cuerpo para definir el mejor programa para remodelarlo. Se paga al confirmar tu hora.</div>
+              <div class="descuento">Si contratas un plan, los $27.990 se descuentan del valor del plan.</div>
             </div>
             <button class="confirm-btn" onclick="goToStep(3, &#39;forward&#39;)">Confirmo</button>
             <div class="form-note">Confirmar no genera ningún cobro: primero dejas tus datos.</div>
@@ -1845,6 +1874,7 @@
     <div class="pay-price">$27.990</div>
     <p class="pay-copy">La evaluación P3 tiene un costo de $27.990. En ella realizaremos un análisis 3D de tu cuerpo
       para ver el mejor programa para remodelar tu cuerpo.</p>
+    <div class="pay-descuento">Si contratas un plan, los $27.990 se descuentan del valor del plan.</div>
     <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
       onclick="handlePayClick()">Confirmar y pagar $27.990</a>
     <div class="pay-note">🔒 Pago seguro a través de MercadoPago. Al confirmar, dejamos tu hora reservada y te
