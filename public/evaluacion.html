@@ -984,6 +984,19 @@
       line-height: 1.4;
     }
 
+    /* Estado de la reserva. Va antes que el detalle de la evaluación porque lo primero
+       que la paciente necesita saber es que la hora todavía no está confirmada. */
+    .pay-estado {
+      max-width: 380px;
+      margin-bottom: 1.1rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.45;
+      text-align: center;
+      animation: fadeUp 0.5s ease 0.35s both;
+    }
+
     .pay-descuento {
       display: inline-block;
       margin-bottom: 1.4rem;
@@ -1872,6 +1885,7 @@
     <div class="pay-badge">Último paso</div>
     <h2>TU EVALUACIÓN P3</h2>
     <div class="pay-price">$27.990</div>
+    <div class="pay-estado">Tu evaluación está pendiente de pago para ser confirmada.</div>
     <p class="pay-copy">La evaluación P3 tiene un costo de $27.990. En ella realizaremos un análisis 3D de tu cuerpo
       para ver el mejor programa para remodelar tu cuerpo.</p>
     <div class="pay-descuento">Si contratas un plan, los $27.990 se descuentan del valor del plan.</div>
