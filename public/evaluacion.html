@@ -984,19 +984,6 @@
       line-height: 1.4;
     }
 
-    /* Estado de la reserva. Va antes que el detalle de la evaluación porque lo primero
-       que la paciente necesita saber es que la hora todavía no está confirmada. */
-    .pay-estado {
-      max-width: 380px;
-      margin-bottom: 1.6rem;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.45;
-      text-align: center;
-      animation: fadeUp 0.5s ease 0.35s both;
-    }
-
     .pay-descuento {
       display: inline-block;
       margin-bottom: 1.4rem;
@@ -1064,13 +1051,17 @@
       pointer-events: auto;
     }
 
+    /* Carga la frase completa del estado, no tres palabras: tamaño y tracking bajan y
+       lleva max-width para que caiga en dos líneas en vez de estirarse a todo el ancho. */
     .pay-overlay h2 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
+      font-size: 1.75rem;
       color: #fff;
-      letter-spacing: 3px;
+      letter-spacing: 1.5px;
+      line-height: 1.08;
+      max-width: 460px;
       text-align: center;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.6rem;
       animation: fadeUp 0.5s ease 0.25s both;
     }
 
@@ -1857,9 +1848,8 @@
 
   <!-- Payment Overlay — confirmación de costo de la evaluación P3 -->
   <div class="pay-overlay" id="payOverlay">
-    <h2>TU EVALUACIÓN P3</h2>
+    <h2>TU EVALUACIÓN P3 ESTÁ PENDIENTE DE PAGO PARA SER CONFIRMADA</h2>
     <div class="pay-price">$27.990</div>
-    <div class="pay-estado">Tu evaluación está pendiente de pago para ser confirmada.</div>
     <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.</div>
     <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
       onclick="handlePayClick()">Confirmar y pagar</a>
