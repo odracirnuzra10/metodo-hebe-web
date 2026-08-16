@@ -1140,6 +1140,15 @@
       text-align: center;
     }
 
+    /* El logo va DESPUÉS del texto y decorativo: la frase ya nombra a MercadoPago, así
+       que repetirlo en el alt se lo leería dos veces a quien usa lector de pantalla. */
+    .pay-btn-logo {
+      height: 1.5em;
+      width: auto;
+      flex: none;
+      margin-left: 0.15rem;
+    }
+
     .pay-btn {
       display: inline-flex;
       align-items: center;
@@ -1960,7 +1969,8 @@
       <div class="pay-price">$27.990</div>
       <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.</div>
       <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
-        onclick="handlePayClick()">Confirmar y pagar</a>
+        onclick="handlePayClick()">Confirma y paga por MercadoPago<img class="pay-btn-logo" src="/img/mercadopago.webp"
+          alt="" width="88" height="88" aria-hidden="true"></a>
       <div class="pay-note">🔒 Pago seguro con MercadoPago</div>
     </div>
     <a class="pay-wa-link" href="#" onclick="skipToWhatsapp(); return false;">Prefiero coordinar por WhatsApp</a>
