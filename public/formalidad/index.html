@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estándar de presentación · Protocolo Lumina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --porcelain:#F2F3F1;
+    --porcelain-deep:#E6E7E3;
+    --ink:#16181B;
+    --ink-soft:#5A5D60;
+    --ink-faint:#9A9C9C;
+    --gold:#B99A63;
+    --clinical:#C2D0D4;
+    --rule:rgba(22,24,27,.14);
+    --slide-pad: clamp(28px, 4.4vw, 76px);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html,body{height:100%}
+  body{
+    background:var(--ink);
+    color:var(--ink);
+    font-family:"DM Sans",system-ui,sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow:hidden;
+  }
+
+  /* ---------- deck shell ---------- */
+  .deck{position:relative;width:100vw;height:100dvh;overflow:hidden}
+
+  .slide{
+    position:absolute;inset:0;
+    background:var(--porcelain);
+    padding:var(--slide-pad);
+    display:flex;flex-direction:column;
+    opacity:0;visibility:hidden;
+    transform:scale(.994);
+    transition:opacity .55s cubic-bezier(.22,.61,.36,1), transform .55s cubic-bezier(.22,.61,.36,1), visibility .55s;
+    overflow-y:auto;
+  }
+  .slide.is-active{opacity:1;visibility:visible;transform:none}
+
+  /* signature: directional window light, like light falling on skin */
+  .slide::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(120% 90% at 8% -10%, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 55%),
+      radial-gradient(85% 70% at 100% 108%, rgba(185,154,99,.13) 0%, rgba(185,154,99,0) 60%);
+  }
+  .slide > *{position:relative;z-index:1}
+
+  /* ---------- shared type ---------- */
+  .eyebrow{
+    font-family:"DM Mono",ui-monospace,monospace;
+    font-size:11px;letter-spacing:.20em;text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  .eyebrow .mark{color:var(--gold)}
+
+  h1,h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1.02}
+  h1{font-size:clamp(44px,7.4vw,104px)}
+  h2{font-size:clamp(30px,4.2vw,58px);line-height:1.06}
+  h2 em{font-style:italic;color:var(--gold)}
+
+  p{font-size:clamp(15px,1.32vw,19px);line-height:1.6;color:var(--ink-soft);max-width:62ch}
+  strong{font-weight:500;color:var(--ink)}
+
+  .slide-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding-bottom:18px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+  .slide-body{flex:1;display:flex;align-items:center;padding-top:clamp(20px,3.4vw,44px)}
+
+  /* ---------- 01 cover ---------- */
+  .cover{justify-content:space-between}
+  .cover h1{margin:0 0 6px}
+  .cover .lede{margin-top:26px;font-size:clamp(16px,1.5vw,21px);max-width:46ch}
+  .cover-mid{display:flex;flex-direction:column;justify-content:center;flex:1;padding:clamp(20px,4vw,40px) 0}
+  .cover-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-top:1px solid var(--rule);padding-top:18px;flex-wrap:wrap}
+
+  /* ---------- annotated figure ---------- */
+  .split{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(26px,4vw,68px);align-items:center;width:100%}
+
+  .figure{position:relative;border-radius:2px;overflow:hidden;background:var(--porcelain-deep);aspect-ratio:3/4;max-height:70dvh;margin-inline:auto;width:100%}
+  .figure img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* markers over the photo */
+  .pin{position:absolute;display:flex;align-items:center;gap:0;transform:translateY(-50%)}
+  .pin .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(255,255,255,.72);flex:none}
+  .pin .line{height:1px;background:var(--gold);width:clamp(22px,3.4vw,52px);flex:none}
+  .pin .tag{
+    font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    background:rgba(255,255,255,.94);color:var(--ink);
+    padding:6px 9px;white-space:nowrap;border:1px solid rgba(22,24,27,.09);
+  }
+  .pin.left{flex-direction:row-reverse}
+
+  /* ---------- checklist ---------- */
+  .rules{list-style:none;display:flex;flex-direction:column}
+  .rules li{padding:clamp(13px,1.5vw,19px) 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:26px 1fr;gap:16px;align-items:start}
+  .rules li:first-child{border-top:1px solid var(--rule)}
+  .rules .k{font-family:"DM Mono",monospace;font-size:11px;color:var(--gold);padding-top:5px}
+  .rules .t{font-size:clamp(15px,1.42vw,20px);color:var(--ink);font-weight:400;line-height:1.35}
+  .rules .d{font-size:clamp(13px,1.1vw,15px);color:var(--ink-soft);margin-top:5px;line-height:1.5}
+
+  /* ---------- no va ---------- */
+  .avoid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);width:100%}
+  .avoid div{background:var(--porcelain);padding:clamp(18px,2.2vw,26px)}
+  .avoid .x{font-family:"DM Mono",monospace;font-size:13px;color:var(--ink-faint);display:block;margin-bottom:11px}
+  .avoid p{font-size:clamp(14px,1.2vw,17px);color:var(--ink);line-height:1.4}
+
+  /* ---------- invierte ---------- */
+  .invest{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(18px,2.4vw,34px);width:100%}
+  .card{border-top:2px solid var(--ink);padding-top:18px}
+  .card .n{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+  .card h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(23px,2.5vw,32px);line-height:1.1;margin-bottom:10px}
+  .card p{font-size:clamp(13.5px,1.12vw,16px)}
+
+  .note{margin-top:clamp(22px,3vw,34px);border-left:2px solid var(--clinical);padding:4px 0 4px 18px;font-size:clamp(13px,1.1vw,15.5px);color:var(--ink-soft);max-width:74ch}
+
+  /* ---------- gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);width:100%}
+  .gallery figure{margin:0}
+  .gallery .shot{aspect-ratio:3/4;overflow:hidden;background:var(--porcelain-deep)}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block}
+  .gallery figcaption{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);padding-top:11px}
+
+  /* ---------- closing ---------- */
+  .closing{align-items:center;justify-content:center;text-align:center}
+  .closing h2{max-width:17ch;margin-inline:auto}
+  .closing p{margin:22px auto 0;text-align:center}
+
+  /* ---------- chrome ---------- */
+  .chrome{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:0 var(--slide-pad) clamp(16px,2vw,26px);pointer-events:none}
+  .progress{display:flex;gap:6px;pointer-events:auto}
+  .progress button{width:22px;height:2px;border:0;background:rgba(22,24,27,.18);cursor:pointer;padding:0;transition:background .3s}
+  .progress button[aria-current="true"]{background:var(--ink)}
+  .progress button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+  .nav{display:flex;gap:8px;pointer-events:auto}
+  .nav button{
+    width:38px;height:38px;border:1px solid var(--rule);background:rgba(255,255,255,.6);
+    color:var(--ink);cursor:pointer;font-size:15px;line-height:1;border-radius:50%;
+    display:grid;place-items:center;transition:background .2s,border-color .2s;
+  }
+  .nav button:hover{background:#fff;border-color:rgba(22,24,27,.3)}
+  .nav button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .counter{font-family:"DM Mono",monospace;font-size:11px;color:var(--ink-faint);letter-spacing:.1em;margin-right:12px;align-self:center}
+
+  @media (max-width:900px){
+    .split{grid-template-columns:1fr;gap:26px}
+    .figure{max-height:44dvh}
+    .pin .tag{font-size:9.5px;padding:5px 7px}
+    .pin .line{width:18px}
+    .gallery{grid-template-columns:1fr;gap:14px}
+    .gallery figure:nth-child(n+3){display:none}
+    .slide{padding-bottom:86px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .slide{transition:opacity .01s}
+  }
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- 01 -->
+  <section class="slide cover is-active">
+    <div class="slide-head" style="border:0;padding:0">
+      <span class="eyebrow">Protocolo Lumina <span class="mark">·</span> Equipo de especialistas</span>
+      <span class="eyebrow">Agosto 2026</span>
+    </div>
+    <div class="cover-mid">
+      <h1>Cómo nos<br>presentamos</h1>
+      <p class="lede">El estándar de imagen para la evaluación presencial — y lo que la clínica va a poner de su parte para sostenerlo.</p>
+    </div>
+    <div class="cover-foot">
+      <span class="eyebrow">Uso interno</span>
+      <span class="eyebrow">01 / 07</span>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="eyebrow"><span class="mark">02</span> — Por qué importa</span>
+      <span class="eyebrow">Protocolo Lumina</span>
+    </div>
+    <div class="slide-body">
+      <div>
+        <h2>La evaluación empieza<br>antes de la <em>primera palabra</em>.</h2>
+        <p style="margin-top:26px">La paciente llega a preguntarnos cómo verse mejor. En los primeros segundos ya sacó una conclusión sobre si este es el lugar indicado, y esa conclusión la saca mirándonos.</p>
+        <p style="margin-top:16px">No se trata de ser guapa. Se trata de <strong>coherencia</strong>: una clínica que cuida la piel de otras personas tiene que verse a sí misma cuidada, ordenada y limpia. Eso es lo que hace creíble el plan que estamos proponiendo.</p>
+        <div class="note">Esto es un estándar de presentación profesional, igual que el uniforme o la higiene del box. No es una evaluación de la apariencia personal de nadie.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="eyebrow"><span class="mark">03</span> — El estándar</span>
+      <span class="eyebrow">Cinco puntos</span>
+    </div>
+    <div class="slide-body">
+      <div class="split">
+        <div class="figure">
+          <img loading="lazy" decoding="async" src="img/pose-01-recibir.jpg" alt="Especialista de Lumina de pie, bata blanca abotonada, pelo tomado">
+          <div class="pin left" style="top:16%;right:6%"><span class="tag">Pelo tomado</span><span class="line"></span><span class="dot"></span></div>
+          <div class="pin" style="top:31%;left:4%"><span class="dot"></span><span class="line"></span><span class="tag">Cutis limpio</span></div>
+          <div class="pin left" style="top:44%;right:6%"><span class="tag">Aro discreto</span><span class="line"></span><span class="dot"></span></div>
+          <div class="pin" style="top:63%;left:4%"><span class="dot"></span><span class="line"></span><span class="tag">Bata abotonada</span></div>
+          <div class="pin left" style="top:80%;right:6%"><span class="tag">Postura recta</span><span class="line"></span><span class="dot"></span></div>
+        </div>
+        <div>
+          <ul class="rules">
+            <li><span class="k">01</span><div><div class="t">Cutis limpio</div><div class="d">Piel lavada, hidratada y con protector solar. Maquillaje suave y parejo — base ligera, cejas ordenadas, labio en tono natural. Nunca cargado.</div></div></li>
+            <li><span class="k">02</span><div><div class="t">Pelo tomado y con brillo</div><div class="d">Moño bajo o cola, peinado firme, sin mechas sueltas. Limpio y con brillo. La cara despejada.</div></div></li>
+            <li><span class="k">03</span><div><div class="t">Bata blanca abotonada</div><div class="d">Impecable, planchada, cerrada, sobre prenda de cuello alto. Sin escote a la vista.</div></div></li>
+            <li><span class="k">04</span><div><div class="t">Un aro discreto</div><div class="d">Pequeño y elegante. Uñas cortas y prolijas, en tono natural o transparente.</div></div></li>
+            <li><span class="k">05</span><div><div class="t">Postura</div><div class="d">Espalda recta, hombros atrás, mentón paralelo al piso. Mirada al frente al saludar.</div></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="eyebrow"><span class="mark">04</span> — Cómo se ve en la práctica</span>
+      <span class="eyebrow">Tres momentos</span>
+    </div>
+    <div class="slide-body">
+      <div style="width:100%">
+        <div class="gallery">
+          <figure>
+            <div class="shot"><img loading="lazy" decoding="async" src="img/pose-01-recibir.jpg" alt="De pie, frontal"></div>
+            <figcaption>Al recibir</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img loading="lazy" decoding="async" src="img/pose-02-acompanar.jpg" alt="De pie, tres cuartos"></div>
+            <figcaption>Acompañando al box</figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><img loading="lazy" decoding="async" src="img/pose-03-evaluacion.jpg" alt="Sentada en el escritorio de atención"></div>
+            <figcaption>En la evaluación</figcaption>
+          </figure>
+        </div>
+        <p style="margin-top:24px">El estándar es el mismo de pie, caminando y sentada. Si la bata se abre al sentarse o el pelo se suelta durante el turno, se corrige — no se deja pasar hasta el final del día.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="eyebrow"><span class="mark">05</span> — Lo que no va</span>
+      <span class="eyebrow">Sin excepciones</span>
+    </div>
+    <div class="slide-body">
+      <div style="width:100%">
+        <div class="avoid">
+          <div><span class="x">×</span><p>Pelo suelto o tomado a medias, con mechas sueltas</p></div>
+          <div><span class="x">×</span><p>Bata desabotonada, arrugada o manchada</p></div>
+          <div><span class="x">×</span><p>Escote a la vista bajo la bata</p></div>
+          <div><span class="x">×</span><p>Uñas largas de color fuerte o descascaradas</p></div>
+          <div><span class="x">×</span><p>Maquillaje cargado o labial muy oscuro</p></div>
+          <div><span class="x">×</span><p>Celular sobre el escritorio durante la evaluación</p></div>
+          <div><span class="x">×</span><p>Perfume fuerte en espacio cerrado</p></div>
+          <div><span class="x">×</span><p>Zapatilla deportiva de color o calzado abierto</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="slide">
+    <div class="slide-head">
+      <span class="eyebrow"><span class="mark">06</span> — Lo que pone la clínica</span>
+      <span class="eyebrow">Beneficio para el equipo</span>
+    </div>
+    <div class="slide-body">
+      <div style="width:100%">
+        <h2 style="margin-bottom:clamp(24px,3vw,38px)">No te pedimos algo<br>que no vamos a <em>financiar</em>.</h2>
+        <div class="invest">
+          <div class="card">
+            <span class="n">Incluido</span>
+            <h3>Uniforme nuevo</h3>
+            <p>Batas y prendas de línea, entregadas por la clínica y renovadas cuando pierdan calidad. Con recambio para que siempre haya una impecable disponible.</p>
+          </div>
+          <div class="card">
+            <span class="n">Voluntario</span>
+            <h3>Tratamientos del equipo</h3>
+            <p>Acceso sin costo a tratamientos de la clínica — toxina botulínica, vitaminas faciales y protocolos de piel — con evaluación médica previa, igual que cualquier paciente.</p>
+          </div>
+          <div class="card">
+            <span class="n">Incluido</span>
+            <h3>Peluquería y apoyo</h3>
+            <p>Convenio para peinado y color, más los productos de piel de la clínica a disposición del equipo.</p>
+          </div>
+        </div>
+        <div class="note">Los tratamientos son un beneficio, no un requisito del cargo. Se toman por decisión propia, con evaluación e indicación médica, y quien no quiera hacerse ninguno cumple igual el estándar: cutis limpio, pelo tomado, bata impecable y buena postura.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section class="slide closing">
+    <div class="slide-body" style="justify-content:center">
+      <div>
+        <span class="eyebrow">Protocolo Lumina</span>
+        <h2 style="margin-top:22px">Nos cuidamos igual<br>que cuidamos a<br>nuestras <em>pacientes</em>.</h2>
+        <p>Partimos el lunes. Cualquier duda sobre uniforme, talla o los tratamientos del equipo, con Tamara.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="chrome">
+  <div class="progress" id="progress" role="tablist" aria-label="Ir a lámina"></div>
+  <div style="display:flex">
+    <span class="counter" id="counter">01 / 07</span>
+    <div class="nav">
+      <button id="prev" aria-label="Lámina anterior">←</button>
+      <button id="next" aria-label="Lámina siguiente">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  const progress = document.getElementById('progress');
+  const counter = document.getElementById('counter');
+  let i = 0;
+
+  slides.forEach((_, n) => {
+    const b = document.createElement('button');
+    b.setAttribute('role','tab');
+    b.setAttribute('aria-label','Lámina ' + (n+1));
+    b.addEventListener('click', () => go(n));
+    progress.appendChild(b);
+  });
+  const dots = [...progress.children];
+
+  function go(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+    dots.forEach((d, k) => d.setAttribute('aria-current', k === i));
+    const pad = v => String(v).padStart(2,'0');
+    counter.textContent = pad(i+1) + ' / ' + pad(slides.length);
+    slides[i].scrollTop = 0;
+  }
+
+  document.getElementById('next').addEventListener('click', () => go(i+1));
+  document.getElementById('prev').addEventListener('click', () => go(i-1));
+
+  document.addEventListener('keydown', e => {
+    if(['ArrowRight','PageDown',' '].includes(e.key)){ e.preventDefault(); go(i+1); }
+    if(['ArrowLeft','PageUp'].includes(e.key)){ e.preventDefault(); go(i-1); }
+    if(e.key === 'Home') go(0);
+    if(e.key === 'End') go(slides.length-1);
+  });
+
+  go(0);
+</script>
+</body>
+</html>
