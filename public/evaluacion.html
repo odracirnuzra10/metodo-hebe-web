@@ -988,7 +988,7 @@
        que la paciente necesita saber es que la hora todavía no está confirmada. */
     .pay-estado {
       max-width: 380px;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.6rem;
       color: #fff;
       font-size: 1rem;
       font-weight: 600;
@@ -1064,20 +1064,6 @@
       pointer-events: auto;
     }
 
-    .pay-badge {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      margin-bottom: 1rem;
-      animation: fadeUp 0.5s ease 0.15s both;
-    }
-
     .pay-overlay h2 {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2rem;
@@ -1096,17 +1082,6 @@
       letter-spacing: 2px;
       margin-bottom: 1rem;
       animation: scaleBounce 0.6s ease 0.3s both;
-    }
-
-    .pay-copy {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 0.95rem;
-      line-height: 1.55;
-      text-align: center;
-      max-width: 380px;
-      margin-bottom: 1.6rem;
-      font-weight: 300;
-      animation: fadeUp 0.5s ease 0.4s both;
     }
 
     .pay-btn {
@@ -1882,17 +1857,13 @@
 
   <!-- Payment Overlay — confirmación de costo de la evaluación P3 -->
   <div class="pay-overlay" id="payOverlay">
-    <div class="pay-badge">Último paso</div>
     <h2>TU EVALUACIÓN P3</h2>
     <div class="pay-price">$27.990</div>
     <div class="pay-estado">Tu evaluación está pendiente de pago para ser confirmada.</div>
-    <p class="pay-copy">La evaluación P3 tiene un costo de $27.990. En ella realizaremos un análisis 3D de tu cuerpo
-      para ver el mejor programa para remodelar tu cuerpo.</p>
-    <div class="pay-descuento">Si contratas un plan, los $27.990 se descuentan del valor del plan.</div>
+    <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.</div>
     <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
-      onclick="handlePayClick()">Confirmar y pagar $27.990</a>
-    <div class="pay-note">🔒 Pago seguro a través de MercadoPago. Al confirmar, dejamos tu hora reservada y te
-      escribimos por WhatsApp para coordinar los detalles.</div>
+      onclick="handlePayClick()">Confirmar y pagar</a>
+    <div class="pay-note">🔒 Pago seguro con MercadoPago</div>
     <a class="pay-wa-link" href="#" onclick="skipToWhatsapp(); return false;">Prefiero coordinar por WhatsApp</a>
   </div>
 
