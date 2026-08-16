@@ -1075,6 +1075,71 @@
       animation: scaleBounce 0.6s ease 0.3s both;
     }
 
+    /* Grid con áreas nombradas para poder ordenar distinto en cada pantalla sin duplicar
+       el contenido: en escritorio la muestra del análisis ocupa la columna izquierda y
+       todo el texto va a su derecha; en móvil se apila con el estado y el precio arriba
+       (lo primero que tiene que leer), la imagen en medio y el botón al final. */
+    .pay-fila {
+      display: grid;
+      grid-template-columns: minmax(0, 460px);
+      grid-template-areas:
+        "title"
+        "price"
+        "nota"
+        "img"
+        "cta"
+        "seg";
+      justify-items: center;
+      animation: fadeUp 0.5s ease 0.5s both;
+    }
+
+    .pay-fila>h2 {
+      grid-area: title;
+    }
+
+    .pay-fila>.pay-price {
+      grid-area: price;
+    }
+
+    .pay-fila>.pay-descuento {
+      grid-area: nota;
+    }
+
+    .pay-fila>.pay-muestra {
+      grid-area: img;
+    }
+
+    .pay-fila>.pay-btn {
+      grid-area: cta;
+    }
+
+    .pay-fila>.pay-note {
+      grid-area: seg;
+    }
+
+    .pay-muestra {
+      margin: 0 0 1.4rem;
+      width: 340px;
+      max-width: 76vw;
+    }
+
+    .pay-muestra img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .pay-muestra figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      line-height: 1.35;
+      letter-spacing: 0.4px;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
     .pay-btn {
       display: inline-flex;
       align-items: center;
@@ -1129,6 +1194,40 @@
     .pay-wa-link:hover {
       color: rgba(255, 255, 255, 0.7);
       border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Escritorio: dos columnas. La imagen manda el alto y el bloque de texto queda
+       centrado a su derecha — las filas 1fr de arriba y abajo hacen ese centrado sin
+       tener que envolver el texto en otro div. */
+    @media (min-width: 769px) {
+      .pay-fila {
+        grid-template-columns: auto minmax(0, 460px);
+        grid-template-rows: 1fr auto auto auto auto auto 1fr;
+        grid-template-areas:
+          "img ."
+          "img title"
+          "img price"
+          "img nota"
+          "img cta"
+          "img seg"
+          "img .";
+        column-gap: 2.4rem;
+        justify-items: start;
+        align-items: center;
+      }
+
+      .pay-fila>.pay-muestra {
+        margin-bottom: 0;
+      }
+
+      .pay-fila>h2,
+      .pay-fila>.pay-note {
+        text-align: left;
+      }
+
+      .pay-fila>h2 {
+        margin-bottom: 0.8rem;
+      }
     }
 
     /* Marquesina de tratamientos */
@@ -1848,12 +1947,22 @@
 
   <!-- Payment Overlay — confirmación de costo de la evaluación P3 -->
   <div class="pay-overlay" id="payOverlay">
-    <h2>TU EVALUACIÓN P3 ESTÁ PENDIENTE DE PAGO PARA SER CONFIRMADA</h2>
-    <div class="pay-price">$27.990</div>
-    <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.</div>
-    <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
-      onclick="handlePayClick()">Confirmar y pagar</a>
-    <div class="pay-note">🔒 Pago seguro con MercadoPago</div>
+    <!-- La muestra del análisis va junto al texto, no aparte: enseña QUÉ recibe por los
+         $27.990 justo donde decide pagar. El orden visual lo pone el grid (.pay-fila),
+         distinto en escritorio y en móvil; el del DOM es el de lectura. -->
+    <div class="pay-fila">
+      <figure class="pay-muestra">
+        <img src="/img/analisis-inbody.webp" alt="Ejemplo de análisis de tejidos corporales de Método Hebe" width="760"
+          height="760" loading="lazy" decoding="async">
+        <figcaption>Ejemplo de análisis corporal · Método Hebe</figcaption>
+      </figure>
+      <h2>TU EVALUACIÓN P3 ESTÁ PENDIENTE DE PAGO PARA SER CONFIRMADA</h2>
+      <div class="pay-price">$27.990</div>
+      <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.</div>
+      <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
+        onclick="handlePayClick()">Confirmar y pagar</a>
+      <div class="pay-note">🔒 Pago seguro con MercadoPago</div>
+    </div>
     <a class="pay-wa-link" href="#" onclick="skipToWhatsapp(); return false;">Prefiero coordinar por WhatsApp</a>
   </div>
 
@@ -2104,8 +2213,10 @@
           content_category: 'corporal',
           clinica: 'hebe',
           sede: sedeKey,
-          value: 10,
-          currency: 'USD',
+          // Valor real del lead en pesos, la misma moneda que el Purchase de $27.990:
+          // así Meta optimiza sobre plata comparable y no sobre un número inventado.
+          value: 2000,
+          currency: 'CLP',
           content_ids: ['hebe_evaluacion_p3']
         }, { eventID: eventId });
       }
