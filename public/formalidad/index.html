@@ -94,16 +94,8 @@
 
   /* markers over the photo */
   .pin{position:absolute;display:flex;align-items:center;gap:0;transform:translateY(-50%)}
-  /* punta de flecha: la punta cae exactamente en la x del pin.
-     .pin apunta a la izquierda (etiqueta a la derecha) y .pin.left al revés. */
-  .pin .dot{
-    width:0;height:0;flex:none;border-radius:0;background:none;
-    border-top:5px solid transparent;border-bottom:5px solid transparent;
-    border-right:9px solid var(--alert);
-    filter:drop-shadow(0 0 2px rgba(255,255,255,.95));
-  }
-  .pin.left .dot{border-right:0;border-left:9px solid var(--alert)}
-  .pin .line{height:1px;background:var(--alert);width:clamp(14px,2.2dvh,34px);flex:none}
+  .pin .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(255,255,255,.72);flex:none}
+  .pin .line{height:1px;background:var(--gold);width:clamp(14px,2.2dvh,34px);flex:none}
   .pin .tag{
     font-family:"DM Mono",monospace;font-size:clamp(8.5px,1.15dvh,10.5px);letter-spacing:.1em;text-transform:uppercase;
     background:rgba(255,255,255,.94);color:var(--ink);
@@ -128,7 +120,7 @@
   .avoid{display:flex;flex-direction:column;width:100%;max-width:80ch}
   .avoid div{display:grid;grid-template-columns:16px 1fr;gap:15px;align-items:baseline;padding:clamp(10px,1.15vw,14px) 0;border-bottom:1px solid var(--rule)}
   .avoid div:first-child{border-top:1px solid var(--rule)}
-  .avoid .x{font-family:"DM Mono",monospace;font-size:14px;color:var(--ink-soft);display:block;margin:0}
+  .avoid .x{font-family:"DM Mono",monospace;font-size:15px;font-weight:500;color:var(--alert);display:block;margin:0}
   .avoid p{font-size:clamp(14px,1.2vw,17px);color:var(--ink);line-height:1.4;max-width:none}
 
   /* ---------- invierte ---------- */
