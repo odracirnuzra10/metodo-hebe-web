@@ -17,7 +17,6 @@
     --ink-faint:#9A9C9C;
     --gold:#B99A63;
     --clinical:#C2D0D4;
-    --alert:#C0342B;
     --rule:rgba(22,24,27,.14);
     --slide-pad: clamp(28px, 4.4vw, 76px);
   }
@@ -87,41 +86,33 @@
   /* ---------- annotated figure ---------- */
   .split{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(26px,4vw,68px);align-items:center;width:100%}
 
-  /* el ancho manda: así la caja es siempre 3/4 exacto, igual que la foto,
-     y no hay recorte. Antes max-height rompía la proporción y cortaba la cabeza. */
-  .figure{position:relative;border-radius:2px;overflow:hidden;background:var(--porcelain-deep);aspect-ratio:3/4;width:min(100%,calc(70dvh*3/4));margin-inline:auto}
+  .figure{position:relative;border-radius:2px;overflow:hidden;background:var(--porcelain-deep);aspect-ratio:3/4;max-height:70dvh;margin-inline:auto;width:100%}
   .figure img{width:100%;height:100%;object-fit:cover;display:block}
 
   /* markers over the photo */
   .pin{position:absolute;display:flex;align-items:center;gap:0;transform:translateY(-50%)}
-  .pin .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(255,255,255,.72);flex:none}
-  .pin .line{height:1px;background:var(--gold);width:clamp(14px,2.2dvh,34px);flex:none}
+  .pin .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(255,255,255,.72);flex:none}
+  .pin .line{height:1px;background:var(--gold);width:clamp(22px,3.4vw,52px);flex:none}
   .pin .tag{
-    font-family:"DM Mono",monospace;font-size:clamp(8.5px,1.15dvh,10.5px);letter-spacing:.1em;text-transform:uppercase;
+    font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
     background:rgba(255,255,255,.94);color:var(--ink);
-    padding:clamp(4px,.55dvh,6px) clamp(6px,.95dvh,9px);white-space:nowrap;border:1px solid rgba(22,24,27,.09);
+    padding:6px 9px;white-space:nowrap;border:1px solid rgba(22,24,27,.09);
   }
-  /* .pin      → punto, línea, etiqueta: se ancla con left  y el punto queda en esa x
-     .pin.left → etiqueta, línea, punto: se ancla con right y el punto queda en 100-right
-     Así el punto cae siempre en la x indicada, sin importar cuánto mida la etiqueta. */
-  .pin.left{flex-direction:row}
+  .pin.left{flex-direction:row-reverse}
 
   /* ---------- checklist ---------- */
   .rules{list-style:none;display:flex;flex-direction:column}
-  .rules li{padding:clamp(8px,1.1dvh,15px) 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:26px 1fr;gap:16px;align-items:start}
+  .rules li{padding:clamp(13px,1.5vw,19px) 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:26px 1fr;gap:16px;align-items:start}
   .rules li:first-child{border-top:1px solid var(--rule)}
   .rules .k{font-family:"DM Mono",monospace;font-size:11px;color:var(--gold);padding-top:5px}
-  .rules .t{font-size:clamp(14px,1.9dvh,20px);color:var(--ink);font-weight:400;line-height:1.35}
-  .rules .d{font-size:clamp(12px,1.5dvh,15px);color:var(--ink-soft);margin-top:5px;line-height:1.5}
+  .rules .t{font-size:clamp(15px,1.42vw,20px);color:var(--ink);font-weight:400;line-height:1.35}
+  .rules .d{font-size:clamp(13px,1.1vw,15px);color:var(--ink-soft);margin-top:5px;line-height:1.5}
 
   /* ---------- no va ---------- */
-  /* lista vertical: la grilla auto-fit dejaba la última fila incompleta
-     y el fondo del contenedor asomaba como un bloque gris */
-  .avoid{display:flex;flex-direction:column;width:100%;max-width:80ch}
-  .avoid div{display:grid;grid-template-columns:16px 1fr;gap:15px;align-items:baseline;padding:clamp(10px,1.15vw,14px) 0;border-bottom:1px solid var(--rule)}
-  .avoid div:first-child{border-top:1px solid var(--rule)}
-  .avoid .x{font-family:"DM Mono",monospace;font-size:15px;font-weight:500;color:var(--alert);display:block;margin:0}
-  .avoid p{font-size:clamp(14px,1.2vw,17px);color:var(--ink);line-height:1.4;max-width:none}
+  .avoid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);width:100%}
+  .avoid div{background:var(--porcelain);padding:clamp(18px,2.2vw,26px)}
+  .avoid .x{font-family:"DM Mono",monospace;font-size:13px;color:var(--ink-faint);display:block;margin-bottom:11px}
+  .avoid p{font-size:clamp(14px,1.2vw,17px);color:var(--ink);line-height:1.4}
 
   /* ---------- invierte ---------- */
   .invest{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(18px,2.4vw,34px);width:100%}
@@ -161,13 +152,11 @@
   .nav button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   .counter{font-family:"DM Mono",monospace;font-size:11px;color:var(--ink-faint);letter-spacing:.1em;margin-right:12px;align-self:center}
 
-  @media (max-width:1200px){
-    .pin{display:none}
-  }
-
   @media (max-width:900px){
     .split{grid-template-columns:1fr;gap:26px}
-    .figure{width:min(100%,calc(52dvh*3/4))}
+    .figure{max-height:44dvh}
+    .pin .tag{font-size:9.5px;padding:5px 7px}
+    .pin .line{width:18px}
     .gallery{grid-template-columns:1fr;gap:14px}
     .slide{padding-bottom:86px}
   }
@@ -217,26 +206,25 @@
   <section class="slide">
     <div class="slide-head">
       <span class="eyebrow"><span class="mark">03</span> — El estándar</span>
-      <span class="eyebrow">Seis puntos</span>
+      <span class="eyebrow">Cinco puntos</span>
     </div>
     <div class="slide-body">
       <div class="split">
         <div class="figure">
-          <img loading="lazy" decoding="async" src="/formalidad/img/pose-01-recibir.jpg" alt="Especialista de Lumina de pie, bata blanca abotonada, pelo tomado">
-          <div class="pin" style="top:7%;left:52%"><span class="dot"></span><span class="line"></span><span class="tag">Pelo tomado</span></div>
-          <div class="pin left" style="top:20%;right:63%"><span class="tag">Cutis cuidado</span><span class="line"></span><span class="dot"></span></div>
-          <div class="pin" style="top:22%;left:60%"><span class="dot"></span><span class="line"></span><span class="tag">Aro discreto</span></div>
-          <div class="pin left" style="top:72%;right:58%"><span class="tag">Postura recta</span><span class="line"></span><span class="dot"></span></div>
-          <div class="pin left" style="top:56%;right:50%"><span class="tag">Bata abotonada</span><span class="line"></span><span class="dot"></span></div>
+          <img loading="lazy" decoding="async" src="img/pose-01-recibir.jpg" alt="Especialista de Lumina de pie, bata blanca abotonada, pelo tomado">
+          <div class="pin left" style="top:16%;right:6%"><span class="tag">Pelo tomado</span><span class="line"></span><span class="dot"></span></div>
+          <div class="pin" style="top:31%;left:4%"><span class="dot"></span><span class="line"></span><span class="tag">Cutis limpio</span></div>
+          <div class="pin left" style="top:44%;right:6%"><span class="tag">Aro discreto</span><span class="line"></span><span class="dot"></span></div>
+          <div class="pin" style="top:63%;left:4%"><span class="dot"></span><span class="line"></span><span class="tag">Bata abotonada</span></div>
+          <div class="pin left" style="top:80%;right:6%"><span class="tag">Postura recta</span><span class="line"></span><span class="dot"></span></div>
         </div>
         <div>
           <ul class="rules">
-            <li><span class="k">01</span><div><div class="t">Cutis cuidado</div><div class="d">Piel lavada, hidratada y con protector solar. Maquillaje suave y parejo — base ligera, cejas ordenadas, labio en tono natural. Nunca cargado.</div></div></li>
+            <li><span class="k">01</span><div><div class="t">Cutis limpio</div><div class="d">Piel lavada, hidratada y con protector solar. Maquillaje suave y parejo — base ligera, cejas ordenadas, labio en tono natural. Nunca cargado.</div></div></li>
             <li><span class="k">02</span><div><div class="t">Pelo tomado y con brillo</div><div class="d">Moño bajo o cola, peinado firme, sin mechas sueltas. Limpio y con brillo. La cara despejada.</div></div></li>
             <li><span class="k">03</span><div><div class="t">Bata blanca abotonada</div><div class="d">Impecable, planchada, cerrada, sobre prenda de cuello alto. Sin escote a la vista.</div></div></li>
             <li><span class="k">04</span><div><div class="t">Un aro discreto</div><div class="d">Pequeño y elegante. Uñas cortas y prolijas, en tono natural o transparente.</div></div></li>
             <li><span class="k">05</span><div><div class="t">Postura</div><div class="d">Espalda recta, hombros atrás, mentón paralelo al piso. Mirada al frente al saludar.</div></div></li>
-            <li><span class="k">06</span><div><div class="t">Perfume suave</div><div class="d">Apenas perceptible al acercarse. En box cerrado, mejor poco que mucho.</div></div></li>
           </ul>
         </div>
       </div>
@@ -253,15 +241,15 @@
       <div style="width:100%">
         <div class="gallery">
           <figure>
-            <div class="shot"><img loading="lazy" decoding="async" src="/formalidad/img/pose-01-recibir.jpg" alt="De pie, frontal"></div>
+            <div class="shot"><img loading="lazy" decoding="async" src="img/pose-01-recibir.jpg" alt="De pie, frontal"></div>
             <figcaption>Al recibir</figcaption>
           </figure>
           <figure>
-            <div class="shot"><img loading="lazy" decoding="async" src="/formalidad/img/pose-02-acompanar.jpg" alt="De pie, tres cuartos"></div>
+            <div class="shot"><img loading="lazy" decoding="async" src="img/pose-02-acompanar.jpg" alt="De pie, tres cuartos"></div>
             <figcaption>Acompañando al box</figcaption>
           </figure>
           <figure>
-            <div class="shot"><img loading="lazy" decoding="async" src="/formalidad/img/pose-03-evaluacion.jpg" alt="Sentada en el escritorio de atención"></div>
+            <div class="shot"><img loading="lazy" decoding="async" src="img/pose-03-evaluacion.jpg" alt="Sentada en el escritorio de atención"></div>
             <figcaption>En la evaluación</figcaption>
           </figure>
         </div>
@@ -318,7 +306,7 @@
             <p>El pelo limpio, con brillo y bien tomado lo mantiene cada una. La clínica no cubre peluquería, pero deja sus productos de piel a disposición del equipo.</p>
           </div>
         </div>
-        <div class="note">Los tratamientos son un beneficio, no un requisito del cargo. Se toman por decisión propia, con evaluación e indicación médica, y quien no quiera hacerse ninguno cumple igual el estándar: cutis cuidado, pelo tomado, bata impecable y buena postura.</div>
+        <div class="note">Los tratamientos son un beneficio, no un requisito del cargo. Se toman por decisión propia, con evaluación e indicación médica, y quien no quiera hacerse ninguno cumple igual el estándar: cutis limpio, pelo tomado, bata impecable y buena postura.</div>
       </div>
     </div>
   </section>

@@ -1,81 +1,59 @@
 # ═══════════════════════════════════════════
 # Método Hebe — robots.txt
 # Optimizado para SEO + AI Search (GEO)
-# Última actualización: 2026-08-16
+# Última actualización: 2026-04-14
 # ═══════════════════════════════════════════
-
-# ── Documentos internos ──
-# /formalidad es material de uso interno del equipo de clínica.
-# El Disallow va repetido en cada grupo a propósito: un crawler con
-# grupo propio ignora por completo el de User-agent: *, así que una
-# sola línea al final no lo cubriría.
 
 # ── Crawlers tradicionales ──
 User-agent: Googlebot
-Disallow: /formalidad
 Allow: /
 
 User-agent: Bingbot
-Disallow: /formalidad
 Allow: /
 
 # ── AI Training Crawlers (permitir para aparecer en modelos) ──
 User-agent: GPTBot
-Disallow: /formalidad
 Allow: /
 
 User-agent: Google-Extended
-Disallow: /formalidad
 Allow: /
 
 User-agent: ClaudeBot
-Disallow: /formalidad
 Allow: /
 
 User-agent: anthropic-ai
-Disallow: /formalidad
 Allow: /
 
 User-agent: CCBot
-Disallow: /formalidad
 Allow: /
 
 # ── AI Search/Retrieval Crawlers (crítico para GEO) ──
 User-agent: ChatGPT-User
-Disallow: /formalidad
 Allow: /
 
 User-agent: OAI-SearchBot
-Disallow: /formalidad
 Allow: /
 
 User-agent: Claude-SearchBot
-Disallow: /formalidad
 Allow: /
 
 User-agent: Claude-User
-Disallow: /formalidad
 Allow: /
 
 User-agent: PerplexityBot
-Disallow: /formalidad
 Allow: /
 
 User-agent: Applebot-Extended
-Disallow: /formalidad
 Allow: /
 
 User-agent: Amazonbot
-Disallow: /formalidad
 Allow: /
 
 User-agent: FacebookBot
-Disallow: /formalidad
 Allow: /
 
-# ── Default: permitir todo menos lo interno ──
+# ── Default: permitir todo ──
 User-agent: *
-Disallow: /formalidad
 Allow: /
 
 # Sitemap
