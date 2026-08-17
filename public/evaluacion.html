@@ -2351,9 +2351,12 @@
       const payEventId = 'pago_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
       window.__payEventId = payEventId;
 
-      // Meta Pixel — Purchase (intención de pago: se dispara al clic, no al pago confirmado)
+      // Evento propio, NO Purchase: esto es el clic, no la plata. El Purchase de
+      // verdad lo manda el servidor por CAPI cuando MercadoPago confirma el pago
+      // (incluye los que pagan por link directo, que acá nunca se verían). Si
+      // los dos usaran 'Purchase', Meta contaría dos compras por cada pago.
       if (typeof fbq === 'function') {
-        fbq('track', 'Purchase', {
+        fbq('trackCustom', 'ClickPagar', {
           content_name: 'Método Hebe',
           content_category: 'corporal',
           clinica: 'hebe',
