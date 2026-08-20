@@ -93,7 +93,6 @@ button{cursor:pointer;border:none;background:none}
 
 /* ── Tipografía base ── */
 h1,h2,h3,h4{font-weight:600;letter-spacing:-.028em;line-height:1.08;color:var(--ink)}
-h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.01em;color:var(--cyan-dd)}
 p{color:var(--ink-2)}
 
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-dd);font-weight:600;margin-bottom:16px}
@@ -305,6 +304,8 @@ form .btn{width:100%;margin-top:6px}
 .form-micro{font-size:13px;color:var(--ink-3);text-align:center;margin-top:14px;line-height:1.55}
 .form-ok{display:none;background:var(--cyan-soft);border-left:2px solid var(--cyan);border-radius:0 9px 9px 0;padding:16px 20px;font-size:14.5px;color:var(--ink-2);line-height:1.55;margin-bottom:18px}
 .form-ok.on{display:block}
+.form-ok a{color:var(--cyan-dd);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.form-ok--err{background:var(--gold-soft);border-left-color:var(--gold)}
 
 /* ── Footer ── */
 .foot{background:var(--ink);color:var(--on-slab-3);padding:clamp(40px,5vw,64px) 0 32px}
@@ -401,8 +402,8 @@ form .btn{width:100%;margin-top:6px}
     <div class="hero-grid">
       <div class="hero-copy">
         <span class="eyebrow">Franquicias Método Hebe</span>
-        <h1 data-cro="hero-headline">Opera tu propia clínica de estética con un sistema que <em>ya funciona</em></h1>
-        <p class="hero-sub">No es una licencia de marca. Es la operación completa: los equipos, los protocolos clínicos, el software con el que se gestiona la clínica y la agencia que te genera la demanda. <b>Todo dentro de la franquicia, no como extras.</b></p>
+        <h1 data-cro="hero-headline">Una sucursal factura entre $25 y $100 millones al mes. Abre la tuya.</h1>
+        <p class="hero-sub">No es una licencia de marca. Recibes la operación completa: los equipos, los protocolos clínicos, el software con el que se gestiona la clínica y la agencia que te trae los pacientes. <b>Todo incluido mientras dures en la red.</b></p>
         <div class="cta-block">
           <a href="#solicitud" class="btn btn--lg" data-cro="primary-cta" data-loc="hero" data-cta-label>Agenda una conversación</a>
           <p class="cta-micro" data-cta-micro>Sin compromiso · Es una conversación exploratoria · Te respondemos en 24 horas</p>
@@ -442,26 +443,26 @@ form .btn{width:100%;margin-top:6px}
       <span class="shead-num" aria-hidden="true">01</span>
       <div class="shead-main">
         <span class="eyebrow">El dato que sostiene todo</span>
-        <h2>Partamos por el número, no por el <em>discurso</em></h2>
-        <p class="shead-sub">Esto es lo que factura hoy una sede propia de Método Hebe. Es un dato de operación, no una proyección de plan de negocios.</p>
+        <h2>Entre $25 y $100 millones al mes, por sucursal</h2>
+        <p class="shead-sub">Es lo que facturan hoy las sucursales propias de la red. La diferencia entre el piso y el techo la hacen el sector donde está el local y su capacidad. Dato de operación, no proyección de plan de negocios.</p>
       </div>
     </div>
 
     <div class="figs rv">
       <div class="fig">
-        <span class="fig-v tnum">$25.000.000</span>
-        <span class="fig-u">CLP por mes</span>
-        <p class="fig-l">Facturación promedio mensual de una sede propia de Método Hebe.</p>
+        <span class="fig-v tnum">$25 a $100</span>
+        <span class="fig-u">Millones al mes, por sucursal</span>
+        <p class="fig-l">Lo que vende una sucursal según su sector y su capacidad instalada.</p>
       </div>
       <div class="fig">
         <span class="fig-v tnum">36%</span>
         <span class="fig-u">Margen operativo aproximado</span>
-        <p class="fig-l">Margen operativo cercano al 36% sobre esa misma operación.</p>
+        <p class="fig-l">El margen operativo con el que trabaja la red sobre esa facturación.</p>
       </div>
     </div>
 
     <div class="note rv">
-      <p><b>Con una aclaración que te debemos:</b> esa es una sede madura. Una sede nueva no parte en ese nivel — tiene una curva de maduración por delante. Por eso más abajo te mostramos el payback con la rampa declarada y no con el mejor escenario posible.</p>
+      <p><b>Ojo con el techo del rango:</b> los $100 millones son de una sucursal madura y bien ubicada. Una sucursal nueva no parte ahí — tiene una curva de maduración por delante. Por eso más abajo te mostramos el payback con la rampa declarada y no con el mejor escenario posible.</p>
     </div>
 
     <div class="sedes rv">
@@ -491,7 +492,7 @@ form .btn{width:100%;margin-top:6px}
       <span class="shead-num" aria-hidden="true">02</span>
       <div class="shead-main">
         <span class="eyebrow">Las tres modalidades</span>
-        <h2>Tres formas de entrar a la <em>red</em></h2>
+        <h2>Elige con qué entras a la red</h2>
         <p class="shead-sub">Puedes operar solo estética corporal, solo estética facial, o las dos marcas en un mismo local. Las tres son franquicias completas: cambia el alcance, no el acompañamiento.</p>
       </div>
     </div>
@@ -558,7 +559,7 @@ form .btn{width:100%;margin-top:6px}
       <span class="shead-num" aria-hidden="true">03</span>
       <div class="shead-main">
         <span class="eyebrow eyebrow--slab">Acompañamiento punta a punta</span>
-        <h2>La franquicia no termina el día que <em>abres</em></h2>
+        <h2>La franquicia no termina el día que abres</h2>
         <p class="shead-sub slab-lead">La objeción real no es si el modelo funciona — el número de arriba responde eso. La objeción real es si te acompañan después de firmar. Acá está, punto por punto, <b>lo que recibes antes de abrir y lo que sigues recibiendo mientras operes.</b></p>
       </div>
     </div>
@@ -668,8 +669,8 @@ form .btn{width:100%;margin-top:6px}
       <span class="shead-num" aria-hidden="true">04</span>
       <div class="shead-main">
         <span class="eyebrow">Cómo se recupera la inversión</span>
-        <h2>El payback, con las advertencias <em>puestas</em></h2>
-        <p class="shead-sub">Un candidato serio desconfía de la proyección optimista, y hace bien. Preferimos darte el rango honesto y decirte qué lo mueve.</p>
+        <h2>Recuperas la inversión entre el mes 23 y el 34</h2>
+        <p class="shead-sub">Ese es el rango del paquete completo, y depende de cómo estructures la operación. Te lo damos con las advertencias puestas: un candidato serio desconfía de la proyección optimista, y hace bien.</p>
       </div>
     </div>
 
@@ -718,7 +719,7 @@ form .btn{width:100%;margin-top:6px}
       <span class="shead-num" aria-hidden="true">05</span>
       <div class="shead-main">
         <span class="eyebrow">Qué se paga cada mes</span>
-        <h2>El único cobro de la marca es el <em>royalty</em></h2>
+        <h2>El único cobro de la marca es el royalty</h2>
         <p class="shead-sub">Todo lo demás o va incluido, o es inversión que va directo a generar tus propios pacientes. Esto es todo lo que sale de tu caja cada mes.</p>
       </div>
     </div>
@@ -777,13 +778,13 @@ form .btn{width:100%;margin-top:6px}
       <span class="shead-num" aria-hidden="true">06</span>
       <div class="shead-main">
         <span class="eyebrow">Territorio</span>
-        <h2>Tu zona es <em>tuya</em></h2>
+        <h2>Tu zona es tuya, y hoy están todas libres</h2>
       </div>
     </div>
     <div class="terr rv">
-      <p class="terr-lead">Cada franquicia opera con exclusividad territorial en la zona que se le asigna.</p>
+      <p class="terr-lead">Cada franquicia opera con exclusividad territorial en la zona que se le asigna. Este es el primer lote: hoy no hay ninguna zona tomada.</p>
       <div>
-        <p>El criterio de asignación y el detalle de cada zona los definimos contigo en la reunión, caso a caso: depende de tu ciudad, de la densidad y de lo que ya tenga la red.</p>
+        <p>Todavía no hay franquiciados en la red, así que el mapa está entero. El criterio de asignación y el detalle de cada zona los definimos contigo en la reunión, caso a caso: depende de tu ciudad, de la densidad y de lo que ya tenga la red.</p>
         <p>Por eso el primer dato que te pedimos abajo es tu ciudad o zona de interés. Es lo primero que revisamos.</p>
       </div>
     </div>
@@ -796,8 +797,8 @@ form .btn{width:100%;margin-top:6px}
     <div class="form-grid">
       <div class="form-side rv">
         <span class="eyebrow">07 · Conversemos</span>
-        <h2>Agenda una <em>conversación</em></h2>
-        <p>Cinco datos. Con eso revisamos si tu zona está disponible y si el modelo te calza. Si calza, agendamos.</p>
+        <h2>Agenda una conversación</h2>
+        <p>Cinco datos y listo. Con eso revisamos si tu zona sigue libre y si el modelo te calza. Si calza, agendamos esta semana.</p>
         <div class="form-tr">
           <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sin compromiso: es una conversación exploratoria.</div>
           <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Te respondemos en 24 horas.</div>
@@ -855,7 +856,7 @@ form .btn{width:100%;margin-top:6px}
         <a href="mailto:contacto@metodohebe.cl">contacto@metodohebe.cl</a> · <a href="/">metodohebe.cl</a>
       </div>
     </div>
-    <p class="foot-legal">Las cifras de facturación y margen corresponden a la operación de sedes propias de Método Hebe y se entregan como referencia. No constituyen una proyección ni una garantía de resultados para un franquiciado; el rango de payback es una estimación. Método Hebe y Protocolo Lumina son marcas del grupo OACG, al que también pertenecen Clinera y Metricads.</p>
+    <p class="foot-legal">El rango de facturación y el margen corresponden a la operación de sucursales propias de la red y se entregan como referencia; el monto que alcance cada sucursal depende de su sector y de su capacidad. No constituyen una proyección ni una garantía de resultados para un franquiciado; el rango de payback es una estimación. Método Hebe y Protocolo Lumina son marcas del grupo OACG, al que también pertenecen Clinera y Metricads.</p>
     <div class="foot-bottom">
       <span>© 2026 MÉTODO HEBE SpA · Todos los derechos reservados</span>
       <span>Vitacura · Concón · Los Ángeles</span>
@@ -924,29 +925,74 @@ document.addEventListener('click',function(e){
 },true);
 
 /* ═══════════════════════════════════════════════════════════════════
-   TODO: CONECTAR EL ENVÍO DEL FORMULARIO
-   Hoy este handler NO manda nada a ninguna parte. Falta definir el
-   destino del lead (endpoint propio, CRM o webhook) y recién ahí se
-   reemplaza el bloque de abajo por el POST real.
-   Mientras tanto falla en voz alta a propósito: así es imposible
-   publicar la página creyendo que los leads están llegando.
+   ENVÍO DEL LEAD
+   Va al webhook de n8n, igual que el resto de los formularios del sitio.
+   Desde ahí n8n lo enruta a ricardo@oacg.cl.
+
+   TODO: crear el webhook `franquicia-lead` en n8n.oacg.cl y apuntarlo al
+   correo. Mientras no exista, el POST falla y el formulario cae al
+   respaldo por mail — el lead nunca se pierde en silencio, pero el
+   candidato ve un paso extra. Conviene crearlo antes de pautar.
    ═══════════════════════════════════════════════════════════════════ */
+var LEAD_WEBHOOK='https://n8n.oacg.cl/webhook/franquicia-lead';
+var LEAD_EMAIL='ricardo@oacg.cl';
+
 var formFranquicia=document.getElementById('form-franquicia');
+var enviando=false;
+
+function mostrarAviso(html,ok){
+  var box=document.getElementById('form-stub');
+  box.innerHTML=html;
+  box.classList.toggle('form-ok--err',!ok);
+  box.classList.add('on');
+  box.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});
+}
+
+// Respaldo: si el webhook no responde, el candidato manda el mismo dato por
+// correo con un clic. Preferimos un paso extra antes que perder el lead.
+function enlaceDeRespaldo(d){
+  var cuerpo=['Nombre: '+d.nombre,'Teléfono: '+d.telefono,'Email: '+d.email,
+              'Ciudad o zona: '+d.zona,'Rango de inversión: '+d.rango_inversion,
+              '','Enviado desde '+location.href].join('\n');
+  return 'mailto:'+LEAD_EMAIL+'?subject='+encodeURIComponent('Franquicia Método Hebe — '+d.nombre)+
+         '&body='+encodeURIComponent(cuerpo);
+}
+
 formFranquicia.addEventListener('submit',function(e){
   e.preventDefault();
-  if(!formFranquicia.reportValidity())return;
+  if(enviando||!formFranquicia.reportValidity())return;
 
-  var data=Object.fromEntries(new FormData(formFranquicia).entries());
-  data.attribution=(window.hebeAttr&&window.hebeAttr())||{};
+  var d=Object.fromEntries(new FormData(formFranquicia).entries());
+  var boton=formFranquicia.querySelector('button[type=submit]');
+  enviando=true; boton.disabled=true; boton.textContent='Enviando…';
 
-  console.warn('[TODO] Formulario de franquicia sin endpoint: el lead NO se envió.',data);
+  var payload={
+    nombre:d.nombre, telefono:d.telefono, email:d.email,
+    zona:d.zona, rango_inversion:d.rango_inversion,
+    fuente:'Landing Franquicias — Método Hebe',
+    marca:'hebe', tipo_lead:'franquicia',
+    destino:LEAD_EMAIL,
+    'landing url':location.href,
+    'fecha de creacion':new Date().toLocaleString('es-CL',{timeZone:'America/Santiago'}),
+    atribucion:(window.hebeAttr&&window.hebeAttr())||{}
+  };
 
-  if(window.hebeTrack)hebeTrack('franquicia_form_submit',{rango_inversion:data.rango_inversion||'',zona:data.zona||''});
+  if(window.hebeTrack)hebeTrack('franquicia_form_submit',{rango_inversion:d.rango_inversion||'',zona:d.zona||''});
 
-  var stub=document.getElementById('form-stub');
-  stub.textContent='⚠ Este formulario todavía no está conectado a ningún destino. Falta el endpoint de envío — revisa la consola.';
-  stub.classList.add('on');
-  stub.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});
+  fetch(LEAD_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){ if(!r.ok)throw new Error('HTTP '+r.status); return r; })
+    .then(function(){
+      formFranquicia.reset();
+      boton.textContent=CTA_COPY;
+      mostrarAviso('<b>Listo.</b> Recibimos tus datos y te escribimos dentro de 24 horas.',true);
+    })
+    .catch(function(err){
+      console.error('[franquicia] el webhook no respondió, se ofrece el respaldo por mail',err);
+      boton.disabled=false; boton.textContent=CTA_COPY;
+      mostrarAviso('No pudimos enviar tus datos ahora. <a href="'+enlaceDeRespaldo(d)+
+                   '">Mándanoslos por correo</a> y te respondemos igual dentro de 24 horas.',false);
+    })
+    .then(function(){ enviando=false; });
 });
 </script>
 </body>
