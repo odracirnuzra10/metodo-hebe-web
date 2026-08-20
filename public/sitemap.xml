@@ -102,6 +102,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+  <!-- FRANQUICIAS (B2B) -->
+  <url>
+    <loc>https://www.metodohebe.cl/franquicia</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <!-- PÁGINAS DE SEDES -->
   <url>
     <loc>https://www.metodohebe.cl/clinica-estetica-corporal-vitacura</loc>
