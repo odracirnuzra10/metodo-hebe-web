@@ -1,3 +1,9 @@
+## 2026-08-20 — `/franquicia` entra al sitemap
+
+### `public/sitemap.xml`
+- Se agrega `https://www.metodohebe.cl/franquicia` con `changefreq` mensual y prioridad 0.80, en un bloque propio de franquicias.
+- Ojo: la página sigue con `noindex, nofollow` hasta confirmar INAPI. Mientras siga así, Search Console va a reportar la URL como "enviada pero marcada con noindex". Las dos cosas tienen que cambiar juntas.
+
 ## 2026-08-20 — Landing de captación de franquiciados en `/franquicia`
 
 ### `public/franquicia/index.html` (nuevo)
