@@ -1,3 +1,18 @@
+## 2026-08-20 — Landing de captación de franquiciados en `/franquicia`
+
+### `public/franquicia/index.html` (nuevo)
+- Landing B2B de captación de franquiciados, mobile-first, con un solo CTA («Agenda una conversación») repetido 7 veces: nav, hero, después del bloque de acompañamiento, después de la sección de pagos, formulario y barra fija de mobile.
+- Ocho secciones, cada una desactivando una objeción: hero, dato de operación (facturación y margen de sede propia), tres modalidades, acompañamiento punta a punta —el bloque de mayor peso visual, sobre fondo oscuro—, payback con la rampa declarada, qué se paga cada mes, territorio y formulario.
+- Identidad tomada del sitio: misma paleta teal + tinta + oro, mismo `em` en Playfair Display dentro de los títulos, mismo topbar oscuro. Tipografía de texto en Instrument Sans y cifras en Playfair, para un registro de documento de negocio.
+- Atributos `data-cro` en `hero`, `hero-headline`, `primary-cta`, `acompanamiento` y `form`. Copy del CTA y su micro-copy en dos constantes al inicio del script, para poder testearlos sin tocar el markup.
+- Formulario de cinco campos (nombre, teléfono, email, ciudad o zona, rango de inversión). El handler es un stub: no envía nada y avisa en pantalla y en consola, para que sea imposible publicarlo creyendo que los leads llegan.
+- Medición con el mismo stack del sitio (GTM, GA4, Meta Pixel, `hebeTrack`, `hebeAttr`), con los eventos `franquicia_cta_click` y `franquicia_form_submit`.
+- `noindex, nofollow` mientras no esté confirmada la inscripción de las marcas en INAPI. El bloqueo está comentado arriba del meta.
+- Imágenes bajo el fold con `loading="lazy"` y `decoding="async"`; el logo del nav usa la versión optimizada (37 KB en vez de 361 KB).
+
+### `public/img/logo-clinera.svg`, `public/img/logo-metricads.png` (nuevos)
+- Logos originales de Clinera y Metricads, descargados de sus propios sitios y usados sin modificar. Cada uno se muestra sobre el fondo en el que está hecho para leerse: el de Clinera sobre una placa blanca, el de Metricads sobre una placa oscura.
+
 ## 2026-05-08 — SEO overhaul + mobile redesign for `/resultados`
 
 ### `/Users/ricardooyarzun_macair/Documents/Codex/N8N/Hebe/public/resultados/index.html`
