@@ -199,11 +199,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .incl p{font-size:15.5px;color:var(--ink-2);line-height:1.6;max-width:560px}
 .incl p b{color:var(--ink);font-weight:600}
 .incl-logos{display:flex;align-items:center;gap:clamp(20px,2.4vw,30px);flex-shrink:0;flex-wrap:wrap;min-width:0}
-.plate{display:inline-flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:12px 18px;height:56px;min-width:168px}
-.plate--dark{background:var(--ink);border-color:var(--ink)}
-.plate--ink{background:var(--slab);border-color:rgba(255,255,255,.17)}
-.plate img{height:20px;width:auto}
-.plate--dark img{height:19px}
+/* Logos de partner. Cada marca trae su versión para fondo claro y para fondo
+   oscuro, así que van directos sobre la superficie: sin placas de contención. */
+.brandmark{height:30px;width:auto;flex-shrink:0}
+.brandmark--todo{display:inline-flex;flex-direction:column;justify-content:center;height:auto;padding:7px 14px;border:1px dashed var(--line-2);border-radius:8px;font-size:15px;font-weight:600;letter-spacing:-.012em;color:var(--ink-3);line-height:1.2}
+.brandmark--todo i{font-style:normal;font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin-top:1px}
+.brandmark--slab{border-color:var(--slab-line);color:var(--on-slab-2)}
+.brandmark--slab i{color:var(--on-slab-3)}
 
 /* Precio */
 .price{margin-top:clamp(24px,3vw,34px);border-top:1px solid var(--line);padding-top:clamp(24px,3vw,32px);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px}
@@ -232,10 +234,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 /* Operando — tratamiento visual propio */
 .ops{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,1.8vw,22px)}
 .op{background:var(--slab-2);border:1px solid var(--slab-line);border-radius:16px;padding:clamp(24px,2.8vw,34px);display:flex;flex-direction:column}
-.op-logo{height:60px;display:flex;align-items:center;margin-bottom:22px}
-.op-logo .plate{height:54px;min-width:196px;padding:11px 18px;justify-content:flex-start;border-color:transparent}
-.op-logo .plate img{height:22px}
-.op-logo>img{height:26px;width:auto}
+.op-logo{height:48px;display:flex;align-items:center;margin-bottom:22px}
+.op-logo .brandmark{height:34px}
 .op-badge{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:var(--cyan);border:1px solid rgba(20,181,167,.34);border-radius:100px;padding:5px 12px;margin-bottom:16px}
 .op-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan)}
 .op h4{font-size:clamp(18px,1.9vw,21px);color:var(--on-slab);margin-bottom:10px;letter-spacing:-.02em;line-height:1.25}
@@ -357,9 +357,8 @@ form .btn{width:100%;margin-top:6px}
   .sedes{grid-template-columns:1fr}
   .pre,.honest,.pays{grid-template-columns:1fr}
   .op--plain{grid-template-columns:1fr;gap:8px}
-  .incl-logos{gap:12px;width:100%}
-  .plate{min-width:0;width:100%;justify-content:flex-start;padding:12px 16px}
-  .op-logo .plate{width:100%;min-width:0}
+  .incl-logos{gap:16px}
+  .brandmark{height:28px}
   .pre-i{padding:16px 0}
   .li{grid-template-columns:1fr;gap:6px}
   .li-v{font-size:24px}
@@ -540,8 +539,11 @@ form .btn{width:100%;margin-top:6px}
         <p>Durante <b>toda la vigencia de la franquicia y sin costo adicional</b>: el software de gestión Clinera y la gestión de marketing de Metricads. Más 3 meses de capacitación en el modelo de negocio antes de abrir.</p>
       </div>
       <div class="incl-logos">
-        <span class="plate"><img src="/img/logo-clinera.svg" alt="Clinera" width="1195" height="151" loading="lazy" decoding="async"></span>
-        <span class="plate plate--dark"><img src="/img/logo-metricads.png" alt="Metricads" width="340" height="67" loading="lazy" decoding="async"></span>
+        <img class="brandmark" src="/img/logo-clinera.png" alt="Clinera" width="640" height="149" loading="lazy" decoding="async">
+        <!-- TODO: falta el logo oficial de Metricads. metricads.com sirve una versión
+             antigua (la del gráfico de líneas) y no está ni en Drive ni en Canva.
+             Reemplazar este placeholder por el archivo real, versión para fondo claro. -->
+        <span class="brandmark brandmark--todo">Metricads<i>logo pendiente</i></span>
       </div>
     </div>
 
@@ -625,7 +627,7 @@ form .btn{width:100%;margin-top:6px}
 
       <div class="ops">
         <article class="op">
-          <div class="op-logo"><span class="plate"><img src="/img/logo-clinera.svg" alt="Clinera" width="1195" height="151" loading="lazy" decoding="async"></span></div>
+          <div class="op-logo"><img class="brandmark" src="/img/logo-clinera-blanco.png" alt="Clinera" width="640" height="149" loading="lazy" decoding="async"></div>
           <span class="op-badge">Incluido mientras dure la franquicia</span>
           <h4>El sistema con el que se gestiona tu clínica</h4>
           <p>Clinera es la agenda, la ficha del paciente y el punto de venta de la clínica. Va incluido, sin costo de licencia, todo el tiempo que estés en la red.</p>
@@ -633,7 +635,8 @@ form .btn{width:100%;margin-top:6px}
         </article>
 
         <article class="op">
-          <div class="op-logo"><span class="plate plate--ink"><img src="/img/logo-metricads.png" alt="Metricads" width="340" height="67" loading="lazy" decoding="async"></span></div>
+          <!-- TODO: mismo pendiente que arriba, acá hace falta la versión para fondo oscuro. -->
+          <div class="op-logo"><span class="brandmark brandmark--todo brandmark--slab">Metricads<i>logo pendiente</i></span></div>
           <span class="op-badge">Incluido mientras dure la franquicia</span>
           <h4>La agencia que te genera la demanda</h4>
           <p>Metricads gestiona tu marketing digital sin fee de gestión. Tú pones la pauta publicitaria; la gestión de esa pauta va incluida en la franquicia.</p>
