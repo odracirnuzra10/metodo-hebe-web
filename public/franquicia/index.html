@@ -199,13 +199,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .incl p{font-size:15.5px;color:var(--ink-2);line-height:1.6;max-width:560px}
 .incl p b{color:var(--ink);font-weight:600}
 .incl-logos{display:flex;align-items:center;gap:clamp(20px,2.4vw,30px);flex-shrink:0;flex-wrap:wrap;min-width:0}
-/* Logos de partner. Cada marca trae su versión para fondo claro y para fondo
-   oscuro, así que van directos sobre la superficie: sin placas de contención. */
+/* Logos de partner. Clinera trae su versión para fondo claro y para fondo oscuro,
+   y Metricads es un tile opaco que se lee sobre cualquiera de los dos: los logos
+   van directos sobre la superficie, sin placas de contención. */
 .brandmark{height:30px;width:auto;flex-shrink:0}
-.brandmark--todo{display:inline-flex;flex-direction:column;justify-content:center;height:auto;padding:7px 14px;border:1px dashed var(--line-2);border-radius:8px;font-size:15px;font-weight:600;letter-spacing:-.012em;color:var(--ink-3);line-height:1.2}
-.brandmark--todo i{font-style:normal;font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin-top:1px}
-.brandmark--slab{border-color:var(--slab-line);color:var(--on-slab-2)}
-.brandmark--slab i{color:var(--on-slab-3)}
+.brandmark--tile{height:40px;width:40px;border-radius:9px}
 
 /* Precio */
 .price{margin-top:clamp(24px,3vw,34px);border-top:1px solid var(--line);padding-top:clamp(24px,3vw,32px);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px}
@@ -236,6 +234,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .op{background:var(--slab-2);border:1px solid var(--slab-line);border-radius:16px;padding:clamp(24px,2.8vw,34px);display:flex;flex-direction:column}
 .op-logo{height:48px;display:flex;align-items:center;margin-bottom:22px}
 .op-logo .brandmark{height:34px}
+.op-logo .brandmark--tile{height:46px;width:46px;border-radius:10px}
 .op-badge{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:var(--cyan);border:1px solid rgba(20,181,167,.34);border-radius:100px;padding:5px 12px;margin-bottom:16px}
 .op-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan)}
 .op h4{font-size:clamp(18px,1.9vw,21px);color:var(--on-slab);margin-bottom:10px;letter-spacing:-.02em;line-height:1.25}
@@ -359,6 +358,7 @@ form .btn{width:100%;margin-top:6px}
   .op--plain{grid-template-columns:1fr;gap:8px}
   .incl-logos{gap:16px}
   .brandmark{height:28px}
+  .brandmark--tile{height:38px;width:38px}
   .pre-i{padding:16px 0}
   .li{grid-template-columns:1fr;gap:6px}
   .li-v{font-size:24px}
@@ -540,10 +540,7 @@ form .btn{width:100%;margin-top:6px}
       </div>
       <div class="incl-logos">
         <img class="brandmark" src="/img/logo-clinera.png" alt="Clinera" width="640" height="149" loading="lazy" decoding="async">
-        <!-- TODO: falta el logo oficial de Metricads. metricads.com sirve una versión
-             antigua (la del gráfico de líneas) y no está ni en Drive ni en Canva.
-             Reemplazar este placeholder por el archivo real, versión para fondo claro. -->
-        <span class="brandmark brandmark--todo">Metricads<i>logo pendiente</i></span>
+        <img class="brandmark brandmark--tile" src="/img/logo-metricads.png" alt="Metricads" width="225" height="225" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -635,8 +632,7 @@ form .btn{width:100%;margin-top:6px}
         </article>
 
         <article class="op">
-          <!-- TODO: mismo pendiente que arriba, acá hace falta la versión para fondo oscuro. -->
-          <div class="op-logo"><span class="brandmark brandmark--todo brandmark--slab">Metricads<i>logo pendiente</i></span></div>
+          <div class="op-logo"><img class="brandmark brandmark--tile" src="/img/logo-metricads.png" alt="Metricads" width="225" height="225" loading="lazy" decoding="async"></div>
           <span class="op-badge">Incluido mientras dure la franquicia</span>
           <h4>La agencia que te genera la demanda</h4>
           <p>Metricads gestiona tu marketing digital sin fee de gestión. Tú pones la pauta publicitaria; la gestión de esa pauta va incluida en la franquicia.</p>

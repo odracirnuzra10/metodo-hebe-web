@@ -10,10 +10,9 @@
 - `noindex, nofollow` mientras no esté confirmada la inscripción de las marcas en INAPI. El bloqueo está comentado arriba del meta.
 - Imágenes bajo el fold con `loading="lazy"` y `decoding="async"`; el logo del nav usa la versión optimizada (37 KB en vez de 361 KB).
 
-### `public/img/logo-clinera.png`, `public/img/logo-clinera-blanco.png` (nuevos)
-- Logo oficial de Clinera en sus dos variantes (fondo claro y fondo oscuro), sacadas de Drive. Se recortó el margen transparente sobrante y se escalaron a 640 px de ancho; el arte no se tocó.
-- Como cada marca trae su propia variante, los logos van directos sobre la superficie: no hacen falta placas de contención.
-- El logo de Metricads queda como placeholder marcado. El que sirve `metricads.com` es una versión antigua y no hay archivo del actual ni en Drive ni en Canva.
+### `public/img/logo-clinera.png`, `public/img/logo-clinera-blanco.png`, `public/img/logo-metricads.png` (nuevos)
+- Logos oficiales de Clinera —en sus dos variantes, fondo claro y fondo oscuro— y de Metricads, entregados por el dueño de la marca. En los de Clinera se recortó el margen transparente sobrante y se escalaron a 640 px de ancho; el arte no se tocó. El de Metricads va tal cual.
+- Clinera cambia de variante según la superficie; el de Metricads es un tile opaco que se lee igual sobre claro y sobre oscuro, y lleva un radio suave para no parecer una foto recortada. Con eso ninguno necesita placa de contención.
 
 ## 2026-05-08 — SEO overhaul + mobile redesign for `/resultados`
 
