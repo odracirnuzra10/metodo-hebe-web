@@ -15,7 +15,7 @@ Hasta ahora `index.html` y `/evaluacion` ya cobraban la Evaluación P3 ($27.990,
 ### CTAs de agendamiento
 - Barra fija de mobile (40 páginas): el botón pasa a `Agenda tu Evaluación P3 · $27.990` y el micro-copy de abajo a `45 minutos · Sin compromiso · Respuesta inmediata`. Es el mismo patrón que ya tenía el home.
 - CTAs en prosa que mandan a agendar por WhatsApp o teléfono llevan ahora `(45 minutos, $27.990)` antes del número.
-- Los botones del nav (`Agenda evaluación`, 53 apariciones) quedan sin precio a propósito: no hay ancho para eso en el header y el valor aparece igual en el bloque de CTA de cada página.
+- Botones del nav (`Agenda evaluación`, 53 apariciones): pasan a `Agenda evaluación · $27.990`. El header queda más ancho; en pantallas chicas conviene mirar que no empuje al hamburguesa.
 
 ### Verificación
 - Los 64 bloques JSON-LD del sitio siguen parseando.
