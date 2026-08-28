@@ -1,3 +1,27 @@
+## 2026-08-28 — La Evaluación P3 pasa a $27.990 y 45 minutos en todo el sitio
+
+Hasta ahora `index.html` y `/evaluacion` ya cobraban la Evaluación P3 ($27.990, 45 minutos, con descuento contra el plan), pero las otras 48 páginas seguían ofreciéndola como gratuita. Cualquiera que llegara por una landing de sede o por el blog agendaba esperando que no le costara nada. Este cambio alinea el resto del sitio con el precio que ya estaba vivo en el home y en el formulario.
+
+### 50 archivos en `public/` (landings de sede, páginas de tratamiento, blog, `/planes`, `/resultados`, `/formalidad`)
+- Se elimina toda declaración de gratuidad de la P3: «sin costo», «sin costo ni compromiso», «Evaluación clínica gratuita», «no tiene costo». Queda el valor `$27.990` y, donde la frase no lo decía ya, la duración de 45 minutos.
+- Se conserva «sin compromiso»: pagar la evaluación sigue sin obligar a contratar plan. La coletilla tipo queda como `45 minutos · Valor $27.990 · sin compromiso`, con el mismo separador `·` que ya usaba el home.
+- La duración de la cita se unifica en 45 minutos. En `clinica-estetica-corporal-vitacura.html` decía «60-90 minutos» y «60 a 90 minutos» en cinco lugares, incluido el JSON-LD.
+- **No se tocaron** las menciones de gratuidad ajenas a la P3: la cirugía por Ley 21.438 / Bono PAD / FONASA, «sin costos ocultos» de los planes, la licencia de Clinera sin costo de la página de franquicia, y «el hábito es gratis» del artículo de caminar. Tampoco los 30, 60-90 y 90 minutos que describen la duración de una **sesión de tratamiento**, que no cambia.
+
+### FAQs que quedaban contradictorias
+- `clinica-estetica-corporal-concon.html`, `flacidez-corporal-concon/index.html` y `clinica-estetica-corporal-los-angeles.html` respondían «**No.**» a «¿La Evaluación P3 tiene costo?». Ahora responden «**Sí.**», con el valor, los 45 minutos y la nota de que los $27.990 se descuentan del plan. Se corrigió en el JSON-LD y en el acordeón visible, que son dos copias del mismo texto.
+- La de Los Ángeles no decía literalmente «sin costo», así que no la agarraba el barrido: se corrigió aparte. También traía «30 a 45 minutos».
+
+### CTAs de agendamiento
+- Barra fija de mobile (40 páginas): el botón pasa a `Agenda tu Evaluación P3 · $27.990` y el micro-copy de abajo a `45 minutos · Sin compromiso · Respuesta inmediata`. Es el mismo patrón que ya tenía el home.
+- CTAs en prosa que mandan a agendar por WhatsApp o teléfono llevan ahora `(45 minutos, $27.990)` antes del número.
+- Los botones del nav (`Agenda evaluación`, 53 apariciones) quedan sin precio a propósito: no hay ancho para eso en el header y el valor aparece igual en el bloque de CTA de cada página.
+
+### Verificación
+- Los 64 bloques JSON-LD del sitio siguen parseando.
+- Ningún tag HTML cambió en los 50 archivos: el diff es solo texto.
+- Sin duplicados de «45 minutos» ni de `$27.990` dentro de una misma frase, y sin ningún «60-90 minutos» que haya quedado hablando de la evaluación.
+
 ## 2026-08-20 — `/franquicia` entra al sitemap
 
 ### `public/sitemap.xml`
