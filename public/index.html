@@ -333,6 +333,8 @@ img{max-width:100%;display:block}
 .hero-trust{font-size:13px;color:var(--ink-3);display:flex;gap:18px;flex-wrap:wrap}
 .hero-trust span{display:flex;align-items:center;gap:6px}
 .hero-trust span::before{content:'✓';color:var(--cyan-dd);font-weight:700}
+.eval-refund-note{margin-top:12px;font-size:12px;color:var(--ink-3);line-height:1.45;max-width:420px}
+.cta-final .eval-refund-note{margin:14px auto 0;color:rgba(255,255,255,.5)}
 
 /* ── PATIENT CARD ── */
 .patient{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.04)}
@@ -572,6 +574,7 @@ img{max-width:100%;display:block}
           <span>Sin rebote</span>
           <span>Evaluación P3 · $27.990</span>
         </div>
+        <p class="eval-refund-note fade-up-d3">Te pedimos tener presente que el valor de la evaluación no es reembolsable.</p>
       </div>
 
       <aside class="patient fade-up-d1">
@@ -845,7 +848,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Qué incluye la evaluación inicial?</button>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Bioimpedancia, perfil metabólico y plan recomendado en PDF. 45 minutos. Tiene un costo de $27.990.</p></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Bioimpedancia, perfil metabólico y plan recomendado en PDF. 45 minutos. Tiene un costo de $27.990. Te pedimos tener presente que este valor no es reembolsable; si contratas un plan, se descuenta del total.</p></div>
       </div>
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-q" itemprop="name" aria-expanded="false">¿Es mejor que la liposucción?</button>
@@ -904,6 +907,7 @@ img{max-width:100%;display:block}
       </button>
       <a href="/evaluacion" class="btn-wa" onclick="hebeTrack('evaluacion_click',{location:'cta_final_wa'})">Ver cómo funciona la evaluación</a>
     </div>
+    <p class="eval-refund-note">Te pedimos tener presente que el valor de la evaluación no es reembolsable.</p>
   </div>
 </section>
 

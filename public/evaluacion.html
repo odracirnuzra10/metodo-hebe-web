@@ -984,6 +984,16 @@
       line-height: 1.4;
     }
 
+    .no-refund-note {
+      display: block;
+      margin-top: 0.55rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text-sec);
+      line-height: 1.45;
+    }
+
     .pay-descuento {
       display: inline-block;
       margin-bottom: 1.4rem;
@@ -1869,6 +1879,7 @@
                   </svg></div>
               </div>
             </div>
+            <p class="no-refund-note" style="text-align:center;margin-top:1rem;">Te pedimos tener presente que el valor de la evaluación ($27.990) no es reembolsable.</p>
           </div>
 
           <!-- STEP 2 -->
@@ -1908,6 +1919,7 @@
               <div class="price-notice-head">La evaluación P3 tiene un costo de <strong>$27.990</strong></div>
               <div class="price-notice-sub">Incluye el análisis profundo de tus tejidos corporales con InBody para definir el mejor programa para remodelar tu cuerpo. Se paga al confirmar tu hora.</div>
               <div class="descuento">Si contratas un plan, los $27.990 se descuentan del valor del plan.</div>
+              <p class="no-refund-note">Te pedimos tener presente que el valor de la evaluación no es reembolsable.</p>
             </div>
             <button class="confirm-btn" onclick="goToStep(3, &#39;forward&#39;)">Confirmo</button>
             <div class="form-note">Confirmar no genera ningún cobro: primero dejas tus datos.</div>
@@ -1967,7 +1979,7 @@
       </figure>
       <h2>TU EVALUACIÓN P3 ESTÁ PENDIENTE DE PAGO PARA SER CONFIRMADA</h2>
       <div class="pay-price">$27.990</div>
-      <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.</div>
+      <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.<br><span style="font-weight:400;opacity:.85;font-size:.8rem;display:inline-block;margin-top:.35rem;">Te pedimos tener presente que el valor de la evaluación no es reembolsable.</span></div>
       <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
         onclick="handlePayClick()">Confirma y paga por MercadoPago<img class="pay-btn-logo" src="/img/mercadopago.webp"
           alt="" width="88" height="88" aria-hidden="true"></a>
