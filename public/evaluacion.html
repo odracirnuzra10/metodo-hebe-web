@@ -1119,7 +1119,7 @@
       grid-area: img;
     }
 
-    .pay-fila>.pay-btn {
+    .pay-fila>.pay-cta-wrap {
       grid-area: cta;
     }
 
@@ -1159,30 +1159,71 @@
       margin-left: 0.15rem;
     }
 
+    /* Bloque CTA: el botón de pago debe dominar la pantalla post-wizard */
+    .pay-cta-wrap {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.65rem;
+      padding: 1.1rem 1rem 1.15rem;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+      animation: fadeUp 0.5s ease 0.45s both;
+    }
+
+    .pay-cta-eyebrow {
+      margin: 0;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 2px;
+      color: #7ddfb8;
+      text-align: center;
+      line-height: 1.2;
+    }
+
     .pay-btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.55rem;
+      width: 100%;
+      min-height: 58px;
       background: #fff;
       color: var(--teal-darker);
-      padding: 1rem 2.2rem;
-      border-radius: 12px;
-      border: none;
+      padding: 1.05rem 1.4rem;
+      border-radius: 14px;
+      border: 2px solid rgba(255, 255, 255, 0.95);
       font-family: 'Outfit', sans-serif;
-      font-size: 1.05rem;
+      font-size: 1.12rem;
       font-weight: 700;
+      line-height: 1.25;
       cursor: pointer;
       text-decoration: none;
       text-align: center;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28), 0 0 0 0 rgba(255, 255, 255, 0.45);
       transition: transform 0.2s, box-shadow 0.2s;
-      animation: fadeUp 0.5s ease 0.5s both;
+      animation: payBtnPulse 2.4s ease-in-out 0.8s infinite;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
-    .pay-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+    .pay-btn:hover,
+    .pay-btn:focus-visible {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34), 0 0 0 4px rgba(255, 255, 255, 0.35);
+      animation: none;
+      outline: none;
+    }
+
+    .pay-btn-arrow {
+      flex: none;
+      font-size: 1.25rem;
+      line-height: 1;
+      opacity: 0.85;
     }
 
     .pay-note {
@@ -1736,6 +1777,67 @@
         transform: scale(1);
       }
     }
+
+    @keyframes payBtnPulse {
+      0%,
+      100% {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28), 0 0 0 0 rgba(255, 255, 255, 0.45);
+      }
+
+      50% {
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.32), 0 0 0 8px rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    /* Móvil: CTA antes de la imagen para que no quede bajo el pliegue */
+    @media (max-width: 768px) {
+      .pay-overlay {
+        justify-content: flex-start;
+        padding-top: 1.4rem;
+        padding-bottom: 5.5rem;
+      }
+
+      .pay-fila {
+        grid-template-areas:
+          "title"
+          "price"
+          "nota"
+          "cta"
+          "seg"
+          "img";
+      }
+
+      .pay-overlay h2 {
+        font-size: 1.55rem;
+      }
+
+      .pay-price {
+        font-size: 3rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .pay-cta-wrap {
+        position: sticky;
+        bottom: 0.75rem;
+        z-index: 5;
+        margin-top: 0.2rem;
+        backdrop-filter: blur(8px);
+      }
+
+      .pay-btn {
+        min-height: 60px;
+        font-size: 1.08rem;
+      }
+
+      .pay-muestra {
+        margin-top: 0.6rem;
+        margin-bottom: 0;
+      }
+
+      .pay-note {
+        margin-top: 0.6rem;
+      }
+    }
   </style>
 </head>
 
@@ -1980,10 +2082,16 @@
       <h2>TU EVALUACIÓN P3 ESTÁ PENDIENTE DE PAGO PARA SER CONFIRMADA</h2>
       <div class="pay-price">$27.990</div>
       <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.<br><span style="font-weight:400;opacity:.85;font-size:.8rem;display:inline-block;margin-top:.35rem;">Te pedimos tener presente que el valor de la evaluación no es reembolsable.</span></div>
-      <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
-        onclick="handlePayClick()">Confirma y paga por MercadoPago<img class="pay-btn-logo" src="/img/mercadopago.webp"
-          alt="" width="88" height="88" aria-hidden="true"></a>
-      <div class="pay-note">🔒 Pago seguro con MercadoPago</div>
+      <div class="pay-cta-wrap">
+        <p class="pay-cta-eyebrow">SIGUIENTE PASO · CONFIRMA TU HORA</p>
+        <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
+          onclick="handlePayClick()">
+          Pagar evaluación · $27.990
+          <img class="pay-btn-logo" src="/img/mercadopago.webp" alt="" width="88" height="88" aria-hidden="true">
+          <span class="pay-btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="pay-note">🔒 Pago seguro con MercadoPago · 45 min · se descuenta si contratas un plan</div>
     </div>
     <a class="pay-wa-link" href="#" onclick="skipToWhatsapp(); return false;">Prefiero coordinar por WhatsApp</a>
   </div>
