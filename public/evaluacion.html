@@ -1085,21 +1085,20 @@
       animation: scaleBounce 0.6s ease 0.3s both;
     }
 
-    /* Grid con áreas nombradas para poder ordenar distinto en cada pantalla sin duplicar
-       el contenido: en escritorio la muestra del análisis ocupa la columna izquierda y
-       todo el texto va a su derecha; en móvil se apila con el estado y el precio arriba
-       (lo primero que tiene que leer), la imagen en medio y el botón al final. */
+    /* Grid con áreas nombradas: en móvil el CTA va justo después del precio (antes de
+       la foto) para que no quede bajo el pliegue. */
     .pay-fila {
       display: grid;
       grid-template-columns: minmax(0, 460px);
       grid-template-areas:
         "title"
         "price"
+        "cta"
         "nota"
         "img"
-        "cta"
         "seg";
       justify-items: center;
+      width: 100%;
       animation: fadeUp 0.5s ease 0.5s both;
     }
 
@@ -1153,36 +1152,63 @@
     /* El logo va DESPUÉS del texto y decorativo: la frase ya nombra a MercadoPago, así
        que repetirlo en el alt se lo leería dos veces a quien usa lector de pantalla. */
     .pay-btn-logo {
-      height: 1.5em;
+      height: 1.15em;
       width: auto;
       flex: none;
-      margin-left: 0.15rem;
     }
 
     .pay-btn {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.2rem;
+      width: 100%;
+      max-width: 420px;
+      min-height: 76px;
       background: #fff;
       color: var(--teal-darker);
-      padding: 1rem 2.2rem;
-      border-radius: 12px;
-      border: none;
+      padding: 1.15rem 1.4rem 1.05rem;
+      border-radius: 16px;
+      border: 2px solid #f4d35e;
       font-family: 'Outfit', sans-serif;
-      font-size: 1.05rem;
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
       text-align: center;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
-      transition: transform 0.2s, box-shadow 0.2s;
-      animation: fadeUp 0.5s ease 0.5s both;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28), 0 0 0 0 rgba(244, 211, 94, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      animation: fadeUp 0.5s ease 0.5s both, payGlow 2.1s ease-in-out 0.9s infinite;
     }
 
-    .pay-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+    .pay-btn-main {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      line-height: 1.05;
+    }
+
+    .pay-btn-sub {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+      color: #14706a;
+    }
+
+    .pay-btn:hover,
+    .pay-btn:focus-visible {
+      transform: translateY(-2px) scale(1.02);
+      border-color: #e6c14a;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .pay-btn:focus-visible {
+      outline: 3px solid #f4d35e;
+      outline-offset: 3px;
     }
 
     .pay-note {
@@ -1198,12 +1224,12 @@
     /* Salida alternativa, deliberadamente discreta: el pago es la ruta principal */
     .pay-wa-link {
       display: inline-block;
-      margin-top: 2.4rem;
-      color: rgba(255, 255, 255, 0.38);
-      font-size: 0.7rem;
+      margin-top: 2.8rem;
+      color: rgba(255, 255, 255, 0.32);
+      font-size: 0.65rem;
       font-weight: 300;
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       padding-bottom: 1px;
       cursor: pointer;
       transition: color 0.2s, border-color 0.2s;
@@ -1226,8 +1252,8 @@
           "img ."
           "img title"
           "img price"
-          "img nota"
           "img cta"
+          "img nota"
           "img seg"
           "img .";
         column-gap: 2.4rem;
@@ -1245,6 +1271,29 @@
       }
 
       .pay-fila>h2 {
+        margin-bottom: 0.8rem;
+      }
+
+      .pay-fila>.pay-btn {
+        margin-bottom: 0.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pay-overlay {
+        justify-content: flex-start;
+        padding: 1.4rem 1rem 1.6rem;
+      }
+
+      .pay-fila>.pay-btn {
+        position: sticky;
+        bottom: max(0.75rem, env(safe-area-inset-bottom));
+        z-index: 3;
+        max-width: none;
+      }
+
+      .pay-muestra {
+        width: min(260px, 68vw);
         margin-bottom: 0.8rem;
       }
     }
@@ -1736,6 +1785,23 @@
         transform: scale(1);
       }
     }
+
+    @keyframes payGlow {
+      0%,
+      100% {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28), 0 0 0 0 rgba(244, 211, 94, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), 0 0 0 12px rgba(244, 211, 94, 0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pay-btn {
+        animation: fadeUp 0.5s ease 0.5s both;
+      }
+    }
   </style>
 </head>
 
@@ -1981,8 +2047,8 @@
       <div class="pay-price">$27.990</div>
       <div class="pay-descuento">Si contratas un plan, se descuenta del valor del plan.<br><span style="font-weight:400;opacity:.85;font-size:.8rem;display:inline-block;margin-top:.35rem;">Te pedimos tener presente que el valor de la evaluación no es reembolsable.</span></div>
       <a class="pay-btn" id="payLink" href="https://mpago.la/2stfZWb" target="_blank" rel="noopener"
-        onclick="handlePayClick()">Confirma y paga por MercadoPago<img class="pay-btn-logo" src="/img/mercadopago.webp"
-          alt="" width="88" height="88" aria-hidden="true"></a>
+        onclick="handlePayClick()"><span class="pay-btn-main">Pagar evaluación</span><span class="pay-btn-sub">$27.990 · MercadoPago<img class="pay-btn-logo" src="/img/mercadopago.webp"
+          alt="" width="88" height="88" aria-hidden="true"></span></a>
       <div class="pay-note">🔒 Pago seguro con MercadoPago</div>
     </div>
     <a class="pay-wa-link" href="#" onclick="skipToWhatsapp(); return false;">Prefiero coordinar por WhatsApp</a>
