@@ -3,20 +3,28 @@
   <!-- HOME -->
   <url>
     <loc>https://www.metodohebe.cl/</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.metodohebe.cl/img/og-metodo-hebe.jpg</image:loc>
+      <image:caption>Método Hebe — clínica corporal metabólica en Chile</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.metodohebe.cl/img/angelica-testimonio.webp</image:loc>
+      <image:caption>Angélica Gallardo, paciente Método Hebe — Plan Zero Celulitis</image:caption>
+    </image:image>
   </url>
   <!-- PILARES SEO/AEO (2026-04-23) -->
   <url>
     <loc>https://www.metodohebe.cl/lipoescultura-sin-cirugia</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.metodohebe.cl/criolipolisis</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -29,7 +37,7 @@
   </url>
   <url>
     <loc>https://www.metodohebe.cl/guatita-de-delantal-operacion-vs-tratamiento</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -80,19 +88,19 @@
   <!-- PÁGINAS INTERIORES PRINCIPALES -->
   <url>
     <loc>https://www.metodohebe.cl/planes</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.metodohebe.cl/resultados</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.metodohebe.cl/el-metodo</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -137,7 +145,7 @@
   </url>
   <url>
     <loc>https://www.metodohebe.cl/blog/celulitis-tipos-grados-tratamientos</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -161,7 +169,7 @@
   </url>
   <url>
     <loc>https://www.metodohebe.cl/blog/ized-ultrasonido-corporal</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -186,13 +194,13 @@
   <!-- PÁGINAS POR NECESIDAD -->
   <url>
     <loc>https://www.metodohebe.cl/celulitis</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.metodohebe.cl/flacidez</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -291,19 +299,13 @@
   <!-- BLOG GENERAL — 2026-04-17 -->
   <url>
     <loc>https://www.metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.metodohebe.cl/5-razones-para-tomar-aplicar-el-metodo-hebe-en-tu-vida</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -325,16 +327,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-  <url>
-    <loc>https://www.metodohebe.cl/quieres-aumentar-y-levantar-tus-gluteos</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.metodohebe.cl/caminar-sus-beneficios-fisicos-y-emocionales</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
+
+  <!-- AEO REFRESH 2026-09-03 -->
+  <url><loc>https://www.metodohebe.cl/equipo</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.metodohebe.cl/evaluacion-metabolica</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://www.metodohebe.cl/coaching-nutricional</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.metodohebe.cl/seguridad-criolipolisis</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://www.metodohebe.cl/criolipolisis-vs-ized</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.metodohebe.cl/metodo-hebe-vs-liposuccion</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.metodohebe.cl/plan-zero-rollito-vs-semaglutida</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.metodohebe.cl/hiems-vs-gimnasio</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.metodohebe.cl/clinica-estetica-corporal-concepcion</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+
 </urlset>

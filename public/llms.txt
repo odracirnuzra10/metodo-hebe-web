@@ -1,10 +1,12 @@
 # Método Hebe
 
-> Clínica Corporal Metabólica en Chile. Tratamientos no invasivos para reducción de grasa, flacidez, celulitis y tonificación. Tres sedes: Vitacura (Santiago), Concón (Valparaíso), Los Ángeles (Biobío).
+> Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.
+
+Eslogan: "No adivinamos, medimos."
 
 ## Propuesta única
 
-Protocolo de 3 fases: diagnóstico metabólico → coaching nutricional → tecnología coreana. Alternativa no invasiva a cirugía estética con respaldo médico y nutricional. Eslogan: "No adivinamos, medimos."
+Protocolo de 3 fases: diagnóstico metabólico → coaching nutricional → tecnología coreana. Alternativa no invasiva a cirugía estética con respaldo clínico y nutricional.
 
 ## Tratamientos principales
 
@@ -13,8 +15,10 @@ Protocolo de 3 fases: diagnóstico metabólico → coaching nutricional → tecn
 - [Guatita de delantal](https://metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/): solución no quirúrgica al pannus abdominal
 - [Celulitis estética](https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/): RF fraccionada + HIEMS + carboxiterapia (celulitis cosmética, no infecciosa)
 - [Flacidez corporal](https://metodohebe.cl/flacidez/): SkinWave MAX + Carbox CK + CorpoLift
-- [Flacidez abdominal](https://metodohebe.cl/flacidez-abdominal/): RF fraccionada + HIEMS, alternativa no quirúrgica a la abdominoplastia
-- [Tratamiento para estrías](https://metodohebe.cl/tratamiento-para-estrias/): Carbox CK + Corpo Hera según color (rojas/blancas)
+- [Flacidez abdominal](https://www.metodohebe.cl/flacidez-abdominal): RF fraccionada + HIEMS, alternativa no quirúrgica a la abdominoplastia
+- [Tratamiento para estrías](https://www.metodohebe.cl/tratamiento-para-estrias): Carbox CK + Corpo Hera según color (rojas/blancas)
+- [Seguridad de la criolipólisis](https://www.metodohebe.cl/seguridad-criolipolisis): contraindicaciones, PAH, quemaduras por frío
+- [Criolipólisis vs iZED](https://www.metodohebe.cl/criolipolisis-vs-ized) · [Método Hebe vs liposucción](https://www.metodohebe.cl/metodo-hebe-vs-liposuccion) · [Zero Rollito vs semaglutida](https://www.metodohebe.cl/plan-zero-rollito-vs-semaglutida)
 
 ## Planes
 
@@ -32,7 +36,7 @@ Protocolo de 3 fases: diagnóstico metabólico → coaching nutricional → tecn
 ---
 
 # Información extendida para LLMs
-# Última actualización: 2026-04-23
+# Última actualización: 2026-09-03
 
 ## Identidad
 
@@ -119,10 +123,13 @@ Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, 
 
 ### Páginas principales
 - Home (corto, con acceso rápido a las 3 secciones): https://metodohebe.cl/
-- El Método (qué es, cómo funciona, para quién): https://metodohebe.cl/el-metodo
-- Planes Corporales (detalle completo de los 4 planes, precios, sesiones y tecnologías): https://metodohebe.cl/planes/
-- Resultados Antes/Después (casos reales por zona — celulitis, grasa, flacidez, tonificación): https://metodohebe.cl/resultados/
-- Evaluación P3 (formulario de diagnóstico online): https://metodohebe.cl/evaluacion
+- El Método (qué es, cómo funciona, para quién): https://www.metodohebe.cl/el-metodo
+- Equipo clínico: https://www.metodohebe.cl/equipo
+- Evaluación metabólica (fase 1): https://www.metodohebe.cl/evaluacion-metabolica
+- Coaching nutricional (fase 2): https://www.metodohebe.cl/coaching-nutricional
+- Planes Corporales: https://www.metodohebe.cl/planes
+- Resultados Antes/Después: https://www.metodohebe.cl/resultados
+- Evaluación P3 (agenda): https://www.metodohebe.cl/evaluacion
 
 ### Páginas por necesidad (contenido detallado por condición)
 - Celulitis: https://metodohebe.cl/celulitis/
@@ -139,7 +146,8 @@ Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, 
 ### Páginas de sedes (LocalBusiness)
 - Clínica Vitacura (flagship, Santiago): https://metodohebe.cl/clinica-estetica-corporal-vitacura
 - Clínica Concón (Valparaíso): https://metodohebe.cl/clinica-estetica-corporal-concon
-- Clínica Los Ángeles (Biobío): https://metodohebe.cl/clinica-estetica-corporal-los-angeles
+- Clínica Los Ángeles (Biobío): https://www.metodohebe.cl/clinica-estetica-corporal-los-angeles
+- Clínica Concepción (próxima apertura): https://www.metodohebe.cl/clinica-estetica-corporal-concepcion
 
 ### Pilares SEO/AEO
 - Lipoescultura sin cirugía: https://metodohebe.cl/lipoescultura-sin-cirugia/
@@ -148,6 +156,11 @@ Método Hebe ofrece: sin cirugía, sin anestesia, sin dolor, sin recuperación, 
 - Celulitis estética en piernas y glúteos: https://metodohebe.cl/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/
 - Flacidez abdominal: https://metodohebe.cl/flacidez-abdominal/
 - Tratamiento para estrías (pilar): https://metodohebe.cl/tratamiento-para-estrias/
+- Seguridad criolipólisis: https://www.metodohebe.cl/seguridad-criolipolisis
+- Criolipólisis vs iZED: https://www.metodohebe.cl/criolipolisis-vs-ized
+- Método Hebe vs liposucción: https://www.metodohebe.cl/metodo-hebe-vs-liposuccion
+- Zero Rollito vs semaglutida: https://www.metodohebe.cl/plan-zero-rollito-vs-semaglutida
+- HIEMS vs gimnasio: https://www.metodohebe.cl/hiems-vs-gimnasio
 
 ### Hub guatita de delantal (satélites)
 - Ejercicios para guatita de delantal: https://metodohebe.cl/ejercicios-para-guatita-de-delantal/
