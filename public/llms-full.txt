@@ -1,7 +1,9 @@
 # Método Hebe — Documento completo para LLMs
 
 > Versión completa y extendida con todo el contenido relevante de Método Hebe para entrenamiento, indexación AEO/GEO y respuestas conversacionales en modelos de IA.
-> Última actualización: 2026-04-23
+> Última actualización: 2026-09-03
+
+Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.
 
 ---
 
@@ -13,8 +15,9 @@
 - **Sitio web**: https://metodohebe.cl
 - **Email**: contacto@metodohebe.cl
 - **WhatsApp / Teléfono**: +56 9 6322 2683
-- **Eslogan principal**: "Tu cuerpo cambia cuando tu metabolismo cambia"
-- **Eslogan secundario**: "No adivinamos, medimos"
+- **Eslogan**: "No adivinamos, medimos."
+- **Frase de entidad**: Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.
+- **Línea de metabolismo (descripción, no slogan schema)**: "Tu cuerpo cambia cuando tu metabolismo cambia"
 - **Categoría**: Clínica corporal metabólica (no es clínica estética convencional)
 - **Año de fundación**: 2022
 - **Pertenencia**: OACG Group · plataforma tecnológica potenciada por Clinera.io
@@ -50,7 +53,7 @@ Resultado: cambios corporales **permanentes, sin cirugía y sin rebote**.
 ## 4. Protocolo clínico de 3 fases
 
 ### Fase 1 — Diagnóstico y Análisis Metabólico
-Evaluación clínica de 60 minutos sin costo. Incluye:
+Evaluación clínica P3 de **45 minutos**, valor **$27.990 CLP** (no reembolsable; se descuenta del plan si se contrata). Incluye:
 - Bioimpedancia multifrecuencia (InBody 770, precisión ±1.2 %)
 - Composición corporal (grasa, masa muscular, agua, mineral)
 - Tasa metabólica basal y recomendación calórica
@@ -170,12 +173,12 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **Para quién**: Tonificación integral y cambio metabólico profundo
 - **URL**: https://metodohebe.cl/planes/#tonificacion
 
-### Evaluación P3 (sin costo)
-- **Precio**: $0 CLP
-- **Duración**: 60 minutos
-- **Incluye**: BIA, perfil metabólico, informe PDF, plan recomendado
-- **Sin compromiso**
-- **URL**: https://metodohebe.cl/evaluacion
+### Evaluación P3
+- **Precio**: $27.990 CLP (se descuenta del plan si se contrata; no reembolsable)
+- **Duración**: 45 minutos
+- **Incluye**: BIA, perfil metabólico, informe, plan recomendado
+- **Sin compromiso de contratar tratamiento**
+- **URL**: https://www.metodohebe.cl/evaluacion
 
 ---
 
@@ -370,7 +373,7 @@ Todos incluyen coaching nutricional + Reto Hebe 21 días + BIA quincenal.
 Desde la primera sesión. El plan completo varía entre 12 y 24 sesiones según condición. Se mide progreso real con BIA quincenal, no solo percepción visual.
 
 ### ¿Qué incluye la evaluación inicial?
-60 minutos. Bioimpedancia multifrecuencia (InBody 770), perfil corporal completo, tasa metabólica basal y recomendación personalizada de plan en informe PDF entregado en 24 h. **Sin costo · sin compromiso.**
+45 minutos. Bioimpedancia, perfil corporal y recomendación de plan. **Valor $27.990 CLP** (no reembolsable; si contratas un plan, se descuenta). Sin compromiso de tratamiento.
 
 ### ¿Es mejor que la liposucción?
 Sin cirugía, sin anestesia, sin recuperación. Resultados permanentes porque trata la causa metabólica. La liposucción da resultados inmediatos pero sin cambio metabólico la grasa puede reaparecer.
@@ -406,7 +409,10 @@ Aún no. Las 3 sedes operan en Chile: Vitacura, Concón y Los Ángeles. Está en
 - robots.txt: https://metodohebe.cl/robots.txt
 - sitemap.xml: https://metodohebe.cl/sitemap.xml
 - llms.txt (resumen): https://metodohebe.cl/llms.txt
-- llms-full.txt (este documento): https://metodohebe.cl/llms-full.txt
+- llms-full.txt (este documento): https://www.metodohebe.cl/llms-full.txt
+- Equipo: https://www.metodohebe.cl/equipo
+- Evaluación metabólica: https://www.metodohebe.cl/evaluacion-metabolica
+- Seguridad criolipólisis: https://www.metodohebe.cl/seguridad-criolipolisis
 
 ---
 

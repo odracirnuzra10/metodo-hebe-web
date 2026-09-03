@@ -1,3 +1,7 @@
+## 2026-09-03 — Refresh AEO trimestral (frescura, entidad, E-E-A-T, FAQ)
+
+Ciclo de septiembre 2026 del brief AEO: se actualizó contenido real (unificación P3 45 min / $27.990), no solo la fecha. Frase de entidad única en meta, schema, llms.txt y `/el-metodo`. `sameAs` de Instagram pasa a `@metodo.hebe`. Un solo slogan schema: «No adivinamos, medimos.» Home con 10 FAQ. Nueva `/equipo` (Ricardo Oyarzún como director fundador; sin inventar registros Superintendencia). Pilares con bloque «Revisado por» y `MedicalWebPage.reviewedBy`. Páginas nuevas: evaluación metabólica, coaching nutricional, seguridad criolipólisis, comparativas, Concepción (próxima). 301 de URLs antiguas del sitemap. Detalle: `docs/AEO_CHANGELOG_2026-09.md`.
+
 ## 2026-08-28 — La Evaluación P3 pasa a $27.990 y 45 minutos en todo el sitio
 
 Hasta ahora `index.html` y `/evaluacion` ya cobraban la Evaluación P3 ($27.990, 45 minutos, con descuento contra el plan), pero las otras 48 páginas seguían ofreciéndola como gratuita. Cualquiera que llegara por una landing de sede o por el blog agendaba esperando que no le costara nada. Este cambio alinea el resto del sitio con el precio que ya estaba vivo en el home y en el formulario.
