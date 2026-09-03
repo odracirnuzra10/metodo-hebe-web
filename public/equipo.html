@@ -136,13 +136,22 @@
       "@id": "https://www.metodohebe.cl/equipo#ricardo-oyarzun",
       "name": "Ricardo Alfredo Oyarzún Acuña",
       "jobTitle": "Director fundador",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.metodohebe.cl/img/ricardo-oyarzun.jpg",
+        "contentUrl": "https://www.metodohebe.cl/img/ricardo-oyarzun.webp",
+        "caption": "Ricardo Alfredo Oyarzún Acuña, director fundador de Método Hebe",
+        "width": 400,
+        "height": 400
+      },
       "worksFor": {
         "@id": "https://www.metodohebe.cl/#organization"
       },
       "sameAs": [
+        "https://www.linkedin.com/in/ricardo-oyarzun",
         "https://www.linkedin.com/company/metodo-hebe"
       ],
-      "url": "https://www.metodohebe.cl/equipo"
+      "url": "https://www.metodohebe.cl/equipo#ricardo-oyarzun"
     },
     {
       "@type": "Organization",
@@ -184,6 +193,17 @@
 .compare{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14.5px}
 .compare th,.compare td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
 .compare th{background:#F6F9F9}
+.staff-grid{display:grid;grid-template-columns:1fr;gap:18px;margin:8px 0 28px}
+.staff-card{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.staff-card picture,.staff-card img{display:block;width:120px;height:120px;border-radius:50%;object-fit:cover;background:#EEF4F4}
+.staff-role{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--cyan-dd);font-weight:600;margin:0 0 6px}
+.staff-card h3{font-size:22px;margin:0 0 8px;line-height:1.2}
+.staff-card p{font-size:15.5px;color:var(--ink-2);line-height:1.65;margin:0 0 10px}
+.staff-card p:last-child{margin:0}
+@media (max-width:640px){
+  .staff-card{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .staff-card picture,.staff-card img{width:140px;height:140px}
+}
 </style>
 
 
@@ -241,7 +261,20 @@
 
     <div class="answer-capsule speakable"><strong>Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.</strong> Esta página identifica a la dirección y al equipo clínico que revisa los pilares. No inventamos títulos médicos ni números de Superintendencia: se publican aquí cuando el área clínica los confirma por escrito.</div>
     <h2>Dirección</h2>
-    <p><strong>Ricardo Alfredo Oyarzún Acuña</strong> es director fundador de Método Hebe (Método Hebe SpA, fundada en 2022) y figura pública de la empresa en <a class="inline-link" href="https://www.linkedin.com/company/metodo-hebe" rel="noopener">LinkedIn</a>. No es el profesional tratante de cada sesión: firma la línea editorial y la consistencia de protocolos entre sedes.</p>
+    <div class="staff-grid">
+      <article class="staff-card" id="ricardo-oyarzun">
+        <picture>
+          <source type="image/webp" srcset="/img/ricardo-oyarzun.webp">
+          <img src="/img/ricardo-oyarzun.jpg" alt="Ricardo Alfredo Oyarzún Acuña, director fundador de Método Hebe" width="400" height="400">
+        </picture>
+        <div>
+          <p class="staff-role">Director fundador</p>
+          <h3>Ricardo Alfredo Oyarzún Acuña</h3>
+          <p>Fundó Método Hebe SpA en 2022. Firma la línea editorial y la consistencia de protocolos entre Vitacura, Concón y Los Ángeles. <strong>No es el profesional tratante</strong> de cada sesión.</p>
+          <p><a class="inline-link" href="https://www.linkedin.com/in/ricardo-oyarzun" rel="noopener">LinkedIn personal</a> · <a class="inline-link" href="https://www.linkedin.com/company/metodo-hebe" rel="noopener">Método Hebe en LinkedIn</a></p>
+        </div>
+      </article>
+    </div>
     <p>El eslogan operativo de la clínica es <strong>No adivinamos, medimos.</strong> — la frase de posicionamiento de metabolismo (“Tu cuerpo cambia cuando tu metabolismo cambia”) queda como descripción, no como segundo slogan en schema.</p>
     <h2>Equipo clínico</h2>
     <p>En sala trabajan esteticistas corporales formadas en los protocolos Hebe (iZED, SkinWave MAX, Carbox CK, CorpoLift, Corpo Hera, RF fraccionada, HIEMS, criolipólisis, presoterapia) y el área de <a class="inline-link" href="/coaching-nutricional">coaching nutricional</a> del Reto Hebe 21 días. Cada sede (Vitacura, Concón, Los Ángeles) opera el mismo protocolo de 3 fases: <a class="inline-link" href="/evaluacion-metabolica">diagnóstico metabólico</a> → hábitos → tecnología.</p>

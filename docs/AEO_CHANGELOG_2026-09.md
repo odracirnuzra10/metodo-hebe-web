@@ -15,6 +15,7 @@ No se inventaron cm de pacientes ni números de Superintendencia de Salud.
 | H2 dos slogans | Un solo `slogan` en Organization y MedicalBusiness | Home JSON-LD | Rich Results / vista JSON-LD: un slogan |
 | H3 frase de entidad | Texto único en meta home, Organization.description, WebSite.description, MedicalBusiness.description, hero-sub, llms.txt línea 1, llms-full, primer párrafo `/el-metodo` | esos archivos | `rg` de la frase; debe aparecer ≥6 veces |
 | H4 E-E-A-T | `/equipo` con `Person` Ricardo Oyarzún (director fundador, LinkedIn) y política explícita de no inventar registros Superintendencia. Bloque “Revisado por” visible + `MedicalWebPage.reviewedBy` → `#ricardo-oyarzun` | `/equipo` | Abrir `/equipo`; en pilares aside `#revision-clinica` y JSON-LD `reviewedBy` |
+| H4 foto fundador | Ficha visible en `/equipo` con retrato profesional, `Person.image` y `Organization.founder` | `/equipo`, `public/img/ricardo-oyarzun.webp`, home JSON-LD | Foto circular + nombre completo; JSON-LD `image` 400×400 |
 | H5 timeout blog | En vivo (2026-09-03) `/blog/celulitis-tipos-grados-tratamientos` TTFB ~0,09 s. Hero home PNG 2,6 MB → WebP 76 KB. Cache `img/` 1 año | `public/img/angelica-testimonio.webp`, `vercel.json` | `curl -o /dev/null -w '%{time_starttransfer}'` del blog; Lighthouse home LCP |
 | H6 FAQ home | 10 preguntas en FAQPage JSON-LD y acordeón visible | `/#faq` | Contar `.faq-item` ≥8 y `FAQPage.mainEntity` |
 | H7 lang | `lang="es-CL"` en HTML | todos los `public/**/*.html` | Ver `<html lang="es-CL"` |
