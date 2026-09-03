@@ -1,3 +1,7 @@
+## 2026-09-03 — Foto del fundador en `/equipo`
+
+Ricardo Alfredo Oyarzún Acuña aparece en `/equipo` como director fundador, con retrato profesional (`/img/ricardo-oyarzun.webp` + `.jpg`), ficha de staff y `Person.image` en schema. El home declara `Organization.founder` hacia el mismo `@id`. No se inventan registros de Superintendencia ni se presenta como profesional tratante.
+
 ## 2026-09-03 — Refresh AEO trimestral (frescura, entidad, E-E-A-T, FAQ)
 
 Ciclo de septiembre 2026 del brief AEO: se actualizó contenido real (unificación P3 45 min / $27.990), no solo la fecha. Frase de entidad única en meta, schema, llms.txt y `/el-metodo`. `sameAs` de Instagram pasa a `@metodo.hebe`. Un solo slogan schema: «No adivinamos, medimos.» Home con 10 FAQ. Nueva `/equipo` (Ricardo Oyarzún como director fundador; sin inventar registros Superintendencia). Pilares con bloque «Revisado por» y `MedicalWebPage.reviewedBy`. Páginas nuevas: evaluación metabólica, coaching nutricional, seguridad criolipólisis, comparativas, Concepción (próxima). 301 de URLs antiguas del sitemap. Detalle: `docs/AEO_CHANGELOG_2026-09.md`.
