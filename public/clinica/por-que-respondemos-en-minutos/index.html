@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-CL">
 <head>
-<!-- FAQPage: no agregado. Esta página no tiene preguntas/respuestas visibles en el HTML; no se inventan Question/Answer. /evaluacion sí tiene FAQPage. -->
 
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a8e82'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='18' fill='white' font-style='italic'%3EH%3C/text%3E%3C/svg%3E">
@@ -52,6 +51,36 @@
         "@id": "https://www.metodohebe.cl/#organization"
       },
       "mainEntityOfPage": "https://www.metodohebe.cl/clinica/por-que-respondemos-en-minutos"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.metodohebe.cl/clinica/por-que-respondemos-en-minutos#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Por qué responden en minutos por WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las consultas de horarios, sedes y reagendamiento se atienden en minutos por WhatsApp, también fuera del horario de box. El asistente resuelve lo operativo de la agenda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Atienden fuera del horario de la clínica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Fuera de lun–vie 10:00–20:00 y sábado 09:00–19:00 igual puedes escribir. El asistente confirma disponibilidad, ubicación y datos de la evaluación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El asistente indica tratamientos por chat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. No interpreta resultados ni indica tratamientos por chat. Si la duda es clínica, la deriva al equipo humano de la sede. Eso se resuelve en la evaluación presencial."
+          }
+        }
+      ]
     }
   ]
 }
@@ -379,6 +408,17 @@
 <p>Si quieres ver el detalle operativo de este flujo, lee <a class="inline-link" href="https://www.clinera.io/casos/metodo-hebe" target="_blank" rel="noopener">cómo lo hacemos con Clinera</a>.</p>
 
 </div></article>
+
+<style>
+.clinica-faq{padding:8px 0 48px}
+.clinica-faq .wrap{max-width:820px}
+.clinica-faq h2{font-size:clamp(22px,3vw,30px);margin:0 0 18px}
+.clinica-faq details{border-bottom:1px solid var(--line,#e8ecec);padding:14px 0}
+.clinica-faq summary{cursor:pointer;font-weight:600;font-size:15.5px;line-height:1.4;list-style:none}
+.clinica-faq summary::-webkit-details-marker{display:none}
+.clinica-faq details p{margin:10px 0 0;font-size:15px;color:var(--ink-2,#36474a);line-height:1.7}
+</style>
+<section class="clinica-faq" id="faq"><div class="wrap"><h2>Preguntas frecuentes</h2><details open><summary>¿Por qué responden en minutos por WhatsApp?</summary><p>Las consultas de horarios, sedes y reagendamiento se atienden en minutos por WhatsApp, también fuera del horario de box. El asistente resuelve lo operativo de la agenda.</p></details><details><summary>¿Atienden fuera del horario de la clínica?</summary><p>Sí. Fuera de lun–vie 10:00–20:00 y sábado 09:00–19:00 igual puedes escribir. El asistente confirma disponibilidad, ubicación y datos de la evaluación.</p></details><details><summary>¿El asistente indica tratamientos por chat?</summary><p>No. No interpreta resultados ni indica tratamientos por chat. Si la duda es clínica, la deriva al equipo humano de la sede. Eso se resuelve en la evaluación presencial.</p></details></div></section>
 <section class="cta-banner" style="background:#0F1A1A;color:#fff;text-align:center;padding:56px 20px;margin-top:48px">
   <div class="wrap" style="max-width:720px;margin:0 auto">
     <h2 style="font-size:clamp(24px,4vw,36px);margin-bottom:12px">Agenda tu hora</h2>
