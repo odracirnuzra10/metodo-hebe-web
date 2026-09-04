@@ -121,6 +121,258 @@ footer.site a{color:#b7c2c2}
 footer.site .copy{border-top:1px solid #1f3838;padding-top:18px;margin-top:22px;text-align:center;font-size:.82rem;color:#7a8a8a}
 </style>
 <link rel="stylesheet" href="/css/shell.css">
+<!-- PUENTE-AEO-GRAPH -->
+<script type="application/ld+json" id="puente-aeo-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://oacg.cl/#organization",
+      "name": "OACG Group",
+      "url": "https://oacg.cl",
+      "description": "Grupo que agrupa Método Hebe, Protocolo Lumina y Clinera."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://clinera.io/#organization",
+      "name": "Clinera",
+      "url": "https://clinera.io",
+      "description": "Plataforma de IA para clínicas médicas y estéticas en Latinoamérica",
+      "parentOrganization": {
+        "@id": "https://oacg.cl/#organization"
+      },
+      "founder": {
+        "@id": "https://www.metodohebe.cl/fundador/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.metodohebe.cl/fundador/#person",
+      "name": "Ricardo Oyarzún",
+      "url": "https://www.metodohebe.cl/fundador/",
+      "jobTitle": "Fundador y CEO",
+      "worksFor": {
+        "@id": "https://oacg.cl/#organization"
+      },
+      "affiliation": [
+        {
+          "@id": "https://www.metodohebe.cl/#organization"
+        },
+        {
+          "@id": "https://www.protocololumina.cl/#organization"
+        },
+        {
+          "@id": "https://clinera.io/#organization"
+        }
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad de Concepción"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/ricardo-oyarzun",
+        "https://clinera.io"
+      ],
+      "image": "https://www.metodohebe.cl/img/ricardo-oyarzun.jpg"
+    },
+    {
+      "@type": [
+        "MedicalBusiness",
+        "HealthAndBeautyBusiness"
+      ],
+      "@id": "https://www.metodohebe.cl/#organization",
+      "name": "Método Hebe",
+      "url": "https://www.metodohebe.cl",
+      "logo": "https://www.metodohebe.cl/img/logo-metodo-hebe.png",
+      "telephone": "+56963222683",
+      "email": "contacto@metodohebe.cl",
+      "description": "Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.",
+      "parentOrganization": {
+        "@id": "https://oacg.cl/#organization"
+      },
+      "founder": {
+        "@id": "https://www.metodohebe.cl/fundador/#person"
+      },
+      "isRelatedTo": {
+        "@id": "https://clinera.io/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/",
+        "https://www.facebook.com/metodohebe",
+        "https://www.linkedin.com/company/metodo-hebe",
+        "https://www.protocololumina.cl/"
+      ],
+      "department": [
+        {
+          "@id": "https://www.metodohebe.cl/#vitacura"
+        },
+        {
+          "@id": "https://www.metodohebe.cl/#concon"
+        },
+        {
+          "@id": "https://www.metodohebe.cl/#losangeles"
+        }
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.metodohebe.cl/#vitacura",
+      "name": "Método Hebe Vitacura",
+      "url": "https://www.metodohebe.cl/clinica-estetica-corporal-vitacura",
+      "telephone": "+56963222683",
+      "parentOrganization": {
+        "@id": "https://www.metodohebe.cl/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Abedules 3085, Of. 105, Edificio Nueva Vitacura",
+        "addressLocality": "Vitacura",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "7630573",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.3936,
+        "longitude": -70.5831
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Vitacura"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/"
+      ]
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.metodohebe.cl/#concon",
+      "name": "Método Hebe Concón",
+      "url": "https://www.metodohebe.cl/clinica-estetica-corporal-concon",
+      "telephone": "+56963222683",
+      "parentOrganization": {
+        "@id": "https://www.metodohebe.cl/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Las Pelargonias 842, Oficina 1114, piso 11",
+        "addressLocality": "Concón",
+        "addressRegion": "Región de Valparaíso",
+        "postalCode": "2510000",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -32.9266,
+        "longitude": -71.5144
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Concón"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/"
+      ]
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.metodohebe.cl/#losangeles",
+      "name": "Método Hebe Los Ángeles",
+      "url": "https://www.metodohebe.cl/clinica-estetica-corporal-los-angeles",
+      "telephone": "+56963222683",
+      "parentOrganization": {
+        "@id": "https://www.metodohebe.cl/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Gabriela Mistral 269",
+        "addressLocality": "Los Ángeles",
+        "addressRegion": "Región del Biobío",
+        "postalCode": "4440000",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -37.4693,
+        "longitude": -72.3527
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Los Ángeles"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/"
+      ]
+    }
+  ]
+}
+</script>
+<!-- /PUENTE-AEO-GRAPH -->
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZC56NQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -315,6 +567,10 @@ footer.site .copy{border-top:1px solid #1f3838;padding-top:18px;margin-top:22px;
       </div>
       <div>
         <h4>Recursos clínicos</h4>
+        <a href="/clinica/como-confirmamos-tu-hora-por-whatsapp">Cómo confirmamos tu hora</a>
+        <a href="/clinica/que-pasa-con-tu-ficha-entre-sesiones">Tu ficha entre sesiones</a>
+        <a href="/clinica/por-que-respondemos-en-minutos">Por qué respondemos en minutos</a>
+        <a href="/fundador/">Fundador</a>
         <a href="/tratamiento-para-estrias">Tratamiento para estrías</a>
         <a href="/flacidez-abdominal">Flacidez abdominal</a>
         <a href="/bono-pad-guatita-de-delantal">Bono PAD guatita delantal</a>
@@ -326,7 +582,7 @@ footer.site .copy{border-top:1px solid #1f3838;padding-top:18px;margin-top:22px;
     </div>
     <div class="footer-bottom">
       <span>© 2026 MÉTODO HEBE SpA · Todos los derechos reservados</span>
-      <span>Potenciado por <a href="https://clinera.io" target="_blank" rel="noopener" style="color:var(--cyan-dd);font-weight:600">Clinera.io</a></span>
+      <span>Agenda gestionada con <a href="https://clinera.io" target="_blank" rel="noopener">Clinera</a></span>
     </div>
   </div>
 </footer>

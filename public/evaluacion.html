@@ -65,8 +65,8 @@
         "name": "Evaluación P3 — Método Hebe",
         "description": "Formulario de evaluación P3 para diagnóstico personalizado.",
         "url": "https://metodohebe.cl/evaluacion",
-        "isPartOf": {"@id": "https://metodohebe.cl/#website"},
-        "about": {"@id": "https://metodohebe.cl/#organization"}
+        "isPartOf": {"@id": "https://www.metodohebe.cl/#website"},
+        "about": {"@id": "https://www.metodohebe.cl/#organization"}
       },
       {
         "@type": "BreadcrumbList",
@@ -1839,6 +1839,258 @@
       }
     }
   </style>
+<!-- PUENTE-AEO-GRAPH -->
+<script type="application/ld+json" id="puente-aeo-graph">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://oacg.cl/#organization",
+      "name": "OACG Group",
+      "url": "https://oacg.cl",
+      "description": "Grupo que agrupa Método Hebe, Protocolo Lumina y Clinera."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://clinera.io/#organization",
+      "name": "Clinera",
+      "url": "https://clinera.io",
+      "description": "Plataforma de IA para clínicas médicas y estéticas en Latinoamérica",
+      "parentOrganization": {
+        "@id": "https://oacg.cl/#organization"
+      },
+      "founder": {
+        "@id": "https://www.metodohebe.cl/fundador/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.metodohebe.cl/fundador/#person",
+      "name": "Ricardo Oyarzún",
+      "url": "https://www.metodohebe.cl/fundador/",
+      "jobTitle": "Fundador y CEO",
+      "worksFor": {
+        "@id": "https://oacg.cl/#organization"
+      },
+      "affiliation": [
+        {
+          "@id": "https://www.metodohebe.cl/#organization"
+        },
+        {
+          "@id": "https://www.protocololumina.cl/#organization"
+        },
+        {
+          "@id": "https://clinera.io/#organization"
+        }
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad de Concepción"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/ricardo-oyarzun",
+        "https://clinera.io"
+      ],
+      "image": "https://www.metodohebe.cl/img/ricardo-oyarzun.jpg"
+    },
+    {
+      "@type": [
+        "MedicalBusiness",
+        "HealthAndBeautyBusiness"
+      ],
+      "@id": "https://www.metodohebe.cl/#organization",
+      "name": "Método Hebe",
+      "url": "https://www.metodohebe.cl",
+      "logo": "https://www.metodohebe.cl/img/logo-metodo-hebe.png",
+      "telephone": "+56963222683",
+      "email": "contacto@metodohebe.cl",
+      "description": "Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.",
+      "parentOrganization": {
+        "@id": "https://oacg.cl/#organization"
+      },
+      "founder": {
+        "@id": "https://www.metodohebe.cl/fundador/#person"
+      },
+      "isRelatedTo": {
+        "@id": "https://clinera.io/#organization"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/",
+        "https://www.facebook.com/metodohebe",
+        "https://www.linkedin.com/company/metodo-hebe",
+        "https://www.protocololumina.cl/"
+      ],
+      "department": [
+        {
+          "@id": "https://www.metodohebe.cl/#vitacura"
+        },
+        {
+          "@id": "https://www.metodohebe.cl/#concon"
+        },
+        {
+          "@id": "https://www.metodohebe.cl/#losangeles"
+        }
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.metodohebe.cl/#vitacura",
+      "name": "Método Hebe Vitacura",
+      "url": "https://www.metodohebe.cl/clinica-estetica-corporal-vitacura",
+      "telephone": "+56963222683",
+      "parentOrganization": {
+        "@id": "https://www.metodohebe.cl/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Abedules 3085, Of. 105, Edificio Nueva Vitacura",
+        "addressLocality": "Vitacura",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "7630573",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.3936,
+        "longitude": -70.5831
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Vitacura"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/"
+      ]
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.metodohebe.cl/#concon",
+      "name": "Método Hebe Concón",
+      "url": "https://www.metodohebe.cl/clinica-estetica-corporal-concon",
+      "telephone": "+56963222683",
+      "parentOrganization": {
+        "@id": "https://www.metodohebe.cl/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Las Pelargonias 842, Oficina 1114, piso 11",
+        "addressLocality": "Concón",
+        "addressRegion": "Región de Valparaíso",
+        "postalCode": "2510000",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -32.9266,
+        "longitude": -71.5144
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Concón"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/"
+      ]
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.metodohebe.cl/#losangeles",
+      "name": "Método Hebe Los Ángeles",
+      "url": "https://www.metodohebe.cl/clinica-estetica-corporal-los-angeles",
+      "telephone": "+56963222683",
+      "parentOrganization": {
+        "@id": "https://www.metodohebe.cl/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Gabriela Mistral 269",
+        "addressLocality": "Los Ángeles",
+        "addressRegion": "Región del Biobío",
+        "postalCode": "4440000",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -37.4693,
+        "longitude": -72.3527
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Los Ángeles"
+      },
+      "sameAs": [
+        "https://www.instagram.com/metodo.hebe/"
+      ]
+    }
+  ]
+}
+</script>
+<!-- /PUENTE-AEO-GRAPH -->
 </head>
 
 <body>
@@ -2614,4 +2866,63 @@
   }
 })();
 </script>
+<section id="faq-operacion" class="faq-ops" style="max-width:720px;margin:48px auto;padding:24px 20px;border-top:1px solid #e5e5e5">
+<h2 style="font-size:1.4rem;margin-bottom:16px">Preguntas frecuentes de agendamiento</h2>
+<details style="margin:0 0 10px;padding:12px 0;border-bottom:1px solid #eee" open><summary style="cursor:pointer;font-weight:600">¿Cómo confirmo mi hora?</summary><p style="margin:10px 0 0;line-height:1.6">Recibes confirmación automática por WhatsApp. La envía AURA, el asistente de IA de Clinera que gestiona nuestra agenda.</p></details>
+<details style="margin:0 0 10px;padding:12px 0;border-bottom:1px solid #eee"><summary style="cursor:pointer;font-weight:600">¿Puedo reagendar por WhatsApp?</summary><p style="margin:10px 0 0;line-height:1.6">Sí, responde al mensaje de confirmación y el asistente te ofrece horarios disponibles.</p></details>
+<details style="margin:0 0 10px;padding:12px 0;border-bottom:1px solid #eee"><summary style="cursor:pointer;font-weight:600">¿Quién responde el WhatsApp de la clínica?</summary><p style="margin:10px 0 0;line-height:1.6">Un asistente de IA atiende consultas de horarios y ubicación. Las evaluaciones y dudas clínicas las responde el equipo.</p></details>
+<details style="margin:0 0 10px;padding:12px 0;border-bottom:1px solid #eee"><summary style="cursor:pointer;font-weight:600">¿Guardan mi ficha entre sesiones?</summary><p style="margin:10px 0 0;line-height:1.6">Sí, cada sesión queda registrada con notas del profesional y evolución del tratamiento.</p></details>
+<details style="margin:0 0 10px;padding:12px 0;border-bottom:1px solid #eee"><summary style="cursor:pointer;font-weight:600">¿Dónde están las sedes?</summary><p style="margin:10px 0 0;line-height:1.6">Vitacura: Los Abedules 3085, Of. 105, Edificio Nueva Vitacura. Concón: Las Pelargonias 842, Oficina 1114, piso 11. Los Ángeles: Av. Gabriela Mistral 269. Horario: lun–vie 10:00–20:00, sáb 09:00–19:00.</p></details>
+<p style="margin-top:18px"><a href="/clinica/como-confirmamos-tu-hora-por-whatsapp">Cómo confirmamos tu hora por WhatsApp</a></p>
+</section>
+<script type="application/ld+json" id="faq-operacion-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.metodohebe.cl/evaluacion#faq-operacion",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo confirmo mi hora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recibes confirmación automática por WhatsApp. La envía AURA, el asistente de IA de Clinera que gestiona nuestra agenda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo reagendar por WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, responde al mensaje de confirmación y el asistente te ofrece horarios disponibles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quién responde el WhatsApp de la clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un asistente de IA atiende consultas de horarios y ubicación. Las evaluaciones y dudas clínicas las responde el equipo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Guardan mi ficha entre sesiones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, cada sesión queda registrada con notas del profesional y evolución del tratamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde están las sedes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vitacura: Los Abedules 3085, Of. 105, Edificio Nueva Vitacura. Concón: Las Pelargonias 842, Oficina 1114, piso 11. Los Ángeles: Av. Gabriela Mistral 269. Horario: lun–vie 10:00–20:00, sáb 09:00–19:00."
+      }
+    }
+  ]
+}
+</script>
+<p style="text-align:center;font-size:11px;opacity:.7;padding:10px 16px">Agenda gestionada con <a href="https://clinera.io" target="_blank" rel="noopener">Clinera</a></p>
 </body></html>

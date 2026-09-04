@@ -1,13 +1,14 @@
 # ═══════════════════════════════════════════
 # Método Hebe — robots.txt
 # SEO + AEO / GEO
-# Última actualización: 2026-09-03
+# Última actualización: 2026-09-04
 # Política de crawlers de entrenamiento: SE PERMITE
 # (GPTBot, Google-Extended, ClaudeBot, anthropic-ai, CCBot, Bytespider,
 #  Applebot-Extended). Decisión consciente: el contenido clínico debe poder
 # citarse en modelos. Si en el futuro se restringe entrenamiento, cambiar
 # aquí a Disallow sin tocar los crawlers de búsqueda (OAI-SearchBot, etc.).
 # No hay banner de cookies que oculte HTML a bots: el cuerpo es público.
+# LLM docs: https://www.metodohebe.cl/llms.txt
 # ═══════════════════════════════════════════
 
 # ── Crawlers tradicionales ──
@@ -27,6 +28,9 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
 
@@ -41,9 +45,6 @@ User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
