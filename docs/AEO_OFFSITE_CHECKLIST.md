@@ -13,7 +13,7 @@
 
 1. **Bios** Instagram, TikTok, LinkedIn, Google Business Profile: pegar la frase de entidad y el slogan “No adivinamos, medimos.”
 2. **LinkedIn**: la URL ya es Método Hebe; revisar que el *about* no diga solo Concón.
-3. **Google Business Profile** por sede: categoría, horarios, fotos, Q&A, reseñas. Pegar CID real en `sameAs`/`hasMap` cuando exista `https://maps.google.com/?cid=…`.
+3. **Google Business Profile** por sede: categoría, horarios, fotos, Q&A, reseñas. Schema ya usa los share oficiales (2026-09-04): Vitacura `share.google/MsZnMY3vYGe6bW1Mo` · Concón `G1xHnaCeC1qxxoc6F` · Los Ángeles `TXyvAWXsTRvMAu9gD`. No inventar `?cid=` numérico.
 4. **Doctoralia**: ficha clínica + profesionales (cuando haya registros Superintendencia).
 5. **Wikidata**: ítem “Método Hebe” (clinic / Chile / official website).
 6. **hebebeauty.cl**: si aún está en GSC, solicitar retiro; si se recupera el DNS, 301 a `https://www.metodohebe.cl/`.

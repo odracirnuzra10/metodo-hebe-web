@@ -9,18 +9,19 @@ Lo que sigue no se cierra desde este repo.
 
 ---
 
-## 1) Off-site / GBP (no es código de este repo)
+## 1) GBP — hecho (2026-09-04)
 
-Obtener el CID real de Google Business Profile de cada sede Método Hebe
-(Vitacura, Concón, Los Ángeles) y entregar URLs del tipo:
+Ricardo entregó los share oficiales de cada ficha. Van en `sameAs` + `hasMap`
+de cada `MedicalClinic` (reemplazan `maps/search/?query=dirección`).
 
-```
-https://maps.google.com/?cid=XXXXXXXX
-```
+| Sede | URL |
+|---|---|
+| Los Ángeles | https://share.google/TXyvAWXsTRvMAu9gD |
+| Concón | https://share.google/G1xHnaCeC1qxxoc6F |
+| Vitacura | https://share.google/MsZnMY3vYGe6bW1Mo |
 
-Luego, en el bloque `PUENTE-AEO-GRAPH` y en el schema de home, reemplazar
-`sameAs`/`hasMap` de cada MedicalClinic (hoy `maps/search`) por el CID real.
-No inventar CIDs.
+No hay `?cid=` numérico extraíble (Maps es un shell JS). No inventar CIDs.
+Los share resuelven al Knowledge Graph (`kgmid` `/g/11…`).
 
 ---
 

@@ -31,7 +31,7 @@ No se inventaron cm de pacientes ni números de Superintendencia de Salud.
 | §5 comparativas + seguridad | Páginas nuevas | `/seguridad-criolipolisis`, `/criolipolisis-vs-ized`, `/metodo-hebe-vs-liposuccion`, `/plan-zero-rollito-vs-semaglutida`, `/hiems-vs-gimnasio` | 200 + PubMed en seguridad |
 | §5 IndexNow | Clave estática | `/f0e1ff44b0ff128d2711bf78b0aa90b9.txt` | 200 text/plain; ping Bing post-deploy |
 | §5 crawlers | Política consciente Allow + Bytespider | `public/robots.txt` | Comentario de política |
-| S6 off-site | No se puede desde el repo (prensa, Doctoralia, Wikidata, bios RRSS, GBP CID) | `docs/AEO_OFFSITE_CHECKLIST.md` | Checklist |
+| S6 off-site | Prensa, Doctoralia, Wikidata, bios RRSS siguen off-site. GBP `sameAs`/`hasMap` ya usa share oficiales (2026-09-04): Vitacura `MsZnMY3vYGe6bW1Mo` · Concón `G1xHnaCeC1qxxoc6F` · Los Ángeles `TXyvAWXsTRvMAu9gD` | `docs/AEO_OFFSITE_CHECKLIST.md` | Checklist |
 | Share of Model | Preguntas mes 0 | `docs/SHARE_OF_MODEL_MES0.md` | Medir a mano en ChatGPT/Perplexity Chile |
 
 ## Verificación live post-deploy
