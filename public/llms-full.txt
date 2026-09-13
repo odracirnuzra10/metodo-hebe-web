@@ -83,48 +83,66 @@ Evaluación clínica P3 de **45 minutos**, valor **$27.990 CLP** (no reembolsabl
 
 ---
 
-## 5. Las 6 tecnologías coreanas
+## 5. Tecnologías coreanas en sala
 
-Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin reventa ni alquiler. Operadas por técnicos certificados en cada sede.
+Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin reventa ni alquiler. Operadas por técnicos certificados en cada sede. Inventario principal (fotos de equipo 2026-09):
 
-### 5.1 Corpo Hera (flagship)
+### 5.1 iZED / iZED PRO
+- **Tipo**: Criolipólisis / contorno corporal
+- **Indicación principal**: Grasa localizada resistente
+- **Mecanismo**: Apoptosis controlada del adipocito; eliminación progresiva por vía linfática
+- **Origen**: Seúl, Corea del Sur
+
+### 5.2 Corpo Hera (flagship)
 - **Tipo**: Masaje mecánico profundo con cabezales motorizados
 - **Indicación principal**: Celulitis (rotura de nódulos subcutáneos)
 - **Mecanismo**: Estimula drenaje linfático asistido y rompe nódulos desde la capa subcutánea
-- **Profundidad**: 6 mm
-- **Cabezales**: 4
 - **Duración sesión**: 45 min
-- **Origen**: Seúl, Corea del Sur
 
-### 5.2 SkinWave MAX
-- **Tipo**: Radiofrecuencia fraccionada
-- **Indicación principal**: Flacidez
-- **Mecanismo**: Reactiva producción de colágeno y elastina sin lesión cutánea visible
-- **Duración sesión**: 60 min
-
-### 5.3 iZED
-- **Tipo**: Electroestimulación muscular de alta intensidad (HIEMS)
-- **Indicación principal**: Tonificación
-- **Mecanismo**: Contracciones profundas equivalentes a horas de entrenamiento
-- **Duración sesión**: 30 min
-
-### 5.4 Carbox CK
+### 5.3 Carbox CK
 - **Tipo**: Carboxiterapia médica
-- **Indicación principal**: Celulitis y estrías
+- **Indicación principal**: Celulitis, microcirculación y estrías
 - **Mecanismo**: CO₂ medicinal subcutáneo, oxigena tejido y mejora microcirculación
 - **Duración sesión**: 40 min
 
-### 5.5 Adipolite
-- **Tipo**: Criolipólisis selectiva
-- **Indicación principal**: Grasa localizada
-- **Mecanismo**: Congela adipocitos de grasa localizada con resultado medible en 4 semanas
-- **Duración sesión**: 50 min
+### 5.4 Crio CK
+- **Tipo**: Criolipólisis multiaplicador
+- **Indicación principal**: Panículo adiposo localizado
+- **Mecanismo**: Frío controlado con múltiples aplicadores simultáneos
 
-### 5.6 Corpo Lift
-- **Tipo**: HIFU focalizado (ultrasonido de alta intensidad)
+### 5.5 Skin Wave Max
+- **Tipo**: HIFU + radiofrecuencia corporal
+- **Indicación principal**: Flacidez y tensado post-reducción
+- **Mecanismo**: Reactiva colágeno y elastina; define contorno cutáneo
+- **Duración sesión**: 60 min
+
+### 5.6 Cuorpo Lift
+- **Tipo**: HIFU corporal focalizado
 - **Indicación principal**: Flacidez avanzada
 - **Mecanismo**: Ultrasonido de precisión que tensa desde capas profundas
 - **Duración sesión**: 55 min
+- **Nota de marca**: en equipo se lee «Cuorpo Lift» (antes comunicado también como Corpo Lift)
+
+### 5.7 Cuky Body
+- **Tipo**: Bioimpedancia / composición corporal
+- **Indicación principal**: Diagnóstico metabólico y seguimiento
+- **Mecanismo**: Medición de masa grasa, muscular y agua para calibrar el protocolo
+
+### 5.8 Sculpt DD
+- **Tipo**: HIEMS (electroestimulación muscular de alta intensidad)
+- **Indicación principal**: Tonificación de abdomen, glúteos y core
+- **Mecanismo**: Contracciones profundas equivalentes a entrenamiento intenso
+- **Duración sesión**: 30 min
+
+### 5.9 Sculpt DD Firm
+- **Tipo**: HIEMS orientado a firmeza
+- **Indicación principal**: Definición y firmeza muscular superficial
+- **Mecanismo**: Variante Sculpt DD calibrada a estímulo de firmeza
+
+### 5.10 Laser Trimax (y más en sala)
+- **Tipo**: Láser lipolítico
+- **Indicación principal**: Movilización de lípidos / apoyo a grasa localizada
+- **Nota**: Complementa protocolos de contorno junto con iZED, Crio CK y Skin Wave Max. Adipolite sigue referenciado en planes históricos cuando aplica.
 
 ### Certificaciones aplicables
 - KFDA Korea Food & Drug (2018)
