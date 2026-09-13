@@ -357,6 +357,10 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 
 /* ── TECH CARDS ── */
 .tech-stack{display:grid;gap:18px;margin:24px 0 32px}
+.autoeval-band{grid-template-columns:1fr 1fr}
+.autoeval-band .autoeval-cierre{grid-column:1/-1;font-size:14.5px;color:var(--ink-3)}
+.autoeval-band a{color:var(--cyan-dd);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:700px){.autoeval-band{grid-template-columns:1fr}}
 .tech-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:var(--radius-lg);padding:clamp(20px,2.5vw,26px) clamp(20px,2.5vw,28px);position:relative;transition:all .3s}
 .tech-card:hover{border-color:rgba(28,197,197,.25);box-shadow:var(--shadow-card)}
 .tech-card h3{margin-top:0;font-family:var(--serif);font-size:clamp(18px,2vw,22px);color:var(--ink);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:10px}
@@ -639,6 +643,16 @@ button{font-family:var(--sans);cursor:pointer;border:none}
     <p>El origen científico del procedimiento está en <strong>Harvard Medical School</strong>. En 2008, Dieter Manstein y R. Rox Anderson publicaron en la revista Lasers in Surgery and Medicine un estudio en modelo animal que demostraba por primera vez que el frío podía inducir panelosis grasa controlada sin lesión cutánea. Ese trabajo fue la base técnica que, dos años después, permitió a la empresa Zeltiq obtener la aprobación de la FDA para su equipo <strong>CoolSculpting</strong> (aprobación inicial en 2010 para flancos, ampliada progresivamente a abdomen, muslos, papada, brazos y espalda). Desde entonces se desarrollaron múltiples equipos posteriores, tanto estadounidenses como europeos y coreanos, que replican y optimizan el mismo principio físico.</p>
 
     <p>Es importante distinguir <strong>criolipólisis</strong> (un procedimiento médico-estético regulado) de métodos caseros, "criolipólisis" con bolsas de hielo o equipos sin certificación: sin control preciso de temperatura, succión y tiempo, no hay apoptosis selectiva, solo riesgo de quemadura por frío (congelación cutánea). Esa vía de daño está desarrollada en la página de <a class="inline-link" href="/seguridad-criolipolisis">seguridad y contraindicaciones</a>.</p>
+
+    <div class="tech-stack autoeval-band" data-section="banda_triage">
+      <div class="tech-card">
+        <p><strong>Suele funcionar.</strong> Pliegue pellizcable de al menos 2,5 cm, IMC 18–30, piel elástica y peso estable. Es el mismo criterio del pinch test de más abajo. No es un diagnóstico.</p>
+      </div>
+      <div class="tech-card">
+        <p><strong>No es la vía.</strong> Exceso de piel colgante, IMC mayor a 35, o el objetivo de bajar de peso. El frío no resuelve eso.</p>
+      </div>
+      <p class="autoeval-cierre"><a href="/evaluacion?origen=criolipolisis&bloque=banda_triage" onclick="hebeTrack('evaluacion_click',{location:'banda_triage'})">Medirlo en la Evaluación P3</a> — 45 min · $27.990. Este resumen no dispara Lead.</p>
+    </div>
 
     <h2>¿Cómo funciona paso a paso?</h2>
 
