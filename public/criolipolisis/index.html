@@ -79,6 +79,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/img/logo-hebe-stacked.avif" type="image/avif" fetchpriority="high">
 
 <!-- ═══ Schema: MedicalWebPage + BreadcrumbList + FAQPage ═══ -->
 <script type="application/ld+json">
@@ -501,7 +502,11 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 <nav class="nav" id="navbar" aria-label="Navegación principal">
   <div class="wrap">
     <a href="/" class="nav-logo" aria-label="Método Hebe — Inicio">
-      <img src="/img/logo-hebe-stacked.png" alt="Método Hebe" width="76" height="58" class="nav-logo-img">
+      <picture>
+        <source type="image/avif" srcset="/img/logo-hebe-stacked.avif">
+        <source type="image/webp" srcset="/img/logo-hebe-stacked.webp">
+        <img src="/img/logo-hebe-stacked.png" alt="Método Hebe" width="76" height="58" class="nav-logo-img" fetchpriority="high" decoding="async">
+      </picture>
     </a>
     <div class="nav-links" role="navigation">
       <a href="/">Inicio</a>

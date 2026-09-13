@@ -1,3 +1,7 @@
+## 2026-09-13 — H2.4: `<picture>` AVIF/WebP y peso
+
+Las `tech-*.png` de home pasan a `<picture>` AVIF/WebP con `width`/`height`. LCP de home y `/criolipolisis` tienen preload `fetchpriority="high"`. Se borran PNG duplicados, `angelica.png` / `angelica-testimonio.png` y los 4 `.webm` huérfanos.
+
 ## 2026-09-13 — H2.2: a11y del wizard `/evaluacion`
 
 El wizard es un `<form>` real: `label for`, `required`, errores persistentes `role="alert"`, sedes `role=button` + teclado, `fieldset` en sedes y franjas. `#btnSubmit` no dispara `whatsapp_click`. Mismo payload n8n.
