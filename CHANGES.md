@@ -1,3 +1,7 @@
+## 2026-09-13 — H5.4: borrar clave IndexNow huérfana
+
+Se elimina `public/ab767007d40e7700a59b91b6f690a54f.txt`. No aparece en robots ni en pings. Queda la clave vigente `f0e1ff44b0ff128d2711bf78b0aa90b9`.
+
 ## 2026-09-13 — H5.2: cuestionario «¿Eres candidata?»
 
 Nueva URL `/eres-candidata`: 8 preguntas, orientación a un plan publicado, captura por mailto, enlace compartible. No es diagnóstico. Sin webhook nuevo. Radiografía Corporal no se publica.
