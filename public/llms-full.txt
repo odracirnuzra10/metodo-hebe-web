@@ -1,7 +1,7 @@
 # Método Hebe — Documento completo para LLMs
 
 > Versión completa y extendida con todo el contenido relevante de Método Hebe para entrenamiento, indexación AEO/GEO y respuestas conversacionales en modelos de IA.
-> Última actualización: 2026-09-03
+> Última actualización: 2026-09-13
 
 Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.
 
@@ -43,7 +43,7 @@ Resultado: cambios corporales **permanentes, sin cirugía y sin rebote**.
 - **94 % de satisfacción** reportada
 - **4.9 ⭐** rating Google promedio (120+ reseñas)
 - **3 sedes** activas: Vitacura, Concón, Los Ángeles
-- **6 tecnologías** médicas importadas de Corea del Sur
+- **10 equipos coreanos en sala** (9 principales + Laser Trimax y más)
 - **3 fases** clínicas obligatorias
 - **12 a 24 sesiones** según plan
 - **0 cirugía · 0 anestesia · 0 recuperación**
@@ -142,7 +142,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 ### 5.10 Laser Trimax (y más en sala)
 - **Tipo**: Láser lipolítico
 - **Indicación principal**: Movilización de lípidos / apoyo a grasa localizada
-- **Nota**: Complementa protocolos de contorno junto con iZED, Crio CK y Skin Wave Max. Adipolite sigue referenciado en planes históricos cuando aplica.
+- **Nota**: Complementa protocolos de contorno junto con iZED, Crio CK y Skin Wave Max. Adipolite ya no forma parte del inventario en sala.
 
 ### Certificaciones aplicables
 - KFDA Korea Food & Drug (2018)
@@ -168,7 +168,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **Precio**: $1.977.990 CLP
 - **Sesiones**: 20
 - **Duración**: 5 meses
-- **Equipos**: SkinWave MAX + Corpo Lift
+- **Equipos**: Skin Wave Max + Cuorpo Lift
 - **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
 - **Para quién**: Piel que perdió firmeza con laxitud visible (post embarazo, post baja de peso, edad)
 - **URL**: https://metodohebe.cl/planes/#flacidez
@@ -177,7 +177,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **Precio**: $1.799.990 CLP
 - **Sesiones**: 12
 - **Duración**: 3 meses
-- **Equipos**: iZED + SkinWave MAX + Adipolite
+- **Equipos**: iZED + Skin Wave Max + Crio CK
 - **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
 - **Para quién**: Personas con grasa localizada persistente resistente a dieta y ejercicio
 - **URL**: https://metodohebe.cl/planes/#grasa
@@ -224,7 +224,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 
 ### Guatita de delantal (pannus abdominal)
 - Frecuente post embarazo o post baja brusca de peso
-- Solución no quirúrgica con combinación de Adipolite + SkinWave MAX + iZED
+- Solución no quirúrgica con combinación de Crio CK + Skin Wave Max + iZED
 - URL hub: https://metodohebe.cl/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/
 
 ---
@@ -378,7 +378,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 ## 12. FAQ ampliado
 
 ### ¿Qué es el Método Hebe y en qué se diferencia de otras clínicas?
-Protocolo clínico de 3 fases — diagnóstico metabólico con bioimpedancia, coaching nutricional con Reto Hebe 21 días, y 6 tecnologías médicas importadas de Corea del Sur. Tratamos la causa metabólica, no el síntoma estético. +30.000 pacientes, 94 % satisfacción, 4.9 ⭐ Google.
+Protocolo clínico de 3 fases — diagnóstico metabólico con bioimpedancia, coaching nutricional con Reto Hebe 21 días, y equipos coreanos en sala (iZED, Corpo Hera, Carbox CK, Crio CK, Skin Wave Max, Cuorpo Lift, Cuky Body, Sculpt DD, Sculpt DD Firm y Laser Trimax). Tratamos la causa metabólica, no el síntoma estético. +30.000 pacientes, 94 % satisfacción, 4.9 ⭐ Google.
 
 ### ¿Cuánto cuestan los planes?
 - Zero Celulitis: $1.977.990 CLP (20 sesiones, 5 meses)
