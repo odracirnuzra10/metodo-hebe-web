@@ -1,3 +1,7 @@
+## 2026-09-13 — R8: se borra Concepción
+
+Se elimina `/clinica-estetica-corporal-concepcion` (página, nav, sitemap, schema). La URL leftover hace 301 a la sede de Los Ángeles. `/franquicia` ya no anuncia «próxima apertura».
+
 ## 2026-09-13 — R6: una sola persona nombrada
 
 En página, la única persona con nombre es el CEO **Ricardo Alfredo Oyarzún Acuña**. El resto del staff se describe como profesionales altamente capacitados. Se quitaron promesas de registros Superintendencia en `/equipo` y en los bloques «Revisado por».
