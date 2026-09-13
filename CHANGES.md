@@ -1,3 +1,7 @@
+## 2026-09-13 — H1.8: tracking scroll, sección y evaluación
+
+`scroll_depth` 25/50/75/90 en criolipólisis y AUGE. Los CTA llevan `data-section`. Los botones a `/evaluacion` disparan `evaluacion_click`, no `whatsapp_click`. Los enlaces del artículo a `/evaluacion` llevan `?origen=&bloque=`.
+
 ## 2026-09-13 — H1.7: enlaces Fase 1
 
 `/criolipolisis` enlaza a `/resultados` y a `/criolipolisis-los-angeles`. AUGE enlaza a Bono PAD y FONASA/Isapre, con `id` en los H2. Se corrigen tres auto-enlaces de footer (X17). `/criolipolisis-los-angeles` enlaza a `/grasa-localizada-los-angeles`.
