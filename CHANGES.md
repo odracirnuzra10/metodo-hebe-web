@@ -1,3 +1,7 @@
+## 2026-09-13 — X20: satélite del blog vs pilar de guatita
+
+La guía `/blog/guatita-delantal-tratamiento-sin-cirugia` declara al pilar como documento canónico del cluster (`rel=related`, `isPartOf`, aside visible). H1s distintos. Ambas URLs 200. Sitemap del satélite baja a 0.55.
+
 ## 2026-09-13 — X10: pilar de guatita más largo y prioridad 0.90
 
 Se agregan H2 de Ley 21.438, plan publicado en `/planes`, tres sedes y lectura pilar vs satélite del blog. Sitemap de la URL pasa de 0.75 a 0.90. Sin reescribir H1/H2 existentes ni inventar centímetros.
