@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.11: copy del párrafo del inline-cta en criolipólisis
+
+Solo el `<p>` (D.1). H3 y botones intactos. Precio $27.990, no “sin costo”. Tracking igual.
+
 ## 2026-09-13 — H3.10: dos FAQ nuevas en criolipólisis
 
 Guatita de delantal (no como arreglo de piel) y sesiones del Plan Zero Rollito (12 / 3 meses / $1.799.990). 11 visibles = 11 schema.
