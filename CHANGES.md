@@ -1,3 +1,7 @@
+## 2026-09-13 — R6: una sola persona nombrada
+
+En página, la única persona con nombre es el CEO **Ricardo Alfredo Oyarzún Acuña**. El resto del staff se describe como profesionales altamente capacitados. Se quitaron promesas de registros Superintendencia en `/equipo` y en los bloques «Revisado por».
+
 ## 2026-09-13 — Estado (docs)
 
 `/franquicia` ya no es stub: el formulario POSTea a n8n (`franquicia-lead`) y, si el webhook no responde, ofrece `mailto:contacto@metodohebe.cl`. Quedan residuos P3 (copy «gratuita» / «sin costo» residual o ajeno a la evaluación, y «+20.000» en `/evaluacion`). **R3 cerrado:** el par oficial es «más de 30.000 pacientes» y «5/5 estrellas en Google»; H1.6 reemplaza el resto. No está «sin residuos».
