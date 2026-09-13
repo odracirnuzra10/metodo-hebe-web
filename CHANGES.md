@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.1: chips del hero en criolipólisis
+
+Fila de chips bajo el meta: $27.990 · sin compromiso; más de 30.000 pacientes; 3 sedes. H1 intacto.
+
 ## 2026-09-13 — H3.6: tarjeta Plan Zero Rollito en criolipólisis
 
 Precio visible $1.799.990 (12 sesiones / 3 meses), igual que `/planes`. Offer schema con el mismo monto. CTA a P3 + enlace a /planes.
