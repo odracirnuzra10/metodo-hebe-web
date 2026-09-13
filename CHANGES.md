@@ -1,3 +1,7 @@
+## 2026-09-13 — H1.6: /evaluacion al par R3
+
+En `/evaluacion`, «+20.000 personas» pasa a «más de 30.000 pacientes» y el chip de Google a «5/5 estrellas en Google». Las gratuidades ajenas a P3 (Ley 21.438, Clinera, «sin costos ocultos», bioimpedancia al contratar plan) se conservan.
+
 ## 2026-09-13 — H1.1: sticky B.4 en criolipólisis, AUGE y /resultados
 
 El CTA móvil usa `.visible`, `scrollY > 400` (AUGE `> 800`) e `IntersectionObserver` del footer. Evento unificado `evaluacion_click` + `location:'mobile_sticky'`. No se propaga al resto de páginas.
@@ -12,7 +16,7 @@ En página, la única persona con nombre es el CEO **Ricardo Alfredo Oyarzún Ac
 
 ## 2026-09-13 — Estado (docs)
 
-`/franquicia` ya no es stub: el formulario POSTea a n8n (`franquicia-lead`) y, si el webhook no responde, ofrece `mailto:contacto@metodohebe.cl`. Quedan residuos P3 (copy «gratuita» / «sin costo» residual o ajeno a la evaluación, y «+20.000» en `/evaluacion`). **R3 cerrado:** el par oficial es «más de 30.000 pacientes» y «5/5 estrellas en Google»; H1.6 reemplaza el resto. No está «sin residuos».
+`/franquicia` ya no es stub: el formulario POSTea a n8n (`franquicia-lead`) y, si el webhook no responde, ofrece `mailto:contacto@metodohebe.cl`. **H1.6 hecho:** `/evaluacion` usa el par R3. Quedan solo gratuidades ajenas a P3 (Ley 21.438 / Bono PAD, «sin costos ocultos», Clinera, bioimpedancia al contratar plan).
 
 ## 2026-09-03 — Foto del fundador en `/equipo`
 
