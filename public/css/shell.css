@@ -183,7 +183,9 @@ button{font-family:var(--sans);cursor:pointer;border:none}
    sitio llegaba a aplicar, así que el CTA quedaba desplazado el 100% de su alto
    hacia abajo en las 47 páginas que lo incluyen. Si en el futuro se necesitan
    estilos compartidos para este componente, agregarlos aquí volverá a pisar el
-   CSS por página: conviene primero quitar el bloque inline de las páginas. */
+   CSS por página: conviene primero quitar el bloque inline de las páginas.
+   Fase 4.5: no reintroducir aquí transform:translateY(100%). El show/hide
+   es por página (scrollY>400 + observer del footer + clase .visible). */
 
 /* ── SAAS PRICING GRID (for /planes and similar pages) ── */
 .pricing-grid-section{padding:clamp(56px,7vw,88px) 0;background:var(--bg)}

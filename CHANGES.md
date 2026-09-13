@@ -1,3 +1,7 @@
+## 2026-09-13 — Fase 4.5: sticky B.4 en páginas que ya lo tenían
+
+Home y 8 satélites: `scrollY>400`, observer del footer, `evaluacion_click` `mobile_sticky`. Sin barras nuevas. AUGE se queda en 800.
+
 ## 2026-09-13 — H4.1–H4.10: AUGE segmenta, no vende
 
 Chips de fuentes, índice, tabla GES vs Ley 21.438, puente honesto, triage 3 rutas (2 no comerciales), tabla de rutas con “resuelve piel colgante: No”, 3 FAQ, sigue leyendo, HowTo + reviewedBy. Sin Offer ni precio arriba del pliegue. Sin checklist (T6.3).
