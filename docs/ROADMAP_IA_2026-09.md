@@ -8,6 +8,8 @@
 
 **Este PR ya cumple H0.6** (notas fechadas en `CHANGES.md`, `docs/LINK_BUILDING_PLAN_2026.md`, `docs/AEO_CHANGELOG_2026-09.md`, `docs/PROMPTS_PENDIENTES_PUENTE_CLINERA.md`). No vuelvas a abrir un PR solo para esas notas.
 
+**R1–R5 y R7 están cerrados (Ricardo, 2026-09-13).** Texto normativo en §4. No los reabras ni pidas de nuevo: H2.3 no se hace; H0.3 desbloqueado (el merge de #51 lo hace **otro worker**); H1.5/H1.6 usan el par oficial de R3; Bloque 3 **no** espera GSC; Bloque 4 usa los KPI de R4; medición por URL de página (R2), sin partir GTM ni WhatsApp.
+
 **Prohibido en este roadmap:** ejecutar las tareas de código. Quien lea esto es la IA ejecutora de *otro* PR. Una tarea = una rama = un PR.
 
 ---
@@ -21,7 +23,7 @@ Eres la IA que implementa **una** tarea de este archivo en `metodo-hebe-web`. No
 1. Abre la tabla del §3. Quédate con las filas cuyo **Criterio de aceptación** aún falla en `main`.
 2. De esas, toma la de **prioridad más alta** (`P0` > `P1` > `P2` > `P3`).
 3. Si hay empate, toma la de **ID menor** cuyo campo **Depende de** esté satisfecho (merge en `main` +, si aplica, decisión `R*` escrita por Ricardo — no la inventes).
-4. Si la siguiente es `R*` o está bloqueada por un `R*`, **párate**. Un comentario en el PR o un mensaje: qué falta, de quién, y qué ID queda en cola. Nada más.
+4. Si la siguiente es `R*` **abierta** (R6, R8–R12) o depende de una de esas, **párate**. R1–R5 y R7 ya están escritas en §4: no pares por ellas. Un comentario: qué falta, de quién, y qué ID queda en cola. Nada más.
 
 ### Contrato de trabajo
 
@@ -52,8 +54,8 @@ En el cuerpo del PR, en este orden:
 
 Una sola pregunta a la vez. Párate si:
 
-- El ID depende de un `R*` sin respuesta escrita de Ricardo.
-- Haría falta inventar un registro de Superintendencia, un cm de paciente, una reseña, una dirección, una fecha de apertura o un `ratingCount`.
+- El ID depende de un `R*` **abierto** (R6, R8–R12). R1–R5 y R7 están cerrados: usá el texto de §4.
+- Haría falta inventar un registro de Superintendencia, un cm de paciente, una reseña, una dirección, una fecha de apertura o un `ratingCount`. Las únicas cifras de prueba social permitidas son las de R3: **más de 30.000 pacientes** y **5/5 estrellas en Google** (visible, nunca `AggregateRating` ni Review oculto).
 - El cambio viola B1–B15 o B.4.
 - El JSON-LD deja de parsear o dos nodos de la misma página comparten `@id`.
 - No estás seguro de si un CTA extra cabe en el tope de 5 puntos de conversión del `<article>` (B.4.5).
@@ -98,7 +100,7 @@ Contrato. Si una implementación choca con esta lista, **gana la regla**. Fuente
 ### Prohibiciones transversales
 
 - **Nunca** `AggregateRating` nuevo ni `Review` oculto (`display:none` en `reviewRating`). Hoy hay `AggregateRating` solo en `public/clinica-estetica-corporal-vitacura.html` y `Review` microdata con rating oculto en `public/index.html` y `public/planes/index.html` (H1.5).
-- **Nunca** inventar registros de Superintendencia, centímetros de pacientes, reseñas, direcciones o fechas. Si no está en GBP / `share.google` / copy ya publicado y reconciliado (R3), no va.
+- **Nunca** inventar registros de Superintendencia, centímetros de pacientes, reseñas, direcciones o fechas. Cifras de prueba social: solo el par R3 (**más de 30.000 pacientes**; **5/5 estrellas en Google**), en texto visible. Reemplazá `+20.000`, `4,9` y `+1.000 reseñas` (H1.5 / H1.6). No inventes un `ratingCount`.
 - Español de Chile, sin voseo.
 - JSON-LD parseable (`json.loads`). **Un nodo por `@id` por página.** Referenciar un `@id` de otra página (Person, Organization) está bien; **redefinir** el mismo `@id` como nodo completo en 9 archivos (`#faq-local`) no lo está (H1.4).
 - Fechas de schema: `scripts/schema_dates.py` / `public/js/format-schema-date.js`. Offset `America/Santiago`. No inventar el día del calendario.
@@ -128,6 +130,21 @@ Verificado en `main` (`a566232`) y en vivo. No re-auditar este cuadro: usalo com
 | Clinera caso | `https://www.clinera.io/casos/metodo-hebe` **200**. Host apex `https://clinera.io` mezclado en schema de `/clinica/*` (H1.10). |
 | IndexNow | `f0e1ff44b0ff128d2711bf78b0aa90b9.txt` **200**. Huérfana `ab767007d40e7700a59b91b6f690a54f.txt` también **200** (H5.4). |
 | `og:image` | 17/66 HTML. Faltan **49** (H1.2). Asset bueno: `https://www.metodohebe.cl/img/og-metodo-hebe.jpg` **200**. |
+| GTM + WhatsApp (R2) | Contenedor compartido `GTM-TZC56NQ5` y `wa.me/56963222683` en Hebe y Lumina. **No partir por marca.** Medir en GA4 por URL de página. |
+| Cifras oficiales (R3) | Copy: **más de 30.000 pacientes**; **5/5 estrellas en Google**. Residuos a borrar en H1.5/H1.6: `+20.000` en `/evaluacion`, `4,9` / `ratingCount 120` en Vitacura, `+1.000 reseñas` en `/planes`. |
+
+### PageSpeed móvil (R5, best-effort, 2026-09-13)
+
+PSI API (`pagespeedonline.googleapis.com`) respondió **429 quota exceeded**. GSC / CrUX **sigue sin acceso**. Lab: Lighthouse **12.8.2**, Chrome headless, `--form-factor=mobile`, throttling simulado, contra producción.
+
+| URL | Perf | LCP | CLS | INP |
+|---|---|---|---|---|
+| `https://www.metodohebe.cl/` | 74 | 5.0 s | 0.00 | n/d (lab; sin CrUX) |
+| `https://www.metodohebe.cl/criolipolisis` | 84 | 3.5 s | 0.00 | n/d |
+| `https://www.metodohebe.cl/guatita-de-delantal-auge-y-ley` | 82 | 3.6 s | 0.00 | n/d |
+| `https://www.metodohebe.cl/planes` | 69 | 5.5 s | 0.00 | n/d |
+
+TBT lab (proxy, no es INP): home 310 ms · criolipólisis 280 ms · AUGE 330 ms · `/planes` 260 ms. **Bloque 3 no está bloqueado por GSC.** Si más adelante hay export GSC, se anexa; no se espera para H3.
 
 ### Pendiente / roto (no implementar en este PR)
 
@@ -135,22 +152,22 @@ Verificado en `main` (`a566232`) y en vivo. No re-auditar este cuadro: usalo com
 |---|---|---|
 | `knowsAbout` ausente en Organization del home | `public/index.html` · PR #37 sucio | H0.1 |
 | PR #43 draft, duplicado de `8b44c01` | pago P3 ya en `main` | H0.2 |
-| PR #51 draft, catálogo equipos | merge solo con R7 | H0.3 |
+| PR #51 draft, catálogo equipos | **R7 = merge sí.** Otro worker mergea #51. H0.3 desbloqueado | H0.3 |
 | Auditoría UX solo en PR #4 | 50 archivos; rescatar **solo** el md | H0.4 |
 | `CLAUDE.md` no existe | raíz del repo | H0.5 |
 | Sticky **no** cumple B.4 | 56 markup / ~10 JS / umbral 300 vs 400 | H1.1 |
 | 49 páginas sin `og:image`; 7 URLs de schema **404** | ver H1.2 | H1.2 |
 | Slash / `www` en `@id` y `og:url` | 13 `og:url` ≠ canonical; 61 `@id` sin `www` | H1.3 |
 | `@id` reutilizado entre páginas | `#faq-local` ×9; locations ×3–4 | H1.4 |
-| `AggregateRating` Vitacura 4.9/120; Review oculto | home + `/planes` | H1.5 |
-| Residuos P3 + cifras | `/evaluacion` dice +20.000; footer +30.000; «gratuita» residual | H1.6 |
+| `AggregateRating` Vitacura 4.9/120; Review oculto | home + `/planes`. R3: visible = 30.000 + 5/5 Google; **cero** schema rating | H1.5 |
+| Residuos P3 + cifras | `/evaluacion` +20.000; `/planes` +1.000 reseñas / 4,9. Unificar al par R3; «gratuita» P3 residual | H1.6 |
 | Enlaces Fase 1 (propuesta 1.5–1.6) | criolipólisis ↛ `/resultados`; AUGE ↛ PAD/FONASA en cuerpo | H1.7 |
 | `whatsapp_click` en botones a `/evaluacion` | p.ej. `public/resultados/index.html` :1305; landings `btn-wa` | H1.8 |
 | AUGE `dateModified` 2026-04-23 | no contrastado con Ley 21.438 vigente | H1.9 |
 | Concepción «próxima» vs «no hay sede» | footers/topbars vs landing | H1.10 |
 | Contraste AA CTA | blanco sobre `#14B5A7` ~2,56:1 (auditoría PR #4) | H2.1 |
 | `/evaluacion` a11y | `<label>` sin `for`; H1 clip; sede-cards `div`+`onclick` | H2.2 |
-| Cuota mensual bajo precios | no está; FAQ de `/planes` la difiere a P3 | H2.3 + R1 |
+| Cuota mensual bajo precios | **No hacer.** R1: precios actuales; sin UI nueva de cuota | H2.3 cancelada |
 | `<picture>` AVIF/WebP; 4 `.webm` huérfanos | 8 páginas con `<picture>`; `public/video/*.webm` sin referencias | H2.4 |
 | `/formalidad` es deck Lumina | `noindex`, title «Protocolo Lumina» | H5.3 |
 
@@ -235,11 +252,11 @@ gh pr view 43 --json state,title,closedAt
 
 **Reversión.** Reabrir #43. No hay diff de sitio.
 
-#### H0.3 · Prioridad P0 · Esfuerzo M · Depende de R7 · Archivos PR #51 (`public/index.html`, `public/el-metodo.html`, `public/llms.txt`, `public/llms-full.txt`, `public/img/tech-*.webp`)
+#### H0.3 · Prioridad P0 · Esfuerzo M · Depende de — (R7 cerrado: merge sí) · Archivos PR #51 (`public/index.html`, `public/el-metodo.html`, `public/llms.txt`, `public/llms-full.txt`, `public/img/tech-*.webp`)
 
-**Prompt para la IA.** PR #51 (`https://github.com/odracirnuzra10/metodo-hebe-web/pull/51`, draft, `cursor/update-hebe-technologies-20d6`) actualiza el catálogo según fotos de sala: iZED, Corpo Hera, Carbox CK, Crio CK, Skin Wave Max, Cuorpo Lift, Cuky Body, Sculpt DD, Sculpt DD Firm + Laser Trimax en llms. **No merges sin R7.** Antes: tabla de consistencia nombre-en-máquina vs copy vs `llms-full.txt` vs `/franquicia` (ya corregido en #50, `a566232`). Si un nombre no está en la foto o contradice `/franquicia`, no lo inventes: lista la duda en el PR y espera R7. Tras R7, marca listo y mergea.
+**Prompt para la IA.** **R7 decidido: mergear #51.** Este ID está **desbloqueado**. El merge lo hace **otro worker** (dueño de `https://github.com/odracirnuzra10/metodo-hebe-web/pull/51`, rama `cursor/update-hebe-technologies-20d6`). No reimplementes el catálogo en un PR nuevo. No merges desde el PR del roadmap (#52). Si sos el worker de #51: tabla de consistencia nombre-en-máquina vs copy vs `llms-full.txt` vs `/franquicia` (#50, `a566232`) y mergeá. Si no sos ese worker: no toques #51; el criterio de este ID se cumple cuando #51 esté merged en `main`.
 
-**Criterio de aceptación.** Tabla en el PR. Cero nombres no fotografiados. Merge solo con R7 explícito.
+**Criterio de aceptación.** #51 merged en `main` (por el otro worker). Cero nombres no fotografiados. Este roadmap no es el vehículo del merge.
 
 **Verificación (comando).**
 
@@ -407,11 +424,11 @@ PY
 
 **Reversión.** `git revert`.
 
-#### H1.5 · Prioridad P1 · Esfuerzo S · Depende de R3 · Archivos `public/clinica-estetica-corporal-vitacura.html`, `public/index.html`, `public/planes/index.html`
+#### H1.5 · Prioridad P1 · Esfuerzo S · Depende de — (R3 cerrado) · Archivos `public/clinica-estetica-corporal-vitacura.html`, `public/index.html`, `public/planes/index.html`
 
-**Prompt para la IA.** Quitá `AggregateRating` de Vitacura y el `reviewRating` `display:none` de home y `/planes`. No agregues `AggregateRating` en Concón/Los Ángeles. La cifra visible de reseñas (si R3 entrega número de GBP) va en texto visible, no en schema, hasta que R3 diga lo contrario. Sin R3: solo borrás el schema/microdata oculto; **no** inventás “+1.000 reseñas” nuevo.
+**Prompt para la IA.** **R3:** copy visible = **más de 30.000 pacientes** y **5/5 estrellas en Google**. Quitá `AggregateRating` de Vitacura (`4.9` / `ratingCount 120`) y el `reviewRating` `display:none` de home y `/planes`. Reemplazá en visible `4,9` y `+1.000 reseñas` por el par R3 (no inventes `ratingCount`). No agregues `AggregateRating` ni Review oculto en ninguna sede.
 
-**Criterio de aceptación.** `rg AggregateRating public` vacío. Cero `itemtype="https://schema.org/Review"` con `display:none`. Copy visible de rating solo si R3.
+**Criterio de aceptación.** `rg AggregateRating public` vacío. Cero `itemtype="https://schema.org/Review"` con `display:none`. Visible: 5/5 Google + más de 30.000; cero `4,9` / `+1.000 reseñas`.
 
 **Verificación (comando).**
 
@@ -423,17 +440,18 @@ rg -n 'display:none' public/index.html public/planes/index.html | rg -i 'rating|
 
 **Reversión.** `git revert`.
 
-#### H1.6 · Prioridad P1 · Esfuerzo S · Depende de R3 (cifras) · Archivos landings con «gratuita» / «sin costo»; `public/evaluacion.html` (+20.000)
+#### H1.6 · Prioridad P1 · Esfuerzo S · Depende de — (R3 cerrado) · Archivos landings con «gratuita» / «sin costo»; `public/evaluacion.html` (+20.000)
 
-**Prompt para la IA.** No está “sin residuos P3”. Barré menciones de evaluación gratuita que contradigan $27.990 / 45 min (`CHANGES.md` 2026-08-28). Conservá gratuidades **ajenas** a P3: Ley 21.438 / Bono PAD, «sin costos ocultos» de planes, licencia Clinera en `/franquicia`, «el hábito es gratis» de caminar, bioimpedancia «sin costo adicional al contratar plan» en `public/blog/sede-los-angeles/index.html`. Cifras: `/evaluacion` dice «+20.000 personas»; el footer sitewide dice «+30.000». **No unifiques sin R3.** Con R3, un solo número en `/evaluacion` y el resto.
+**Prompt para la IA.** No está “sin residuos P3”. Barré menciones de evaluación gratuita que contradigan $27.990 / 45 min (`CHANGES.md` 2026-08-28). Conservá gratuidades **ajenas** a P3: Ley 21.438 / Bono PAD, «sin costos ocultos» de planes, licencia Clinera en `/franquicia`, «el hábito es gratis» de caminar, bioimpedancia «sin costo adicional al contratar plan» en `public/blog/sede-los-angeles/index.html`. **R3:** unificá cifras al par **más de 30.000 pacientes** / **5/5 estrellas en Google**. En `/evaluacion` reemplazá «+20.000 personas». No dejes `4,9` ni `+1.000 reseñas`. Nunca `AggregateRating` ni Review oculto (eso es H1.5; no lo reintroduzcas).
 
-**Criterio de aceptación.** Cero «Evaluación clínica gratuita» / «sin costo ni compromiso» referidos a P3. Cifras de pacientes tocadas solo con R3.
+**Criterio de aceptación.** Cero «Evaluación clínica gratuita» / «sin costo ni compromiso» referidos a P3. Cero `+20.000` de pacientes. Copy de prueba social = par R3.
 
 **Verificación (comando).**
 
 ```bash
 rg -n -i 'evaluación clínica gratuita|sin costo ni compromiso|evaluaci[oó]n .*gratuita' public --glob '*.html'
-rg -n '+20.000|+30.000' public/evaluacion.html public/index.html
+rg -n '+20.000|+1.000 reseñas|4,9' public --glob '*.html' && echo FAIL || echo 'R3 leftovers gone'
+rg -n 'más de 30.000|5/5' public/evaluacion.html public/index.html public/planes/index.html
 ```
 
 **Reversión.** `git revert`.
@@ -543,20 +561,19 @@ curl -sI https://www.metodohebe.cl/evaluacion | head -3   # 200
 
 **Reversión.** `git revert`.
 
-#### H2.3 · Prioridad P2 · Esfuerzo S · Depende de R1 · Archivos `public/planes/index.html` (y fichas de precio que R1 nombre)
+#### H2.3 · Prioridad P2 · Esfuerzo — · Depende de — (R1 cerrado) · Archivos —
 
-**Prompt para la IA.** **Sin R1 no hagas este PR.** Si R1 entrega monto, número de cuotas y letra chica, mostrá la cuota mensual **bajo** el precio actual, no en el hero. `/planes` FAQ ya dice que las cuotas se informan en P3: no contradigas a R1. No inventes CAF ni “desde $X”.
+**Cancelada.** **R1:** mantener los precios actuales. **No** hay UI nueva de cuota mensual. El «desde» de Lumina es el otro repo. No abras un PR para cuotas. La FAQ de `/planes` que difiere el detalle a la P3 se deja como está.
 
-**Criterio de aceptación.** Cuota visible solo con cifras de R1. FAQ y schema `Offer` coinciden con el visible.
+**Criterio de aceptación.** Este ID no produce diff. `git log` sin commit H2.3.
 
 **Verificación (comando).**
 
 ```bash
-rg -n 'cuota' public/planes/index.html
-# JSON-LD Offer price == texto visible (no automatizable del todo: revisar a mano)
+echo 'H2.3 cancelada — no hay PR de cuota'
 ```
 
-**Reversión.** `git revert`.
+**Reversión.** N/A.
 
 #### H2.4 · Prioridad P2 · Esfuerzo M · Depende de — · Archivos páginas con `<img>` LCP/galería; `public/video/*.webm`
 
@@ -577,18 +594,18 @@ rg -n '<picture' public/criolipolisis/index.html public/index.html public/result
 
 ### Bloque 3 — P2 `/criolipolisis` híbrido Fase 2
 
-**Prerrequisitos (todos):** Bloque 1 en `main` · ≥7 días post-H1.1 · R5 (baseline Search Console 6 meses, móvil/desktop) escrito.  
+**Prerrequisitos (todos):** Bloque 1 en `main` · ≥7 días post-H1.1. **R5 no bloquea con GSC** (GSC sigue missing; PageSpeed lab ya está en §2). Un PR por sub-bloque.  
 **Un PR por sub-bloque.** Máximo 5 puntos de conversión dentro del `<article>` (B.4.5). Insertar, jamás reemplazar (B20). Citas B6 intactas. Reusar galería de `public/resultados/index.html` (`.zone-gallery`, `<picture>`). Fechas con `scripts/schema_dates.py`.
 
 | ID | Prioridad | Esfuerzo | Depende de | Archivos | Prompt para la IA | Criterio de aceptación | Verificación (comando) | Reversión |
 |---|---|---|---|---|---|---|---|---|
-| H3.1 | P2 | S | Bloque 1 + 7d H1.1 + R5 | `public/criolipolisis/index.html` | Chips en el hero (propuesta bloque 04). No tocar H1 (B3). | Chips visibles; word count no baja; ≤5 CTAs artículo | `rg -n 'chip\|hero' public/criolipolisis/index.html`; word count ≥ 3671 | `git revert` |
+| H3.1 | P2 | S | Bloque 1 + 7d H1.1 | `public/criolipolisis/index.html` | Chips en el hero (propuesta bloque 04). No tocar H1 (B3). | Chips visibles; word count no baja; ≤5 CTAs artículo | `rg -n 'chip\|hero' public/criolipolisis/index.html`; word count ≥ 3671 | `git revert` |
 | H3.2 | P2 | S | H3.1 o paralelo si no comparte hunks | idem | Banda de autoevaluación (bloque 07). No es el 6º CTA: cuenta contra B.4.5. | Autoevalúa; no popup; evento `hebeTrack` ≠ Lead | contar `.inline-cta`+bandas ≤5 | `git revert` |
 | H3.3 | P2 | S | — (imágenes) | idem + `public/img/sesion-criolipolisis-hiems.webp` (existe en `main`) | Figura con `width`/`height` (bloque 09). No inventes otra foto. | `width`/`height` + lazy; 200 | `test -e public/img/sesion-criolipolisis-hiems.webp`; `curl -sI` 200 | `git revert` |
 | H3.4 | P2 | S | H3.1 | idem | CTA contextual de zonas (bloque 11). Cuenta como punto de conversión. | Destino `/evaluacion`; `evaluacion_click` no `whatsapp_click` | `rg -n 'evaluacion_click' public/criolipolisis/index.html` | `git revert` |
 | H3.5 | P2 | M | H3.3 | idem + markup `public/resultados/index.html` | Galería antes/después: **reusar** `.zone-gallery` / `<picture>` / observer. Sin cm inventados. | Mismas fotos ya públicas en `/resultados`; alt honestos | `rg -n 'zone-gallery\|resultado-' public/criolipolisis/index.html` | `git revert` |
 | H3.6 | P2 | S | — | idem + `/planes` | Tarjeta Plan Zero Rollito (bloque 16). Precio = el de `/planes`. | Un `Offer` que coincide con el visible | `rg -n 'Zero Rollito\|1.799' public/criolipolisis/index.html public/planes/index.html` | `git revert` |
-| H3.7 | P2 | S | R3 si cita rating | idem | Micro-bloque de confianza (bloque 19). Sin AggregateRating. | Texto sin estrellas schema | `rg AggregateRating public/criolipolisis/index.html` vacío | `git revert` |
+| H3.7 | P2 | S | H1.5/H1.6 (par R3) | idem | Micro-bloque de confianza (bloque 19): **más de 30.000 pacientes** / **5/5 estrellas en Google**. Sin AggregateRating ni Review oculto. | Texto = par R3; schema sin rating | `rg AggregateRating public/criolipolisis/index.html` vacío | `git revert` |
 | H3.8 | P2 | S | H1.10 | idem | Tarjetas de sede (bloque 21). 3 sedes reales + Concepción solo si H1.10. | Direcciones = las ya publicadas | `rg -n 'Vitacura\|Concón\|Los Ángeles' public/criolipolisis/index.html` | `git revert` |
 | H3.9 | P2 | S | H1.7 | idem | Bloque enlaces relacionados (bloque 25). Suma, no quita B11. | Links a `/resultados`, `/seguridad-criolipolisis`, cluster | `rg -n 'href="/' public/criolipolisis/index.html` | `git revert` |
 | H3.10 | P2 | S | — | idem | 2 FAQ nuevas, visible + schema (B9). | 11 Question visibles = 11 schema | `python3` contar FAQPage vs `.faq-item` | `git revert` |
@@ -599,23 +616,23 @@ Tras H3.5+H3.6: medir 7 días antes del resto (propuesta Fase 2).
 
 ---
 
-### Bloque 4 — P3 AUGE Fase 3 (solo si R4)
+### Bloque 4 — P3 AUGE Fase 3 (R4 cerrado — go)
 
-Prerrequisitos: Fase 0/1 (H1.1, H1.7, H1.9) + **R4** (KPI y go/no-go). Riesgo de tono (propuesta I.2): 2 de 3 rutas del triage **no venden**. Pregunta de merge: *¿un periodista de BBCL enlazaría esta página?* Si no, no merges. Un PR por sub-bloque. Monitoreo 8 semanas, no 4.
+Prerrequisitos: H1.1, H1.7, H1.9 en `main`. **R4 (lock):** KPI primario = sesiones AUGE que llegan a `/evaluacion` con origen/página AUGE, 8 semanas post-Bloque 4, meta **+20 % relativo** vs la semana 1 de ese tramo; secundario = % sesiones con `scroll_depth` ≥ 75; guardrail = tasa de clic WhatsApp en AUGE **no** debe subir vs pre-Bloque 4 (la página sigue siendo informacional). Riesgo de tono (propuesta I.2): 2 de 3 rutas del triage **no venden**. Pregunta de merge: *¿un periodista de BBCL enlazaría esta página?* Si no, no merges. Un PR por sub-bloque. Monitoreo 8 semanas, no 4.
 
 | ID | Prioridad | Esfuerzo | Depende de | Archivos | Prompt para la IA | Criterio de aceptación | Verificación (comando) | Reversión |
 |---|---|---|---|---|---|---|---|---|
-| H4.1 | P3 | S | R4 | `public/guatita-de-delantal-auge-y-ley/index.html` | Chips de credibilidad hero (3.1). No tocar H1. | Chips; B3 intacto | `rg -n '<h1' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
-| H4.2 | P3 | S | R4 | idem | Índice + `id` en H2 existentes (3.2). No reescribir H2 (B4). | `id` en cada H2 actual | `rg -n '<h2' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
-| H4.3 | P3 | M | R4 | idem | Tabla AUGE/GES vs Ley 21.438 (3.3). Solo hechos de `bcn.cl`. | B7/B10 intactos | `rg -n 'bcn.cl\|GES\|21.438' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
-| H4.4 | P3 | S | R4 | idem | Bloque puente honesto (3.4). No vende cirugía ni P3 como “equivalente”. | Fila honesta visible | lectura humana BBCL | `git revert` |
-| H4.5 | P3 | M | R4 | idem | Auto-triage 3 rutas (3.5). 2/3 no comerciales. Eventos G.3. | 2 rutas → PAD / ejercicios; 1 → `/evaluacion` | `rg -n 'triage_click\|evaluacion_click' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
+| H4.1 | P3 | S | H1.1 H1.7 H1.9 | `public/guatita-de-delantal-auge-y-ley/index.html` | Chips de credibilidad hero (3.1). No tocar H1. | Chips; B3 intacto | `rg -n '<h1' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
+| H4.2 | P3 | S | H1.1 H1.7 H1.9 | idem | Índice + `id` en H2 existentes (3.2). No reescribir H2 (B4). | `id` en cada H2 actual | `rg -n '<h2' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
+| H4.3 | P3 | M | H1.9 | idem | Tabla AUGE/GES vs Ley 21.438 (3.3). Solo hechos de `bcn.cl`. | B7/B10 intactos | `rg -n 'bcn.cl\|GES\|21.438' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
+| H4.4 | P3 | S | H1.1 H1.7 H1.9 | idem | Bloque puente honesto (3.4). No vende cirugía ni P3 como “equivalente”. | Fila honesta visible | lectura humana BBCL | `git revert` |
+| H4.5 | P3 | M | H1.1 H1.7 H1.9 | idem | Auto-triage 3 rutas (3.5). 2/3 no comerciales. Eventos G.3. Ruta comercial → `/evaluacion` con origen/página AUGE (KPI R4). | 2 rutas → PAD / ejercicios; 1 → `/evaluacion` | `rg -n 'triage_click\|evaluacion_click' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
 | H4.6 | P3 | M | H4.5 | idem | Tabla rutas costo/tiempo/recuperación (E.3.2). Fila «resuelve piel colgante: No» obligatoria. | Esa fila existe | `rg -n 'piel colgante' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
-| H4.7 | P3 | S | R4 | idem | 3 FAQ nuevas visible+schema (3.7, B9). | Conteos iguales | script FAQ vs `.faq-item` | `git revert` |
+| H4.7 | P3 | S | H1.9 | idem | 3 FAQ nuevas visible+schema (3.7, B9). | Conteos iguales | script FAQ vs `.faq-item` | `git revert` |
 | H4.8 | P3 | S | H1.7 | idem | «Sigue leyendo» del cluster (3.8). | Links cluster | `rg -n 'bono-pad\|fonasa-isapre\|ejercicios-para-guatita' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
-| H4.9 | P3 | S | R4 | idem | Copy `.inline-cta` / `.cta-banner` (3.9) sin mentir gratuidad P3. | $27.990 si menciona P3 | `rg -n '27.990\|sin costo' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
+| H4.9 | P3 | S | H1.6 | idem | Copy `.inline-cta` / `.cta-banner` (3.9) sin mentir gratuidad P3. Destino `/evaluacion` con origen AUGE (KPI R4). | $27.990 si menciona P3 | `rg -n '27.990\|sin costo' public/guatita-de-delantal-auge-y-ley/index.html` | `git revert` |
 | H4.10 | P3 | M | H4.2, H4.5 | idem | Schema `HowTo` + FAQ ampliado (3.10). HowTo = pasos **visibles**. No `AggregateRating`. Fechas `schema_dates.py`. | Parse OK; HowTo espeja el ol visible | JSON-LD §2 + Rich Results | `git revert` |
-| H4.11 | P3 | M | R4 + R2/n8n | idem + endpoint | Checklist descargable (3.11 / G.4). `fuente: 'Checklist Ley 21.438'`. **Nunca** `Lead` Meta. Diferible. | Pipeline distinto a P3 | no `fbq('track','Lead')` en el checklist | `git revert` |
+| H4.11 | P3 | M | R11 (webhook) | idem + endpoint | Checklist descargable (3.11 / G.4). `fuente: 'Checklist Ley 21.438'`. **Nunca** `Lead` Meta. Diferible. R2: medir por URL; no partir GTM. | Pipeline distinto a P3 | no `fbq('track','Lead')` en el checklist | `git revert` |
 
 ---
 
@@ -694,13 +711,13 @@ rg -n 'ab767007|f0e1ff44' docs public/robots.txt docs/AEO_CHANGELOG_2026-09.md
 
 ---
 
-### Bloque 6 — Transversal medición (R2, n8n)
+### Bloque 6 — Transversal medición (R2 cerrado; n8n de leads sigue R11)
 
-No es código de landing. No asumas dashboards ni webhooks que Ricardo no haya dado (R2).
+No es código de landing. **R2:** mismo GTM `GTM-TZC56NQ5` y mismo WhatsApp `56963222683` que Lumina. **No partir por marca.** Medir en GA4 / Analytics **por URL de página** (y `pagina_origen` / `landing_page` ya van en el payload de `/evaluacion`). R11 sigue abierto para el webhook `franquicia-lead`.
 
-#### T6.1 · Prioridad P1 · Esfuerzo S · Depende de R2 · Archivos — (GA4 / GTM; opcional nota en `CHANGES.md`)
+#### T6.1 · Prioridad P1 · Esfuerzo S · Depende de — (R2 cerrado) · Archivos — (GA4 / GTM; opcional nota en `CHANGES.md`)
 
-**Prompt para la IA.** Con acceso R2: inventario de eventos reales (`evaluacion_click`, `whatsapp_click`, `Lead`, `scroll_depth`, `franquicia_*`, `contacto_whatsapp_2026`). Marcá cuáles están duplicados o mal tipados (H1.8). No crees eventos nuevos aquí salvo que R2 lo pida. No toques el mapa B15.
+**Prompt para la IA.** Inventario de eventos reales (`evaluacion_click`, `whatsapp_click`, `Lead`, `scroll_depth`, `franquicia_*`, `contacto_whatsapp_2026`) **segmentado por page path**. No dupliques contenedor GTM ni número de WA. No crees un GTM «Hebe-only». Marcá cuáles están mal tipados (H1.8). No toques el mapa B15.
 
 **Criterio de aceptación.** Tabla evento → disparador → destino (GA4/Meta/n8n) pegada en el PR. Cero cambios de sitio si no hace falta.
 
@@ -712,9 +729,9 @@ rg -n "hebeTrack\(|fbq\('track'" public/evaluacion.html public/index.html | head
 
 **Reversión.** N/A si solo docs; si tocaste GTM, revertir el contenedor (fuera de git — R2).
 
-#### T6.2 · Prioridad P2 · Esfuerzo M · Depende de R2 · Archivos n8n (fuera de repo) + comentarios en `public/evaluacion.html` / `public/franquicia/index.html`
+#### T6.2 · Prioridad P2 · Esfuerzo M · Depende de R11 (cierre del webhook franquicia) · Archivos n8n (fuera de repo) + comentarios en `public/evaluacion.html` / `public/franquicia/index.html`
 
-**Prompt para la IA.** Verificar webhooks: `lead-capture`, `link-pago-evaluacion`, `franquicia-lead` (este último aún `[REDACTED]` + TODO en `/franquicia` :1243). No pegues URLs secretas en el PR. Confirmá que `fuente: 'Landing Evaluación P3'` no se mezcla con franquicia. Sin R2/R11 no “completes” el webhook.
+**Prompt para la IA.** Verificar webhooks: `lead-capture`, `link-pago-evaluacion`, `franquicia-lead` (este último aún `[REDACTED]` + TODO en `/franquicia` :1243). No pegues URLs secretas en el PR. Confirmá que `fuente: 'Landing Evaluación P3'` no se mezcla con franquicia. R2 no desbloquea el alta del webhook: eso es R11. Medición de esos leads: por URL (R2).
 
 **Criterio de aceptación.** Lead de prueba (datos fake) llega o se documenta el fallo. Franquicia fallback `mailto` sigue si n8n no existe.
 
@@ -745,22 +762,22 @@ wc -l docs/SHARE_OF_MODEL_MES0.md
 
 ## 4. Solo Ricardo
 
-La IA **no asume** estas decisiones ni crea cuentas. Si un ID `H*`/`T*` depende de un `R*` sin nota escrita (comentario de PR, issue o mensaje), se detiene.
+La IA **no asume** las filas **abiertas**. R1–R5 y R7 están **cerradas** (2026-09-13): copiá el texto, no las renegociés.
 
-| ID | Decisión / cuenta | Bloquea |
-|---|---|---|
-| R1 | Autorizar cuota mensual visible: monto, nº de cuotas, letra chica, dónde. | H2.3 |
-| R2 | Acceso GA4/GTM/n8n y qué se considera “medido”. Sin R2 no hay baseline inventado ni workflows nuevos. | T6.1 T6.2 T6.3; H4.11 |
-| R3 | Cifra oficial de reseñas/rating (GBP) y de pacientes (20.000 vs 30.000). Visible vs schema. | H1.5 H1.6 H3.7 H5.2 |
-| R4 | KPI y go/no-go de Fase 3 AUGE (propuesta 0.7 / E.5). | Bloque 4 entero |
-| R5 | Export Search Console 6 meses, móvil/desktop, de `/criolipolisis` (y AUGE si pide). | Bloque 3 |
-| R6 | Nombres, fotos y registros Superintendencia del equipo clínico. Sin R6 no se inventan fichas en `/equipo`. | extras de `/equipo` |
-| R7 | Sí/no al catálogo de equipos del PR #51 (nombres en máquina vs copy). | H0.3 merge |
-| R8 | INAPI: cuándo quitar `noindex` de `/franquicia`. | indexar franquicia |
-| R9 | Concepción: si hay apertura, fecha, dirección, Maps. Si no hay, el copy es el de H1.10. | cualquier sede Concepción |
-| R10 | URL pública de reserva Clinera (`URL_RESERVA_HEBE`). Hoy no existe (`docs/PROMPTS_PENDIENTES_PUENTE_CLINERA.md`). | reemplazar `/evaluacion` en `/clinica/*` |
-| R11 | Crear y apuntar el webhook `franquicia-lead` en n8n. | T6.2 cierre |
-| R12 | Off-site: bios RRSS, GBP Q&A, Doctoralia, Wikidata, GSC `hebebeauty.cl`, pitcheo prensa, llenar Share of Model mes 0 y mes 3 (diciembre). | T6.3; `docs/AEO_OFFSITE_CHECKLIST.md` |
+| ID | Estado | Decisión / cuenta | Bloquea |
+|---|---|---|---|
+| R1 | **Cerrada** | Precios actuales. **No** UI nueva de cuota mensual. El «desde» de Lumina es el otro repo. | H2.3 **cancelada** |
+| R2 | **Cerrada** | Mismo `GTM-TZC56NQ5` y WhatsApp `56963222683` que Lumina. **No partir por marca.** Medir en GA4 por URL de página. | T6.1 desbloqueada (reglas arriba). n8n franquicia sigue R11 |
+| R3 | **Cerrada** | Copy Hebe: **más de 30.000 pacientes**; **5/5 estrellas en Google**. Reemplazar `+20.000`, leftover 5/5 incoherente, `4,9` y `+1.000 reseñas`. **Nunca** `AggregateRating` ni Review oculto. | H1.5 H1.6 H3.7 desbloqueadas con este par |
+| R4 | **Cerrada** | KPI primario = sesiones AUGE → `/evaluacion` con origen/página AUGE, 8 semanas post-Bloque 4, meta +20 % rel. vs semana 1. Secundario = % `scroll_depth` ≥ 75. Guardrail = tasa WhatsApp en AUGE no sube vs pre-Bloque 4 (página informacional). | Bloque 4 **go** (tras H1.1/H1.7/H1.9) |
+| R5 | **Cerrada** | PageSpeed móvil lab en §2 (home 74 / criolipólisis 84 / AUGE 82 / planes 69). **GSC sigue missing.** Bloque 3 **no** espera GSC. | — (baseline lab escrita) |
+| R6 | Abierta | Nombres, fotos y registros Superintendencia del equipo clínico. Sin R6 no se inventan fichas en `/equipo`. | extras de `/equipo` |
+| R7 | **Cerrada** | **Merge #51 = sí.** Otro worker hace el merge. | H0.3 **desbloqueado** (no mergear desde #52) |
+| R8 | Abierta | INAPI: cuándo quitar `noindex` de `/franquicia`. | indexar franquicia |
+| R9 | Abierta | Concepción: si hay apertura, fecha, dirección, Maps. Si no hay, el copy es el de H1.10. | cualquier sede Concepción |
+| R10 | Abierta | URL pública de reserva Clinera (`URL_RESERVA_HEBE`). Hoy no existe (`docs/PROMPTS_PENDIENTES_PUENTE_CLINERA.md`). | reemplazar `/evaluacion` en `/clinica/*` |
+| R11 | Abierta | Crear y apuntar el webhook `franquicia-lead` en n8n. | T6.2 cierre; H4.11 |
+| R12 | Abierta | Off-site: bios RRSS, GBP Q&A, Doctoralia, Wikidata, GSC `hebebeauty.cl`, pitcheo prensa, llenar Share of Model mes 0 y mes 3 (diciembre). | T6.3; `docs/AEO_OFFSITE_CHECKLIST.md` |
 
 ---
 
@@ -790,7 +807,7 @@ No se juzga SEO antes de **30 días** (propuesta H.6). Share of Model **mes 3 = 
 
 | Momento | Qué se mira | Qué se decide |
 |---|---|---|
-| T+0 | Línea base (R5, T6.1) | No deployar Fase 2/3 sin esto |
+| T+0 | PageSpeed lab (§2) + T6.1 por URL | GSC no es puerta de Bloque 3 |
 | T+7 | Indexación, schema, CWV, clics a `/evaluacion` | Rollback si cae indexación o schema |
 | T+14 | Posición/CTR, primeros leads con `pagina_origen` | Ajustes de copy |
 | T+30 | Primera evaluación real | Seguir / revertir |
@@ -801,11 +818,11 @@ No se juzga SEO antes de **30 días** (propuesta H.6). Share of Model **mes 3 = 
 
 | Ventana | Fechas | Hebe | Transversal |
 |---|---|---|---|
-| P0 esta semana | 15–21 sep 2026 | H0.1 reaplica `knowsAbout` y cierra #37 · H0.2 cierra #43 · H0.3 pre-review #51 (merge solo R7) · H0.4 rescata auditoría · H0.5 `CLAUDE.md` · H0.6 ya está | — |
-| P1 septiembre | 15–30 sep 2026 | H1.1 sticky B.4 **solo** + medir 7 d · H1.2 og/404s · H1.3 higiene URL · H1.4 `@id` · H1.5 schema reviews (R3) · H1.6 residuos P3 (R3 cifras) · H1.7 enlaces Fase 1 · H1.8 tracking · H1.9 Ley 21.438 · H1.10 Concepción/Maps/Clinera | T6.1 inventario eventos si R2 |
-| P2 octubre | 1–31 oct 2026 | H2.1 contraste · H2.2 a11y `/evaluacion` · H2.4 `<picture>` + borrar webm · H5.1 blog (por clúster) · H5.3 `/formalidad` · inicio H3 si prereqs | T6.2 n8n (R2/R11) · T6.3 plantilla SoM |
-| P2 noviembre | 1–30 nov 2026 | H3.x un PR por sub-bloque si R5 + 7 d post-H1.1 · H5.2 asset linkable (sin inventar data) · H5.4 clave IndexNow | Off-site R12 (no es código) |
-| P3 condicional | oct–dic 2026 | H2.3 cuotas **si R1** · H4.x AUGE **si R4** · extras `/equipo` **si R6** · index `/franquicia` **si R8** | — |
+| P0 esta semana | 15–21 sep 2026 | H0.1 reaplica `knowsAbout` y cierra #37 · H0.2 cierra #43 · H0.3 desbloqueado (otro worker mergea #51) · H0.4 rescata auditoría · H0.5 `CLAUDE.md` · H0.6 ya está | — |
+| P1 septiembre | 15–30 sep 2026 | H1.1 sticky B.4 **solo** + medir 7 d · H1.2 og/404s · H1.3 higiene URL · H1.4 `@id` · H1.5 + H1.6 (par R3) · H1.7 enlaces Fase 1 · H1.8 tracking · H1.9 Ley 21.438 · H1.10 Concepción/Maps/Clinera | T6.1 inventario por URL (R2) |
+| P2 octubre | 1–31 oct 2026 | H2.1 contraste · H2.2 a11y `/evaluacion` · H2.4 `<picture>` + borrar webm · H5.1 blog (por clúster) · H5.3 `/formalidad` · inicio H3 si Bloque 1 + 7 d H1.1 | T6.2 n8n (R11) · T6.3 plantilla SoM |
+| P2 noviembre | 1–30 nov 2026 | H3.x un PR por sub-bloque (no espera GSC) · H5.2 asset linkable (sin inventar data) · H5.4 clave IndexNow | Off-site R12 (no es código) |
+| P3 condicional | oct–dic 2026 | H2.3 **no se hace** (R1) · H4.x AUGE con KPI R4 · extras `/equipo` **si R6** · index `/franquicia` **si R8** | — |
 | SoM mes 3 | diciembre 2026 (≈ 3-dic) | No hay deploy de “SoM” | R12 + T6.3: mismas 15 preguntas, VPN Chile |
 | Cierre horizonte | 15 dic 2026 | T+90 de H1.1 / H3 | Lectura estratégica, no más Fase 2/3 nueva |
 

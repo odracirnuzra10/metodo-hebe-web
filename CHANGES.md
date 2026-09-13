@@ -1,6 +1,6 @@
 ## 2026-09-13 — Estado (docs)
 
-`/franquicia` ya no es stub: el formulario POSTea a n8n (`franquicia-lead`) y, si el webhook no responde, ofrece `mailto:contacto@metodohebe.cl`. Quedan residuos P3 (copy «gratuita» / «sin costo» residual o ajeno a la evaluación, y «+20.000» en `/evaluacion` vs «+30.000» en footer). No está «sin residuos»: ver H1.6 en `docs/ROADMAP_IA_2026-09.md`.
+`/franquicia` ya no es stub: el formulario POSTea a n8n (`franquicia-lead`) y, si el webhook no responde, ofrece `mailto:contacto@metodohebe.cl`. Quedan residuos P3 (copy «gratuita» / «sin costo» residual o ajeno a la evaluación, y «+20.000» en `/evaluacion`). **R3 cerrado:** el par oficial es «más de 30.000 pacientes» y «5/5 estrellas en Google»; H1.6 reemplaza el resto. No está «sin residuos».
 
 ## 2026-09-03 — Foto del fundador en `/equipo`
 

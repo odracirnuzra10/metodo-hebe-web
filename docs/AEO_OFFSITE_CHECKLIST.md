@@ -22,4 +22,4 @@
 9. **Nombres y registros Superintendencia** de el equipo clínico → cargarlos en `/equipo`.
 10. **Share of Model** mes 0 y mes 3: `docs/SHARE_OF_MODEL_MES0.md`.
 11. **IndexNow ping** post-deploy (comando en el changelog).
-12. **PageSpeed / CrUX** móvil de home, criolipólisis, guatita, planes (PSI API no devolvió Lighthouse en este entorno).
+12. **PageSpeed / CrUX** móvil de home, criolipólisis, guatita, planes. **Nota 2026-09-13:** lab Lighthouse 12.8.2 en `docs/ROADMAP_IA_2026-09.md` §2 (R5). PSI API 429; **GSC / CrUX siguen missing**. Bloque 3 no espera GSC.
