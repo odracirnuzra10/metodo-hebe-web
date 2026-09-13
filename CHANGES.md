@@ -1,3 +1,7 @@
+## 2026-09-13 — H1.4: un @id por entidad por página
+
+El grafo puente deja de redefinir Organization, Person y sedes: solo referencia los `@id` del home. `fundador#person` tiene un solo cargo (Fundador y CEO). Los FAQ y locations de landing usan `@id` de esa URL, no el del home.
+
 ## 2026-09-13 — H1.3: higiene de URL
 
 `og:url` queda igual al canonical y sin slash final (el home conserva `/`). Los `@id` de página usan `www`. `/fundador/` pasa a `/fundador` en sitemap, canonical y enlaces internos.
