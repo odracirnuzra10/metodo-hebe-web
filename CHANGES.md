@@ -1,3 +1,7 @@
+## 2026-09-13 — H2.1: contraste AA de CTAs, WhatsApp, estrellas y grises
+
+Texto de CTA en tinta `#14201F` sobre teal (6,53:1). WhatsApp usa la misma tinta sobre `#25D366`. Estrellas `#8A6100`. Gris `--ink-4` `#5A6B6B`. En `/evaluacion`, `--teal` queda en `#14B5A7`.
+
 ## 2026-09-13 — H1.10 leftover: Maps, wa.me y Clinera www
 
 Los enlaces visibles de Maps usan los `share.google` del schema. En `/clinica/*`, WhatsApp apunta a `wa.me/56963222683` y las tres páginas enlazan el caso Clinera en `https://www.clinera.io`.

@@ -16,8 +16,8 @@ h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
 :root{
   --cyan:#14B5A7;--cyan-d:#0FA094;--cyan-dd:#0A6B65;--cyan-soft:#D8F2EF;
   --bg:#FAFBFB;--paper:#FFFFFF;--line:#E8ECEC;--line-2:#CDD4D4;
-  --ink:#0F1A1A;--ink-2:#36474A;--ink-3:#65797A;--ink-4:#9AA8A8;
-  --gold:#D4A853;--wa:#25D366;
+  --ink:#14201F;--ink-2:#36474A;--ink-3:#65797A;--ink-4:#5A6B6B;
+  --gold:#8A6100;--wa:#25D366;
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --logo-script:'Pacifico',cursive;
@@ -150,7 +150,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--cyan);color:var(--ink);padding:14px 26px;border-radius:10px;font-size:14px;font-weight:600;letter-spacing:.3px;transition:.2s;text-decoration:none}
 .cta-btn:hover{background:#fff}
 .cta-btn-wa{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;padding:12.5px 24px;border-radius:10px;font-size:14px;font-weight:600;letter-spacing:.3px;border:1.5px solid rgba(37,211,102,.5);transition:.2s;text-decoration:none}
-.cta-btn-wa:hover{background:var(--wa);border-color:var(--wa)}
+.cta-btn-wa:hover{background:var(--wa);border-color:var(--wa);color:#14201F}
 .cta-trust{margin-top:18px;font-size:13px;color:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;gap:6px}
 .cta-trust svg{width:14px;height:14px;color:var(--cyan);flex-shrink:0}
 
