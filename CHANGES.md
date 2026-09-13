@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.4: CTA de zonas en criolipólisis
+
+Una línea + botón a `/evaluacion`. Evento `evaluacion_click`, no `whatsapp_click`.
+
 ## 2026-09-13 — H3.3: figura de sesión iZED en criolipólisis
 
 `sesion-criolipolisis-hiems.webp` con width/height 1600×2400 y lazy. No se inventa otra foto.
