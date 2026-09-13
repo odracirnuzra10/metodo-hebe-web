@@ -1,3 +1,7 @@
+## 2026-09-13 — H5.3: borrar /formalidad (deck Lumina) y 301 a home
+
+El leftover noindex era un deck de Protocolo Lumina en este dominio. Se elimina y redirige a `/`. Sin destino Lumina inventado.
+
 ## 2026-09-13 — Fase 4.5: sticky B.4 en páginas que ya lo tenían
 
 Home y 8 satélites: `scrollY>400`, observer del footer, `evaluacion_click` `mobile_sticky`. Sin barras nuevas. AUGE se queda en 800.

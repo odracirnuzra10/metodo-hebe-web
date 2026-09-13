@@ -21,7 +21,9 @@
     { "source": "/quieres-aumentar-y-levantar-tus-gluteos", "destination": "/tonificar", "statusCode": 301 },
     { "source": "/quieres-aumentar-y-levantar-tus-gluteos/", "destination": "/tonificar", "statusCode": 301 },
     { "source": "/clinica-estetica-corporal-concepcion", "destination": "/clinica-estetica-corporal-los-angeles", "statusCode": 301 },
-    { "source": "/clinica-estetica-corporal-concepcion/", "destination": "/clinica-estetica-corporal-los-angeles", "statusCode": 301 }
+    { "source": "/clinica-estetica-corporal-concepcion/", "destination": "/clinica-estetica-corporal-los-angeles", "statusCode": 301 },
+    { "source": "/formalidad", "destination": "/", "statusCode": 301 },
+    { "source": "/formalidad/", "destination": "/", "statusCode": 301 }
   ],
   "headers": [
     {
