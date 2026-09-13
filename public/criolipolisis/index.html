@@ -377,6 +377,35 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .footer p{margin-bottom:8px;line-height:1.6}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px}
 
+/* ── H3.5 galería (markup de /resultados) ── */
+.disclaimer-note{font-size:14px;color:var(--ink-3);line-height:1.7;margin:24px 0 16px;padding:18px 22px;background:var(--bg-section);border-left:3px solid var(--cyan);border-radius:0 var(--radius) var(--radius) 0}
+.disclaimer-note strong{color:var(--ink);font-weight:600}
+.zone-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,18px);margin:20px 0 16px}
+.zone-gallery-shell{position:relative}
+.zone-gallery-controls{display:none}
+.zone-gallery-status{display:none}
+.photo-card{border-radius:var(--radius-lg);overflow:hidden;position:relative;background:#ebebeb;box-shadow:var(--shadow-card)}
+.photo-card-media{display:block;position:relative;overflow:hidden;background:#ebebeb}
+.photo-card img{width:100%;display:block;object-fit:contain;background:#ebebeb}
+.photo-badges{position:absolute;top:10px;left:10px;display:flex;gap:6px}
+.badge-ba{background:rgba(11,30,30,.78);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;text-transform:uppercase}
+.photo-state-labels,.photo-state-toggle{display:none}
+.photo-caption{padding:10px 14px 14px;font-size:13px;color:var(--ink-3);line-height:1.5;background:#fff}
+.zone-cta{margin:8px 0 28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.zone-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--cyan);color:var(--cyan-dd);padding:11px 22px;border-radius:8px;font-size:14.5px;font-weight:600}
+.zone-cta-note{font-size:13px;color:var(--ink-muted)}
+@media(max-width:900px){
+  .zone-gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:767px){
+  .zone-gallery-shell{display:grid;gap:10px}
+  .zone-gallery-controls{display:flex;justify-content:flex-end;align-items:center;gap:10px}
+  .zone-gallery-status{display:inline-flex;align-items:center;justify-content:center;min-width:58px;padding:0 10px;font-size:12px;font-weight:700;color:var(--ink-3)}
+  .zone-gallery-control{width:52px;height:52px;padding:0;border-radius:999px;border:1px solid rgba(20,181,167,.18);background:#fff;color:var(--cyan-dd);display:inline-flex;align-items:center;justify-content:center}
+  .zone-gallery{display:flex;grid-template-columns:none;gap:14px;overflow:hidden;scroll-snap-type:x mandatory}
+  .photo-card{flex:0 0 min(86vw,360px);scroll-snap-align:start}
+}
+
 /* ── MOBILE STICKY CTA ── */
 .mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(11,30,30,.97);backdrop-filter:blur(12px);padding:10px 16px;text-align:center;border-top:1px solid rgba(28,197,197,.15);max-height:100px;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .mobile-sticky-cta.visible{transform:translateY(0)}
@@ -630,6 +659,54 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 
     <p>La variabilidad individual es real y depende de múltiples factores: <strong>edad, genética, perfil hormonal, metabolismo basal, actividad física, hábitos alimentarios</strong> y calidad del sistema linfático. Dos pacientes con el mismo IMC y la misma zona tratada pueden mostrar respuestas distintas. Por eso en una consulta honesta no se prometen "X centímetros exactos", sino que se entrega un rango realista basado en evidencia y medición inicial. Conviene también aclarar una expectativa clave: la criolipólisis <strong>no es sinónimo de transformación corporal</strong>. Es una herramienta de contorno y esculpido que funciona cuando el resto del cuadro —hábitos, composición corporal, piel— está razonablemente estable.</p>
 
+    <div class="disclaimer-note" data-section="galeria_criolipolisis">
+      <strong>Nota clínica honesta:</strong> los resultados mostrados corresponden a pacientes reales de Método Hebe y son <strong>variables según el caso individual, el perfil metabólico y la adherencia al plan</strong>. Cada caso se documenta con <strong>fotografía estandarizada</strong> (misma distancia, iluminación y postura) al inicio y al término del protocolo. No hay garantía de reproducibilidad exacta: lo que mostramos es evidencia visual de lo que el protocolo puede lograr cuando la paciente completa el plan clínico indicado.
+    </div>
+    <div class="zone-gallery-shell">
+    <div class="zone-gallery-controls" aria-label="Controles de la galería de criolipólisis">
+      <button type="button" class="zone-gallery-control zone-gallery-prev" aria-label="Ver caso anterior">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <span class="zone-gallery-status" aria-live="polite">1 de 3</span>
+      <button type="button" class="zone-gallery-control zone-gallery-next" aria-label="Ver siguiente caso">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="zone-gallery">
+      <div class="photo-card" data-mobile-before-after="true">
+        <div class="photo-badges"><span class="badge-ba">Antes / Después</span></div>
+        <picture class="photo-card-media">
+          <source type="image/webp" srcset="/img/resultado-abdomen-cintura.webp">
+          <img src="/img/resultado-abdomen-cintura.jpg" alt="Antes y después grasa localizada abdomen y cintura — Método Hebe" loading="lazy" width="600" height="600">
+        </picture>
+        <button type="button" class="photo-state-toggle" aria-label="Alternar vista antes y después">Toca o desliza para ver antes y después</button>
+        <div class="photo-caption">Abdomen y cintura. Contorno sin cirugía; sesiones según plan indicado en P3. Foto estandarizada. Equipo clínico Método Hebe.</div>
+      </div>
+      <div class="photo-card" data-mobile-before-after="true">
+        <div class="photo-badges"><span class="badge-ba">Antes / Después</span></div>
+        <picture class="photo-card-media">
+          <source type="image/webp" srcset="/img/resultado-lateral-cintura.webp">
+          <img src="/img/resultado-lateral-cintura.jpg" alt="Antes y después contorno lateral de cintura — Método Hebe" loading="lazy" width="600" height="600">
+        </picture>
+        <button type="button" class="photo-state-toggle" aria-label="Alternar vista antes y después">Toca o desliza para ver antes y después</button>
+        <div class="photo-caption">Cintura lateral. Grasa localizada; protocolo de contorno. Foto estandarizada. Supervisión del equipo clínico Método Hebe.</div>
+      </div>
+      <div class="photo-card" data-mobile-before-after="true">
+        <div class="photo-badges"><span class="badge-ba">Antes / Después</span></div>
+        <picture class="photo-card-media">
+          <source type="image/webp" srcset="/img/resultado-contorno-corporal.webp">
+          <img src="/img/resultado-contorno-corporal.jpg" alt="Antes y después contorno corporal — Método Hebe" loading="lazy" width="600" height="600">
+        </picture>
+        <button type="button" class="photo-state-toggle" aria-label="Alternar vista antes y después">Toca o desliza para ver antes y después</button>
+        <div class="photo-caption">Contorno corporal global. Plan combinado (grasa + tono según P3). Foto estandarizada. Equipo clínico Método Hebe.</div>
+      </div>
+    </div>
+    </div>
+    <div class="zone-cta">
+      <a href="/resultados" class="zone-cta-btn" onclick="hebeTrack('internal_link_click',{location:'galeria',destino:'/resultados'})">Ver los 11 casos documentados</a>
+      <span class="zone-cta-note">Mismas fotos ya publicadas en /resultados. Sin centímetros inventados.</span>
+    </div>
+
     <div class="inline-cta" data-section="cta_resultados">
       <h3>¿Tu caso es candidato a criolipólisis?</h3>
       <p>En 45 minutos te hacemos bioimpedancia, medimos el pliegue de la zona que te preocupa y te decimos con honestidad si la criolipólisis es suficiente, si necesitas combinarla con otra tecnología o si tu caso debería tomar otra vía. Valor $27.990 · sin compromiso.</p>
@@ -881,6 +958,28 @@ window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scr
     },{threshold:.02}).observe(footer);
   }
   sync();
+})();
+
+(function(){
+  var gallery=document.querySelector('.zone-gallery');
+  if(!gallery) return;
+  var cards=gallery.querySelectorAll('.photo-card');
+  var status=document.querySelector('.zone-gallery-status');
+  var prev=document.querySelector('.zone-gallery-prev');
+  var next=document.querySelector('.zone-gallery-next');
+  var i=0;
+  function go(n){
+    i=Math.max(0,Math.min(cards.length-1,n));
+    if(cards[i]) cards[i].scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'});
+    if(status) status.textContent=(i+1)+' de '+cards.length;
+  }
+  cards.forEach(function(card){
+    card.addEventListener('click',function(){
+      if(window.hebeTrack) hebeTrack('gallery_interact',{location:'criolipolisis',zona:'abdomen'});
+    });
+  });
+  if(prev) prev.addEventListener('click',function(){go(i-1)});
+  if(next) next.addEventListener('click',function(){go(i+1)});
 })();
 
 // FAQ accordion

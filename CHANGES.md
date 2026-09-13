@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.5: galería antes/después en criolipólisis
+
+Tres pares de `/resultados` (abdomen-cintura, lateral-cintura, contorno) con el disclaimer de fotografía estandarizada. Enlace a los 11 casos. Sin cm inventados.
+
 ## 2026-09-13 — H5.4: borrar clave IndexNow huérfana
 
 Se elimina `public/ab767007d40e7700a59b91b6f690a54f.txt`. No aparece en robots ni en pings. Queda la clave vigente `f0e1ff44b0ff128d2711bf78b0aa90b9`.
