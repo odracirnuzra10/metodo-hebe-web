@@ -64,18 +64,18 @@
     },
     {
       "event": "lead_magnet_click",
-      "status": "not_implemented_needs_n8n",
+      "status": "live",
       "required": ["location"],
       "example": {"event": "lead_magnet_click", "location": "checklist_documentos"}
     },
     {
       "event": "lead_magnet_submit",
-      "status": "not_implemented_needs_n8n",
+      "status": "live",
       "meta": "trackCustom only — never Lead",
       "required": ["tipo"],
       "example": {"event": "lead_magnet_submit", "tipo": "checklist_ley_sain"}
     }
   ],
   "lead_only_on_evaluacion_submit": true,
-  "n8n_pending_ricardo": ["franquicia-lead", "checklist-ley-21438"]
+  "n8n_live": ["franquicia-lead", "checklist-ley-21438"]
 }

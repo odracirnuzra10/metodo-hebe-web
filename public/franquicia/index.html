@@ -1014,13 +1014,11 @@ document.addEventListener('click',function(e){
    Va al webhook de n8n, igual que el resto de los formularios del sitio.
    Desde ahí n8n lo enruta a ricardo@oacg.cl.
 
-   TODO: crear el webhook `franquicia-lead` en n8n.oacg.cl y apuntarlo al
-   correo. Mientras no exista, el POST falla y el formulario cae al
-   respaldo por mail — el lead nunca se pierde en silencio, pero el
-   candidato ve un paso extra. Conviene crearlo antes de pautar.
+   El webhook `franquicia-lead` ya acepta POST. Si falla, el formulario
+   ofrece mailto a contacto@metodohebe.cl. No va al pipeline P3 ni a Clinera.
    ═══════════════════════════════════════════════════════════════════ */
 var LEAD_WEBHOOK='https://n8n.oacg.cl/webhook/franquicia-lead';
-var LEAD_EMAIL='ricardo@oacg.cl';
+var LEAD_EMAIL='contacto@metodohebe.cl';
 
 var formFranquicia=document.getElementById('form-franquicia');
 var enviando=false;

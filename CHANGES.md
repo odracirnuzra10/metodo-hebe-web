@@ -1,3 +1,7 @@
+## 2026-09-13 — T6.3: webhooks franquicia + checklist AUGE
+
+`/franquicia` POSTea a `franquicia-lead` (n8n → `contacto@metodohebe.cl`). AUGE `#checklist` POSTea a `checklist-ley-21438` (`fuente: 'Checklist Ley 21.438'`, `lead_magnet_*`, nunca `Lead`). Mailto solo si el POST falla. Sin Clinera.
+
 ## 2026-09-13 — T6.2: spec dataLayer (G.3 / G.6)
 
 `docs/EVENTOS_DATALAYER.md` + `docs/datalayer-spec.json`. Inventario evento → destino. No hay dashboard. T6.3: Ricardo crea `franquicia-lead` y el checklist AUGE en n8n.

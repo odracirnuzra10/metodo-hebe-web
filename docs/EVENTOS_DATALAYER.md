@@ -10,11 +10,18 @@ Helper: `hebeTrack(nombre, params)` → `gtag('event', …)` (GA4) y, si existe 
 
 Snippet JSON de la especificación: `docs/datalayer-spec.json`.
 
-## T6.3 — n8n (Ricardo)
+## T6.3 — n8n
 
-El host `n8n.oacg.cl` responde, pero esta IA no puede entrar a crear flujos. **Ricardo debe crear en n8n los endpoints `franquicia-lead` y el de checklist AUGE** (`fuente: 'Checklist Ley 21.438'`). No se inventan URLs de webhook. Hasta entonces, `/franquicia` sigue con fallback `mailto:contacto@metodohebe.cl`. El checklist descargable (H4.11) no se implementa sin ese endpoint.
+Host `n8n.oacg.cl`. Los dos magnet/franquicia ya aceptan POST (2026-09-13):
 
-Los webhooks P3 de `/evaluacion` (`lead-capture`, `link-pago-evaluacion`, `pago-evaluacion`) siguen `[REDACTED]` en el HTML. No pegar URLs secretas aquí.
+| Path | Destino | Qué no hace |
+|---|---|---|
+| `POST /webhook/franquicia-lead` | Gmail `contacto@metodohebe.cl` | No Clinera, no tabla P3, no Meta Lead |
+| `POST /webhook/checklist-ley-21438` | Gmail `contacto@metodohebe.cl` · `fuente: 'Checklist Ley 21.438'` | Igual. Nunca `fbq('Lead')` |
+
+`/franquicia` apunta al primero; si el POST falla, queda `mailto:contacto@metodohebe.cl`. AUGE (`#checklist`) apunta al segundo y muestra la lista de documentos en la página.
+
+Los webhooks P3 de `/evaluacion` (`lead-capture`, `link-pago-evaluacion`, `pago-evaluacion`) no se tocan aquí.
 
 ## Evento → disparador → destino
 
@@ -35,8 +42,8 @@ Los webhooks P3 de `/evaluacion` (`lead-capture`, `link-pago-evaluacion`, `pago-
 | `InitiateCheckout` / `ViewContent` | Pasos del wizard `/evaluacion` | Meta estándar | No son `hebeTrack` |
 | n8n `lead-capture` | Mismo submit P3 | n8n → pipeline agenda | `fuente: 'Landing Evaluación P3'` |
 | n8n `link-pago-evaluacion` / `pago-evaluacion` | Pago P3 | n8n | URLs `[REDACTED]` |
-| n8n `franquicia-lead` | Submit `/franquicia` | **No existe aún** | Fallback mailto. Crear = Ricardo |
-| `lead_magnet_click` / `lead_magnet_submit` | Checklist AUGE (G.3 / G.4) | GA4 + Meta `trackCustom` | **No implementado.** Nunca `Lead`. Crear endpoint = Ricardo |
+| n8n `franquicia-lead` | Submit `/franquicia` | n8n → Gmail clínica | Mailto solo si el POST falla |
+| `lead_magnet_click` / `lead_magnet_submit` | Checklist AUGE `#checklist` (G.3 / G.4) | GA4 + Meta `trackCustom` + n8n `checklist-ley-21438` | Nunca `Lead` |
 
 ## G.3 — bloques de las landings híbridas
 
@@ -58,7 +65,7 @@ Los webhooks P3 de `/evaluacion` (`lead-capture`, `link-pago-evaluacion`, `pago-
 | Bloque | Evento | Parámetros |
 |---|---|---|
 | Índice | `toc_click` | `{destino:'#…'}` |
-| Checklist | `lead_magnet_*` | No en repo hasta que Ricardo cree el endpoint |
+| Checklist | `lead_magnet_click` / `lead_magnet_submit` | `{location:'checklist_documentos'}` / `{tipo:'checklist_ley_sain'}` |
 | Triage 1 / 3 | `triage_click` | `{ruta:'quirurgico'\|'espera', destino}` |
 | Triage 2 | `evaluacion_click` | `{location:'triage_ruta2'}` |
 | `.inline-cta` | `evaluacion_click` | `{location:'inline_cta_alternativas'}` |
