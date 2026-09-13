@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.3: figura de sesión iZED en criolipólisis
+
+`sesion-criolipolisis-hiems.webp` con width/height 1600×2400 y lazy. No se inventa otra foto.
+
 ## 2026-09-13 — H3.2: banda de autoevaluación en criolipólisis
 
 Dos tarjetas (suele funcionar / no es la vía) y un enlace de texto a P3. Evento `evaluacion_click`, no Lead.
