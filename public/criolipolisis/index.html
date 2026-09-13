@@ -309,6 +309,8 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .article-meta{display:flex;gap:24px;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid rgba(0,0,0,.06);font-size:13px;color:var(--ink-muted)}
 .article-meta-item{display:flex;align-items:center;gap:6px}
 .article-meta-item svg{width:16px;height:16px;color:var(--cyan);flex-shrink:0}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;min-height:32px}
+.hero-chips .chip{font-size:12px;padding:6px 12px;background:var(--cyan-subtle);color:var(--cyan-dd);border-radius:20px;font-weight:600}
 
 /* ── ARTICLE CONTENT ── */
 .article-body{padding:clamp(32px,5vw,56px) 0}
@@ -605,6 +607,11 @@ button{font-family:var(--sans);cursor:pointer;border:none}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <span>Vitacura · Concón · Los Ángeles</span>
       </div>
+    </div>
+    <div class="hero-chips" aria-label="Datos de la evaluación">
+      <span class="chip">$27.990 · sin compromiso</span>
+      <span class="chip">Más de 30.000 pacientes</span>
+      <span class="chip">3 sedes: Vitacura · Concón · Los Ángeles</span>
     </div>
   </div>
 </header>
