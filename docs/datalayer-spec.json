@@ -1,0 +1,81 @@
+{
+  "$comment": "Especificación dataLayer Hebe (G.3 / G.6). No es un dashboard. No incluye URLs de webhook.",
+  "container": {
+    "gtm": "GTM-TZC56NQ5",
+    "ga4": "G-NGW7210RXB",
+    "meta_pixel": "271117138864148",
+    "whatsapp": "56963222683",
+    "measure_by": "page_path"
+  },
+  "push_shapes": [
+    {
+      "event": "evaluacion_click",
+      "required": ["location"],
+      "example": {"event": "evaluacion_click", "location": "mobile_sticky"}
+    },
+    {
+      "event": "whatsapp_click",
+      "meta": "Contact",
+      "required": ["location"],
+      "example": {"event": "whatsapp_click", "location": "inline_cta"}
+    },
+    {
+      "event": "contacto_whatsapp_2026",
+      "via": "dataLayer.push",
+      "required": ["cta_label", "cta_type", "click_location", "clinica"],
+      "example": {
+        "event": "contacto_whatsapp_2026",
+        "cta_label": "WhatsApp directo",
+        "cta_type": "whatsapp",
+        "click_location": "cta_resultados",
+        "clinica": "hebe"
+      }
+    },
+    {
+      "event": "internal_link_click",
+      "required": ["location", "destino"],
+      "example": {"event": "internal_link_click", "location": "galeria", "destino": "/resultados"}
+    },
+    {
+      "event": "gallery_interact",
+      "required": ["location"],
+      "example": {"event": "gallery_interact", "location": "criolipolisis", "zona": "abdomen"}
+    },
+    {
+      "event": "triage_click",
+      "required": ["ruta", "destino"],
+      "example": {"event": "triage_click", "ruta": "quirurgico", "destino": "/bono-pad-guatita-de-delantal"}
+    },
+    {
+      "event": "toc_click",
+      "required": ["destino"],
+      "example": {"event": "toc_click", "destino": "#requisitos"}
+    },
+    {
+      "event": "cta_click",
+      "required": ["location"],
+      "example": {"event": "cta_click", "location": "criolipolisis_bottom"}
+    },
+    {
+      "event": "scroll_depth",
+      "required": ["page", "pct"],
+      "pct_allowed": [25, 50, 75, 90],
+      "example": {"event": "scroll_depth", "page": "criolipolisis", "pct": 50}
+    },
+    {
+      "event": "lead_magnet_click",
+      "status": "not_implemented_needs_n8n",
+      "required": ["location"],
+      "example": {"event": "lead_magnet_click", "location": "checklist_documentos"}
+    },
+    {
+      "event": "lead_magnet_submit",
+      "status": "not_implemented_needs_n8n",
+      "meta": "trackCustom only — never Lead",
+      "required": ["tipo"],
+      "example": {"event": "lead_magnet_submit", "tipo": "checklist_ley_sain"}
+    }
+  ],
+  "lead_only_on_evaluacion_submit": true,
+  "n8n_pending_ricardo": ["franquicia-lead", "checklist-ley-21438"]
+}
