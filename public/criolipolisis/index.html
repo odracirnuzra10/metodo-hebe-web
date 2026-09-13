@@ -207,6 +207,29 @@
           }
         }
       ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.metodohebe.cl/criolipolisis#service",
+      "serviceType": "Criolipólisis",
+      "name": "Criolipólisis en Método Hebe",
+      "url": "https://www.metodohebe.cl/criolipolisis",
+      "provider": {"@id": "https://www.metodohebe.cl/#organization"},
+      "areaServed": [
+        {"@type":"City","name":"Santiago"},
+        {"@type":"City","name":"Concón"},
+        {"@type":"City","name":"Los Ángeles"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://www.metodohebe.cl/criolipolisis#offer-zero-rollito",
+        "name": "Plan Zero Rollito",
+        "price": "1799990",
+        "priceCurrency": "CLP",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.metodohebe.cl/planes",
+        "description": "12 sesiones en 3 meses. iZED (criolipólisis), SkinWave MAX y Adipolite para grasa localizada."
+      }
     }
   ]
 }
@@ -394,6 +417,8 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .zone-cta{margin:8px 0 28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .zone-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--cyan);color:var(--cyan-dd);padding:11px 22px;border-radius:8px;font-size:14.5px;font-weight:600}
 .zone-cta-note{font-size:13px;color:var(--ink-muted)}
+.plan-rollito-card{max-width:420px;margin:8px 0 36px}
+.plan-rollito-card .price-cta .btn-primary{background:var(--cyan);color:#14201F}
 @media(max-width:900px){
   .zone-gallery{grid-template-columns:repeat(2,1fr)}
 }
@@ -729,6 +754,26 @@ button{font-family:var(--sans);cursor:pointer;border:none}
     <p>La primera es el <strong>equipo utilizado</strong>. En la parte alta del rango están sistemas como <em>CoolSculpting Elite</em> (Allergan/AbbVie) o equipos coreanos de nueva generación como <em>iZED</em> y similares, con aplicadores ergonómicos, control termodinámico preciso y evidencia publicada. En la parte baja aparecen equipos más antiguos o fabricados sin certificación, cuyo control de temperatura y succión no siempre es fiable. La segunda variable es el <strong>tamaño y tipo de aplicador</strong>: un aplicador pequeño para papada cuesta menos que un aplicador grande para abdomen. La tercera es el <strong>perfil profesional</strong>: centros con evaluación médica previa, protocolos de seguimiento y equipo kinésico complementario tienden a cobrar más porque el resultado incluye más que la sesión aislada.</p>
 
     <p>Un <strong>protocolo completo</strong> por zona (2 a 4 aplicaciones espaciadas) se sitúa habitualmente entre $600.000 y $1.800.000 en Chile. En Método Hebe, nuestro <a class="inline-link" href="/planes">Plan Zero Rollito</a> para grasa localizada incluye 12 sesiones combinadas a <strong>$1.799.990</strong>, con evaluación P3 y bioimpedancia previas incluidas. El costo final de cada caso depende estrictamente de las zonas y del protocolo indicado: no adivinamos, medimos.</p>
+
+    <div class="price-card featured plan-rollito-card" data-section="tarjeta_plan" id="plan-zero-rollito">
+      <div class="price-popular">Publicado en /planes</div>
+      <h3>Plan Zero Rollito</h3>
+      <div class="price-amt">$1.799.990<span class="per">CLP / plan</span></div>
+      <p class="price-desc">12 sesiones en 3 meses. Mismo precio que <a href="/planes">/planes</a>. El plan final lo cierra la Evaluación P3.</p>
+      <div class="price-chips">
+        <span class="chip">iZED (criolipólisis)</span>
+        <span class="chip">SkinWave MAX</span>
+        <span class="chip">Adipolite</span>
+      </div>
+      <ul class="price-feat-list">
+        <li>Evaluación P3 y bioimpedancia incluidas (45 min · $27.990, se descuenta si contratas)</li>
+        <li>12 sesiones / 3 meses</li>
+      </ul>
+      <div class="price-cta">
+        <a class="btn-primary" href="/evaluacion?origen=criolipolisis&bloque=tarjeta_plan" onclick="hebeTrack('evaluacion_click',{location:'tarjeta_plan'})">Agendar Evaluación P3</a>
+        <a class="btn-ghost" href="/planes" onclick="hebeTrack('internal_link_click',{location:'tarjeta_plan',destino:'/planes'})">Ver todos los planes</a>
+      </div>
+    </div>
 
     <h2>¿Es efectiva? Evidencia clínica</h2>
 
