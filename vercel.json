@@ -19,7 +19,9 @@
     { "source": "/caminar-sus-beneficios-fisicos-y-emocionales", "destination": "/coaching-nutricional", "statusCode": 301 },
     { "source": "/caminar-sus-beneficios-fisicos-y-emocionales/", "destination": "/coaching-nutricional", "statusCode": 301 },
     { "source": "/quieres-aumentar-y-levantar-tus-gluteos", "destination": "/tonificar", "statusCode": 301 },
-    { "source": "/quieres-aumentar-y-levantar-tus-gluteos/", "destination": "/tonificar", "statusCode": 301 }
+    { "source": "/quieres-aumentar-y-levantar-tus-gluteos/", "destination": "/tonificar", "statusCode": 301 },
+    { "source": "/clinica-estetica-corporal-concepcion", "destination": "/clinica-estetica-corporal-los-angeles", "statusCode": 301 },
+    { "source": "/clinica-estetica-corporal-concepcion/", "destination": "/clinica-estetica-corporal-los-angeles", "statusCode": 301 }
   ],
   "headers": [
     {
