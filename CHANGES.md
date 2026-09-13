@@ -1,3 +1,7 @@
+## 2026-09-13 — H4.1–H4.10: AUGE segmenta, no vende
+
+Chips de fuentes, índice, tabla GES vs Ley 21.438, puente honesto, triage 3 rutas (2 no comerciales), tabla de rutas con “resuelve piel colgante: No”, 3 FAQ, sigue leyendo, HowTo + reviewedBy. Sin Offer ni precio arriba del pliegue. Sin checklist (T6.3).
+
 ## 2026-09-13 — H3.12: schema extra en criolipólisis
 
 ImageObject de la figura iZED, speakable en la cápsula, FAQPage con @id. Service+Offer ya coinciden con el precio visible. Sin MedicalBusiness duplicado ni AggregateRating.
