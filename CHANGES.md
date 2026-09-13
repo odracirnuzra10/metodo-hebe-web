@@ -1,3 +1,7 @@
+## 2026-09-13 — H1.1: sticky B.4 en criolipólisis, AUGE y /resultados
+
+El CTA móvil usa `.visible`, `scrollY > 400` (AUGE `> 800`) e `IntersectionObserver` del footer. Evento unificado `evaluacion_click` + `location:'mobile_sticky'`. No se propaga al resto de páginas.
+
 ## 2026-09-13 — R8: se borra Concepción
 
 Se elimina `/clinica-estetica-corporal-concepcion` (página, nav, sitemap, schema). La URL leftover hace 301 a la sede de Los Ángeles. `/franquicia` ya no anuncia «próxima apertura».
