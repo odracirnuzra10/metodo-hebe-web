@@ -1,3 +1,7 @@
+## 2026-09-13 — H5.1: refresh de 7 posts de blog (abril)
+
+Cada artículo recibe un hecho operativo ya publicado (P3 45 min / $27.990, planes vigentes o Ley 21.438 ≠ abdominoplastia) más `dateModified` 2026-09-13 y `<time>` visible. Sin cm, reseñas ni Superintendencia inventados.
+
 ## 2026-09-13 — H2.4: `<picture>` AVIF/WebP y peso
 
 Las `tech-*.png` de home pasan a `<picture>` AVIF/WebP con `width`/`height`. LCP de home y `/criolipolisis` tienen preload `fetchpriority="high"`. Se borran PNG duplicados, `angelica.png` / `angelica-testimonio.png` y los 4 `.webm` huérfanos.
