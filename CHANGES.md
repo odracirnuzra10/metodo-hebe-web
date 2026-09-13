@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.7: micro-bloque de confianza en criolipólisis
+
+Más de 30.000 pacientes y 5/5 en Google. Sin AggregateRating ni Review oculto. No es un CTA.
+
 ## 2026-09-13 — H3.4: CTA de zonas en criolipólisis
 
 Una línea + botón a `/evaluacion`. Evento `evaluacion_click`, no `whatsapp_click`.
