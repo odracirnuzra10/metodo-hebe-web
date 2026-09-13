@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.8: tarjetas de sede en criolipólisis
+
+Tres fichas (Vitacura, Concón, Los Ángeles) con las direcciones ya publicadas. Sin Concepción. Enlaces internos, no un quinto CTA.
+
 ## 2026-09-13 — H3.7: micro-bloque de confianza en criolipólisis
 
 Más de 30.000 pacientes y 5/5 en Google. Sin AggregateRating ni Review oculto. No es un CTA.
