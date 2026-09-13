@@ -323,6 +323,14 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .sede-card h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin:0 0 8px}
 .sede-card .sede-address{font-size:14px;color:var(--ink-3);margin:0 0 10px;line-height:1.5}
 .sede-card-link{font-size:14px;color:var(--cyan-dd);font-weight:600}
+.related-block{padding:clamp(36px,5vw,56px) 0;background:var(--bg-section)}
+.related-block h2{font-family:var(--serif);font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--ink);margin:0 0 20px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.related-card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:var(--radius-lg);padding:20px 18px;text-decoration:none;color:inherit}
+.related-card:hover{border-color:rgba(28,197,197,.25)}
+.related-card h3{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--ink);margin:0 0 8px}
+.related-card p{font-size:14px;color:var(--ink-3);line-height:1.55;margin:0 0 10px;flex:1}
+.related-card span{font-size:14px;color:var(--cyan-dd);font-weight:600}
 
 /* ── ARTICLE CONTENT ── */
 .article-body{padding:clamp(32px,5vw,56px) 0}
@@ -470,7 +478,8 @@ button{font-family:var(--sans);cursor:pointer;border:none}
   .comparison-table th,.candidate-table th,.results-table th,
   .comparison-table td,.candidate-table td,.results-table td{padding:11px 12px}
 }
-@media(max-width:700px){.sedes-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.sedes-grid,.related-grid{grid-template-columns:1fr}}
 @media(max-width:600px){
   .footer-grid{grid-template-columns:1fr}
   .topbar .wrap{flex-direction:column;gap:4px;text-align:center}
@@ -956,6 +965,44 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 
   </div>
 </article>
+
+<section class="related-block" data-section="relacionados" aria-labelledby="relacionados-title">
+  <div class="wrap">
+    <h2 id="relacionados-title">También te puede servir</h2>
+    <div class="related-grid">
+      <a href="/resultados" class="related-card" onclick="hebeTrack('internal_link_click',{location:'relacionados',destino:'/resultados'})">
+        <h3>Antes y después</h3>
+        <p>11 casos documentados con fotografía estandarizada. Sin centímetros inventados.</p>
+        <span>Ver resultados →</span>
+      </a>
+      <a href="/lipoescultura-sin-cirugia" class="related-card" onclick="hebeTrack('internal_link_click',{location:'relacionados',destino:'/lipoescultura-sin-cirugia'})">
+        <h3>Lipoescultura sin cirugía</h3>
+        <p>Cómo se combinan las rutas no invasivas cuando el frío solo no alcanza.</p>
+        <span>Leer la guía →</span>
+      </a>
+      <a href="/grasa-localizada" class="related-card" onclick="hebeTrack('internal_link_click',{location:'relacionados',destino:'/grasa-localizada'})">
+        <h3>Grasa localizada</h3>
+        <p>Cuándo el pliegue responde a tecnología y cuándo el problema es otro.</p>
+        <span>Leer →</span>
+      </a>
+      <a href="/flacidez-abdominal" class="related-card" onclick="hebeTrack('internal_link_click',{location:'relacionados',destino:'/flacidez-abdominal'})">
+        <h3>Flacidez abdominal</h3>
+        <p>Si el tema es piel, no grasa, la criolipólisis no es la herramienta.</p>
+        <span>Leer →</span>
+      </a>
+      <a href="/planes" class="related-card" onclick="hebeTrack('internal_link_click',{location:'relacionados',destino:'/planes'})">
+        <h3>Planes y precios</h3>
+        <p>Zero Rollito y el resto de planes publicados. El precio lo cierra la P3.</p>
+        <span>Ver planes →</span>
+      </a>
+      <a href="/criolipolisis-los-angeles" class="related-card" onclick="hebeTrack('internal_link_click',{location:'relacionados',destino:'/criolipolisis-los-angeles'})">
+        <h3>Criolipólisis en Los Ángeles</h3>
+        <p>Página local de Biobío. La nacional no reemplaza la ficha de sede.</p>
+        <span>Ir a la local →</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ CTA BANNER ═══ -->
 <section class="cta-banner" data-section="cta_final">

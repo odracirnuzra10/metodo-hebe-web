@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.9: enlaces relacionados en criolipólisis
+
+Seis tarjetas fuera del article (resultados, lipo sin cirugía, grasa, flacidez, planes, criolipólisis Los Ángeles). Suma B11, no quita.
+
 ## 2026-09-13 — H3.8: tarjetas de sede en criolipólisis
 
 Tres fichas (Vitacura, Concón, Los Ángeles) con las direcciones ya publicadas. Sin Concepción. Enlaces internos, no un quinto CTA.
