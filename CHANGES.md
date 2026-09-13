@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.2: banda de autoevaluación en criolipólisis
+
+Dos tarjetas (suele funcionar / no es la vía) y un enlace de texto a P3. Evento `evaluacion_click`, no Lead.
+
 ## 2026-09-13 — H3.1: chips del hero en criolipólisis
 
 Fila de chips bajo el meta: $27.990 · sin compromiso; más de 30.000 pacientes; 3 sedes. H1 intacto.
