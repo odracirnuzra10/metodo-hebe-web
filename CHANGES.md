@@ -1,3 +1,7 @@
+## 2026-09-13 — T6.2: spec dataLayer (G.3 / G.6)
+
+`docs/EVENTOS_DATALAYER.md` + `docs/datalayer-spec.json`. Inventario evento → destino. No hay dashboard. T6.3: Ricardo crea `franquicia-lead` y el checklist AUGE en n8n.
+
 ## 2026-09-13 — H5.3: borrar /formalidad (deck Lumina) y 301 a home
 
 El leftover noindex era un deck de Protocolo Lumina en este dominio. Se elimina y redirige a `/`. Sin destino Lumina inventado.
