@@ -1,3 +1,7 @@
+## 2026-09-13 — H1.10 leftover: Maps, wa.me y Clinera www
+
+Los enlaces visibles de Maps usan los `share.google` del schema. En `/clinica/*`, WhatsApp apunta a `wa.me/56963222683` y las tres páginas enlazan el caso Clinera en `https://www.clinera.io`.
+
 ## 2026-09-13 — H1.9: refresh AUGE vs BCN / Minsal / FONASA
 
 La Ley 21.438 no cubre abdominoplastia (BCN: Día de la Inclusión Social). GES son 90 problemas (Minsal); la guatita no está en el listado. La vía documentada es el Bono PAD FONASA. Se actualizan `dateModified`, `article:modified_time` y el hero a septiembre 2026. Sin cifras de copago ni espera sin fuente.
