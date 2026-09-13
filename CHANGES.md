@@ -1,3 +1,7 @@
+## 2026-09-13 — H2.2: a11y del wizard `/evaluacion`
+
+El wizard es un `<form>` real: `label for`, `required`, errores persistentes `role="alert"`, sedes `role=button` + teclado, `fieldset` en sedes y franjas. `#btnSubmit` no dispara `whatsapp_click`. Mismo payload n8n.
+
 ## 2026-09-13 — H2.1: contraste AA de CTAs, WhatsApp, estrellas y grises
 
 Texto de CTA en tinta `#14201F` sobre teal (6,53:1). WhatsApp usa la misma tinta sobre `#25D366`. Estrellas `#8A6100`. Gris `--ink-4` `#5A6B6B`. En `/evaluacion`, `--teal` queda en `#14B5A7`.
