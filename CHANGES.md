@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.12: schema extra en criolipólisis
+
+ImageObject de la figura iZED, speakable en la cápsula, FAQPage con @id. Service+Offer ya coinciden con el precio visible. Sin MedicalBusiness duplicado ni AggregateRating.
+
 ## 2026-09-13 — H3.11: copy del párrafo del inline-cta en criolipólisis
 
 Solo el `<p>` (D.1). H3 y botones intactos. Precio $27.990, no “sin costo”. Tracking igual.
