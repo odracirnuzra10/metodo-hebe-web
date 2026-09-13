@@ -1,3 +1,7 @@
+## 2026-09-13 — H5.2: Radiografía corporal Chile (ENS + OMS)
+
+`/radiografia-corporal-chile`. Tablas de mediana ENS 2016–2017 (Minsal) y cortes IMC OMS. Etiquetado promedio referencial, no diagnóstico. Sin cm de pacientes Hebe ni Superintendencia.
+
 ## 2026-09-13 — T6.3: webhooks franquicia + checklist AUGE
 
 `/franquicia` POSTea a `franquicia-lead` (n8n → `contacto@metodohebe.cl`). AUGE `#checklist` POSTea a `checklist-ley-21438` (`fuente: 'Checklist Ley 21.438'`, `lead_magnet_*`, nunca `Lead`). Mailto solo si el POST falla. Sin Clinera.
