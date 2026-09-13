@@ -1,3 +1,7 @@
+## 2026-09-13 — H1.9: refresh AUGE vs BCN / Minsal / FONASA
+
+La Ley 21.438 no cubre abdominoplastia (BCN: Día de la Inclusión Social). GES son 90 problemas (Minsal); la guatita no está en el listado. La vía documentada es el Bono PAD FONASA. Se actualizan `dateModified`, `article:modified_time` y el hero a septiembre 2026. Sin cifras de copago ni espera sin fuente.
+
 ## 2026-09-13 — H1.8: tracking scroll, sección y evaluación
 
 `scroll_depth` 25/50/75/90 en criolipólisis y AUGE. Los CTA llevan `data-section`. Los botones a `/evaluacion` disparan `evaluacion_click`, no `whatsapp_click`. Los enlaces del artículo a `/evaluacion` llevan `?origen=&bloque=`.
