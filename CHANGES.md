@@ -1,3 +1,7 @@
+## 2026-09-13 — H1.2: og:image en todas las páginas
+
+Las 49 páginas sin `og:image` ahora usan `https://www.metodohebe.cl/img/og-metodo-hebe.jpg` (las de Los Ángeles, la foto de fachada). Se corrigieron las URLs de schema que 404 (`og-vitacura.jpg`, `hebe-og.jpg`, `logo.png`, etc.) y `/franquicia` deja el AVIF de og por el JPG con `www`.
+
 ## 2026-09-13 — H1.6: /evaluacion al par R3
 
 En `/evaluacion`, «+20.000 personas» pasa a «más de 30.000 pacientes» y el chip de Google a «5/5 estrellas en Google». Las gratuidades ajenas a P3 (Ley 21.438, Clinera, «sin costos ocultos», bioimpedancia al contratar plan) se conservan.
