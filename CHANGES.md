@@ -1,3 +1,7 @@
+## 2026-09-13 — X10: pilar de guatita más largo y prioridad 0.90
+
+Se agregan H2 de Ley 21.438, plan publicado en `/planes`, tres sedes y lectura pilar vs satélite del blog. Sitemap de la URL pasa de 0.75 a 0.90. Sin reescribir H1/H2 existentes ni inventar centímetros.
+
 ## 2026-09-13 — H5.1: refresh de 7 posts de blog (abril)
 
 Cada artículo recibe un hecho operativo ya publicado (P3 45 min / $27.990, planes vigentes o Ley 21.438 ≠ abdominoplastia) más `dateModified` 2026-09-13 y `<time>` visible. Sin cm, reseñas ni Superintendencia inventados.
