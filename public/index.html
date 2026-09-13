@@ -573,7 +573,7 @@ img{max-width:100%;display:block}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
   .footer-brand-block{grid-column:1/-1}
   .mobile-sticky-cta{display:block}
-  body{padding-bottom:68px}
+  body{padding-bottom:90px}
   .section{padding:60px 0}
   .nav-r .btn-cta{font-size:12px;padding:10px 14px}
 }
@@ -1208,12 +1208,21 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 });
 
 (function(){
-  const sticky=document.getElementById('mobile-sticky');
+  const sticky=document.getElementById('mobile-sticky')||document.querySelector('.mobile-sticky-cta');
+  const footer=document.querySelector('.footer');
   if(!sticky)return;
-  window.addEventListener('scroll',()=>{
-    if(window.scrollY>300)sticky.classList.add('visible');
-    else sticky.classList.remove('visible');
-  },{passive:true});
+  let footerInView=false;
+  function sync(){
+    sticky.classList.toggle('visible', window.scrollY>400 && !footerInView);
+  }
+  window.addEventListener('scroll',sync,{passive:true});
+  if(footer && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      footerInView=entries.some(function(e){return e.isIntersecting});
+      sync();
+    },{threshold:.02}).observe(footer);
+  }
+  sync();
 })();
 
 (function(){

@@ -185,6 +185,7 @@
   .staff-card{grid-template-columns:1fr;text-align:center;justify-items:center}
   .staff-card picture,.staff-card img{width:140px;height:140px}
 }
+@media(max-width:767px){body{padding-bottom:90px}}
 </style>
 
 
@@ -390,9 +391,21 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
   });
 });
 (function(){
-  const sticky=document.getElementById('mobile-sticky');
+  const sticky=document.getElementById('mobile-sticky')||document.querySelector('.mobile-sticky-cta');
+  const footer=document.querySelector('.footer');
   if(!sticky)return;
-  window.addEventListener('scroll',()=>{if(window.scrollY>300)sticky.classList.add('visible');else sticky.classList.remove('visible');},{passive:true});
+  let footerInView=false;
+  function sync(){
+    sticky.classList.toggle('visible', window.scrollY>400 && !footerInView);
+  }
+  window.addEventListener('scroll',sync,{passive:true});
+  if(footer && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      footerInView=entries.some(function(e){return e.isIntersecting});
+      sync();
+    },{threshold:.02}).observe(footer);
+  }
+  sync();
 })();
 </script>
 </body>
