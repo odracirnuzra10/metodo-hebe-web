@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.10: dos FAQ nuevas en criolipólisis
+
+Guatita de delantal (no como arreglo de piel) y sesiones del Plan Zero Rollito (12 / 3 meses / $1.799.990). 11 visibles = 11 schema.
+
 ## 2026-09-13 — H3.9: enlaces relacionados en criolipólisis
 
 Seis tarjetas fuera del article (resultados, lipo sin cirugía, grasa, flacidez, planes, criolipólisis Los Ángeles). Suma B11, no quita.
