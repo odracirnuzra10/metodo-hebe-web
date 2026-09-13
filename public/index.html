@@ -44,6 +44,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/img/angelica-testimonio.avif" type="image/avif" fetchpriority="high">
 
 <!-- ═══ Favicon ═══ -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a8e82'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-size='18' fill='white' font-style='italic'%3EH%3C/text%3E%3C/svg%3E">
@@ -442,6 +443,7 @@ img{max-width:100%;display:block}
 .tech-c{background:#152222;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:0;transition:.3s;overflow:hidden;display:flex;flex-direction:column}
 .tech-c:hover{background:#1A2929;border-color:rgba(28,197,197,.3);transform:translateY(-2px)}
 .tech-c-img{aspect-ratio:4/3;background:#0E1A1A;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+.tech-c-img picture{display:block;width:100%;height:100%}
 .tech-c-img img{width:100%;height:100%;object-fit:contain;padding:18px;transition:transform .4s}
 .tech-c:hover .tech-c-img img{transform:scale(1.05)}
 .tech-c-body{padding:22px}
@@ -739,8 +741,9 @@ img{max-width:100%;display:block}
       <aside class="patient fade-up-d1">
         <div class="patient-photo">
           <picture>
+            <source type="image/avif" srcset="/img/angelica-testimonio.avif">
             <source type="image/webp" srcset="/img/angelica-testimonio.webp">
-            <img src="/img/angelica-testimonio.jpg" alt="Angélica Gallardo, paciente Método Hebe — resultado real" loading="eager" fetchpriority="high" width="500" height="600">
+            <img src="/img/angelica-testimonio.jpg" alt="Angélica Gallardo, paciente Método Hebe — resultado real" loading="eager" fetchpriority="high" width="500" height="600" decoding="async">
           </picture>
           <span class="photo-badge">Zero Celulitis</span>
           <div class="photo-quote">
@@ -805,7 +808,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="tech-grid">
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-ized.webp" alt="iZED PRO — criolipólisis y contorno corporal" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-ized.avif"><source type="image/webp" srcset="/img/tech-ized.webp"><img src="/img/tech-ized.webp" alt="iZED PRO — criolipólisis y contorno corporal" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul · Contorno</div>
           <h3><em>i</em>ZED</h3>
@@ -814,7 +817,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-corpo-hera.webp" alt="Corpo Hera — masaje mecánico profundo" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-corpo-hera.avif"><source type="image/webp" srcset="/img/tech-corpo-hera.webp"><img src="/img/tech-corpo-hera.webp" alt="Corpo Hera — masaje mecánico profundo" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul · Flagship</div>
           <h3>Corpo <em>Hera</em></h3>
@@ -823,7 +826,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-carbox.webp" alt="Carbox CK — carboxiterapia médica" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-carbox.avif"><source type="image/webp" srcset="/img/tech-carbox.webp"><img src="/img/tech-carbox.webp" alt="Carbox CK — carboxiterapia médica" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul</div>
           <h3>Carbox <em>CK</em></h3>
@@ -832,7 +835,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-crio-ck.webp" alt="Crio CK — criolipólisis multiaplicador" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-crio-ck.avif"><source type="image/webp" srcset="/img/tech-crio-ck.webp"><img src="/img/tech-crio-ck.webp" alt="Crio CK — criolipólisis multiaplicador" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul</div>
           <h3>Crio <em>CK</em></h3>
@@ -841,7 +844,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-skinwave.webp" alt="Skin Wave Max — HIFU y radiofrecuencia corporal" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-skinwave.avif"><source type="image/webp" srcset="/img/tech-skinwave.webp"><img src="/img/tech-skinwave.webp" alt="Skin Wave Max — HIFU y radiofrecuencia corporal" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul</div>
           <h3>Skin Wave <em>Max</em></h3>
@@ -850,7 +853,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-cuorpo-lift.webp" alt="Cuorpo Lift — HIFU corporal focalizado" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-cuorpo-lift.avif"><source type="image/webp" srcset="/img/tech-cuorpo-lift.webp"><img src="/img/tech-cuorpo-lift.webp" alt="Cuorpo Lift — HIFU corporal focalizado" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul</div>
           <h3>Cuorpo <em>Lift</em></h3>
@@ -859,7 +862,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-cuky-body.webp" alt="Cuky Body — análisis de composición corporal" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-cuky-body.avif"><source type="image/webp" srcset="/img/tech-cuky-body.webp"><img src="/img/tech-cuky-body.webp" alt="Cuky Body — análisis de composición corporal" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul</div>
           <h3>Cuky <em>Body</em></h3>
@@ -868,7 +871,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-sculpt-dd.webp" alt="Sculpt DD — electroestimulación HIEMS" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-sculpt-dd.avif"><source type="image/webp" srcset="/img/tech-sculpt-dd.webp"><img src="/img/tech-sculpt-dd.webp" alt="Sculpt DD — electroestimulación HIEMS" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul</div>
           <h3>Sculpt <em>DD</em></h3>
@@ -877,7 +880,7 @@ img{max-width:100%;display:block}
         </div>
       </article>
       <article class="tech-c">
-        <div class="tech-c-img"><img src="/img/tech-sculpt-dd-firm.webp" alt="Sculpt DD Firm — HIEMS de firmeza" loading="lazy"></div>
+        <div class="tech-c-img"><picture><source type="image/avif" srcset="/img/tech-sculpt-dd-firm.avif"><source type="image/webp" srcset="/img/tech-sculpt-dd-firm.webp"><img src="/img/tech-sculpt-dd-firm.webp" alt="Sculpt DD Firm — HIEMS de firmeza" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
         <div class="tech-c-body">
           <div class="flag">🇰🇷 Seoul</div>
           <h3>Sculpt DD <em>Firm</em></h3>
