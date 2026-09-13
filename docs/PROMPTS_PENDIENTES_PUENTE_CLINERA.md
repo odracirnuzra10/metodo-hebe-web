@@ -1,5 +1,7 @@
 # Pendientes — puente Hebe → Clinera
 
+**Verificado en vivo 2026-09-13 (HTTP).** 200: `/`, `/evaluacion`, `/fundador`, `/franquicia`, `/equipo`, `/criolipolisis`, `/guatita-de-delantal-auge-y-ley`, `/clinica/como-confirmamos-tu-hora-por-whatsapp`, `/clinica/por-que-respondemos-en-minutos`, `/clinica/que-pasa-con-tu-ficha-entre-sesiones`, `/clinica-estetica-corporal-concepcion`, `https://www.clinera.io/casos/metodo-hebe`, ambas claves IndexNow. 301: `clinicahebe.cl` → `https://www.metodohebe.cl/`. 308: `/planes/` → `/planes`; `/fundador/` → `/fundador`. Los tres `share.google` de sede: 302.
+
 El lado Clinera **ya está publicado** (2026-09-04):
 https://www.clinera.io/casos/metodo-hebe
 

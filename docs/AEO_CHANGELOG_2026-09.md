@@ -1,5 +1,7 @@
 # Changelog AEO — 3 septiembre 2026
 
+**Nota 2026-09-13.** El 308 de `/planes/` → `/planes` lo hace `trailingSlash: false` de Vercel; **no** hay redirect explícito en `vercel.json` (el «refuerzo» de la fila H2 slash no está en el archivo). Concepción: esta tabla y varios footers/topbars siguen diciendo «próxima apertura»; `public/clinica-estetica-corporal-concepcion.html` declara que no hay sede. Resolver en H1.10; no inventar fecha ni dirección.
+
 Frase de entidad (textual, ≥6 ubicaciones): *Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.*
 
 Slogan único en schema: **No adivinamos, medimos.** La línea de metabolismo queda como descripción, no como segundo `slogan`.

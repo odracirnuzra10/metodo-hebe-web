@@ -1,3 +1,7 @@
+## 2026-09-13 — Estado (docs)
+
+`/franquicia` ya no es stub: el formulario POSTea a n8n (`franquicia-lead`) y, si el webhook no responde, ofrece `mailto:contacto@metodohebe.cl`. Quedan residuos P3 (copy «gratuita» / «sin costo» residual o ajeno a la evaluación, y «+20.000» en `/evaluacion`). **R3 cerrado:** el par oficial es «más de 30.000 pacientes» y «5/5 estrellas en Google»; H1.6 reemplaza el resto. No está «sin residuos».
+
 ## 2026-09-03 — Foto del fundador en `/equipo`
 
 Ricardo Alfredo Oyarzún Acuña aparece en `/equipo` como director fundador, con retrato profesional (`/img/ricardo-oyarzun.webp` + `.jpg`), ficha de staff y `Person.image` en schema. El home declara `Organization.founder` hacia el mismo `@id`. No se inventan registros de Superintendencia ni se presenta como profesional tratante.
