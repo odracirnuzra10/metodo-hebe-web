@@ -1,3 +1,7 @@
+## 2026-09-13 — H5.2: cuestionario «¿Eres candidata?»
+
+Nueva URL `/eres-candidata`: 8 preguntas, orientación a un plan publicado, captura por mailto, enlace compartible. No es diagnóstico. Sin webhook nuevo. Radiografía Corporal no se publica.
+
 ## 2026-09-13 — X20: satélite del blog vs pilar de guatita
 
 La guía `/blog/guatita-delantal-tratamiento-sin-cirugia` declara al pilar como documento canónico del cluster (`rel=related`, `isPartOf`, aside visible). H1s distintos. Ambas URLs 200. Sitemap del satélite baja a 0.55.
