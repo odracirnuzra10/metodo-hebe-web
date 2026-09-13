@@ -2,6 +2,8 @@
 
 Documento operativo interno. No es contenido del sitio público. Complementa el plan SEO/AEO ejecutado el 2026-04-23.
 
+**Nota 2026-09-13.** `https://clinicahebe.cl/` y `https://www.clinicahebe.cl/` responden **301** a `https://www.metodohebe.cl/`. El hallazgo X12 de `docs/PROPUESTA_LANDING_CRIOLIPOLISIS_Y_AUGE.md` y la sección «Redirect pendiente» de este archivo quedan obsoletos. No reabrir ese 301 desde este repo.
+
 ## Diagnóstico
 
 - AS propio (metodohebe.cl): 10/100.
