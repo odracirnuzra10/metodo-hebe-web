@@ -1,3 +1,7 @@
+## 2026-09-13 — H3.6: tarjeta Plan Zero Rollito en criolipólisis
+
+Precio visible $1.799.990 (12 sesiones / 3 meses), igual que `/planes`. Offer schema con el mismo monto. CTA a P3 + enlace a /planes.
+
 ## 2026-09-13 — H3.5: galería antes/después en criolipólisis
 
 Tres pares de `/resultados` (abdomen-cintura, lateral-cintura, contorno) con el disclaimer de fotografía estandarizada. Enlace a los 11 casos. Sin cm inventados.
