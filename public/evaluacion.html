@@ -2472,10 +2472,10 @@
           content_category: 'corporal',
           clinica: 'hebe',
           sede: sedeKey,
-          // Valor real del lead en pesos, la misma moneda que el Purchase de $27.990:
-          // así Meta optimiza sobre plata comparable y no sobre un número inventado.
-          value: 2000,
-          currency: 'CLP',
+          // Valor CRM «Nuevo»: US$5. Cita confirmada (US$29) y Contrata (US$1000)
+          // los manda el CRM por CAPI, no este pixel de browser.
+          value: 5,
+          currency: 'USD',
           content_ids: ['hebe_evaluacion_p3']
         }, { eventID: eventId });
       }

@@ -1,3 +1,7 @@
+## 2026-09-15 — Pixel CRM: valores en USD
+
+`/evaluacion` dispara `Lead` a US$5 (etapa Nuevo). Cita confirmada US$29 / Contrata US$1000 / NQL US$0 salen por CAPI desde Twenty, no desde el browser.
+
 ## 2026-09-13 — H5.2: Radiografía corporal Chile (ENS + OMS)
 
 `/radiografia-corporal-chile`. Tablas de mediana ENS 2016–2017 (Minsal) y cortes IMC OMS. Etiquetado promedio referencial, no diagnóstico. Sin cm de pacientes Hebe ni Superintendencia.
