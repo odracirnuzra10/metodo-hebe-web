@@ -1,6 +1,6 @@
-## 2026-09-15 — Pixel CRM: Lead wizard = $5.000
+## 2026-09-15 — Pixel CRM: valores en USD
 
-`/evaluacion` dispara `Lead` a $5.000 CLP (etapa Nuevo del CRM). Cita confirmada / Contrata / NQL salen por CAPI desde Twenty, no desde el browser.
+`/evaluacion` dispara `Lead` a US$5 (etapa Nuevo). Cita confirmada US$29 / Contrata US$1000 / NQL US$0 salen por CAPI desde Twenty, no desde el browser.
 
 ## 2026-09-13 — H5.2: Radiografía corporal Chile (ENS + OMS)
 
