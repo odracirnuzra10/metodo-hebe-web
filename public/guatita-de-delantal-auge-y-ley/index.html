@@ -308,19 +308,8 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 .magnet{margin:8px 0 32px;padding:22px 22px 20px;background:var(--bg-section);border:1px solid rgba(28,197,197,.18);border-radius:var(--radius-lg)}
 .magnet h2{margin-top:0}
 .magnet .magnet-note{font-size:14.5px;color:var(--ink-3);margin-bottom:16px}
-.magnet-form{display:grid;gap:12px}
-.magnet-form .f{display:flex;flex-direction:column;gap:6px}
-.magnet-form label{font-size:13px;font-weight:600;color:var(--ink-2)}
-.magnet-form input,.magnet-form select{font-family:var(--sans);font-size:15px;padding:11px 12px;border:1px solid rgba(0,0,0,.1);border-radius:8px;background:#fff;color:var(--ink)}
-.magnet-form input:focus-visible,.magnet-form select:focus-visible,.magnet-form button:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
-.magnet-form button{background:var(--cyan);color:#14201F;font-weight:600;padding:12px 18px;border-radius:8px;font-size:15px;justify-self:start}
-.magnet-form button:disabled{opacity:.6;cursor:wait}
-.magnet-status{display:none;margin:0 0 12px;padding:12px 14px;border-radius:8px;font-size:14.5px}
-.magnet-status.on{display:block}
-.magnet-status.ok{background:#E8F7F4;color:#0A6B65}
-.magnet-status.err{background:#FDECEC;color:#6B1C1C}
-.magnet-list{display:none;margin-top:16px;padding-top:8px;border-top:1px solid rgba(0,0,0,.06)}
-.magnet-list.on{display:block}
+.magnet-list{margin-top:4px}
+.magnet-list ol{margin:8px 0 0;padding-left:1.2em}
 .magnet-fine{font-size:13px;color:var(--ink-muted);margin:12px 0 0}
 
 .article-body{padding:clamp(32px,5vw,56px) 0}
@@ -628,30 +617,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
 
     <section class="magnet" id="checklist" data-section="checklist" aria-labelledby="checklist-title">
       <h2 id="checklist-title">Checklist de documentos para tu cita en el CESFAM</h2>
-      <p class="magnet-note">Lista referencial para la consulta en el consultorio o CESFAM (entrada habitual a la red pública) o para preguntar por el Bono PAD. No es un formulario nacional de la Ley 21.438: esa norma no crea uno. Deja tus datos y te la mandamos por WhatsApp o correo. <strong>Es gratis y no implica agendar nada con nosotros.</strong></p>
-      <div class="magnet-status" id="checklist-status" role="status"></div>
-      <form id="form-checklist" class="magnet-form" autocomplete="on">
-        <div class="f">
-          <label for="ck-nombre">Nombre</label>
-          <input id="ck-nombre" name="nombre" type="text" autocomplete="name" required>
-        </div>
-        <div class="f">
-          <label for="ck-email">Correo</label>
-          <input id="ck-email" name="email" type="email" autocomplete="email" inputmode="email">
-        </div>
-        <div class="f">
-          <label for="ck-telefono">WhatsApp</label>
-          <input id="ck-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+56 9 …">
-        </div>
-        <div class="f">
-          <label for="ck-canal">Cómo prefieres recibirla</label>
-          <select id="ck-canal" name="canal">
-            <option value="whatsapp">WhatsApp</option>
-            <option value="email">Correo</option>
-          </select>
-        </div>
-        <button type="submit" id="ck-submit">Quiero el checklist</button>
-      </form>
+      <p class="magnet-note">Lista referencial para la consulta en el consultorio o CESFAM (entrada habitual a la red pública) o para preguntar por el Bono PAD. No es un formulario nacional de la Ley 21.438: esa norma no crea uno. <strong>Es gratis y no implica agendar nada con nosotros.</strong></p>
       <div class="magnet-list" id="checklist-list">
         <p><strong>Referencial, no oficial.</strong> Confirma en tu CESFAM y en la ficha FONASA del PAD. No hay un listado nacional «Ley Saín».</p>
         <ol>
@@ -662,7 +628,7 @@ button{font-family:var(--sans);cursor:pointer;border:none}
           <li>Lista de medicamentos y condiciones de salud (el PAD excluye, entre otros, embarazo, postparto reciente y tabaquismo reciente).</li>
           <li>Pregunta en el CESFAM el protocolo local de abdomen flácido o, si vas por PAD, la ficha vigente de FONASA. No hay plazo GES.</li>
         </ol>
-        <p class="magnet-fine">Es gratis y no implica agendar nada con nosotros.</p>
+        <p class="magnet-fine">Si quieres ver casos y cómo medimos, síguenos en <a class="inline-link" href="https://www.instagram.com/metodo.hebe/" target="_blank" rel="noopener" onclick="hebeTrack('instagram_click',{location:'checklist'})">Instagram</a>.</p>
       </div>
     </section>
 
@@ -1001,69 +967,6 @@ if('IntersectionObserver' in window){
   }
   window.addEventListener('scroll', check, {passive: true});
   check();
-})();
-
-(function(){
-  var form = document.getElementById('form-checklist');
-  if (!form) return;
-  var status = document.getElementById('checklist-status');
-  var list = document.getElementById('checklist-list');
-  var btn = document.getElementById('ck-submit');
-  var webhook = 'https://' + ['n8n','oacg','cl'].join('.') + '/webhook/checklist-ley-21438';
-  var dest = 'contacto@metodohebe.cl';
-  var sentClick = false;
-  function show(html, ok){
-    status.innerHTML = html;
-    status.className = 'magnet-status on ' + (ok ? 'ok' : 'err');
-  }
-  form.addEventListener('focusin', function(){
-    if (sentClick || typeof hebeTrack !== 'function') return;
-    sentClick = true;
-    hebeTrack('lead_magnet_click', {location: 'checklist_documentos'});
-  });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var d = Object.fromEntries(new FormData(form).entries());
-    if (!d.nombre || (!d.email && !d.telefono)) {
-      show('Necesitamos tu nombre y un correo o un WhatsApp.', false);
-      return;
-    }
-    if (typeof hebeTrack === 'function') {
-      hebeTrack('lead_magnet_submit', {tipo: 'checklist_ley_sain'});
-    }
-    btn.disabled = true;
-    btn.textContent = 'Enviando…';
-    var payload = {
-      nombre: d.nombre,
-      email: d.email || '',
-      telefono: d.telefono || '',
-      canal: d.canal || 'whatsapp',
-      fuente: 'Checklist Ley 21.438',
-      marca: 'hebe',
-      tipo_lead: 'checklist_auge',
-      destino: dest,
-      'landing url': location.href,
-      'fecha de creacion': new Date().toLocaleString('es-CL', {timeZone: 'America/Santiago'}),
-      atribucion: (window.hebeAttr && window.hebeAttr()) || {}
-    };
-    var cuerpo = ['Nombre: '+d.nombre,'Email: '+(d.email||''),'WhatsApp: '+(d.telefono||''),'Canal: '+(d.canal||''),'','Pedido desde '+location.href].join('\n');
-    var mailto = 'mailto:'+dest+'?subject='+encodeURIComponent('Checklist Ley 21.438 — '+d.nombre)+'&body='+encodeURIComponent(cuerpo);
-    fetch(webhook, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)})
-      .then(function(r){ if (!r.ok) throw new Error('HTTP '+r.status); return r; })
-      .then(function(){
-        form.reset();
-        btn.textContent = 'Quiero el checklist';
-        btn.disabled = false;
-        list.classList.add('on');
-        show('Listo. Aquí tienes la lista referencial; te la mandamos también por el canal que elegiste.', true);
-      })
-      .catch(function(){
-        btn.disabled = false;
-        btn.textContent = 'Quiero el checklist';
-        list.classList.add('on');
-        show('No pudimos enviar tus datos ahora. La lista referencial está abajo. <a class="inline-link" href="'+mailto+'">Mándanoslos por correo</a> si quieres que te la reenviemos.', false);
-      });
-  });
 })();
 
 </script>
