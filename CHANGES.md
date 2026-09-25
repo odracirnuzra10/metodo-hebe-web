@@ -1,3 +1,7 @@
+## 2026-09-25 — AUGE: checklist visible, sin formulario
+
+`/guatita-de-delantal-auge-y-ley` `#checklist` muestra la lista en la página. Ya no pide datos ni POSTea a `checklist-ley-21438`. Enlace a Instagram `@metodo.hebe`. La agenda sigue en `/evaluacion`.
+
 ## 2026-09-13 — H5.2: Radiografía corporal Chile (ENS + OMS)
 
 `/radiografia-corporal-chile`. Tablas de mediana ENS 2016–2017 (Minsal) y cortes IMC OMS. Etiquetado promedio referencial, no diagnóstico. Sin cm de pacientes Hebe ni Superintendencia.
