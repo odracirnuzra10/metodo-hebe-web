@@ -1,6 +1,6 @@
 ## 2026-09-25 — AUGE: checklist visible, sin formulario
 
-`/guatita-de-delantal-auge-y-ley` `#checklist` muestra la lista en la página. Ya no pide datos ni POSTea a `checklist-ley-21438`. Enlace a Instagram `@metodo.hebe`. La agenda sigue en `/evaluacion`.
+`/guatita-de-delantal-auge-y-ley` `#checklist` muestra la lista en la página. Ya no pide datos ni POSTea a `checklist-ley-21438`. Enlace a Instagram `@metodo.hebe`, con el logo al lado del texto. La agenda sigue en `/evaluacion`.
 
 ## 2026-09-13 — H5.2: Radiografía corporal Chile (ENS + OMS)
 
