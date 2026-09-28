@@ -187,6 +187,23 @@ button{font-family:var(--sans);cursor:pointer;border:none}
    Fase 4.5: no reintroducir aquí transform:translateY(100%). El show/hide
    es por página (scrollY>400 + observer del footer + clase .visible). */
 
+/* ── Inversión en salud vs inversión en enfermedad ── */
+.invest-compare{margin:28px 0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.invest-compare-hint{display:none;margin:0;padding:10px 16px 0;font-size:12px;color:var(--ink-3)}
+.invest-compare-table{width:100%;border-collapse:collapse;min-width:640px;font-size:14.5px}
+.invest-compare-table caption{caption-side:bottom;text-align:left;padding:12px 16px 14px;font-size:13px;color:var(--ink-3);line-height:1.5}
+.invest-compare-table th,.invest-compare-table td{padding:13px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.5}
+.invest-compare-table thead th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.invest-compare-table thead th:nth-child(2){color:#8A4B3A;background:#FBF6F4}
+.invest-compare-table thead th:nth-child(3){color:var(--cyan-dd);background:#F3FBFA}
+.invest-compare-table tbody th{width:22%;font-weight:600;color:var(--ink);background:#F7F8F8}
+.invest-compare-table td:nth-child(2){background:#FBF6F4;color:var(--ink-2)}
+.invest-compare-table td:nth-child(3){background:#F3FBFA;color:var(--ink)}
+.invest-compare-table tr:last-child th,.invest-compare-table tr:last-child td{border-bottom:none}
+@media(max-width:720px){
+  .invest-compare-hint{display:block}
+}
+
 /* ── SAAS PRICING GRID (for /planes and similar pages) ── */
 .pricing-grid-section{padding:clamp(56px,7vw,88px) 0;background:var(--bg)}
 .pricing-grid-head{text-align:center;max-width:680px;margin:0 auto 48px}
