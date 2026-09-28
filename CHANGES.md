@@ -1,6 +1,6 @@
 ## 2026-09-27 — Discurso: invertir en salud
 
-Home, `/el-metodo`, `/planes`, las 5 razones, coaching, caminar y evaluación metabólica suman el marco «tú eres tu mejor inversión»: decisión económica como compromiso, salud y bienestar primero, y temas de alimentación y energía. Sin CTA nuevo. El plan no reemplaza indicación médica ni suspende un fármaco.
+Home, `/el-metodo`, `/planes`, las 5 razones, coaching, caminar y evaluación metabólica suman el marco «tú eres tu mejor inversión»: decisión económica como compromiso, salud y bienestar primero, y temas de alimentación y energía. La home, el método, los planes y las 5 razones incluyen la tabla inversión en enfermedad versus inversión en salud. Sin CTA nuevo. El plan no reemplaza indicación médica ni suspende un fármaco.
 
 ## 2026-09-25 — AUGE: checklist visible, sin formulario
 
