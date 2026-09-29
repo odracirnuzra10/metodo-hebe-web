@@ -973,9 +973,8 @@
       animation: fadeUp 0.5s ease 0.6s both;
     }
 
-    /* Paso de salud: filtra contraindicaciones antes de cobrar la evaluación */
-    /* Con las tres preguntas abiertas no cabe en el visor fijo de escritorio:
-       'safe' evita que el centrado corte el borde superior al hacer scroll. */
+    /* Paso de salud: filtra contraindicaciones antes de cobrar la evaluación.
+       Jerarquía a propósito: "No, ninguna" es el botón; las condiciones son filas quietas. */
     #stepSalud {
       justify-content: flex-start;
       justify-content: safe center;
@@ -984,11 +983,10 @@
     .salud-q {
       border: 0;
       padding: 0;
-      margin: 0 0 0.75rem;
+      margin: 0.8rem 0 0;
       min-inline-size: 0;
     }
 
-    .salud-q[hidden],
     .salud-box[hidden],
     #saludNext[hidden] {
       display: none;
@@ -996,49 +994,107 @@
 
     .salud-legend {
       font-family: 'Outfit', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-sec);
+      margin-bottom: 0.35rem;
       padding: 0;
-    }
-
-    .salud-opts .salud-ninguna {
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .salud-opts .slot-btn {
-      flex-basis: 100%;
       text-align: left;
-      padding: 0.7rem 0.85rem;
+    }
+
+    .salud-lista {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #ececec;
+    }
+
+    .salud-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      width: 100%;
+      padding: 0.7rem 0.1rem;
+      background: none;
+      border: 0;
+      border-bottom: 1px solid #ececec;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.86rem;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .salud-row::before {
+      content: '';
+      flex: 0 0 16px;
+      height: 16px;
+      border: 1.5px solid #cfcfcf;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    .salud-row:hover::before {
+      border-color: var(--teal);
+    }
+
+    .salud-row.selected::before {
+      border-color: var(--teal-darker);
+      background: var(--teal-darker);
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    .salud-ninguna-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.4rem;
+    }
+
+    .salud-ninguna-btn svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+      transform: translateY(2px);
+    }
+
+    .salud-ninguna-btn.is-quiet {
+      background: transparent;
+      color: var(--text);
+      box-shadow: inset 0 0 0 1.5px #d8d8d8;
     }
 
     .salud-box {
       border-radius: 10px;
-      padding: 0.85rem 1rem;
-      font-size: 0.85rem;
+      padding: 0.8rem 0.95rem;
+      margin-top: 1rem;
+      font-size: 0.83rem;
       line-height: 1.45;
       text-align: left;
     }
 
     .salud-box strong {
       display: block;
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.2rem;
     }
 
     .salud-box--nota {
-      border: 1px solid var(--teal);
       background: var(--teal-light);
       color: var(--text);
     }
 
     .salud-box--stop {
-      border: 1px solid #E3B5AE;
       background: #FFF4F2;
       color: #5C1F17;
+    }
+
+    #saludNext {
+      margin-top: 0.8rem;
+    }
+
+    #stepSalud .form-note {
+      margin-top: 0.9rem;
     }
 
     /* Botón de la pantalla dedicada de costo */
@@ -2177,20 +2233,22 @@
             </button>
             <div class="step-label">POR TU SEGURIDAD</div>
             <h2 class="step-title">TU <em>SALUD</em></h2>
-            <div class="step-sub">Un toque y seguimos.</div>
             <fieldset class="salud-q" id="saludQ">
-              <legend class="salud-legend">¿Alguna de estas aplica a ti?</legend>
-              <div class="slot-grid salud-opts">
-                <button type="button" class="slot-btn" data-v="absoluta" onclick="saludResp(this)">Embarazo, cáncer o tumor</button>
-                <button type="button" class="slot-btn" data-v="reciente" onclick="saludResp(this)">Infarto, ACV o trombosis en los últimos 6 meses</button>
-                <button type="button" class="slot-btn" data-v="medicamento" onclick="saludResp(this)">Tomo anticoagulantes, inmunosupresores o corticoides</button>
-                <button type="button" class="slot-btn salud-ninguna" data-v="ninguna" onclick="saludResp(this)">Ninguna</button>
+              <legend class="salud-legend">¿Tienes alguna de estas?</legend>
+              <div class="salud-lista">
+                <button type="button" class="salud-row" data-v="absoluta" aria-pressed="false" onclick="saludResp(this)">Embarazo, cáncer o tumor</button>
+                <button type="button" class="salud-row" data-v="reciente" aria-pressed="false" onclick="saludResp(this)">Infarto, ACV o trombosis en los últimos 6 meses</button>
+                <button type="button" class="salud-row" data-v="medicamento" aria-pressed="false" onclick="saludResp(this)">Tomo anticoagulantes, inmunosupresores o corticoides</button>
               </div>
+              <button type="button" class="confirm-btn salud-ninguna-btn" data-v="ninguna" aria-pressed="false" onclick="saludResp(this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                No, ninguna
+              </button>
             </fieldset>
             <div class="salud-box salud-box--nota" id="saludNota" role="status" hidden></div>
             <div class="salud-box salud-box--stop" id="saludStop" role="alert" hidden></div>
             <button type="button" class="confirm-btn" id="saludNext" onclick="goToStep(2.5, &#39;forward&#39;)" hidden>Continuar</button>
-            <div class="form-note">Tus respuestas son confidenciales y solo las ve el equipo clínico.</div>
+            <div class="form-note">Confidencial. Solo lo ve el equipo clínico.</div>
           </div>
 
           <!-- PANTALLA DE COSTO — entre el horario y el formulario -->
@@ -2482,10 +2540,12 @@
     const SALUD_NOTA = '<strong>Puedes tratarte</strong>Si los tomas por prevención, el resultado suele ser más lento y puedes necesitar más sesiones. Antes de confirmar tu hora te preguntamos por WhatsApp para qué los tomas.';
 
     function saludResp(el) {
-      el.parentElement.querySelectorAll('.slot-btn').forEach(b => {
+      document.querySelectorAll('#saludQ [data-v]').forEach(b => {
         b.classList.toggle('selected', b === el);
         b.setAttribute('aria-pressed', b === el ? 'true' : 'false');
       });
+      // Si marcó una condición, "No, ninguna" pasa a segundo plano (sigue sirviendo para corregir).
+      document.querySelector('.salud-ninguna-btn').classList.toggle('is-quiet', el.dataset.v !== 'ninguna');
       const v = salud = el.dataset.v;
       const nota = document.getElementById('saludNota');
       const stop = document.getElementById('saludStop');
@@ -2504,7 +2564,7 @@
         // Aviso + Continuar quedan bajo el pliegue: los trae a la vista.
         requestAnimationFrame(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
       } else {
-        setTimeout(() => { if (salud === 'ninguna' && currentStep === 2.2) goToStep(2.5, 'forward'); }, 400);
+        setTimeout(() => { if (salud === 'ninguna' && currentStep === 2.2) goToStep(2.5, 'forward'); }, 250);
       }
     }
 
