@@ -1,3 +1,7 @@
+## 2026-09-29 — /evaluacion: letra blanca en botones y salud arriba en móvil
+
+`.confirm-btn` (No, ninguna · Continuar · Confirmo) pasa a fondo `#0B8076` con letra blanca (4.8:1). El centrado vertical de `#stepSalud` queda solo en escritorio: en móvil todos los pasos parten a la misma altura.
+
 ## 2026-09-29 — /evaluacion: aviso antes de "No, ninguna"
 
 Aviso ámbar con ícono sobre el botón del paso de salud: si tiene alguna condición, no podremos tratarla y los $27.990 no son reembolsables.

@@ -979,9 +979,12 @@
 
     /* Paso de salud: filtra contraindicaciones antes de cobrar la evaluación.
        Jerarquía a propósito: "No, ninguna" es el botón; las condiciones son filas quietas. */
-    #stepSalud {
-      justify-content: flex-start;
-      justify-content: safe center;
+    /* Solo escritorio: en móvil todos los pasos parten arriba, igual que el resto. */
+    @media (min-width: 769px) {
+      #stepSalud {
+        justify-content: flex-start;
+        justify-content: safe center;
+      }
     }
 
     .salud-q {
@@ -1132,8 +1135,9 @@
     .confirm-btn {
       display: block;
       width: 100%;
-      background: var(--teal);
-      color: var(--cta-ink);
+      /* Verde un tono más oscuro para que la letra blanca se lea (4.8:1) */
+      background: #0B8076;
+      color: #fff;
       padding: 1rem 2rem;
       border-radius: var(--radius);
       border: none;
