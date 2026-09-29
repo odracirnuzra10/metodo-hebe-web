@@ -1052,7 +1052,34 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      margin-top: 1.4rem;
+      margin-top: 0.8rem;
+    }
+
+    /* Aviso junto al botón: marcar "No, ninguna" sin serlo cuesta la evaluación */
+    .salud-aviso {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      margin: 1rem 0 0;
+      padding: 0.65rem 0.8rem;
+      border-radius: 10px;
+      background: #FFF7E0;
+      color: #6B4A00;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .salud-aviso svg {
+      flex: none;
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      color: #B7791F;
+    }
+
+    .salud-aviso strong {
+      font-weight: 600;
     }
 
     .salud-ninguna-btn svg {
@@ -2244,6 +2271,10 @@
                 <button type="button" class="salud-row" data-v="reciente" aria-pressed="false" onclick="saludResp(this)">Infarto, ACV o trombosis en los últimos 6 meses</button>
                 <button type="button" class="salud-row" data-v="medicamento" aria-pressed="false" onclick="saludResp(this)">Tomo anticoagulantes, inmunosupresores o corticoides</button>
               </div>
+              <p class="salud-aviso">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <span><strong>Revisa antes de seguir.</strong> Si tienes alguna de estas, no podremos tratarte y la evaluación ($27.990) no es reembolsable.</span>
+              </p>
               <button type="button" class="confirm-btn salud-ninguna-btn" data-v="ninguna" aria-pressed="false" onclick="saludResp(this)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 No, ninguna
