@@ -1,6 +1,6 @@
 ## 2026-09-29 — /evaluacion: filtro de salud antes del pago
 
-Paso nuevo `#stepSalud` entre horario y costo. Embarazo, cáncer/tumor o infarto/ACV/trombosis en los últimos 6 meses → no se agenda (`evaluacion_no_apta`, sin `Lead`). Anticoagulantes, inmunosupresores o corticoides por prevención → se atiende, avisando resultado más lento. Payload n8n suma `salud` y `salud_revisar`.
+Paso nuevo `#stepSalud` entre horario y costo: una pregunta, un toque. Embarazo, cáncer/tumor o infarto/ACV/trombosis en los últimos 6 meses → no se agenda (`evaluacion_no_apta`, sin `Lead`). Anticoagulantes, inmunosupresores o corticoides → se atiende con aviso de resultado más lento y `salud_revisar`. "Ninguna" avanza sola. Payload n8n suma `salud` y `salud_revisar`.
 
 ## 2026-09-25 — AUGE: checklist visible, sin formulario
 

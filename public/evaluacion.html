@@ -1004,12 +1004,9 @@
       padding: 0;
     }
 
-    .salud-hint {
-      display: block;
-      font-size: 0.76rem;
-      font-weight: 400;
-      color: var(--text-sec);
-      margin-top: 0.15rem;
+    .salud-opts .salud-ninguna {
+      font-weight: 600;
+      text-align: center;
     }
 
     .salud-opts .slot-btn {
@@ -2180,27 +2177,14 @@
             </button>
             <div class="step-label">POR TU SEGURIDAD</div>
             <h2 class="step-title">TU <em>SALUD</em></h2>
-            <div class="step-sub">Unas preguntas rápidas para saber si el tratamiento es seguro para ti.</div>
-            <fieldset class="salud-q" id="saludQ1">
-              <legend class="salud-legend">¿Estás embarazada o tienes cáncer o algún tumor?</legend>
-              <div class="slot-grid">
-                <button type="button" class="slot-btn" data-v="si" onclick="saludResp(1, this)">Sí</button>
-                <button type="button" class="slot-btn" data-v="no" onclick="saludResp(1, this)">No</button>
-              </div>
-            </fieldset>
-            <fieldset class="salud-q" id="saludQ2" hidden>
-              <legend class="salud-legend">¿Tomas anticoagulantes, inmunosupresores o corticoides?</legend>
-              <div class="slot-grid">
-                <button type="button" class="slot-btn" data-v="si" onclick="saludResp(2, this)">Sí</button>
-                <button type="button" class="slot-btn" data-v="no" onclick="saludResp(2, this)">No</button>
-              </div>
-            </fieldset>
-            <fieldset class="salud-q" id="saludQ3" hidden>
-              <legend class="salud-legend">¿Por qué los tomas?</legend>
+            <div class="step-sub">Un toque y seguimos.</div>
+            <fieldset class="salud-q" id="saludQ">
+              <legend class="salud-legend">¿Alguna de estas aplica a ti?</legend>
               <div class="slot-grid salud-opts">
-                <button type="button" class="slot-btn" data-v="prevencion" onclick="saludResp(3, this)">Por prevención o tratamiento de largo plazo<div class="slot-time">Ej.: un evento antiguo, corticoides permanentes</div></button>
-                <button type="button" class="slot-btn" data-v="reciente" onclick="saludResp(3, this)">Por un infarto, ACV o trombosis reciente<div class="slot-time">En los últimos 6 meses</div></button>
-                <button type="button" class="slot-btn" data-v="otro" onclick="saludResp(3, this)">Otro motivo</button>
+                <button type="button" class="slot-btn" data-v="absoluta" onclick="saludResp(this)">Embarazo, cáncer o tumor</button>
+                <button type="button" class="slot-btn" data-v="reciente" onclick="saludResp(this)">Infarto, ACV o trombosis en los últimos 6 meses</button>
+                <button type="button" class="slot-btn" data-v="medicamento" onclick="saludResp(this)">Tomo anticoagulantes, inmunosupresores o corticoides</button>
+                <button type="button" class="slot-btn salud-ninguna" data-v="ninguna" onclick="saludResp(this)">Ninguna</button>
               </div>
             </fieldset>
             <div class="salud-box salud-box--nota" id="saludNota" role="status" hidden></div>
@@ -2484,72 +2468,49 @@
     }
 
     // ===== Filtro de salud (stepSalud) =====
-    // Absolutas: embarazo, cáncer o tumor, evento cardiovascular reciente → no se agenda.
-    // Relativas: anticoagulantes, inmunosupresores o corticoides por prevención o de largo
-    // plazo → se atiende, avisando que el resultado es más lento y pide más sesiones.
-    const salud = { q1: '', q2: '', q3: '' };
+    // Una sola pregunta, un toque: la mayoría marca "Ninguna" y avanza sola.
+    // Absolutas (embarazo, cáncer o tumor, evento cardiovascular reciente) → no se agenda.
+    // Medicamentos (anticoagulantes, inmunosupresores, corticoides) → relativa: se atiende,
+    // el equipo revisa el motivo por WhatsApp y se avisa que el resultado es más lento.
+    let salud = '';
     let saludApta = false;
 
     const SALUD_STOP = {
       absoluta: '<strong>Por ahora no podemos atenderte</strong>Por tu seguridad, no realizamos el tratamiento durante el embarazo ni con cáncer o tumores. Por eso no te pedimos agendar ni pagar la evaluación.',
       reciente: '<strong>Por ahora no podemos atenderte</strong>Por tu seguridad, no realizamos el tratamiento después de un infarto, ACV o trombosis reciente. Cuando tu médico te dé el alta, te esperamos.'
     };
-    const SALUD_NOTA = {
-      prevencion: '<strong>Puedes tratarte</strong>Con estos medicamentos el resultado suele ser más lento y puedes necesitar más sesiones. Lo revisamos en tu evaluación.',
-      otro: '<strong>Lo revisamos contigo</strong>Antes de confirmar tu hora te preguntaremos por WhatsApp para qué los tomas.'
-    };
+    const SALUD_NOTA = '<strong>Puedes tratarte</strong>Si los tomas por prevención, el resultado suele ser más lento y puedes necesitar más sesiones. Antes de confirmar tu hora te preguntamos por WhatsApp para qué los tomas.';
 
-    function saludResp(q, el) {
+    function saludResp(el) {
       el.parentElement.querySelectorAll('.slot-btn').forEach(b => {
         b.classList.toggle('selected', b === el);
         b.setAttribute('aria-pressed', b === el ? 'true' : 'false');
       });
-      salud['q' + q] = el.dataset.v;
-      if (q === 1) { salud.q2 = ''; salud.q3 = ''; }
-      if (q === 2) salud.q3 = '';
-      renderSalud();
-    }
-
-    function renderSalud() {
-      const q2 = document.getElementById('saludQ2');
-      const q3 = document.getElementById('saludQ3');
+      const v = salud = el.dataset.v;
       const nota = document.getElementById('saludNota');
       const stop = document.getElementById('saludStop');
       const next = document.getElementById('saludNext');
-      q2.hidden = salud.q1 !== 'no';
-      q3.hidden = q2.hidden || salud.q2 !== 'si';
-      [q2, q3].forEach(f => { if (f.hidden) f.querySelectorAll('.slot-btn').forEach(b => { b.classList.remove('selected'); b.setAttribute('aria-pressed', 'false'); }); });
+      const stopHtml = SALUD_STOP[v] || '';
+      stop.hidden = !stopHtml;
+      stop.innerHTML = stopHtml;
+      nota.hidden = v !== 'medicamento';
+      nota.innerHTML = v === 'medicamento' ? SALUD_NOTA : '';
+      saludApta = v === 'ninguna' || v === 'medicamento';
+      next.hidden = v !== 'medicamento';
 
-      let stopKey = '';
-      if (salud.q1 === 'si') stopKey = 'absoluta';
-      else if (salud.q3 === 'reciente') stopKey = 'reciente';
-      const notaKey = salud.q3 === 'prevencion' || salud.q3 === 'otro' ? salud.q3 : '';
-
-      stop.hidden = !stopKey;
-      stop.innerHTML = stopKey ? SALUD_STOP[stopKey] : '';
-      nota.hidden = !notaKey;
-      nota.innerHTML = notaKey ? SALUD_NOTA[notaKey] : '';
-
-      saludApta = !stopKey && salud.q1 === 'no' && (salud.q2 === 'no' || !!notaKey);
-      next.hidden = !saludApta;
-
-      if (stopKey) {
-        const motivo = stopKey;
-        window.hebeTrack('evaluacion_no_apta', { clinica: 'hebe', motivo });
-      } else if (saludApta && notaKey) {
+      if (stopHtml) {
+        window.hebeTrack('evaluacion_no_apta', { clinica: 'hebe', motivo: v });
+      } else if (v === 'medicamento') {
         // Aviso + Continuar quedan bajo el pliegue: los trae a la vista.
         requestAnimationFrame(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
-      } else if (saludApta && salud.q2 === 'no') {
-        // Sin nada que leer: avanza solo, igual que día y horario.
-        setTimeout(() => { if (saludApta && currentStep === 2.2) goToStep(2.5, 'forward'); }, 400);
+      } else {
+        setTimeout(() => { if (salud === 'ninguna' && currentStep === 2.2) goToStep(2.5, 'forward'); }, 400);
       }
     }
 
     function saludResumen() {
-      if (salud.q2 === 'no') return 'Sin contraindicaciones declaradas';
-      if (salud.q3 === 'prevencion') return 'Toma anticoagulantes, inmunosupresores o corticoides — prevención o largo plazo';
-      if (salud.q3 === 'otro') return 'Toma anticoagulantes, inmunosupresores o corticoides — otro motivo (revisar antes de confirmar)';
-      return '';
+      if (salud === 'medicamento') return 'Toma anticoagulantes, inmunosupresores o corticoides — revisar motivo antes de confirmar';
+      return salud === 'ninguna' ? 'Sin contraindicaciones declaradas' : '';
     }
 
     function normalizePhoneDigits(rawValue) {
@@ -2725,7 +2686,7 @@
         msclkid: _attr.msclkid || '',
         // Filtro de salud
         salud: saludResumen(),
-        salud_revisar: salud.q3 === 'otro'
+        salud_revisar: salud === 'medicamento'
       };
       fetch('https://n8n.oacg.cl/webhook/lead-capture', {
         method: 'POST',
