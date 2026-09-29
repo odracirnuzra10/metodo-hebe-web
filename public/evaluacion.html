@@ -973,6 +973,134 @@
       animation: fadeUp 0.5s ease 0.6s both;
     }
 
+    .steps-viewport {
+      transition: height 0.35s ease;
+    }
+
+    /* Paso de salud: filtra contraindicaciones antes de cobrar la evaluación.
+       Jerarquía a propósito: "No, ninguna" es el botón; las condiciones son filas quietas. */
+    #stepSalud {
+      justify-content: flex-start;
+      justify-content: safe center;
+    }
+
+    .salud-q {
+      border: 0;
+      padding: 0;
+      margin: 0.8rem 0 0;
+      min-inline-size: 0;
+    }
+
+    .salud-box[hidden],
+    #saludNext[hidden] {
+      display: none;
+    }
+
+    .salud-legend {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-sec);
+      margin-bottom: 0.35rem;
+      padding: 0;
+      text-align: left;
+    }
+
+    .salud-lista {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #ececec;
+    }
+
+    .salud-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      width: 100%;
+      padding: 0.7rem 0.1rem;
+      background: none;
+      border: 0;
+      border-bottom: 1px solid #ececec;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.86rem;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .salud-row::before {
+      content: '';
+      flex: 0 0 16px;
+      height: 16px;
+      border: 1.5px solid #cfcfcf;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    .salud-row:hover::before {
+      border-color: var(--teal);
+    }
+
+    .salud-row.selected::before {
+      border-color: var(--teal-darker);
+      background: var(--teal-darker);
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    .salud-ninguna-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.4rem;
+    }
+
+    .salud-ninguna-btn svg {
+      width: 20px;
+      height: 20px;
+      flex: none;
+      transform: translateY(2px);
+    }
+
+    .salud-ninguna-btn.is-quiet {
+      background: transparent;
+      color: var(--text);
+      box-shadow: inset 0 0 0 1.5px #d8d8d8;
+    }
+
+    .salud-box {
+      border-radius: 10px;
+      padding: 0.8rem 0.95rem;
+      margin-top: 1rem;
+      font-size: 0.83rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .salud-box strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .salud-box--nota {
+      background: var(--teal-light);
+      color: var(--text);
+    }
+
+    .salud-box--stop {
+      background: #FFF4F2;
+      color: #5C1F17;
+    }
+
+    #saludNext {
+      margin-top: 0.8rem;
+    }
+
+    #stepSalud .form-note {
+      margin-top: 0.9rem;
+    }
+
     /* Botón de la pantalla dedicada de costo */
     .confirm-btn {
       display: block;
@@ -2073,7 +2201,7 @@
 
           <!-- STEP 2 -->
           <div class="step" id="step2" aria-expanded="false">
-            <button type="button" class="back-btn" onclick="goToStep(1, &#39;back&#39;)">
+            <button type="button" class="back-btn" onclick="retroceder(2)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
@@ -2098,9 +2226,38 @@
             </fieldset>
           </div>
 
+          <!-- PANTALLA DE SALUD — entre el horario y el costo. Filtra contraindicaciones
+               antes de que la paciente pague una evaluación que no podría usar. -->
+          <div class="step" id="stepSalud" aria-expanded="false">
+            <button type="button" class="back-btn" onclick="retroceder(2.2)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Volver
+            </button>
+            <div class="step-label">POR TU SEGURIDAD</div>
+            <h2 class="step-title">TU <em>SALUD</em></h2>
+            <fieldset class="salud-q" id="saludQ">
+              <legend class="salud-legend">¿Tienes alguna de estas?</legend>
+              <div class="salud-lista">
+                <button type="button" class="salud-row" data-v="absoluta" aria-pressed="false" onclick="saludResp(this)">Embarazo, cáncer o tumor</button>
+                <button type="button" class="salud-row" data-v="reciente" aria-pressed="false" onclick="saludResp(this)">Infarto, ACV o trombosis en los últimos 6 meses</button>
+                <button type="button" class="salud-row" data-v="medicamento" aria-pressed="false" onclick="saludResp(this)">Tomo anticoagulantes, inmunosupresores o corticoides</button>
+              </div>
+              <button type="button" class="confirm-btn salud-ninguna-btn" data-v="ninguna" aria-pressed="false" onclick="saludResp(this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                No, ninguna
+              </button>
+            </fieldset>
+            <div class="salud-box salud-box--nota" id="saludNota" role="status" hidden></div>
+            <div class="salud-box salud-box--stop" id="saludStop" role="alert" hidden></div>
+            <button type="button" class="confirm-btn" id="saludNext" onclick="avanzar(2.2)" hidden>Continuar</button>
+            <div class="form-note">Confidencial. Solo lo ve el equipo clínico.</div>
+          </div>
+
           <!-- PANTALLA DE COSTO — entre el horario y el formulario -->
           <div class="step" id="stepPrecio" aria-expanded="false">
-            <button type="button" class="back-btn" onclick="goToStep(2, &#39;back&#39;)">
+            <button type="button" class="back-btn" onclick="retroceder(2.5)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
@@ -2212,6 +2369,34 @@
 
   <script>
     let currentStep = 1;
+
+    // ===== A/B: orden del filtro de salud =====
+    // 'despues' = sede → horario → salud → costo → datos (control)
+    // 'antes'   = sede → salud → horario → costo → datos
+    // Se sortea una vez por navegador y se guarda; ?salud=antes|despues lo fuerza (QA).
+    const SALUD_AB_KEY = 'hebe_ab_salud_orden';
+    const saludOrden = (() => {
+      const forzado = new URLSearchParams(location.search).get('salud');
+      if (forzado === 'antes' || forzado === 'despues') return forzado;
+      try {
+        const guardado = localStorage.getItem(SALUD_AB_KEY);
+        if (guardado === 'antes' || guardado === 'despues') return guardado;
+      } catch (e) {}
+      const sorteado = Math.random() < 0.5 ? 'antes' : 'despues';
+      try { localStorage.setItem(SALUD_AB_KEY, sorteado); } catch (e) {}
+      return sorteado;
+    })();
+    const ORDEN_PASOS = saludOrden === 'antes' ? [1, 2.2, 2, 2.5, 3] : [1, 2, 2.2, 2.5, 3];
+    const NOMBRE_PASO = { 1: 'sede', 2: 'horario', 2.2: 'salud', 2.5: 'costo', 3: 'datos' };
+    const avanzar = desde => goToStep(ORDEN_PASOS[ORDEN_PASOS.indexOf(desde) + 1], 'forward');
+    const retroceder = desde => goToStep(ORDEN_PASOS[ORDEN_PASOS.indexOf(desde) - 1], 'back');
+
+    // Embudo del wizard: un evento por paso alcanzado + las respuestas de salud,
+    // siempre con la variante, para comparar dónde se cae la gente en cada orden.
+    function evalTrack(nombre, datos) {
+      datos = Object.assign({ clinica: 'hebe', salud_orden: saludOrden }, datos || {});
+      try { gtag('event', nombre, datos); } catch (e) {}
+    }
     let selectedSede = '';
     let selectedDay = '';
     let selectedSlot = '';
@@ -2245,13 +2430,13 @@
     setInterval(() => updateCarousel((carouselIndex + 1) % 4), 3500);
     document.querySelectorAll('#dotsDesktop .dot').forEach(d => d.addEventListener('click', () => updateCarousel(+d.dataset.i)));
 
-    const idDePaso = n => (n === 2.5 ? 'stepPrecio' : 'step' + n);
+    const idDePaso = n => (n === 2.5 ? 'stepPrecio' : n === 2.2 ? 'stepSalud' : 'step' + n);
 
     function goToStep(num, direction) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       const hdr = document.querySelector('.mobile-header-wrapper');
       if (hdr) hdr.classList.toggle('compact', num > 1);
-      // 2.5 = pantalla de costo, entre el horario y el formulario. Se usa un número
+      // 2.2 = pantalla de salud y 2.5 = pantalla de costo, entre el horario y el formulario. Se usa un número
       // fraccionario a propósito: así siguen valiendo las comparaciones de la barra de
       // progreso (num > 1, currentStep > 2) sin tener que renumerar los pasos.
       if (num === 3 || num === 2.5) {
@@ -2279,14 +2464,42 @@
       });
       currentStep = num;
       updateProgress();
+      if (direction === 'forward') evalTrack('evaluacion_paso', { paso: NOMBRE_PASO[num] });
+      ajustarAltoVisor(next);
       setTimeout(() => prev.classList.remove('exit-left', 'exit-right'), 500);
     }
 
     function updateProgress() {
-      document.getElementById('seg1').className = 'progress-seg ' + (currentStep > 1 ? 'done' : 'active');
-      document.getElementById('seg2').className = 'progress-seg ' + (currentStep > 2 ? 'done' : currentStep === 2 ? 'active' : '');
-      document.getElementById('seg3').className = 'progress-seg ' + (currentStep >= 2.5 ? 'active' : '');
+      // Por posición en el orden de la variante: sede | horario + salud | costo + datos.
+      const pos = ORDEN_PASOS.indexOf(currentStep);
+      const tramo = pos === 0 ? 1 : pos <= 2 ? 2 : 3;
+      document.getElementById('seg1').className = 'progress-seg ' + (tramo > 1 ? 'done' : 'active');
+      document.getElementById('seg2').className = 'progress-seg ' + (tramo > 2 ? 'done' : tramo === 2 ? 'active' : '');
+      document.getElementById('seg3').className = 'progress-seg ' + (tramo === 3 ? 'active' : '');
     }
+
+    // Escritorio: el visor de pasos mide lo que mide el paso activo, en vez de 620 px
+    // fijos que dejaban aire vacío arriba y abajo. En móvil lo maneja el CSS (height: auto).
+    const VISOR_MIN = 380;
+    const escritorio = window.matchMedia('(min-width: 769px)');
+    function ajustarAltoVisor(step) {
+      step = step || document.querySelector('.step.active');
+      if (!step) return;
+      const visor = step.parentElement;
+      if (!escritorio.matches) { visor.style.height = ''; return; }
+      const hijos = [...step.children].filter(h => h.offsetParent !== null);
+      if (!hijos.length) return;
+      const arriba = Math.min(...hijos.map(h => h.offsetTop));
+      const abajo = Math.max(...hijos.map(h => h.offsetTop + h.offsetHeight));
+      const cs = getComputedStyle(step);
+      const alto = abajo - arriba + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + 8;
+      visor.style.height = Math.max(VISOR_MIN, Math.ceil(alto)) + 'px';
+    }
+    window.addEventListener('resize', () => ajustarAltoVisor());
+    window.addEventListener('load', () => ajustarAltoVisor());
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ajustarAltoVisor());
+
+    ajustarAltoVisor(document.getElementById('step1'));
 
     function sedeKeyDown(e) {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -2317,7 +2530,7 @@
         });
       }
 
-      setTimeout(() => goToStep(2, 'forward'), 450);
+      setTimeout(() => avanzar(1), 450);
     }
 
     function generateDays() {
@@ -2368,8 +2581,58 @@
             currency: 'USD'
           });
         }
-        setTimeout(() => goToStep(2.5, 'forward'), 400);
+        setTimeout(() => avanzar(2), 400);
       }
+    }
+
+    // ===== Filtro de salud (stepSalud) =====
+    // Una sola pregunta, un toque: la mayoría marca "Ninguna" y avanza sola.
+    // Absolutas (embarazo, cáncer o tumor, evento cardiovascular reciente) → no se agenda.
+    // Medicamentos (anticoagulantes, inmunosupresores, corticoides) → relativa: se atiende,
+    // el equipo revisa el motivo por WhatsApp y se avisa que el resultado es más lento.
+    let salud = '';
+    let saludApta = false;
+
+    const SALUD_STOP = {
+      absoluta: '<strong>Por ahora no podemos atenderte</strong>Por tu seguridad, no realizamos el tratamiento durante el embarazo ni con cáncer o tumores. Por eso no te pedimos agendar ni pagar la evaluación.',
+      reciente: '<strong>Por ahora no podemos atenderte</strong>Por tu seguridad, no realizamos el tratamiento después de un infarto, ACV o trombosis reciente. Cuando tu médico te dé el alta, te esperamos.'
+    };
+    const SALUD_NOTA = '<strong>Puedes tratarte</strong>Si los tomas por prevención, el resultado suele ser más lento y puedes necesitar más sesiones. Antes de confirmar tu hora te preguntamos por WhatsApp para qué los tomas.';
+
+    function saludResp(el) {
+      document.querySelectorAll('#saludQ [data-v]').forEach(b => {
+        b.classList.toggle('selected', b === el);
+        b.setAttribute('aria-pressed', b === el ? 'true' : 'false');
+      });
+      // Si marcó una condición, "No, ninguna" pasa a segundo plano (sigue sirviendo para corregir).
+      document.querySelector('.salud-ninguna-btn').classList.toggle('is-quiet', el.dataset.v !== 'ninguna');
+      const v = salud = el.dataset.v;
+      const nota = document.getElementById('saludNota');
+      const stop = document.getElementById('saludStop');
+      const next = document.getElementById('saludNext');
+      const stopHtml = SALUD_STOP[v] || '';
+      stop.hidden = !stopHtml;
+      stop.innerHTML = stopHtml;
+      nota.hidden = v !== 'medicamento';
+      nota.innerHTML = v === 'medicamento' ? SALUD_NOTA : '';
+      saludApta = v === 'ninguna' || v === 'medicamento';
+      next.hidden = v !== 'medicamento';
+
+      evalTrack('salud_respuesta', { respuesta: v });
+      ajustarAltoVisor();
+      if (stopHtml) {
+        window.hebeTrack('evaluacion_no_apta', { clinica: 'hebe', motivo: v });
+      } else if (v === 'medicamento') {
+        // Aviso + Continuar quedan bajo el pliegue: los trae a la vista.
+        requestAnimationFrame(() => next.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
+      } else {
+        setTimeout(() => { if (salud === 'ninguna' && currentStep === 2.2) avanzar(2.2); }, 250);
+      }
+    }
+
+    function saludResumen() {
+      if (salud === 'medicamento') return 'Toma anticoagulantes, inmunosupresores o corticoides — revisar motivo antes de confirmar';
+      return salud === 'ninguna' ? 'Sin contraindicaciones declaradas' : '';
     }
 
     function normalizePhoneDigits(rawValue) {
@@ -2425,6 +2688,7 @@
       el.setAttribute('aria-invalid', 'true');
       if (wrap) wrap.classList.add('error');
       if (err) err.textContent = message;
+      ajustarAltoVisor();
     }
 
     function handleSubmit(e) {
@@ -2448,6 +2712,7 @@
         }
       });
       if (hasError) return false;
+      if (!saludApta) { goToStep(2.2, 'back'); return false; }
 
       // Guard anti doble-envío: un solo lead por sesión
       if (window.__leadSubmitted) {
@@ -2541,7 +2806,11 @@
         utm_term: _attr.utm_term || '',
         gclid: _attr.gclid || '',
         attr_fbclid: _attr.fbclid || '',
-        msclkid: _attr.msclkid || ''
+        msclkid: _attr.msclkid || '',
+        // Filtro de salud
+        salud: saludResumen(),
+        salud_revisar: salud === 'medicamento',
+        ab_salud_orden: saludOrden
       };
       fetch('https://n8n.oacg.cl/webhook/lead-capture', {
         method: 'POST',

@@ -1,3 +1,9 @@
+## 2026-09-29 — /evaluacion: filtro de salud antes del pago
+
+Paso nuevo `#stepSalud` entre horario y costo: una pregunta, un toque. Embarazo, cáncer/tumor o infarto/ACV/trombosis en los últimos 6 meses → no se agenda (`evaluacion_no_apta`, sin `Lead`). Anticoagulantes, inmunosupresores o corticoides → se atiende con aviso de resultado más lento y `salud_revisar`. "Ninguna" avanza sola. Payload n8n suma `salud` y `salud_revisar`.
+
+Medición y A/B del mismo paso: `evaluacion_paso` (`paso`: sede, horario, salud, costo, datos) y `salud_respuesta`, ambos con `salud_orden`. Sorteo 50/50 persistido en `localStorage` (`hebe_ab_salud_orden`): salud antes o después del horario; `?salud=antes|despues` lo fuerza. Payload suma `ab_salud_orden`. En escritorio el visor de pasos mide lo que el paso activo (mínimo 380 px) en vez de 620 px fijos.
+
 ## 2026-09-25 — AUGE: checklist visible, sin formulario
 
 `/guatita-de-delantal-auge-y-ley` `#checklist` muestra la lista en la página. Ya no pide datos ni POSTea a `checklist-ley-21438`. Enlace a Instagram `@metodo.hebe`, con el logo al lado del texto. La agenda sigue en `/evaluacion`.
