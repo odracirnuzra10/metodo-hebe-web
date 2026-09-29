@@ -1,3 +1,7 @@
+## 2026-09-29 — /evaluacion: aviso antes de "No, ninguna"
+
+Aviso ámbar con ícono sobre el botón del paso de salud: si tiene alguna condición, no podremos tratarla y los $27.990 no son reembolsables.
+
 ## 2026-09-29 — /evaluacion: filtro de salud antes del pago
 
 Paso nuevo `#stepSalud` entre horario y costo: una pregunta, un toque. Embarazo, cáncer/tumor o infarto/ACV/trombosis en los últimos 6 meses → no se agenda (`evaluacion_no_apta`, sin `Lead`). Anticoagulantes, inmunosupresores o corticoides → se atiende con aviso de resultado más lento y `salud_revisar`. "Ninguna" avanza sola. Payload n8n suma `salud` y `salud_revisar`.
