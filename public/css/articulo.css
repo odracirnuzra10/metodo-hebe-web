@@ -55,3 +55,33 @@
 @media (prefers-reduced-motion:reduce){.aw-pane,.aw-side{animation:none;transition:none}}
 :is(.agenda-widget,.aw-side) .aw-go{text-align:center}
 :is(.agenda-widget,.aw-side) .aw-go svg{flex:none}
+
+/* ── Lectura y UX de artículos (js/articulo.js) ── */
+.read-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:120;background:linear-gradient(90deg,#14B5A7,#0A6B65);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;border-radius:10px;
+  background:linear-gradient(to right,#fff 30%,rgba(255,255,255,0)) left center/24px 100% no-repeat local,
+             linear-gradient(to left,#fff 30%,rgba(255,255,255,0)) right center/24px 100% no-repeat local,
+             linear-gradient(to right,rgba(20,32,31,.14),rgba(20,32,31,0)) left center/10px 100% no-repeat scroll,
+             linear-gradient(to left,rgba(20,32,31,.14),rgba(20,32,31,0)) right center/10px 100% no-repeat scroll}
+.table-scroll:focus-visible{outline:2px solid #0B8076;outline-offset:2px}
+.table-scroll>table{margin:0;min-width:520px}
+details.toc{margin:24px 0 32px;border:1px solid rgba(20,181,167,.28);border-radius:12px;background:#F6F9F9}
+details.toc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:12px 18px;font-size:13px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#0A6B65}
+details.toc>summary::-webkit-details-marker{display:none}
+details.toc>summary::after{content:'+';font-size:20px;font-weight:500;line-height:1}
+details.toc[open]>summary::after{content:'–'}
+details.toc ol{margin:0;padding:0 18px 14px 40px;display:grid;gap:2px}
+details.toc li{font-size:15px;line-height:1.45}
+details.toc a{display:block;padding:8px 0;min-height:44px;color:#14201F;text-decoration:none;border-bottom:1px solid rgba(20,32,31,.06)}
+details.toc a:hover{color:#0A6B65}
+.article-body h2[id]{scroll-margin-top:84px}
+@media (max-width:600px){
+  .article-body p,.article-body li{font-size:17px;line-height:1.72}
+  .article-body .faq-q{min-height:52px}
+  .hero-chips .chip{padding:8px 14px}
+}
+@media (min-width:900px){
+  .article-body>.wrap>p,.article-body>.wrap>ul,.article-body>.wrap>ol{max-width:68ch}
+  .article-body>.wrap>.answer-capsule{max-width:none}
+}
+@media (prefers-reduced-motion:reduce){.read-progress{transition:none}}
