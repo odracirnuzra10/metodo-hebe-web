@@ -1,3 +1,7 @@
+## 2026-09-30 — Widget de agendamiento en 16 artículos
+
+Los botones del `.inline-cta` de los 16 artículos SEO pasan a un widget (`public/js/agenda-widget.js`, `public/css/articulo.css`): sede → día y horario → «Continuar a mi evaluación». Conserva el `<h3>` y el `<p>` de cada bloque y cuenta como el mismo punto de conversión (B.4.5). `/ejercicios-para-guatita-de-delantal` y `/blog/transformacion-corporal-renata-metodo-hebe` suman un bloque nuevo. En escritorio ≥1360 px aparece una tarjeta lateral (sede → continuar) después de `scrollY > 400`, se oculta cerca del CTA final/footer y mientras el widget del artículo está a la vista; no va en AUGE. `/evaluacion` lee `?sede=&dia=&franja=`, marca la selección con las mismas funciones del wizard y salta el paso de horario (registrado con `prefill:true`) en ambos órdenes del A/B de salud. Eventos nuevos: `widget_interact`, `evaluacion_prefill`. Sin JS queda un enlace normal a `/evaluacion`. Sin `Lead` ni `whatsapp_click`.
+
 ## 2026-09-30 — Logo en Google y byline de marca en 16 artículos
 
 Favicon pasa de SVG `data:` inline (que Google no rastrea y reemplaza por el globo) a archivos: `/favicon.ico` (16/32/48), `/favicon.svg`, `/img/apple-touch-icon.png`, `/img/icon-192.png` e `/img/icon-512.png`, en las 66 páginas. `Organization.logo` (home y Los Ángeles) apunta al ícono cuadrado. Los 16 artículos SEO muestran el logo y «Clínica de estética corporal» arriba del hero (`public/css/articulo.css`). El favicon en la SERP cambia cuando Google vuelve a rastrear el home.
