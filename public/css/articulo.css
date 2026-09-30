@@ -1,0 +1,6 @@
+/* Componentes compartidos de artículos (byline de marca; widget y mejoras UX en PRs siguientes). */
+.hero-brand{display:flex;width:fit-content;align-items:center;gap:14px;margin:0 0 20px;text-decoration:none;color:inherit}
+.hero-brand picture,.hero-brand img{display:block}
+.hero-brand img{width:64px;height:49px}
+.hero-brand-txt{display:flex;flex-direction:column;gap:2px;font-size:13px;line-height:1.3;font-weight:600;color:#1f2a2e;padding-left:14px;border-left:1.5px solid rgba(20,181,167,.35)}
+.hero-brand-txt small{font-size:11px;font-weight:500;letter-spacing:.4px;color:#5b6b70}
