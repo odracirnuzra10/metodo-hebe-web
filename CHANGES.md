@@ -1,3 +1,7 @@
+## 2026-09-30 — Logo en Google y byline de marca en 16 artículos
+
+Favicon pasa de SVG `data:` inline (que Google no rastrea y reemplaza por el globo) a archivos: `/favicon.ico` (16/32/48), `/favicon.svg`, `/img/apple-touch-icon.png`, `/img/icon-192.png` e `/img/icon-512.png`, en las 66 páginas. `Organization.logo` (home y Los Ángeles) apunta al ícono cuadrado. Los 16 artículos SEO muestran el logo y «Clínica de estética corporal» arriba del hero (`public/css/articulo.css`). El favicon en la SERP cambia cuando Google vuelve a rastrear el home.
+
 ## 2026-09-29 — /evaluacion: letra blanca en botones y salud arriba en móvil
 
 `.confirm-btn` (No, ninguna · Continuar · Confirmo) pasa a fondo `#0B8076` con letra blanca (4.8:1). El centrado vertical de `#stepSalud` queda solo en escritorio: en móvil todos los pasos parten a la misma altura.
