@@ -1,3 +1,7 @@
+## 2026-09-30 — Contenido AEO/SEO en 16 artículos
+
+Cada artículo suma una tabla de datos clave (H2 nuevo con `id`, agregado al índice) y de 1 a 3 preguntas frecuentes, visibles y en `FAQPage` con el mismo texto. Todo sale de datos ya publicados en la propia página o en `/planes`: no hay cifras, plazos ni casos nuevos. `/radiografia-corporal-chile` suma 3 preguntas con cifras de la ENS 2016–2017 y la OMS ya citadas. Se agregan enlaces cruzados dentro de cada grupo (criolipólisis, grasa y contorno, guatita de delantal, piel). `dateModified` (schema), `article:modified_time` y la fecha visible quedan iguales a 2026-09-30 (`scripts/schema_dates.py`). En `/guatita-de-delantal-auge-y-ley` se corrigió voseo («necesitás», «elegís», «pagás», etc.) a tuteo, también en el `HowTo`. `public/llms-full.txt` suma la sección 13 con las respuestas nuevas. No se tocan title, H1, H2/H3 existentes, canonical, robots ni hreflang. Semrush no estuvo disponible: las preguntas se eligieron por lo que ya dice cada página.
+
 ## 2026-09-30 — Botón fijo móvil con letras blancas
 
 El botón del sticky móvil («Agenda tu Evaluación P3 · $27.990») pasa a letra e ícono blancos sobre `#0B8076` (contraste 4,8:1; blanco sobre el turquesa anterior daba 2,6:1). 47 páginas. No cambia umbral de aparición, ocultamiento en footer ni tracking.
