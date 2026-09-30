@@ -1,3 +1,7 @@
+## 2026-09-30 — Botón fijo móvil con letras blancas
+
+El botón del sticky móvil («Agenda tu Evaluación P3 · $27.990») pasa a letra e ícono blancos sobre `#0B8076` (contraste 4,8:1; blanco sobre el turquesa anterior daba 2,6:1). 47 páginas. No cambia umbral de aparición, ocultamiento en footer ni tracking.
+
 ## 2026-09-30 — UI/UX de lectura en 16 artículos (móvil y escritorio)
 
 Sin desbordes horizontales a 390 px: las tablas van en `.table-scroll` (scroll lateral con sombra de borde, enfocable con teclado). Índice «En esta guía» (`<details>`, abierto en escritorio ≥900 px) con `id` en los H2 existentes, sin cambiar su texto; AUGE y `/radiografia-corporal-chile` conservan su `page-toc`. Barra de progreso de lectura de 3 px, texto de 17 px en móvil, medida de ~68ch en escritorio y objetivos táctiles ≥44 px. Evento `toc_click` (ya documentado) mide el índice. Se quita del párrafo de `/criolipolisis` la frase interna «Este resumen no dispara Lead.». `public/js/articulo.js` + `public/css/articulo.css`.
