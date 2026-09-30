@@ -374,9 +374,7 @@ table caption{caption-side:bottom;padding:10px 4px 0;font-size:13px;color:var(--
     <div class="inline-cta" data-section="inline_cta">
       <h3>Si quieres una lectura de <em>tu</em> caso</h3>
       <p>La ENS describe población. En sala medimos contorno, flacidez y grasa localizada sobre tu cuerpo, no sobre una mediana de 2017. Evaluación P3: 45 minutos · $27.990 · Vitacura, Concón y Los Ángeles.</p>
-      <div class="inline-cta-buttons">
-        <a class="btn-primary" href="/evaluacion?origen=radiografia&amp;bloque=inline" onclick="hebeTrack('evaluacion_click',{location:'inline_cta_radiografia'})">Agendar Evaluación P3</a>
-      </div>
+      <div class="agenda-widget" data-origen="radiografia" data-location="inline_cta_radiografia" data-sidebar="1"><a class="agenda-fallback" href="/evaluacion?origen=radiografia&amp;bloque=widget" onclick="hebeTrack('evaluacion_click',{location:'inline_cta_radiografia'})">Agenda tu Evaluación P3 · $27.990</a></div>
     </div>
 
     <h2 id="faq">Preguntas frecuentes</h2>
@@ -498,5 +496,6 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
   });
 });
 </script>
+<script src="/js/agenda-widget.js" defer></script>
 </body>
 </html>

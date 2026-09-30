@@ -29,6 +29,8 @@ Los webhooks P3 de `/evaluacion` (`lead-capture`, `link-pago-evaluacion`, `pago-
 |---|---|---|---|
 | `page_view` / `gtm.js` | Carga de página | GA4 `G-NGW7210RXB`, GTM, Pixel PageView | Por path (R2) |
 | `evaluacion_click` | Clic a `/evaluacion` (nav, hero, inline, sticky, triage ruta 2, tarjeta de plan, etc.) | GA4 + Meta `trackCustom` | `location` distingue el bloque. En AUGE: `triage_ruta2`, `inline_cta_alternativas`, `cta_banner_final` + `?origen=auge_ley` (KPI R4, comentar no tablero) |
+| `widget_interact` | Widget de agendamiento de los artículos: elegir sede, día u horario | GA4 + Meta `trackCustom` | `{location, origen, paso: sede\|dia\|horario, sede}`. No crea Lead |
+| `evaluacion_prefill` | Llegada a `/evaluacion` con `?sede=&dia=&franja=` del widget | GA4 | `{bloque, origen, horario}` + `salud_orden`. Si hay horario, el paso se registra como `evaluacion_paso` con `prefill:true` |
 | `whatsapp_click` | Clic a `wa.me` / WhatsApp **real** | GA4 + Meta `Contact` | No usarlo en botones que van a `/evaluacion` |
 | `contacto_whatsapp_2026` | Listener global en `a[href*="whatsapp"], a[href*="wa.me"]` | `dataLayer` → GTM | `click_location` usa `section` / `[data-section]` / `main`; si no hay, cae en `'home'` |
 | `cta_click` | CTAs que no son evaluación (planes, resultados, banner criolipólisis) | GA4 + Meta `trackCustom` | p. ej. `location:'criolipolisis_bottom'` |

@@ -74,6 +74,16 @@
       "meta": "trackCustom only — never Lead",
       "required": ["tipo"],
       "example": {"event": "lead_magnet_submit", "tipo": "checklist_ley_sain"}
+    },
+    {
+      "event": "widget_interact",
+      "required": ["location", "origen", "paso"],
+      "example": {"event": "widget_interact", "location": "inline_cta_resultados", "origen": "criolipolisis", "paso": "sede", "sede": "vitacura"}
+    },
+    {
+      "event": "evaluacion_prefill",
+      "required": ["bloque"],
+      "example": {"event": "evaluacion_prefill", "bloque": "widget", "origen": "criolipolisis", "horario": true, "salud_orden": "despues"}
     }
   ],
   "lead_only_on_evaluacion_submit": true,
