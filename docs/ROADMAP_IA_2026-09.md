@@ -758,6 +758,65 @@ wc -l docs/SHARE_OF_MODEL_MES0.md
 
 **Reversión.** Revertir solo el md.
 
+### Bloque 7 — Q4 SEO/AEO (oct–dic 2026)
+
+Origen: «Plan SEO/AEO Hebe y Clinera — Q4 2026» (Semrush 30-sep-2026). Hebe atrae tráfico por síntomas («celulitis» pos. 5, «criolipolisis» pos. 3, «guatita de delantal» pos. 1) pero casi no capta intención de compra. Estas tareas no tocan `/criolipolisis` ni `/guatita-de-delantal-auge-y-ley` (B3–B5).
+
+#### Q4.1 · Prioridad P1 · Esfuerzo S · Depende de — · Archivos `public/celulitis.html`
+
+**Prompt para la IA.** `/celulitis` es el artículo con más búsquedas (12,1K) y el único de los cuatro principales sin widget de agendamiento. Reemplaza el CTA medio por el `agenda-widget` (patrón de `public/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/index.html`), carga `/js/agenda-widget.js`, agrega fecha visible de actualización. Sin `Lead`, sin superar 5 puntos de conversión.
+
+**Criterio de aceptación.** El widget carga, el `<article>` tiene ≤ 5 puntos de conversión, `dateModified` coincide con la fecha visible.
+
+**Verificación (comando).**
+
+```bash
+grep -c 'agenda-widget' public/celulitis.html
+grep -n "'Lead'" public/celulitis.html || echo 'sin Lead OK'
+```
+
+**Reversión.** `git revert`.
+
+#### Q4.2 · Prioridad P1 · Esfuerzo S · Depende de — · Archivos `public/celulitis.html`, `public/como-quitar-la-celulitis-de-las-piernas-y-gluteos-rapido/index.html`, `public/que-es-la-guatita-de-delantal-y-como-puedes-solucionarlo/index.html`, `public/planes/index.html`
+
+**Prompt para la IA.** Las IA extraen la apertura de la página. Donde la cápsula de respuesta supera las 60 palabras, **agrega** una línea «Respuesta corta» de 40 a 60 palabras sin borrar texto existente ni tocar el H1.
+
+**Criterio de aceptación.** Cada página trae una respuesta corta de 40–60 palabras y el word count de la página solo sube.
+
+**Verificación (comando).** Contar palabras de `.answer-short` en cada archivo; JSON-LD parsea (comando de línea base).
+
+**Reversión.** `git revert`.
+
+#### Q4.3 · Prioridad P2 · Esfuerzo S · Depende de — · Archivos `public/clinica-estetica-corporal-concon.html`, `public/clinica-estetica-corporal-los-angeles.html`
+
+**Prompt para la IA.** Concón y Los Ángeles son `LocalBusiness` simple; Vitacura es `["LocalBusiness","MedicalBusiness"]`. Alinear el tipo sin redefinir `@id` ni tocar dirección, horario o código postal (inconsistencias de NAP pendientes de datos oficiales de Ricardo).
+
+**Criterio de aceptación.** Ambos nodos con el mismo `@type` que Vitacura; JSON-LD parsea; `@id` sin cambios.
+
+**Verificación (comando).** Comando de línea base de JSON-LD.
+
+**Reversión.** `git revert`.
+
+#### Q4.4 · Prioridad P2 · Esfuerzo S · Depende de — · Archivos `public/planes/index.html`
+
+**Prompt para la IA.** `/planes` tiene `OfferCatalog` con 4 `Offer` y ningún `Service`. Agrega un nodo `Service` por plan con `@id` propio que referencie al `Offer` por `@id`, sin duplicar nodos y con los precios ya publicados.
+
+**Criterio de aceptación.** Un nodo completo por `@id`; JSON-LD parsea.
+
+**Verificación (comando).** Comando de línea base de JSON-LD y chequeo de `@id` duplicados.
+
+**Reversión.** `git revert`.
+
+#### Q4.5 · Prioridad P3 · Esfuerzo S · Depende de Ricardo · Archivos `docs/SHARE_OF_MODEL_2026-10.md`
+
+**Prompt para la IA.** Plantilla de línea base de menciones en IA (ChatGPT, Gemini, Modo IA) con las 15 preguntas de `SHARE_OF_MODEL_MES0.md` más las del plan Q4. Los resultados los anota Ricardo; no se inventan.
+
+**Criterio de aceptación.** Archivo creado con preguntas y columnas vacías.
+
+**Verificación (comando).** `wc -l docs/SHARE_OF_MODEL_2026-10.md`
+
+**Reversión.** Borrar el archivo.
+
 ---
 
 ## 4. Solo Ricardo
