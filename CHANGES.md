@@ -1,3 +1,7 @@
+## 2026-10-01 — Plantilla de línea base de menciones en IA (Q4.5)
+
+Nuevo `docs/SHARE_OF_MODEL_2026-10.md`: las 15 preguntas del mes 0 más 3 del plan Q4 (cuánto dura el tratamiento de celulitis, si sirve la criolipolisis para la guatita y cuántas sesiones se necesitan), con columnas para ChatGPT, Gemini y Modo IA. Va en blanco: los resultados los anota quien mida. Es solo documentación; no cambia el sitio.
+
 ## 2026-10-01 — Service por plan en /planes (Q4.4)
 
 El schema de `/planes` suma un nodo `Service` por plan (Zero Celulitis, Zero Flacidez, Zero Rollito y Trifásico), cada uno con su `@id`, enlazado a su `Offer` y a la organización de Método Hebe. Los cuatro `Offer` reciben `@id` propio para poder referenciarlos. Precios y descripciones son los ya publicados; no se agregó ningún dato nuevo.
