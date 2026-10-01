@@ -88,9 +88,9 @@ Evaluación clínica P3 de **45 minutos**, valor **$27.990 CLP** (no reembolsabl
 Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin reventa ni alquiler. Operadas por técnicos certificados en cada sede. Inventario principal (fotos de equipo 2026-09):
 
 ### 5.1 iZED / iZED PRO
-- **Tipo**: Criolipólisis / contorno corporal
+- **Tipo**: Ultrasonido focalizado de 60 joules por disparo / contorno corporal
 - **Indicación principal**: Grasa localizada resistente
-- **Mecanismo**: Apoptosis controlada del adipocito; eliminación progresiva por vía linfática
+- **Mecanismo**: Cavitación acústica y apoptosis del adipocito; eliminación progresiva por vía linfática
 - **Origen**: Seúl, Corea del Sur
 
 ### 5.2 Corpo Hera (flagship)
@@ -111,10 +111,14 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **Mecanismo**: Frío controlado con múltiples aplicadores simultáneos
 
 ### 5.5 Skin Wave Max
-- **Tipo**: HIFU + radiofrecuencia corporal
+- **Tipo**: HIFU corporal (ultrasonido focalizado de alta intensidad)
 - **Indicación principal**: Flacidez y tensado post-reducción
 - **Mecanismo**: Reactiva colágeno y elastina; define contorno cutáneo
 - **Duración sesión**: 60 min
+
+### 5.5b Dodo Wave
+- **Tipo**: Endospheres (rodillos con infrarrojo)
+- **Indicación principal**: Celulitis, según tipo y grado definido en la Evaluación P3
 
 ### 5.6 Cuorpo Lift
 - **Tipo**: HIFU corporal focalizado
@@ -435,13 +439,13 @@ Aún no. Las 3 sedes operan en Chile: Vitacura, Concón y Los Ángeles. Está en
 
 
 
-## 13. Respuestas directas de los artículos (actualizado el 30 de septiembre de 2026)
+## 13. Respuestas directas de los artículos (actualizado el 1 de octubre de 2026)
 
-Cada respuesta sale de la página indicada; no hay cifras que no estén publicadas allí.
+Cada respuesta sale de la página indicada.
 
 ### https://www.metodohebe.cl/criolipolisis
 - **¿Cuánto dura una sesión de criolipólisis?** La aplicación dura entre 35 y 60 minutos por zona. Al retirar el aplicador se masajea la zona, y en los días siguientes pueden aparecer entumecimiento, eritema u hormigueo que ceden solos.
-- **¿Quién no es candidato a criolipólisis?** Quien tiene IMC mayor a 35, exceso de piel colgante o busca bajar de peso, y quien presenta una contraindicación formal: embarazo o lactancia, hernias activas en la zona, trastornos de sensibilidad al frío, piel con lesiones activas o anticoagulación no controlada. En la Evaluación P3 lo revisamos y, si corresponde, derivamos.
+- **¿Quién no es candidato a criolipólisis?** Quien tiene exceso de piel colgante o busca bajar de peso, y quien presenta una contraindicación formal: embarazo o lactancia, hernias activas en la zona, trastornos de sensibilidad al frío, piel con lesiones activas o anticoagulación no controlada. En la Evaluación P3 lo revisamos y, si corresponde, derivamos.
 - **¿Qué zonas se pueden tratar con criolipólisis?** Abdomen y flancos, brazos, papada, muslos y cartucheras, y espalda (rollitos del sostén). No trata la grasa visceral ni la flacidez cutánea significativa.
 
 ### https://www.metodohebe.cl/blog/ized-ultrasonido-corporal
@@ -451,6 +455,9 @@ Cada respuesta sale de la página indicada; no hay cifras que no estén publicad
 ### https://www.metodohebe.cl/lipoescultura-sin-cirugia
 - **¿La lipoescultura sin cirugía reemplaza a la liposucción?** No siempre. Es la opción proporcional en grasa localizada moderada con piel que aún responde. Si hay volúmenes muy altos o exceso cutáneo marcado, la cirugía sigue siendo la indicación correcta.
 - **¿Cuánto cuesta la lipoescultura sin cirugía en Chile?** Según la comparativa de esta guía, un protocolo completo se mueve entre $800.000 y $2.500.000. En Método Hebe, el Plan Zero Rollito para grasa localizada incluye 12 sesiones por $1.799.990, con la evaluación P3 previa incluida.
+- **¿Qué aparatología utilizan en la lipoescultura sin cirugía?** Además de criolipólisis, radiofrecuencia fraccionada, HIEMS y Corpo Hera, el protocolo incluye según el caso Dodo Wave (tecnología Endospheres, con rodillos e infrarrojo), iZED (ultrasonido focalizado de 60 joules) y Skin Wave Max (HIFU).
+- **¿Pueden atenderme si tengo un IMC alto?** Depende de tus expectativas. Hay pacientes con IMC de 38 a 42, pero siempre se trabaja primero el perfil metabólico y después se define el protocolo en la Evaluación P3. El peso y el IMC no son el mejor indicador: lo más útil es analizar la composición corporal.
+- **¿Funciona igual a cualquier edad?** No. La edad y la calidad de la piel influyen: en personas mayores la respuesta es menor, y hay pacientes de 80 años que ven poco o nada de resultados. Se evalúa en la Evaluación P3 antes de indicar un plan.
 
 ### https://www.metodohebe.cl/blog/grasa-localizada-eliminar-sin-cirugia
 - **¿Por qué no baja la grasa de una zona aunque haga dieta y ejercicio?** Porque en esas zonas los receptores alfa-2 capturan la adrenalina antes que los beta-3 y bloquean la liberación de grasa, y además llega menos sangre. Es un bloqueo bioquímico y vascular, no falta de disciplina.
@@ -491,7 +498,7 @@ Cada respuesta sale de la página indicada; no hay cifras que no estén publicad
 
 ### https://www.metodohebe.cl/blog/celulitis-tipos-grados-tratamientos
 - **¿Cuál es el tipo de celulitis más común?** La celulitis mixta, que combina retención de líquidos y fibrosis en distintas zonas del cuerpo y suele aparecer en muslos internos, abdomen bajo y brazos.
-- **¿Qué tecnología sirve para la celulitis fibrosa?** Las que actúan sobre las bandas fibrosas, como las ondas de choque focalizadas (Dodo Wave) o la radiofrecuencia profunda. Se aplican en sesiones de 15 a 20 minutos por zona y no requieren recuperación.
+- **¿Qué tecnología sirve para la celulitis fibrosa?** Se requieren tecnologías que actúen sobre las bandas fibrosas, como la radiofrecuencia profunda. En Método Hebe la elección entre Dodo Wave (Endospheres), Corpo-Hera y Carbox CK se define en la Evaluación P3 según el tipo y el grado de celulitis.
 
 ### https://www.metodohebe.cl/blog/flacidez-corporal-tratamiento
 - **¿Cuál es la diferencia entre flacidez cutánea y muscular?** La cutánea es la pérdida de colágeno y elastina de la piel, que se ve fina y sin tensión. La muscular es la pérdida de tono y volumen del músculo, que se siente blando. Suelen coexistir, por eso el abordaje más efectivo trabaja ambas.
