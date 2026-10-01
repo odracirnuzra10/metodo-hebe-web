@@ -16,7 +16,7 @@ El schema de las páginas de Concón y Los Ángeles pasa de `LocalBusiness` a `[
 
 ## 2026-10-01 — Respuesta corta de 40–60 palabras en 4 páginas (Q4.2)
 
-`/celulitis`, el artículo de celulitis en piernas y glúteos, el de la guatita de delantal y `/planes` abren con una «Respuesta corta» de 48 a 53 palabras que responde la pregunta y dice qué se define en la Evaluación P3 (45 minutos, $27.990). Es lo que extraen ChatGPT, Gemini y Modo IA. Se agrega arriba del resumen existente, que queda intacto; no cambia ningún H1 ni la FAQ. Fechas visibles y `dateModified` alineados al 1 de octubre.
+`/celulitis`, el artículo de celulitis en piernas y glúteos, el de la guatita de delantal y `/planes` abren con una «Respuesta corta» de 48 a 57 palabras que responde la pregunta y dice qué se define en la Evaluación P3 (45 minutos, $27.990). Es lo que extraen ChatGPT, Gemini y Modo IA. Se agrega arriba del resumen existente, que queda intacto; no cambia ningún H1 ni la FAQ. Fechas visibles y `dateModified` alineados al 1 de octubre.
 
 ## 2026-10-01 — /celulitis con widget de agendamiento (Q4.1)
 
