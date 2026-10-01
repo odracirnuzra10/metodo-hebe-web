@@ -4,9 +4,9 @@
 (function () {
   'use strict';
   var SEDES = [
-    { slug: 'vitacura', nombre: 'Vitacura', dir: 'Los Abedules 3085' },
-    { slug: 'concon', nombre: 'Concón', dir: 'Las Pelargonias 842' },
-    { slug: 'losangeles', nombre: 'Los Ángeles', dir: 'Av. Gabriela Mistral 269' }
+    { slug: 'vitacura', nombre: 'Vitacura', dir: 'Los Abedules 3085, Locales 105 y 106' },
+    { slug: 'concon', nombre: 'Concón', dir: 'Las Pelargonias 842, piso 11' },
+    { slug: 'losangeles', nombre: 'Los Ángeles', dir: 'Avenida Gabriela Mistral 269' }
   ];
   var FRANJAS = [
     { n: 1, label: 'Mañana', hora: '10:00 – 13:00' },

@@ -2,9 +2,9 @@
 > Clínica de estética corporal metabólica en Chile. Sedes en Vitacura, Concón y Los Ángeles. Trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía.
 
 ## Sedes
-- Vitacura: Los Abedules 3085, Of. 105, Edificio Nueva Vitacura, Vitacura. Lun–Vie 10:00–20:00, Sáb 09:00–19:00. WhatsApp +56 9 6322 2683.
-- Concón: Las Pelargonias 842, Oficina 1114, piso 11, Concón. Lun–Vie 10:00–20:00, Sáb 09:00–19:00. WhatsApp +56 9 6322 2683.
-- Los Ángeles: Av. Gabriela Mistral 269, Los Ángeles. Lun–Vie 10:00–20:00, Sáb 09:00–19:00. WhatsApp +56 9 6322 2683.
+- Vitacura: Los Abedules 3085, Locales 105 y 106, Edificio Nueva Vitacura, Vitacura. Lun–Vie 10:00–20:00, Sáb 09:00–19:00. WhatsApp +56 9 6322 2683.
+- Concón: Las Pelargonias 842, piso 11, Concón. Lun–Vie 10:00–20:00, Sáb 09:00–19:00. WhatsApp +56 9 6322 2683.
+- Los Ángeles: Avenida Gabriela Mistral 269, Los Ángeles. Lun–Vie 10:00–20:00, Sáb 09:00–19:00. WhatsApp +56 9 6322 2683.
 
 ## Tratamientos
 - Lipoescultura sin cirugía: protocolo combinado para reducción de grasa localizada. https://www.metodohebe.cl/lipoescultura-sin-cirugia
@@ -34,4 +34,4 @@ Método Hebe es parte de OACG Group junto a Protocolo Lumina (estética facial) 
 - ¿Puedo reagendar por WhatsApp? Sí, responde al mensaje de confirmación y el asistente te ofrece horarios disponibles.
 - ¿Quién responde el WhatsApp de la clínica? Un asistente de IA atiende consultas de horarios y ubicación. Las evaluaciones y dudas clínicas las responde el equipo.
 - ¿Guardan mi ficha entre sesiones? Sí, cada sesión queda registrada con notas del profesional y evolución del tratamiento.
-- ¿Dónde están las sedes? Vitacura: Los Abedules 3085, Of. 105, Edificio Nueva Vitacura. Concón: Las Pelargonias 842, Oficina 1114, piso 11. Los Ángeles: Av. Gabriela Mistral 269. Horario: lun–vie 10:00–20:00, sáb 09:00–19:00.
+- ¿Dónde están las sedes? Vitacura: Los Abedules 3085, Locales 105 y 106, Edificio Nueva Vitacura. Concón: Las Pelargonias 842, piso 11. Los Ángeles: Avenida Gabriela Mistral 269. Horario: lun–vie 10:00–20:00, sáb 09:00–19:00.

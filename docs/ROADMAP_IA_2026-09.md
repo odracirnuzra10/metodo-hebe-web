@@ -817,6 +817,20 @@ grep -n "'Lead'" public/celulitis.html || echo 'sin Lead OK'
 
 **Reversión.** Borrar el archivo.
 
+#### Q4.6 · Prioridad P1 · Esfuerzo S · Depende de — · Archivos `public/**` (27 archivos con direcciones)
+
+**Prompt para la IA.** Unificar el nombre, la dirección y el teléfono de las sedes (NAP): sitio, `llms*.txt`, schema y widget deben decir lo mismo que la ficha de Google Business Profile. Direcciones oficiales (Ricardo, 1-oct-2026): Vitacura «Los Abedules 3085, Locales 105 y 106»; Los Ángeles «Avenida Gabriela Mistral 269»; Concón «Las Pelargonias 842, piso 11». Horarios y códigos postales siguen pendientes.
+
+**Criterio de aceptación.** Ninguna página usa «Of. 105», «Oficina 105», «local 105-106», «Of. 1114» ni «Oficina 1114»; JSON-LD parsea.
+
+**Verificación (comando).**
+
+```bash
+grep -rnE "Of\. 105|Oficina 105|oficina 105|local 105|Of\. 1114|Oficina 1114|Av\. G" public || echo 'sin formas viejas'
+```
+
+**Reversión.** `git revert`.
+
 ---
 
 ## 4. Solo Ricardo

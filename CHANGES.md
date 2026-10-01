@@ -1,3 +1,7 @@
+## 2026-10-01 — Direcciones oficiales de las tres sedes (Q4.6)
+
+Las direcciones quedan iguales en las 27 páginas, `llms*.txt`, schema y widget de agendamiento: Vitacura «Los Abedules 3085, Locales 105 y 106», Los Ángeles «Avenida Gabriela Mistral 269» y Concón «Las Pelargonias 842, piso 11». Desaparecen «Of. 105», «Oficina 105», «local 105-106» y «Oficina 1114». Se mantiene la mención del Edificio Nueva Vitacura donde ya estaba. Horarios y códigos postales no se tocaron: siguen pendientes del dato oficial.
+
 ## 2026-10-01 — Plantilla de línea base de menciones en IA (Q4.5)
 
 Nuevo `docs/SHARE_OF_MODEL_2026-10.md`: las 15 preguntas del mes 0 más 3 del plan Q4 (cuánto dura el tratamiento de celulitis, si sirve la criolipolisis para la guatita y cuántas sesiones se necesitan), con columnas para ChatGPT, Gemini y Modo IA. Va en blanco: los resultados los anota quien mida. Es solo documentación; no cambia el sitio.
