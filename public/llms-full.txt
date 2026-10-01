@@ -146,7 +146,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 ### 5.10 Laser Trimax (y más en sala)
 - **Tipo**: Láser lipolítico
 - **Indicación principal**: Movilización de lípidos / apoyo a grasa localizada
-- **Nota**: Complementa protocolos de contorno junto con iZED, Crio CK y Skin Wave Max. Adipolite ya no forma parte del inventario en sala.
+- **Nota**: Complementa protocolos de contorno junto con iZED, Crio CK y Skin Wave Max. Adipolite sigue en sala y se usa en el Plan Zero Rollito.
 
 ### Certificaciones aplicables
 - KFDA Korea Food & Drug (2018)
@@ -181,7 +181,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **Precio**: $1.799.990 CLP
 - **Sesiones**: 12
 - **Duración**: 3 meses
-- **Equipos**: iZED + Skin Wave Max + Crio CK
+- **Equipos**: iZED (ultrasonido focalizado) + Skin Wave Max (HIFU) + Crio CK + Adipolite
 - **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
 - **Para quién**: Personas con grasa localizada persistente resistente a dieta y ejercicio
 - **URL**: https://metodohebe.cl/planes/#grasa
@@ -194,6 +194,10 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **Incluye**: Coaching nutricional, Reto Hebe 21 días, BIA quincenal
 - **Para quién**: Tonificación integral y cambio metabólico profundo
 - **URL**: https://metodohebe.cl/planes/#tonificacion
+
+### Método Hebe 3D
+- **Precio**: $2.677.990 CLP
+- **Nota**: plan distinto del Plan Trifásico; las sesiones y los equipos se definen en la Evaluación P3.
 
 ### Evaluación P3
 - **Precio**: $27.990 CLP (se descuenta del plan si se contrata; no reembolsable)
