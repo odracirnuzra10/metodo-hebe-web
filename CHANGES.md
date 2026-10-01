@@ -1,3 +1,7 @@
+## 2026-10-01 — Respuesta corta de 40–60 palabras en 4 páginas (Q4.2)
+
+`/celulitis`, el artículo de celulitis en piernas y glúteos, el de la guatita de delantal y `/planes` abren con una «Respuesta corta» de 48 a 53 palabras que responde la pregunta y dice qué se define en la Evaluación P3 (45 minutos, $27.990). Es lo que extraen ChatGPT, Gemini y Modo IA. Se agrega arriba del resumen existente, que queda intacto; no cambia ningún H1 ni la FAQ. Fechas visibles y `dateModified` alineados al 1 de octubre.
+
 ## 2026-10-01 — /celulitis con widget de agendamiento (Q4.1)
 
 El CTA medio de `/celulitis` pasa de dos botones a que la paciente elija sede, día y franja en el mismo lugar (`agenda-widget`, el mismo de los otros tres artículos principales) y sigue a `/evaluacion` con la selección cargada. Sin JS queda el enlace «Agenda tu Evaluación P3». No dispara `Lead`; el `<article>` mantiene 3 puntos de conversión (tope 5). Se agrega «Actualizado: octubre 2026» visible y `dateModified` del schema alineado.
