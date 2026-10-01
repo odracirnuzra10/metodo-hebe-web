@@ -1,3 +1,26 @@
+## 2026-10-01 — Direcciones oficiales de las tres sedes (Q4.6)
+
+Las direcciones quedan iguales en las 27 páginas, `llms*.txt`, schema y widget de agendamiento: Vitacura «Los Abedules 3085, Locales 105 y 106», Los Ángeles «Avenida Gabriela Mistral 269» y Concón «Las Pelargonias 842, piso 11». Desaparecen «Of. 105», «Oficina 105», «local 105-106» y «Oficina 1114». Se mantiene la mención del Edificio Nueva Vitacura donde ya estaba. Horarios y códigos postales no se tocaron: siguen pendientes del dato oficial.
+
+## 2026-10-01 — Plantilla de línea base de menciones en IA (Q4.5)
+
+Nuevo `docs/SHARE_OF_MODEL_2026-10.md`: las 15 preguntas del mes 0 más 3 del plan Q4 (cuánto dura el tratamiento de celulitis, si sirve la criolipolisis para la guatita y cuántas sesiones se necesitan), con columnas para ChatGPT, Gemini y Modo IA. Va en blanco: los resultados los anota quien mida. Es solo documentación; no cambia el sitio.
+
+## 2026-10-01 — Service por plan en /planes (Q4.4)
+
+El schema de `/planes` suma un nodo `Service` por plan (Zero Celulitis, Zero Flacidez, Zero Rollito y Trifásico), cada uno con su `@id`, enlazado a su `Offer` y a la organización de Método Hebe. Los cuatro `Offer` reciben `@id` propio para poder referenciarlos. Precios y descripciones son los ya publicados; no se agregó ningún dato nuevo.
+
+## 2026-10-01 — Sedes de Concón y Los Ángeles como MedicalBusiness (Q4.3)
+
+El schema de las páginas de Concón y Los Ángeles pasa de `LocalBusiness` a `["LocalBusiness","MedicalBusiness"]`, igual que Vitacura. Los `@id` no cambian. No se tocó dirección, horario ni código postal: esos datos tienen diferencias entre páginas y esperan el dato oficial.
+
+## 2026-10-01 — Respuesta corta de 40–60 palabras en 4 páginas (Q4.2)
+
+`/celulitis`, el artículo de celulitis en piernas y glúteos, el de la guatita de delantal y `/planes` abren con una «Respuesta corta» de 48 a 57 palabras que responde la pregunta y dice qué se define en la Evaluación P3 (45 minutos, $27.990). Es lo que extraen ChatGPT, Gemini y Modo IA. Se agrega arriba del resumen existente, que queda intacto; no cambia ningún H1 ni la FAQ. Fechas visibles y `dateModified` alineados al 1 de octubre.
+
+## 2026-10-01 — /celulitis con widget de agendamiento (Q4.1)
+
+El CTA medio de `/celulitis` pasa de dos botones a que la paciente elija sede, día y franja en el mismo lugar (`agenda-widget`, el mismo de los otros tres artículos principales) y sigue a `/evaluacion` con la selección cargada. Sin JS queda el enlace «Agenda tu Evaluación P3». No dispara `Lead`; el `<article>` mantiene 3 puntos de conversión (tope 5). Se agrega «Actualizado: octubre 2026» visible y `dateModified` del schema alineado.
 ## 2026-10-01 — Correcciones clínicas (feedback de Tamara)
 
 iZED pasa a describirse como ultrasonido focalizado de 60 joules (antes figuraba como criolipólisis en `/planes`, `/criolipolisis` y `/criolipolisis-vs-ized`). Skin Wave Max pasa a HIFU donde decía radiofrecuencia (flacidez, estrías, lipo 3D, planes, el método, qué diferencia a Método Hebe, sede Los Ángeles). Dodo Wave es Endospheres (rodillos con infrarrojo), no ondas de choque (`/blog/celulitis-tipos-grados-tratamientos`). El IMC deja de ser el criterio principal: se indica por composición corporal (bioimpedancia) y medición de pliegues, y se atienden también pacientes con IMC alto trabajando primero el perfil metabólico; en `/criolipolisis` se agrega un recuadro sin borrar texto. Se publica que la edad influye en la respuesta (hay pacientes de 80 años que ven poco o nada). Permanencia: los adipocitos destruidos mueren, pero puede formarse grasa en adipocitos nuevos, incluso en la misma zona; por eso el acompañamiento integral es clave. Recuperación de la liposucción: 1 a 3 meses aproximadamente. Se quita «sin licencia médica». `/lipoescultura-sin-cirugia` suma aparatología (Dodo Wave, iZED, Skin Wave Max) y la sección de personalización por tipo de grasa. No se tocan AUGE ni radiografía (criterios oficiales). Pendiente: las páginas por sede (`grasa-localizada-*`), `/grasa-localizada` y `/opciones-para-eliminar-la-grasa-localizada` siguen llamando «criolipólisis iZED» en título, H1 y texto; requieren reescritura aparte.

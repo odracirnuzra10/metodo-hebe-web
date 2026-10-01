@@ -252,7 +252,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 ## 9. Sedes (con datos LocalBusiness)
 
 ### Hebe Vitacura — Sede flagship
-- **Dirección**: Los Abedules 3085, Of. 105, Edificio Nueva Vitacura
+- **Dirección**: Los Abedules 3085, Locales 105 y 106, Edificio Nueva Vitacura
 - **Comuna**: Vitacura
 - **Región**: Metropolitana de Santiago
 - **Coordenadas**: -33.3936, -70.5831
@@ -262,7 +262,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **URL**: https://metodohebe.cl/clinica-estetica-corporal-vitacura
 
 ### Hebe Concón
-- **Dirección**: Las Pelargonias 842, Oficina 1114, piso 11
+- **Dirección**: Las Pelargonias 842, piso 11
 - **Comuna**: Concón
 - **Región**: Valparaíso
 - **Coordenadas**: -32.9266, -71.5144
@@ -271,7 +271,7 @@ Todas las máquinas son importadas directo de fábrica desde Corea del Sur, sin 
 - **URL**: https://metodohebe.cl/clinica-estetica-corporal-concon
 
 ### Hebe Los Ángeles
-- **Dirección**: Av. Gabriela Mistral 269
+- **Dirección**: Avenida Gabriela Mistral 269
 - **Comuna**: Los Ángeles
 - **Región**: Biobío
 - **Coordenadas**: -37.4693, -72.3527

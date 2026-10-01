@@ -267,9 +267,9 @@
       <fieldset class="q-card">
         <span class="q-num">Pregunta 7 de 8</span>
         <legend>¿Dónde te acomoda la Evaluación P3?</legend>
-        <label class="opt"><input type="radio" name="q7" value="vitacura" required> Vitacura — Los Abedules 3085</label>
-        <label class="opt"><input type="radio" name="q7" value="concon"> Concón — Las Pelargonias 842</label>
-        <label class="opt"><input type="radio" name="q7" value="losangeles"> Los Ángeles — Av. Gabriela Mistral 269</label>
+        <label class="opt"><input type="radio" name="q7" value="vitacura" required> Vitacura — Los Abedules 3085, Locales 105 y 106</label>
+        <label class="opt"><input type="radio" name="q7" value="concon"> Concón — Las Pelargonias 842, piso 11</label>
+        <label class="opt"><input type="radio" name="q7" value="losangeles"> Los Ángeles — Avenida Gabriela Mistral 269</label>
         <label class="opt"><input type="radio" name="q7" value="luego"> Aún no elijo sede</label>
       </fieldset>
 
@@ -381,7 +381,7 @@
     return 'informar';
   }
   function sedeLabel(v){
-    return {vitacura:'Vitacura — Los Abedules 3085',concon:'Concón — Las Pelargonias 842',losangeles:'Los Ángeles — Av. Gabriela Mistral 269',luego:'Aún no elige sede'}[v]||'';
+    return {vitacura:'Vitacura — Los Abedules 3085, Locales 105 y 106',concon:'Concón — Las Pelargonias 842, piso 11',losangeles:'Los Ángeles — Avenida Gabriela Mistral 269',luego:'Aún no elige sede'}[v]||'';
   }
   function render(code, a, track){
     var box=document.getElementById('quizResult');
