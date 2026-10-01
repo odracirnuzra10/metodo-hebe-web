@@ -1,3 +1,7 @@
+## 2026-10-01 — Service por plan en /planes (Q4.4)
+
+El schema de `/planes` suma un nodo `Service` por plan (Zero Celulitis, Zero Flacidez, Zero Rollito y Trifásico), cada uno con su `@id`, enlazado a su `Offer` y a la organización de Método Hebe. Los cuatro `Offer` reciben `@id` propio para poder referenciarlos. Precios y descripciones son los ya publicados; no se agregó ningún dato nuevo.
+
 ## 2026-10-01 — Sedes de Concón y Los Ángeles como MedicalBusiness (Q4.3)
 
 El schema de las páginas de Concón y Los Ángeles pasa de `LocalBusiness` a `["LocalBusiness","MedicalBusiness"]`, igual que Vitacura. Los `@id` no cambian. No se tocó dirección, horario ni código postal: esos datos tienen diferencias entre páginas y esperan el dato oficial.

@@ -111,11 +111,51 @@
       "name": "Planes Corporales Método Hebe",
       "provider": {"@type":"Organization","name":"Método Hebe","url":"https://www.metodohebe.cl"},
       "itemListElement": [
-        {"@type":"Offer","name":"Plan Zero Celulitis","price":"1977990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#celulitis","description":"20 sesiones en 5 meses. Corpo Hera, Carbox CK y presoterapia para tratar celulitis (metabolismo + circulación + tejido subcutáneo)."},
-        {"@type":"Offer","name":"Plan Zero Flacidez","price":"1977990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#flacidez","description":"20 sesiones en 5 meses. SkinWave MAX, Corpo Lift y RF fraccionada para estimular colágeno y reafirmar tejido."},
-        {"@type":"Offer","name":"Plan Zero Rollito","price":"1799990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#grasa","description":"12 sesiones en 3 meses. iZED (criolipólisis), SkinWave MAX y Adipolite para grasa localizada."},
-        {"@type":"Offer","name":"Plan Trifásico","price":"1977990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#tonificacion","description":"24 sesiones en 6 meses. Sculpt DD, iZED, Carbox CK y SkinWave MAX para tonificación y recomposición."}
+        {"@type":"Offer","@id":"https://www.metodohebe.cl/planes#offer-celulitis","name":"Plan Zero Celulitis","price":"1977990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#celulitis","description":"20 sesiones en 5 meses. Corpo Hera, Carbox CK y presoterapia para tratar celulitis (metabolismo + circulación + tejido subcutáneo)."},
+        {"@type":"Offer","@id":"https://www.metodohebe.cl/planes#offer-flacidez","name":"Plan Zero Flacidez","price":"1977990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#flacidez","description":"20 sesiones en 5 meses. SkinWave MAX, Corpo Lift y RF fraccionada para estimular colágeno y reafirmar tejido."},
+        {"@type":"Offer","@id":"https://www.metodohebe.cl/planes#offer-grasa","name":"Plan Zero Rollito","price":"1799990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#grasa","description":"12 sesiones en 3 meses. iZED (criolipólisis), SkinWave MAX y Adipolite para grasa localizada."},
+        {"@type":"Offer","@id":"https://www.metodohebe.cl/planes#offer-tonificacion","name":"Plan Trifásico","price":"1977990","priceCurrency":"CLP","priceValidUntil":"2026-12-31","availability":"https://schema.org/InStock","url":"https://www.metodohebe.cl/planes#tonificacion","description":"24 sesiones en 6 meses. Sculpt DD, iZED, Carbox CK y SkinWave MAX para tonificación y recomposición."}
       ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.metodohebe.cl/planes#service-celulitis",
+      "name": "Plan Zero Celulitis",
+      "serviceType": "Tratamiento estético corporal",
+      "description": "20 sesiones en 5 meses. Corpo Hera, Carbox CK y presoterapia para tratar celulitis (metabolismo + circulación + tejido subcutáneo).",
+      "url": "https://www.metodohebe.cl/planes#celulitis",
+      "provider": {"@id": "https://www.metodohebe.cl/#organization"},
+      "offers": {"@id": "https://www.metodohebe.cl/planes#offer-celulitis"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.metodohebe.cl/planes#service-flacidez",
+      "name": "Plan Zero Flacidez",
+      "serviceType": "Tratamiento estético corporal",
+      "description": "20 sesiones en 5 meses. SkinWave MAX, Corpo Lift y RF fraccionada para estimular colágeno y reafirmar tejido.",
+      "url": "https://www.metodohebe.cl/planes#flacidez",
+      "provider": {"@id": "https://www.metodohebe.cl/#organization"},
+      "offers": {"@id": "https://www.metodohebe.cl/planes#offer-flacidez"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.metodohebe.cl/planes#service-grasa",
+      "name": "Plan Zero Rollito",
+      "serviceType": "Tratamiento estético corporal",
+      "description": "12 sesiones en 3 meses. iZED (criolipólisis), SkinWave MAX y Adipolite para grasa localizada.",
+      "url": "https://www.metodohebe.cl/planes#grasa",
+      "provider": {"@id": "https://www.metodohebe.cl/#organization"},
+      "offers": {"@id": "https://www.metodohebe.cl/planes#offer-grasa"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.metodohebe.cl/planes#service-tonificacion",
+      "name": "Plan Trifásico",
+      "serviceType": "Tratamiento estético corporal",
+      "description": "24 sesiones en 6 meses. Sculpt DD, iZED, Carbox CK y SkinWave MAX para tonificación y recomposición.",
+      "url": "https://www.metodohebe.cl/planes#tonificacion",
+      "provider": {"@id": "https://www.metodohebe.cl/#organization"},
+      "offers": {"@id": "https://www.metodohebe.cl/planes#offer-tonificacion"}
     },
     {
       "@type": "FAQPage",
