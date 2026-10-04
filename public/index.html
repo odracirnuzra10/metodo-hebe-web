@@ -367,6 +367,10 @@ img{max-width:100%;display:block}
 .topbar-r{display:flex;gap:18px;flex-wrap:wrap}
 .topbar-r a{transition:color .2s}
 .topbar-r a:hover{color:var(--cyan)}
+.cyber-bar{background:linear-gradient(90deg,var(--cyan-dd),var(--cyan));color:#fff;text-align:center;font-size:13px;font-weight:600;padding:9px 16px;letter-spacing:.01em}
+.cyber-bar a{color:#fff;text-decoration:none;display:block}
+.cyber-bar a:hover{text-decoration:underline}
+.cyber-bar b{letter-spacing:.08em;text-transform:uppercase}
 
 /* ── NAV ── */
 .nav{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 0;position:sticky;top:0;z-index:60;transition:box-shadow .3s}
@@ -677,6 +681,11 @@ img{max-width:100%;display:block}
 
 <!-- ═══ GTM NOSCRIPT ═══ -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZC56NQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ═══ CYBER HEBE ═══ -->
+<div class="cyber-bar" role="region" aria-label="Promoción Cyber Hebe">
+  <a href="/planes" onclick="hebeTrack('promo_click',{location:'cyber_bar',promo:'cyber_hebe'})">⚡ <b>Cyber Hebe</b> · Hasta 30% de descuento en planes seleccionados · Ver planes →</a>
+</div>
 
 <!-- ═══ TOPBAR ═══ -->
 <div class="topbar">

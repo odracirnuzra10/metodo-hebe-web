@@ -1,3 +1,7 @@
+## 2026-10-04 — Franja Cyber Hebe en el home
+
+Franja superior en `/` con «Cyber Hebe · Hasta 30% de descuento en planes seleccionados», enlazada a `/planes` y con evento `promo_click`. No dispara `Lead`.
+
 ## 2026-10-01 — Precios y planes unificados, P3 de 45 min y páginas de grasa localizada
 
 Planes al precio más alto, según `/planes`: Zero Celulitis y Zero Flacidez $1.977.990 (20 sesiones en 5 meses), Zero Rollito $1.799.990 (12 en 3 meses), Trifásico $1.977.990 (24 en 6 meses). Método Hebe 3D ($2.677.990) queda como plan aparte, sin sesiones publicadas. Se reemplazan los catálogos viejos (Starter/Optimal/Intensive/Premium en Concón y Los Ángeles; $1.697.990 y $1.297.990 en Vitacura; Inicial/Full/Premium en el blog de lipo 3D; $1.697.990 en guatita y estrías). La Evaluación P3 dura 45 minutos (corregido «60-90 min» en el blog de guatita). `/grasa-localizada-vitacura|concon|los-angeles`, `/grasa-localizada` y `/opciones-para-eliminar-la-grasa-localizada`: iZED pasa a ultrasonido focalizado y SkinWave MAX a HIFU (title, meta, schema, cuerpo y FAQ); se quitan las contraindicaciones por frío y las cifras de criolipólisis (20-27% por sesión, 30%); se suma medición de pliegues, composición corporal, edad y permanencia; recuperación de la liposucción 1 a 3 meses. Adipolite sigue en sala (`llms-full.txt` corregido). Pendiente: `/criolipolisis-los-angeles` sigue describiendo iZED como frío.
