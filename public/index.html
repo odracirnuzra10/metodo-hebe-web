@@ -367,16 +367,9 @@ img{max-width:100%;display:block}
 .topbar-r{display:flex;gap:18px;flex-wrap:wrap}
 .topbar-r a{transition:color .2s}
 .topbar-r a:hover{color:var(--cyan)}
-.cyber-bar{position:sticky;top:0;z-index:70;background:var(--ink);color:#fff;text-align:center;font-size:17px;font-weight:700;padding:16px 16px;border-bottom:3px solid var(--cyan)}
-.cyber-bar a{color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 14px}
-.cyber-bar a:hover .cb-go{text-decoration:underline}
-.cyber-bar .cb-tag{background:linear-gradient(90deg,var(--cyan-d),var(--cyan));color:#fff;font-size:15px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
-.cyber-bar .cb-off{color:var(--cyan)}
-.cyber-bar .cb-go{font-size:13px;font-weight:600;color:#9CB8B8}
-@media(max-width:640px){.cyber-bar{font-size:15px;padding:13px 12px}.cyber-bar .cb-tag{font-size:13px}}
 
 /* ── NAV ── */
-.nav{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 0;position:sticky;top:var(--cyber-h,0px);z-index:60;transition:box-shadow .3s}
+.nav{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 0;position:sticky;top:0;z-index:60;transition:box-shadow .3s}
 .nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.05)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-logo{display:flex;align-items:center}
@@ -684,12 +677,6 @@ img{max-width:100%;display:block}
 
 <!-- ═══ GTM NOSCRIPT ═══ -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZC56NQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<!-- ═══ CYBER HEBE ═══ -->
-<div class="cyber-bar" role="region" aria-label="Promoción Cyber Hebe">
-  <a href="/planes" onclick="hebeTrack('promo_click',{location:'cyber_bar',promo:'cyber_hebe'})"><span class="cb-tag">⚡ Cyber Hebe</span><span>Hasta <span class="cb-off">30% de descuento</span> en planes seleccionados</span><span class="cb-go">Hasta el miércoles 7 de octubre →</span></a>
-</div>
-<script>(function(){var b=document.querySelector('.cyber-bar');if(!b)return;if(Date.now()>Date.parse('2026-10-07T23:59:59-03:00')){b.remove();return;}function s(){document.documentElement.style.setProperty('--cyber-h',b.offsetHeight+'px');}s();window.addEventListener('resize',s);})();</script>
 
 <!-- ═══ TOPBAR ═══ -->
 <div class="topbar">

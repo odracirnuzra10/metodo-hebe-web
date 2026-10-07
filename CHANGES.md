@@ -1,6 +1,6 @@
-## 2026-10-04 — Franja Cyber Hebe en el home
+## 2026-10-07 — Se retira la franja Cyber Hebe del home
 
-Franja superior en `/` con «Cyber Hebe · Hasta 30% de descuento en planes seleccionados», visible hasta el miércoles 7 de octubre (se oculta sola), enlazada a `/planes` y con evento `promo_click`. No dispara `Lead`.
+Termina el Cyber: se elimina la franja superior de `/` y su estilo. Menú vuelve a `top:0`.
 
 ## 2026-10-01 — Precios y planes unificados, P3 de 45 min y páginas de grasa localizada
 
