@@ -1,3 +1,7 @@
+## 2026-10-12 — Política de privacidad en `/politica-de-privacidad`
+
+Página nueva con la política de privacidad de Método Hebe: responsable (MÉTODO HEBE SpA), datos que se recopilan, finalidades, datos de salud, proveedores, cookies y píxeles, plazos, derechos (Ley 19.628 y Ley 21.719) y contacto. Hace falta para publicar la app de Google que envía el correo de pago aprobado. No se agregó al `sitemap.xml` ni al footer del resto de las páginas.
+
 ## 2026-10-07 — Se retira la franja Cyber Hebe del home
 
 Termina el Cyber: se elimina la franja superior de `/` y su estilo. Menú vuelve a `top:0`.
