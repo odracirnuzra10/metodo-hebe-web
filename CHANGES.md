@@ -1,6 +1,6 @@
 ## 2026-10-14 — Versión de revisión del home en `/home2`
 
-Página nueva `/home2` con el rediseño premium del home (Fraunces + Manrope, paleta hueso y grafito, sin precios). Va con `noindex, nofollow` (meta y header en `vercel.json`), canonical a `https://www.metodohebe.cl/`, fuera del sitemap y con el mismo GTM y los mismos eventos de conversión del home. La sección de equipo clínico queda oculta hasta tener 3 personas con foto. `/` no cambia.
+Página nueva `/home2` con el diseño premium (Fraunces + Manrope, hueso y grafito) y todo el contenido del home actual: topbar, hero con testimonio, «Revisado por» y «Actualización septiembre 2026», 3 fases, 9 equipos, 4 planes con precio, 4 resultados, 3 testimonios, 10 preguntas frecuentes, 3 sedes con Maps, cierre y footer (sin links visibles a llms.txt, llms-full.txt y robots.txt). Va con `noindex, nofollow` (meta y header en `vercel.json`), canonical a `https://www.metodohebe.cl/`, fuera del sitemap y con el mismo GTM y los mismos eventos. Sin JSON-LD propio hasta el paso 2. La sección de equipo clínico sigue oculta hasta tener 3 personas con foto. `/` no cambia.
 
 ## 2026-10-12 — Política de privacidad en `/politica-de-privacidad`
 
