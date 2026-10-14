@@ -434,6 +434,14 @@ img{max-width:100%;display:block}
 .fase-c .tag{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--cyan-dd);font-weight:600;margin-bottom:10px}
 .fase-c h3{font-size:21px;font-weight:600;line-height:1.25;margin-bottom:10px;letter-spacing:-.01em}
 .fase-c p{font-size:14.5px;color:var(--ink-3);line-height:1.65}
+.medico{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(24px,5vw,64px);align-items:center;max-width:880px;margin:0 auto}
+.medico-photo{aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--line)}
+.medico-photo img{width:100%;height:100%;object-fit:cover}
+.medico .eyebrow{margin-bottom:12px}
+.medico h3{font-size:clamp(26px,3vw,34px);font-weight:600;line-height:1.15;letter-spacing:-.02em;margin-bottom:6px}
+.medico .cargo{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--cyan-dd);margin-bottom:14px}
+.medico p{font-size:15.5px;color:var(--ink-3);line-height:1.65}
+@media(max-width:720px){.medico{grid-template-columns:1fr;max-width:420px}}
 
 /* ── TECNOLOGÍA dark (simple) ── */
 .tech-section{background:var(--ink);color:var(--paper)}
@@ -895,6 +903,26 @@ img{max-width:100%;display:block}
       <div class="tech-meta">
         <b>También en sala: Laser Trimax y más</b>
         <span>Combinamos la tecnología que tu cuerpo necesita en cada sesión, según tu perfil metabólico.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EQUIPO MÉDICO ═══ -->
+<section class="section" id="equipo-medico">
+  <div class="wrap">
+    <div class="medico">
+      <div class="medico-photo">
+        <picture>
+          <source type="image/webp" srcset="/img/eugenio-castro.webp">
+          <img src="/img/eugenio-castro.jpg" alt="Dr. Eugenio Castro, médico estético de Método Hebe en Vitacura y Concón" width="800" height="1000" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div>
+        <div class="eyebrow">Equipo médico</div>
+        <h3>Dr. Eugenio Castro</h3>
+        <div class="cargo">Médico estético</div>
+        <p>Atiende en las sedes de Vitacura y Concón.</p>
       </div>
     </div>
   </div>

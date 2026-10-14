@@ -1,3 +1,7 @@
+## 2026-10-14 — Foto del Dr. Eugenio Castro en el home
+
+Sección «Equipo médico» en `/` (entre Tecnología y Planes): foto, nombre, cargo (médico estético) y sedes (Vitacura y Concón). Foto nueva en `public/img/eugenio-castro.webp` y `.jpg`. Se descarta `/home2`: no se publica. Pendiente: `/equipo`, `llms.txt` y el schema siguen diciendo que Ricardo es la única persona nombrada.
+
 ## 2026-10-12 — Política de privacidad en `/politica-de-privacidad`
 
 Página nueva con la política de privacidad de Método Hebe: responsable (MÉTODO HEBE SpA), datos que se recopilan, finalidades, datos de salud, proveedores, cookies y píxeles, plazos, derechos (Ley 19.628 y Ley 21.719) y contacto. Hace falta para publicar la app de Google que envía el correo de pago aprobado. No se agregó al `sitemap.xml` ni al footer del resto de las páginas.
