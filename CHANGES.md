@@ -1,3 +1,7 @@
+## 2026-10-14 — Versión de revisión del home en `/home2`
+
+Página nueva `/home2` con el rediseño premium del home (Fraunces + Manrope, paleta hueso y grafito, sin precios). Va con `noindex, nofollow` (meta y header en `vercel.json`), canonical a `https://www.metodohebe.cl/`, fuera del sitemap y con el mismo GTM y los mismos eventos de conversión del home. La sección de equipo clínico queda oculta hasta tener 3 personas con foto. `/` no cambia.
+
 ## 2026-10-12 — Política de privacidad en `/politica-de-privacidad`
 
 Página nueva con la política de privacidad de Método Hebe: responsable (MÉTODO HEBE SpA), datos que se recopilan, finalidades, datos de salud, proveedores, cookies y píxeles, plazos, derechos (Ley 19.628 y Ley 21.719) y contacto. Hace falta para publicar la app de Google que envía el correo de pago aprobado. No se agregó al `sitemap.xml` ni al footer del resto de las páginas.
