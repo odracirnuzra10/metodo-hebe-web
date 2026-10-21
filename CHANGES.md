@@ -1,3 +1,7 @@
+## 2026-10-21 — /evaluacion: marquesina sin precios de tratamientos
+
+La franja «Los más solicitados» de `/evaluacion` (móvil y escritorio) deja de mostrar $2.677.990, $1.977.990 y $1.799.990: el wizard no da precio de tratamiento antes del diagnóstico. Quedan solo los nombres de los planes. El valor de la evaluación P3 ($27.990) sigue igual.
+
 ## 2026-10-21 — /evaluacion: celular, correo, envío confirmado y botón atrás
 
 Celular: escribir o pegar el número con 56 o +56 ya no lo convierte en otro número (antes 56912345678 se enviaba como +56 9 5691 2345); se quita el `maxlength` que cortaba el pegado. Correo: exige usuario@dominio.tld y sugiere la corrección de dominios mal escritos (gmial.com, hotmial.com…). Envío: espera la respuesta de `lead-capture` (8 s y un reintento); el Lead de Meta y la pantalla de pago salen solo si n8n confirma; si no, se muestra la salida por WhatsApp con los datos prellenados y se registra `lead_envio_fallido`. El botón atrás del navegador retrocede un paso del wizard en vez de salir de la página.
