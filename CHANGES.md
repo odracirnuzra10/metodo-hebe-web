@@ -1,3 +1,7 @@
+## 2026-10-21 — GA4: un solo page_view por página
+
+Las 66 páginas que cargan GTM también traían `gtag('config','G-NGW7210RXB',{send_page_view:true})` directo, y GA4 recibía dos `page_view` por carga. Pasa a `send_page_view:false`: el page_view lo manda solo GTM y `gtag()` sigue enviando `hebeTrack` y el embudo de `/evaluacion`. `/blog/estrias-tratamiento-sin-cirugia` no carga GTM y queda con `true`. Desde este deploy las vistas de página en GA4 bajan a la mitad: es la corrección, no una caída de tráfico.
+
 ## 2026-10-21 — /evaluacion: marquesina sin precios de tratamientos
 
 La franja «Los más solicitados» de `/evaluacion` (móvil y escritorio) deja de mostrar $2.677.990, $1.977.990 y $1.799.990: el wizard no da precio de tratamiento antes del diagnóstico. Quedan solo los nombres de los planes. El valor de la evaluación P3 ($27.990) sigue igual.
