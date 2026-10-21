@@ -856,6 +856,23 @@
       pointer-events: none;
     }
 
+    .wa-btn[aria-busy="true"] {
+      opacity: 0.7;
+      cursor: progress;
+    }
+
+    .correo-sugerencia {
+      background: none;
+      border: 0;
+      padding: 0.6rem 0;
+      min-height: 44px;
+      font: inherit;
+      color: #0b6e65;
+      text-decoration: underline;
+      text-align: left;
+      cursor: pointer;
+    }
+
     .wa-btn.enabled {
       background: var(--wa-green);
       box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
@@ -2315,7 +2332,7 @@
 
           <!-- STEP 3 -->
           <div class="step" id="step3" aria-expanded="false">
-            <button type="button" class="back-btn" onclick="goToStep(2.5, &#39;back&#39;)">
+            <button type="button" class="back-btn" onclick="retroceder(3)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
@@ -2334,13 +2351,13 @@
               <label for="inputCelular">Celular</label>
               <div class="phone-input-wrap" id="inputCelularWrap">
                 <span class="phone-prefix" aria-hidden="true">+56</span>
-                <input class="phone-field" type="tel" id="inputCelular" name="celular" placeholder="9 XXXX XXXX" autocomplete="tel-national" inputmode="numeric" maxlength="11" required aria-required="true" aria-describedby="errorCelular" oninput="formatPhone(this)" onkeydown="formKeyDown(event, &#39;inputCorreo&#39;)">
+                <input class="phone-field" type="tel" id="inputCelular" name="celular" placeholder="9 XXXX XXXX" autocomplete="tel-national" inputmode="numeric" required aria-required="true" aria-describedby="errorCelular" oninput="formatPhone(this)" onkeydown="formKeyDown(event, &#39;inputCorreo&#39;)">
               </div>
               <p class="field-error" id="errorCelular" role="alert"></p>
             </div>
             <div class="form-group">
               <label for="inputCorreo">Correo</label>
-              <input type="email" id="inputCorreo" name="correo" placeholder="tu@correo.com" autocomplete="email" required aria-required="true" aria-describedby="errorCorreo" oninput="if(this.value.includes('@')) clearFieldError('inputCorreo')" onkeydown="formKeyDown(event, null)">
+              <input type="email" id="inputCorreo" name="correo" onblur="sugerirCorreo()" placeholder="tu@correo.com" autocomplete="email" required aria-required="true" aria-describedby="errorCorreo" oninput="if(this.value.includes('@')) clearFieldError('inputCorreo')" onkeydown="formKeyDown(event, null)">
               <p class="field-error" id="errorCorreo" role="alert"></p>
             </div>
             <button type="submit" class="wa-btn enabled" id="btnSubmit">
@@ -2392,8 +2409,8 @@
         <polyline points="20 6 9 17 4 12"></polyline>
       </svg>
     </div>
-    <h2>¡RESERVA RECIBIDA!</h2>
-    <p>Confirma tu hora por WhatsApp para asegurar tu evaluación P3.</p>
+    <h2 id="successTitulo">¡RESERVA RECIBIDA!</h2>
+    <p id="successTexto">Confirma tu hora por WhatsApp para asegurar tu evaluación P3.</p>
     <a class="success-wa-btn" id="successWaLink" href="#" target="_blank">
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
@@ -2433,11 +2450,42 @@
       if (sig === 2 && horarioPrefill) {
         horarioPrefill = false;
         evalTrack('evaluacion_paso', { paso: NOMBRE_PASO[2], prefill: true });
+        // Deja el horario en el historial para que atrás vuelva a él y no a la sede.
+        try { history.pushState({ wizardPaso: 2 }, ''); } catch (e) {}
         sig = ORDEN_PASOS[ORDEN_PASOS.indexOf(2) + 1];
       }
       goToStep(sig, 'forward');
     };
-    const retroceder = desde => goToStep(ORDEN_PASOS[ORDEN_PASOS.indexOf(desde) - 1], 'back');
+    // Volver: si el paso actual está en el historial, retrocede con él para que el botón
+    // atrás del navegador y el de la página digan lo mismo.
+    const retroceder = desde => {
+      if (history.state && history.state.wizardPaso === desde && !history.state.overlay) { history.back(); return; }
+      goToStep(ORDEN_PASOS[ORDEN_PASOS.indexOf(desde) - 1], 'back');
+    };
+
+    // Botón atrás del navegador (y gesto atrás de Instagram): retrocede un paso en vez de
+    // salir de la página y perder lo elegido. Cada avance deja una entrada en el historial.
+    let pasoMax = 0;
+    try { history.replaceState({ wizardPaso: 1 }, ''); } catch (e) {}
+    window.addEventListener('popstate', e => {
+      const st = e.state || {};
+      const p = st.wizardPaso;
+      if (p == null) return;
+      const pago = document.getElementById('payOverlay');
+      if (st.overlay) {
+        if (window.__leadEnviado) pago.classList.add('visible');
+        return;
+      }
+      pago.classList.remove('visible');
+      document.getElementById('successOverlay').classList.remove('visible');
+      const pos = ORDEN_PASOS.indexOf(p);
+      // Tras recargar, el historial puede apuntar a pasos que esta carga no alcanzó.
+      if (pos < 0 || pos > pasoMax) {
+        try { history.replaceState({ wizardPaso: currentStep }, ''); } catch (err) {}
+        return;
+      }
+      if (p !== currentStep) goToStep(p, pos < ORDEN_PASOS.indexOf(currentStep) ? 'back' : 'forward', true);
+    });
 
     // Embudo del wizard: un evento por paso alcanzado + las respuestas de salud,
     // siempre con la variante, para comparar dónde se cae la gente en cada orden.
@@ -2480,7 +2528,7 @@
 
     const idDePaso = n => (n === 2.5 ? 'stepPrecio' : n === 2.2 ? 'stepSalud' : 'step' + n);
 
-    function goToStep(num, direction) {
+    function goToStep(num, direction, desdeHistorial) {
       if (num === 2) horarioPrefill = false;
       window.scrollTo({ top: 0, behavior: 'smooth' });
       const hdr = document.querySelector('.mobile-header-wrapper');
@@ -2512,8 +2560,15 @@
         next.classList.add('active'); next.style.transform = ''; next.style.opacity = '';
       });
       currentStep = num;
+      pasoMax = Math.max(pasoMax, ORDEN_PASOS.indexOf(num));
+      if (!desdeHistorial) {
+        try {
+          if (direction === 'forward') history.pushState({ wizardPaso: num }, '');
+          else history.replaceState({ wizardPaso: num }, '');
+        } catch (e) {}
+      }
       updateProgress();
-      if (direction === 'forward') evalTrack('evaluacion_paso', { paso: NOMBRE_PASO[num] });
+      if (direction === 'forward' && !desdeHistorial) evalTrack('evaluacion_paso', { paso: NOMBRE_PASO[num] });
       ajustarAltoVisor(next);
       setTimeout(() => prev.classList.remove('exit-left', 'exit-right'), 500);
     }
@@ -2684,12 +2739,28 @@
       return salud === 'ninguna' ? 'Sin contraindicaciones declaradas' : '';
     }
 
+    // Dígitos tal como se escriben: hasta 9, o hasta 11 si parte con el código de país 56.
+    function phoneRawDigits(rawValue) {
+      const digits = rawValue.replace(/\D/g, '');
+      return digits.substring(0, digits.startsWith('56') ? 11 : 9);
+    }
+
+    // Celular de 9 dígitos para validar y enviar. El 56 se quita solo cuando viene completo
+    // (56 + 9 dígitos que parten en 9). Antes se anteponía un 9 en cada tecla y quien
+    // escribía 56912345678 terminaba enviando +56 9 5691 2345 sin ningún aviso.
     function normalizePhoneDigits(rawValue) {
-      let digits = rawValue.replace(/\D/g, '');
-      if (digits.startsWith('569')) digits = digits.substring(2);
-      else if (digits.startsWith('56')) digits = digits.substring(2);
-      if (digits && !digits.startsWith('9')) digits = '9' + digits;
-      return digits.substring(0, 9);
+      let digits = phoneRawDigits(rawValue);
+      if (digits.length === 11 && digits.startsWith('569')) digits = digits.substring(2);
+      else if (digits.length === 8 && !digits.startsWith('9')) digits = '9' + digits;
+      return digits;
+    }
+
+    // Formato mientras se escribe: 56 9 1234 5678, 9 1234 5678 o, sin el 9, 1234 5678.
+    function formatTypedPhone(rawValue) {
+      const raw = phoneRawDigits(rawValue);
+      if (raw.startsWith('56') && raw.length > 8) return '56 ' + formatLocalPhoneValue(raw.substring(2));
+      if (!raw.startsWith('9')) return raw.length > 4 ? raw.substring(0, 4) + ' ' + raw.substring(4) : raw;
+      return formatLocalPhoneValue(raw);
     }
 
     function formatLocalPhoneValue(digits) {
@@ -2710,9 +2781,36 @@
     }
 
     function formatPhone(input) {
+      input.value = formatTypedPhone(input.value);
       const digits = normalizePhoneDigits(input.value);
-      input.value = formatLocalPhoneValue(digits);
       if (digits.length === 9 && digits.startsWith('9')) clearFieldError('inputCelular');
+    }
+
+    // Correo: usuario@dominio.tld, sin espacios. Antes bastaba con un "@".
+    const CORREO_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    // Dominios mal escritos frecuentes: se sugiere la corrección, sin bloquear el envío.
+    const CORREO_TYPOS = {
+      'gmial.com': 'gmail.com', 'gmai.com': 'gmail.com', 'gamil.com': 'gmail.com', 'gmal.com': 'gmail.com',
+      'gmail.co': 'gmail.com', 'gmail.con': 'gmail.com', 'gmail.cl': 'gmail.com',
+      'hotmial.com': 'hotmail.com', 'hotmal.com': 'hotmail.com', 'hotmail.co': 'hotmail.com', 'hotmail.con': 'hotmail.com',
+      'outlok.com': 'outlook.com', 'outlook.co': 'outlook.com', 'iclod.com': 'icloud.com', 'icloud.co': 'icloud.com',
+      'yaho.com': 'yahoo.com'
+    };
+    function sugerirCorreo() {
+      const input = document.getElementById('inputCorreo');
+      const err = document.getElementById('errorCorreo');
+      const c = input.value.trim();
+      const at = c.lastIndexOf('@');
+      const bueno = at > 0 ? CORREO_TYPOS[c.slice(at + 1).toLowerCase()] : '';
+      if (!bueno || input.classList.contains('error')) return;
+      const sugerido = c.slice(0, at + 1) + bueno;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'correo-sugerencia';
+      btn.textContent = '¿Quisiste decir ' + sugerido + '? Toca para corregir.';
+      btn.onclick = () => { input.value = sugerido; err.textContent = ''; input.focus(); };
+      err.textContent = '';
+      err.appendChild(btn);
     }
 
     function formKeyDown(e, nextId) {
@@ -2750,7 +2848,7 @@
       const checks = [
         { id: 'inputNombre', invalid: !nombre, message: 'Escribe tu nombre completo.' },
         { id: 'inputCelular', invalid: celularDigits.length !== 9 || !celularDigits.startsWith('9'), message: 'Ingresa un celular chileno de 9 dígitos (9 XXXX XXXX).' },
-        { id: 'inputCorreo', invalid: !correo || !correo.includes('@'), message: 'Ingresa un correo válido.' }
+        { id: 'inputCorreo', invalid: !CORREO_RE.test(correo), message: 'Ingresa un correo válido (ej.: nombre@gmail.com).' }
       ];
       checks.forEach(({ id, invalid, message }) => {
         if (invalid) {
@@ -2765,7 +2863,7 @@
 
       // Guard anti doble-envío: un solo lead por sesión
       if (window.__leadSubmitted) {
-        document.getElementById('payOverlay').classList.add('visible');
+        if (window.__leadEnviado) mostrarPago();
         return false;
       }
       window.__leadSubmitted = true;
@@ -2777,22 +2875,6 @@
       // Generar event_id único ANTES de disparar
       const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
       window.__currentEventId = eventId;  // ✅ expuesto para GTM wrapper (dedup unificado)
-
-      // Meta Pixel — Lead (paso 3 → confirmación)
-      if (typeof fbq === 'function') {
-        // ✅ eventID va en el 2do argumento (options), NO dentro de custom data
-        fbq('track', 'Lead', {
-          content_name: 'Método Hebe',
-          content_category: 'corporal',
-          clinica: 'hebe',
-          sede: sedeKey,
-          // Valor real del lead en pesos, la misma moneda que el Purchase de $27.990:
-          // así Meta optimiza sobre plata comparable y no sobre un número inventado.
-          value: 2000,
-          currency: 'CLP',
-          content_ids: ['hebe_evaluacion_p3']
-        }, { eventID: eventId });
-      }
 
       // ===== Meta CAPI — capturar fbc / fbp / user agent =====
       // Lee cookie _fbp y _fbc (Meta Pixel las crea auto si hay fbclid en URL)
@@ -2861,11 +2943,7 @@
         salud_revisar: salud === 'medicamento',
         ab_salud_orden: saludOrden
       };
-      fetch('https://n8n.oacg.cl/webhook/lead-capture', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).catch(e => console.error(e));
+      const envio = enviarLead(payload);
 
       // Reutilizado por handlePayClick() para no releer el DOM al confirmar el pago
       window.__leadPayload = payload;
@@ -2898,14 +2976,85 @@
           })
           .catch(() => { if (intento < 3) setTimeout(() => pedirLinkDePago(intento + 1), 2500); });
       }
-      setTimeout(() => pedirLinkDePago(1), 1500);
 
       const waMsg = encodeURIComponent('Quiero confirmar mi evaluación P3 en Método Hebe\n\nNombre: ' + nombre + '\nCelular: ' + celular + '\nCorreo: ' + correo + '\nSede: ' + sede + '\nDisponibilidad: ' + disp);
       const waLink = document.getElementById('successWaLink');
       waLink.href = 'https://wa.me/56963222683?text=' + waMsg;
-      // Pantalla de costo de la evaluación; el pago es la ruta principal y WhatsApp la alternativa
-      document.getElementById('payOverlay').classList.add('visible');
+      // Espera la confirmación de n8n. Si llega: Lead + pantalla de pago. Si no: la paciente
+      // sigue por WhatsApp con sus datos prellenados y el lead no se pierde en silencio.
+      const btn = document.getElementById('btnSubmit');
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      envio.then(ok => {
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+        if (ok) {
+          window.__leadEnviado = true;
+          // Meta Pixel — Lead: solo cuando n8n confirmó que recibió los datos
+          if (typeof fbq === 'function') {
+            // ✅ eventID va en el 2do argumento (options), NO dentro de custom data
+            fbq('track', 'Lead', {
+              content_name: 'Método Hebe',
+              content_category: 'corporal',
+              clinica: 'hebe',
+              sede: sedeKey,
+              // Valor real del lead en pesos, la misma moneda que el Purchase de $27.990:
+              // así Meta optimiza sobre plata comparable y no sobre un número inventado.
+              value: 2000,
+              currency: 'CLP',
+              content_ids: ['hebe_evaluacion_p3']
+            }, { eventID: eventId });
+          }
+          setTimeout(() => pedirLinkDePago(1), 1500);
+          mostrarPago();
+        } else {
+          window.__leadSubmitted = false;
+          evalTrack('lead_envio_fallido', { sede: sedeKey });
+          mostrarFalloEnvio();
+        }
+      });
       return true;
+    }
+
+    // Envía el lead a n8n y confirma que llegó (respuesta 2xx). Reintenta una vez si falla
+    // o tarda más de 8 s.
+    function enviarLead(payload) {
+      const body = JSON.stringify(payload);
+      const intento = () => {
+        const ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+        const timer = ctrl ? setTimeout(() => ctrl.abort(), 8000) : null;
+        return fetch('https://n8n.oacg.cl/webhook/lead-capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body,
+          signal: ctrl ? ctrl.signal : undefined
+        })
+          .then(r => r.ok)
+          .catch(e => { console.error(e); return false; })
+          .then(ok => { clearTimeout(timer); return ok; });
+      };
+      return intento().then(ok => ok || new Promise(r => setTimeout(r, 1500)).then(intento));
+    }
+
+    // Pantalla de costo de la evaluación; el pago es la ruta principal y WhatsApp la alternativa.
+    // Deja una entrada en el historial para que atrás la cierre y vuelva al formulario.
+    function mostrarPago() {
+      document.getElementById('payOverlay').classList.add('visible');
+      if (!(history.state && history.state.overlay)) {
+        try { history.pushState({ wizardPaso: 3, overlay: true }, ''); } catch (e) {}
+      }
+    }
+
+    const EXITO_TITULO = document.getElementById('successTitulo').textContent;
+    const EXITO_TEXTO = document.getElementById('successTexto').textContent;
+
+    function mostrarFalloEnvio() {
+      document.getElementById('successTitulo').textContent = 'NO PUDIMOS GUARDAR TUS DATOS';
+      document.getElementById('successTexto').textContent = 'Hubo un problema de conexión. Envíanos tus datos por WhatsApp y te agendamos igual.';
+      document.getElementById('successOverlay').classList.add('visible');
+      if (!(history.state && history.state.overlay)) {
+        try { history.pushState({ wizardPaso: 3, overlay: true }, ''); } catch (e) {}
+      }
     }
 
     // Clic en "Confirmar y pagar": marca al lead como calificado y deja que el href
@@ -2974,6 +3123,8 @@
 
     // Ruta alternativa: quien prefiere coordinar por WhatsApp en vez de pagar en línea
     function skipToWhatsapp() {
+      document.getElementById('successTitulo').textContent = EXITO_TITULO;
+      document.getElementById('successTexto').textContent = EXITO_TEXTO;
       document.getElementById('payOverlay').classList.remove('visible');
       document.getElementById('successOverlay').classList.add('visible');
       document.getElementById('successWaLink').click();
