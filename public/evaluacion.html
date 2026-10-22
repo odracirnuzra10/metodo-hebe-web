@@ -3020,6 +3020,8 @@
               content_ids: ['hebe_evaluacion_p3']
             }, { eventID: eventId });
           }
+          // GA4: el envío del formulario, en el mismo momento que el Lead de Meta.
+          evalTrack('generate_lead', { sede: sedeKey, value: 2000, currency: 'CLP', event_id: eventId });
           setTimeout(() => pedirLinkDePago(1), 1500);
           mostrarPago();
         } else {
