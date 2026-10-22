@@ -21,6 +21,16 @@ No copies políticas de Protocolo Lumina (`lumina-web`). Este documento es autó
 - Fechas de schema: `scripts/schema_dates.py` / `public/js/format-schema-date.js`. Offset `America/Santiago`.
 - No toques HTML/CSS/JS/`vercel.json` si la tarea es de docs. No toques docs ajenos si la tarea es de código, salvo un renglón en `CHANGES.md` cuando el cambio es de producto.
 
+## /evaluacion: breve, sin scroll
+
+El wizard de `/evaluacion` existe para que la paciente deje sus datos sin hacer scroll. **Nunca extiendas el largo vertical de la página ni de sus pasos.** Vale para cualquier cambio de UX/UI, SEO o AEO.
+
+- Nada de bloques nuevos dentro, entre o debajo de los pasos: FAQ, testimonios, texto SEO/AEO, banners, carruseles ni secciones de confianza.
+- El contenido nuevo va en otra página (`/preguntas-frecuentes`, `/clinica/*`, fichas de sede) y se enlaza desde allá, no desde el wizard.
+- `/evaluacion` no lleva `FAQPage`. Las preguntas de agendamiento viven en `/preguntas-frecuentes`.
+- Un paso o un campo nuevo en el formulario necesita aprobación explícita de Ricardo.
+- Antes de abrir un PR que toque `/evaluacion`, compara en 375x667 contra `main`: ningún paso puede quedar más alto.
+
 ## B15 / Lead
 
 `window.hebeTrack` mapea Meta `{'whatsapp_click':'Contact'}`. Los CTA **no** disparan `Lead`. El único `Lead` legítimo es el submit del wizard en `public/evaluacion.html`.
@@ -60,7 +70,7 @@ print('fails', fails)
 PY
 
 # Sitemap
-test "$(grep -c '<loc>' public/sitemap.xml)" -eq 62 && echo 'sitemap loc=62 OK'
+test "$(grep -c '<loc>' public/sitemap.xml)" -eq 64 && echo 'sitemap loc=64 OK'
 ```
 
 No implementes H1–H5 desde este archivo. Tomá un ID del roadmap y abrí un PR.
