@@ -1,3 +1,7 @@
+## 2026-10-22 — Preguntas frecuentes de agendamiento: salen de /evaluacion y pasan a /preguntas-frecuentes
+
+`/evaluacion` deja de mostrar el bloque «Preguntas frecuentes de agendamiento» y su `FAQPage` (`#faq-operacion`): distraía al final del formulario en móvil. Las 5 preguntas pasan a la página nueva `/preguntas-frecuentes`, con su `FAQPage`, enlazada desde el pie de `/fundador` y `/clinica/*` y agregada al `sitemap.xml` (64 `<loc>`). La respuesta de sedes ya no incluye horario: `/evaluacion` y la ficha de Vitacura decían horarios distintos y siguen pendientes del dato oficial.
+
 ## 2026-10-22 — /evaluacion: un solo scroll en móvil y recargar no borra el avance
 
 Móvil (≤768 px): la página es el único contenedor con scroll; antes cada paso tenía scroll propio dentro de una columna de 100dvh y el gesto sobre el formulario movía el paso y no la página. Recarga: sede, horario, salud, paso y datos escritos se guardan en `sessionStorage` (solo esa pestaña, 30 minutos) y se restauran al recargar; se borran apenas n8n confirma el lead. Si el día guardado ya no está en la grilla, vuelve al paso de horario.
