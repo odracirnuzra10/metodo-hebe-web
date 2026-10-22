@@ -1,3 +1,7 @@
+## 2026-10-22 — /evaluacion: GA4 recibe el envío del formulario
+
+`generate_lead` va a GA4 (vía `gtag`, mismo bloque que el embudo) cuando n8n confirma el lead, junto con el `Lead` de Meta: valor 2000 CLP, sede y `event_id`. Antes GA4 no tenía ningún evento de envío y no se podía calcular la conversión del wizard.
+
 ## 2026-10-22 — Preguntas frecuentes de agendamiento: salen de /evaluacion y pasan a /preguntas-frecuentes
 
 `/evaluacion` deja de mostrar el bloque «Preguntas frecuentes de agendamiento» y su `FAQPage` (`#faq-operacion`): distraía al final del formulario en móvil. Las 5 preguntas pasan a la página nueva `/preguntas-frecuentes`, con su `FAQPage`, enlazada desde el pie de `/fundador` y `/clinica/*` y agregada al `sitemap.xml` (64 `<loc>`). La respuesta de sedes ya no incluye horario: `/evaluacion` y la ficha de Vitacura decían horarios distintos y siguen pendientes del dato oficial.
