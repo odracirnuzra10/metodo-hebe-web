@@ -2076,6 +2076,9 @@
         overflow: visible;
       }
     }
+    .step:focus {
+      outline: none;
+    }
   </style>
 <!-- PUENTE-AEO-GRAPH -->
 <script type="application/ld+json" id="puente-aeo-graph">
@@ -2441,6 +2444,8 @@
 
   <script>
     let currentStep = 1;
+    // Solo el paso visible recibe foco y lectores de pantalla; los demás quedan inertes.
+    document.querySelectorAll('.step').forEach(s => { s.inert = !s.classList.contains('active'); s.tabIndex = -1; });
 
     // ===== A/B: orden del filtro de salud =====
     // 'despues' = sede → horario → salud → costo → datos (control)
@@ -2565,6 +2570,10 @@
       }
       const prev = document.getElementById(idDePaso(currentStep));
       const next = document.getElementById(idDePaso(num));
+      const focoEnPrev = prev.contains(document.activeElement);
+      document.querySelectorAll('.step').forEach(s => { s.inert = s !== next; });
+      // El foco estaba en el paso que se cierra (teclado): pasa al paso nuevo, no al inicio de la página.
+      if (focoEnPrev) next.focus({ preventScroll: true });
       prev.classList.remove('active');
       prev.setAttribute('aria-expanded', 'false');
       prev.classList.add(direction === 'back' ? 'exit-right' : 'exit-left');

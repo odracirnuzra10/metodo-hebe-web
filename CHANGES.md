@@ -1,3 +1,7 @@
+## 2026-10-22 — /evaluacion: los pasos ocultos ya no reciben foco
+
+Los pasos que no se ven quedan `inert`: con teclado o lector de pantalla, Tab ya no pasa por las sedes del paso 1 estando en el paso 2. Si el foco estaba en el paso que se cierra, pasa al paso nuevo. Sin cambios visuales ni de alto.
+
 ## 2026-10-22 — /evaluacion: aviso del número final con 8 dígitos
 
 Si el celular se escribe con 8 dígitos sin el 9 inicial, el wizard sigue guardándolo con un 9 adelante y ahora lo muestra bajo el campo («Quedará como +56 9 2234 5678.»), en gris y en la línea del error, para que la paciente lo corrija si era un teléfono fijo.
