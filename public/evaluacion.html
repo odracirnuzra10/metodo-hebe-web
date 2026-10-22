@@ -2047,6 +2047,30 @@
         margin-top: 0.6rem;
       }
     }
+    /* Móvil: un solo scroll, el de la página. La columna medía 100dvh con overflow oculto y
+       cada paso tenía scroll propio: el gesto sobre el formulario movía el paso y no la
+       página, y el botón de enviar podía quedar bajo el borde. */
+    @media (max-width: 768px) {
+      .page {
+        height: auto;
+        overflow: visible;
+        overflow-x: clip;
+      }
+
+      .right-col {
+        height: auto;
+        overflow: visible;
+      }
+
+      .right-inner {
+        max-height: none;
+        overflow: visible;
+      }
+
+      .step {
+        overflow: visible;
+      }
+    }
   </style>
 <!-- PUENTE-AEO-GRAPH -->
 <script type="application/ld+json" id="puente-aeo-graph">
@@ -2559,6 +2583,7 @@
       updateProgress();
       if (direction === 'forward' && !desdeHistorial) evalTrack('evaluacion_paso', { paso: NOMBRE_PASO[num] });
       ajustarAltoVisor(next);
+      guardarEstado();
       setTimeout(() => prev.classList.remove('exit-left', 'exit-right'), 500);
     }
 
@@ -2979,6 +3004,7 @@
         btn.removeAttribute('aria-busy');
         if (ok) {
           window.__leadEnviado = true;
+          borrarEstado();
           // Meta Pixel — Lead: solo cuando n8n confirmó que recibió los datos
           if (typeof fbq === 'function') {
             // ✅ eventID va en el 2do argumento (options), NO dentro de custom data
@@ -3118,6 +3144,81 @@
       document.getElementById('successOverlay').classList.add('visible');
       document.getElementById('successWaLink').click();
     }
+
+    // Recargar a mitad del flujo no borra lo elegido: el estado vive en sessionStorage (solo
+    // esta pestaña) por 30 minutos y se borra apenas n8n confirma el lead.
+    const ESTADO_KEY = 'hebe_eval_estado';
+    const ESTADO_MAX_MS = 30 * 60 * 1000;
+    function guardarEstado() {
+      if (window.__leadEnviado) return;
+      try {
+        sessionStorage.setItem(ESTADO_KEY, JSON.stringify({
+          ts: Date.now(),
+          paso: currentStep,
+          sede: selectedSede,
+          dia: selectedDay,
+          franja: selectedSlot,
+          salud: saludApta ? salud : '',
+          nombre: document.getElementById('inputNombre').value,
+          celular: document.getElementById('inputCelular').value,
+          correo: document.getElementById('inputCorreo').value
+        }));
+      } catch (e) {}
+    }
+    function borrarEstado() {
+      try { sessionStorage.removeItem(ESTADO_KEY); } catch (e) {}
+    }
+    function restaurarEstado() {
+      let e = null;
+      try { e = JSON.parse(sessionStorage.getItem(ESTADO_KEY) || 'null'); } catch (err) {}
+      if (!e || !e.sede || Date.now() - e.ts > ESTADO_MAX_MS) return;
+      const card = [...document.querySelectorAll('.sede-card')].find(c => c.dataset.sede === e.sede);
+      if (!card) return;
+      selectedSede = e.sede;
+      card.classList.add('selected');
+      card.setAttribute('aria-pressed', 'true');
+      // Los días se generan desde mañana: si el día guardado ya no está, se vuelve a elegir.
+      const dia = [...document.querySelectorAll('.day-btn')].find(b => b.dataset.day === e.dia);
+      const franja = [...document.querySelectorAll('.slot-btn')].find(b => b.dataset.slot === e.franja);
+      if (dia && franja) {
+        dia.classList.add('selected');
+        franja.classList.add('selected');
+        selectedDay = e.dia;
+        selectedSlot = e.franja;
+      }
+      const btnSalud = e.salud && document.querySelector('#saludQ [data-v="' + e.salud + '"]');
+      if (btnSalud) {
+        salud = e.salud;
+        saludApta = true;
+        btnSalud.classList.add('selected');
+        btnSalud.setAttribute('aria-pressed', 'true');
+        if (salud === 'medicamento') {
+          document.querySelector('.salud-ninguna-btn').classList.add('is-quiet');
+          const nota = document.getElementById('saludNota');
+          nota.innerHTML = SALUD_NOTA;
+          nota.hidden = false;
+          document.getElementById('saludNext').hidden = false;
+        }
+      }
+      document.getElementById('inputNombre').value = e.nombre || '';
+      document.getElementById('inputCelular').value = e.celular || '';
+      document.getElementById('inputCorreo').value = e.correo || '';
+      // Vuelve al primer paso que falte completar, sin pasar del paso en que estaba.
+      const posGuardado = ORDEN_PASOS.indexOf(e.paso);
+      const completo = p => p === 1 ? !!selectedSede
+        : p === 2 ? !!(selectedDay && selectedSlot)
+        : p === 2.2 ? saludApta
+        : p === 2.5 ? posGuardado > ORDEN_PASOS.indexOf(2.5)
+        : false;
+      let destino = ORDEN_PASOS.find(p => !completo(p));
+      if (ORDEN_PASOS.indexOf(destino) > posGuardado && posGuardado >= 0) destino = e.paso;
+      if (!destino || destino === 1) return;
+      pasoMax = Math.max(pasoMax, ORDEN_PASOS.indexOf(destino));
+      goToStep(destino, 'forward', true);
+      try { history.replaceState({ wizardPaso: destino }, ''); } catch (err) {}
+    }
+    ['inputNombre', 'inputCelular', 'inputCorreo'].forEach(id => document.getElementById(id).addEventListener('input', guardarEstado));
+    if (!new URLSearchParams(location.search).get('sede')) restaurarEstado();
 
     // Widget de los artículos: ?sede=<slug>&dia=<MIÉ 15>&franja=<1-3>. Reutiliza los mismos
     // eventos Pixel de selectSede/checkStep2 y el mismo orden de pasos (A/B de salud incluido).
