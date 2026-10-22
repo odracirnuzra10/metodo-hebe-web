@@ -1,3 +1,7 @@
+## 2026-10-22 — /evaluacion y home: cierre de la auditoría (20, 21, 24, 25, 27)
+
+`/evaluacion`: se quita «3 cupos esta semana» (texto fijo, no venía de la agenda); el resumen del paso 3 pasa a `--teal-darker` (contraste 5,7:1); los pasos ya no llevan `aria-expanded`; el monto de la evaluación ($27.990) sale del paso 1 y del aviso de salud y queda solo en la pantalla de costo y en la de pago. Home: los CTA a `/evaluacion` (menú, hero, cierre y barra fija móvil) pasan de `<button onclick>` a enlaces `<a href>`, el del menú con 44 px de alto, y el enlace de la FAQ dice «la evaluación» en vez de «/evaluacion».
+
 ## 2026-10-22 — /evaluacion: los pasos ocultos ya no reciben foco
 
 Los pasos que no se ven quedan `inert`: con teclado o lector de pantalla, Tab ya no pasa por las sedes del paso 1 estando en el paso 2. Si el foco estaba en el paso que se cierra, pasa al paso nuevo. Sin cambios visuales ni de alto.

@@ -751,7 +751,8 @@
       gap: 0.4rem;
       align-self: flex-start;
       background: var(--teal-light);
-      color: var(--teal-dark);
+      /* --teal-darker: 5,7:1 sobre --teal-light (con --teal-dark era 2,9:1) */
+      color: var(--teal-darker);
       border: 1px solid rgba(26, 142, 130, 0.25);
       border-radius: 999px;
       padding: 0.4rem 0.95rem;
@@ -2157,10 +2158,6 @@
         <div class="label" style="font-size: 1.1rem; line-height: 1.3; text-transform: none; font-weight: 600;">la mejor
           tecnología coreana del país</div>
       </div>
-      <div class="spots-tag">
-        <div class="pulse-dot"></div>
-        3 cupos disponibles esta semana
-      </div>
 
       <!-- Marquesina tratamientos (desktop) -->
       <div class="ticker-wrap">
@@ -2190,9 +2187,6 @@
             <img src="/img/logo-hebe-stacked-optimized.png" alt="Método Hebe" width="96" height="74" decoding="async" style="width: 96px; height: auto; margin-bottom: 8px;">
             <div class="m-price-new" style="font-size: 0.85rem; font-family: &#39;Outfit&#39;, sans-serif; text-transform: none; line-height: 1.2; margin-top: 4px; font-weight: 600;">
               la mejor tecnología<br>coreana del país</div>
-            <div class="m-spots">
-              <div class="pulse-dot"></div> 3 cupos esta semana
-            </div>
           </div>
         </div>
         <!-- Marquesina tratamientos (mobile) -->
@@ -2221,7 +2215,7 @@
         </div>
         <form id="evalForm" class="steps-viewport" novalidate onsubmit="handleSubmit(event); return false;">
           <!-- STEP 1 -->
-          <div class="step active" id="step1" aria-expanded="true">
+          <div class="step active" id="step1">
             <div class="viewers">
               <span>✨</span>
               <span>Más de 30.000 pacientes en nuestras 3 sedes</span>
@@ -2267,11 +2261,10 @@
                   </svg></div>
               </div>
             </fieldset>
-            <p class="no-refund-note" style="text-align:center;margin-top:1rem;">Te pedimos tener presente que el valor de la evaluación ($27.990) no es reembolsable.</p>
           </div>
 
           <!-- STEP 2 -->
-          <div class="step" id="step2" aria-expanded="false">
+          <div class="step" id="step2">
             <button type="button" class="back-btn" onclick="retroceder(2)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -2299,7 +2292,7 @@
 
           <!-- PANTALLA DE SALUD — entre el horario y el costo. Filtra contraindicaciones
                antes de que la paciente pague una evaluación que no podría usar. -->
-          <div class="step" id="stepSalud" aria-expanded="false">
+          <div class="step" id="stepSalud">
             <button type="button" class="back-btn" onclick="retroceder(2.2)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -2317,7 +2310,7 @@
               </div>
               <p class="salud-aviso">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                <span><strong>Revisa antes de seguir.</strong> Si tienes alguna de estas, no podremos tratarte y la evaluación ($27.990) no es reembolsable.</span>
+                <span><strong>Revisa antes de seguir.</strong> Si tienes alguna de estas, no podremos tratarte y la evaluación no es reembolsable.</span>
               </p>
               <button type="button" class="confirm-btn salud-ninguna-btn" data-v="ninguna" aria-pressed="false" onclick="saludResp(this)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -2331,7 +2324,7 @@
           </div>
 
           <!-- PANTALLA DE COSTO — entre el horario y el formulario -->
-          <div class="step" id="stepPrecio" aria-expanded="false">
+          <div class="step" id="stepPrecio">
             <button type="button" class="back-btn" onclick="retroceder(2.5)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -2352,7 +2345,7 @@
           </div>
 
           <!-- STEP 3 -->
-          <div class="step" id="step3" aria-expanded="false">
+          <div class="step" id="step3">
             <button type="button" class="back-btn" onclick="retroceder(3)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -2575,10 +2568,8 @@
       // El foco estaba en el paso que se cierra (teclado): pasa al paso nuevo, no al inicio de la página.
       if (focoEnPrev) next.focus({ preventScroll: true });
       prev.classList.remove('active');
-      prev.setAttribute('aria-expanded', 'false');
       prev.classList.add(direction === 'back' ? 'exit-right' : 'exit-left');
       next.classList.remove('exit-left', 'exit-right');
-      next.setAttribute('aria-expanded', 'true');
       next.style.transform = direction === 'back' ? 'translateX(-60px)' : 'translateX(60px)';
       next.style.opacity = '0';
       requestAnimationFrame(() => {
