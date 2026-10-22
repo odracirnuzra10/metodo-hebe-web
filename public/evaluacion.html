@@ -546,6 +546,11 @@
       display: none;
     }
 
+    .field-error.is-hint {
+      color: var(--text-sec);
+      font-weight: 400;
+    }
+
     .back-btn svg {
       width: 16px;
       height: 16px;
@@ -2798,6 +2803,22 @@
       input.value = formatTypedPhone(input.value);
       const digits = normalizePhoneDigits(input.value);
       if (digits.length === 9 && digits.startsWith('9')) clearFieldError('inputCelular');
+      pistaCelular();
+    }
+
+    // 8 dígitos sin el 9: se guarda con un 9 adelante (celulares escritos en el formato
+    // antiguo). Se muestra el número final para que la paciente lo corrija si era un fijo.
+    // Usa la línea del error del campo y solo aparece en ese caso, como un error.
+    function pistaCelular() {
+      const err = document.getElementById('errorCelular');
+      const raw = phoneRawDigits(document.getElementById('inputCelular').value);
+      if (raw.length === 8 && !raw.startsWith('9')) {
+        err.textContent = 'Quedará como ' + getFullPhoneNumber() + '.';
+        err.classList.add('is-hint');
+      } else if (err.classList.contains('is-hint')) {
+        err.textContent = '';
+        err.classList.remove('is-hint');
+      }
     }
 
     // Correo: usuario@dominio.tld, sin espacios. Antes bastaba con un "@".
@@ -2838,7 +2859,7 @@
       el.classList.remove('error');
       el.removeAttribute('aria-invalid');
       if (wrap) wrap.classList.remove('error');
-      if (err) err.textContent = '';
+      if (err) { err.textContent = ''; err.classList.remove('is-hint'); }
     }
 
     function setFieldError(id, message) {
@@ -2848,7 +2869,7 @@
       el.classList.add('error');
       el.setAttribute('aria-invalid', 'true');
       if (wrap) wrap.classList.add('error');
-      if (err) err.textContent = message;
+      if (err) { err.textContent = message; err.classList.remove('is-hint'); }
       ajustarAltoVisor();
     }
 
