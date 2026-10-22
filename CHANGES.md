@@ -1,3 +1,7 @@
+## 2026-10-22 — /evaluacion: aviso del número final con 8 dígitos
+
+Si el celular se escribe con 8 dígitos sin el 9 inicial, el wizard sigue guardándolo con un 9 adelante y ahora lo muestra bajo el campo («Quedará como +56 9 2234 5678.»), en gris y en la línea del error, para que la paciente lo corrija si era un teléfono fijo.
+
 ## 2026-10-22 — /evaluacion: GA4 recibe el envío del formulario
 
 `generate_lead` va a GA4 (vía `gtag`, mismo bloque que el embudo) cuando n8n confirma el lead, junto con el `Lead` de Meta: valor 2000 CLP, sede y `event_id`. Antes GA4 no tenía ningún evento de envío y no se podía calcular la conversión del wizard.
