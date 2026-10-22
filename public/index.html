@@ -379,7 +379,7 @@ img{max-width:100%;display:block}
 .nav-links a{padding:6px 0;border-bottom:2px solid transparent;transition:all .2s}
 .nav-links a:hover,.nav-links a.active{border-color:var(--cyan);color:var(--ink)}
 .nav-r{display:flex;gap:10px;align-items:center}
-.btn-cta{background:var(--ink);color:var(--paper);padding:11px 20px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.2s;font-family:inherit;border-radius:8px}
+.btn-cta{background:var(--ink);color:var(--paper);padding:11px 20px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.2s;font-family:inherit;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
 .btn-cta:hover{background:var(--cyan-dd)}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .nav-hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
@@ -395,7 +395,7 @@ img{max-width:100%;display:block}
 .hero h1 em{font-family:var(--serif);font-style:italic;color:var(--cyan-dd);font-weight:500}
 .hero-sub{font-size:17px;color:var(--ink-2);line-height:1.6;margin-bottom:28px;max-width:540px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
-.btn-primary{background:var(--ink);color:var(--paper);padding:14px 24px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:.2s;font-family:inherit;border-radius:10px}
+.btn-primary{background:var(--ink);color:var(--paper);padding:14px 24px;border:none;cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:.2s;font-family:inherit;border-radius:10px;text-decoration:none}
 .btn-primary:hover{background:var(--cyan-dd);transform:translateY(-1px)}
 .btn-outline{background:var(--paper);color:var(--ink);border:1.5px solid var(--line-2);padding:13px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s;display:inline-flex;align-items:center;border-radius:10px}
 .btn-outline:hover{border-color:var(--cyan);color:var(--cyan-dd)}
@@ -561,7 +561,7 @@ img{max-width:100%;display:block}
 /* ── MOBILE STICKY CTA ── */
 .mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;padding:10px 16px 14px;background:rgba(15,26,26,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(28,197,197,.25);text-align:center;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .mobile-sticky-cta.visible{transform:translateY(0)}
-.mobile-sticky-cta button{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#0B8076;color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px}
+.mobile-sticky-cta a{text-decoration:none;width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#0B8076;color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px}
 .trust-text{font-size:11px;color:rgba(255,255,255,.4);margin-top:5px}
 
 /* ── RESPONSIVE ── */
@@ -715,7 +715,7 @@ img{max-width:100%;display:block}
       <a href="/blog">Blog</a>
     </div>
     <div class="nav-r">
-      <button class="btn-cta" onclick="location.href='/evaluacion';hebeTrack('evaluacion_click',{location:'nav'})">Agenda evaluación · $27.990</button>
+      <a href="/evaluacion" class="btn-cta" onclick="hebeTrack('evaluacion_click',{location:'nav'})">Agenda evaluación · $27.990</a>
       <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
@@ -734,10 +734,10 @@ img{max-width:100%;display:block}
         <h1 class="fade-up-d1">Tu cuerpo cambia cuando<br>tu <em>metabolismo</em> cambia.</h1>
         <p class="hero-sub speakable fade-up-d2">Método Hebe es una clínica corporal metabólica chilena con sedes en Vitacura, Concón y Los Ángeles que trata grasa localizada, flacidez, celulitis y guatita de delantal sin cirugía, combinando diagnóstico metabólico, coaching nutricional y tecnología coreana.</p>
         <div class="hero-actions fade-up-d2">
-          <button class="btn-primary" onclick="location.href='/evaluacion';hebeTrack('evaluacion_click',{location:'hero'})">
+          <a href="/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{location:'hero'})">
             Agenda tu evaluación
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-          </button>
+          </a>
           <a href="/planes" class="btn-outline" onclick="hebeTrack('cta_click',{location:'hero',type:'planes'})">Ver planes</a>
         </div>
         <div class="hero-trust fade-up-d3">
@@ -1088,7 +1088,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿Cómo agendo la Evaluación P3?</button>
-        <div class="faq-a"><p>En <a href="/evaluacion">/evaluacion</a> eliges sede y horario. $27.990, 45 minutos, no reembolsable; se descuenta si contratas un plan.</p></div>
+        <div class="faq-a"><p>En <a href="/evaluacion">la evaluación</a> eliges sede y horario. $27.990, 45 minutos, no reembolsable; se descuenta si contratas un plan.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">¿En cuánto tiempo se ven resultados?</button>
@@ -1145,10 +1145,10 @@ img{max-width:100%;display:block}
     <h2>Tu cuerpo cambia cuando<br>tu <em>metabolismo</em> cambia.</h2>
     <p>Comienza con la evaluación P3: análisis profundo de tus tejidos corporales con InBody y tu plan personalizado, por $27.990.</p>
     <div class="cta-final-actions">
-      <button class="btn-primary" onclick="location.href='/evaluacion';hebeTrack('evaluacion_click',{location:'cta_final'})">
+      <a href="/evaluacion" class="btn-primary" onclick="hebeTrack('evaluacion_click',{location:'cta_final'})">
         Agenda tu evaluación
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-      </button>
+      </a>
       <a href="/evaluacion" class="btn-wa" onclick="hebeTrack('evaluacion_click',{location:'cta_final_wa'})">Ver cómo funciona la evaluación</a>
     </div>
     <p class="eval-refund-note">Te pedimos tener presente que el valor de la evaluación no es reembolsable.</p>
@@ -1216,10 +1216,10 @@ img{max-width:100%;display:block}
 
 <!-- ═══ MOBILE STICKY CTA ═══ -->
 <div class="mobile-sticky-cta" id="mobile-sticky">
-  <button onclick="location.href='/evaluacion';hebeTrack('evaluacion_click',{location:'mobile_sticky'})">
+  <a href="/evaluacion" onclick="hebeTrack('evaluacion_click',{location:'mobile_sticky'})">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
     Agenda tu evaluación · $27.990
-  </button>
+  </a>
   <div class="trust-text">45 minutos · Sin compromiso · Respuesta inmediata</div>
 </div>
 
