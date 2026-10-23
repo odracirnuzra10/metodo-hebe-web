@@ -1,3 +1,7 @@
+## 2026-10-23 — /evaluacion: pantalla de pago más simple
+
+La pantalla que aparece después de dejar los datos dice una sola cosa: sin pago no hay hora. Arriba, «Hora sin confirmar»; título «Paga para confirmar tu hora»; la sede, el día y la franja elegidos; tres pasos (Datos ✓ → Pago → Hora confirmada) y un botón «Pagar $27.990 y confirmar». El precio aparece una vez (antes, tres) y el descuento y el no reembolso quedan en una línea bajo el botón. En móvil se quita la muestra del análisis y la pantalla cabe sin scroll en 375×667 (antes, 922 px de alto). El cobro no cambia: mismo link de MercadoPago, link propio por paciente y mismos eventos.
+
 ## 2026-10-22 — /evaluacion y home: cierre de la auditoría (20, 21, 24, 25, 27)
 
 `/evaluacion`: se quita «3 cupos esta semana» (texto fijo, no venía de la agenda); el resumen del paso 3 pasa a `--teal-darker` (contraste 5,7:1); los pasos ya no llevan `aria-expanded`; el monto de la evaluación ($27.990) sale del paso 1 y del aviso de salud y queda solo en la pantalla de costo y en la de pago. Home: los CTA a `/evaluacion` (menú, hero, cierre y barra fija móvil) pasan de `<button onclick>` a enlaces `<a href>`, el del menú con 44 px de alto, y el enlace de la FAQ dice «la evaluación» en vez de «/evaluacion».
