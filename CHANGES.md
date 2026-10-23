@@ -1,3 +1,7 @@
+## 2026-10-23 — /evaluacion: conversiones de Meta en USD y sin ClickPagar
+
+El Lead del navegador pasa de $2.000 CLP a US$5, el mismo valor del Lead que n8n manda por CAPI con ese eventID; `generate_lead` de GA4 igual. Se quita el evento `ClickPagar` del clic en pagar: el pago llega a Meta una sola vez, como `Schedule` US$29 cuando el lead pasa a Cita confirmada en Twenty. `eval_pago_evaluacion` sigue en el dataLayer como paso del embudo, sin valor. El webhook de pago a n8n no cambia.
+
 ## 2026-10-23 — /evaluacion: pantalla de pago más simple
 
 La pantalla que aparece después de dejar los datos dice una sola cosa: sin pago no hay hora. Arriba, «Hora sin confirmar»; título «Paga para confirmar tu hora»; la sede, el día y la franja elegidos; tres pasos (Datos ✓ → Pago → Hora confirmada) y un botón «Pagar $27.990 y confirmar». El precio aparece una vez (antes, tres) y el descuento y el no reembolso quedan en una línea bajo el botón. En móvil se quita la muestra del análisis y la pantalla cabe sin scroll en 375×667 (antes, 922 px de alto). El cobro no cambia: mismo link de MercadoPago, link propio por paciente y mismos eventos.
