@@ -1,3 +1,7 @@
+## 2026-10-28 — /evaluacion: sin scroll en celulares chicos
+
+En 320×568 (y hasta ~700 px de alto) cada paso cabe sin scroll: se oculta la cinta «Los más solicitados», la imagen del encabezado baja a 96 px y se compactan espacios, el aviso de costo y el formulario. Los campos siguen en 16 px (sin zoom en iOS) y 40 px de alto. De 360 px en adelante con pantallas altas no cambia nada.
+
 ## 2026-10-28 — /financiamiento: landing de formas de pago
 
 Página nueva de una vista para clientas: 3, 6, 9 y 12 cuotas precio contado (la de 3 destacada con «Incluye regalo extra»), descuentos del 20% al 30% vigentes en cualquier forma de pago, bloque del regalo extra (solo con 3 cuotas; texto `[REGALO POR DEFINIR]` pendiente), 4 preguntas frecuentes y CTA a `/evaluacion`. Sin precios ni montos de cuotas. `noindex` y fuera del sitemap mientras el regalo esté por definir. Marca: solo el ícono.

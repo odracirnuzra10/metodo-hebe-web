@@ -2295,6 +2295,48 @@
         font-size: 1.9rem;
       }
     }
+
+    /* Celulares chicos (320 px de ancho o hasta ~700 px de alto): cada paso cabe sin scroll.
+       Solo se compactan espacios y alturas; los campos siguen en 16 px para que iOS no haga zoom. */
+    @media (max-width: 359px), (max-width: 480px) and (max-height: 700px) {
+      body .mobile-ticker-wrap { display: none !important; }
+      body .mobile-header-wrapper:not(.compact) .mobile-hero { padding-top: 0.45rem; padding-bottom: 0.45rem; }
+      body .mobile-header-wrapper:not(.compact) .mobile-hero .mobile-carousel { width: 96px; height: 96px; }
+      body .progress-bar { padding-top: 0.5rem; }
+      body .step { padding-top: 0.55rem; padding-bottom: 0.55rem; }
+      body .back-btn { margin-bottom: 0.35rem; }
+      body .step-label { margin-bottom: 0.15rem; }
+      body .step-sub { margin-bottom: 0.5rem; }
+      body .viewers, body .greviews { margin-bottom: 0.25rem; }
+      body .sede-card { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+      body .sede-cards { gap: 0.45rem; }
+      body .recap-chip { margin-top: 0.15rem; margin-bottom: 0.45rem; }
+      body .price-notice { padding: 0.7rem 0.8rem; margin-bottom: 0.6rem; }
+      body .price-notice-head { font-size: 1.05rem; margin-bottom: 0.3rem; }
+      body .price-notice-sub { font-size: 0.8rem; line-height: 1.35; }
+      body .descuento { margin-top: 0.4rem; padding-top: 0.4rem; }
+      body .no-refund-note { margin-top: 0.3rem; }
+      body .confirm-btn, body .wa-btn { padding-top: 0.75rem; padding-bottom: 0.75rem; min-height: 0; }
+      body .form-group { margin-bottom: 0.45rem; }
+      body .form-group label { margin-bottom: 0.15rem; }
+      body .form-group input, body .phone-prefix { padding-top: 0.55rem; padding-bottom: 0.55rem; font-size: 16px; }
+      body .form-note { margin-top: 0.35rem; }
+      body .price-notice--solo { padding: 0.75rem 0.85rem; }
+      body .price-notice--solo .price-notice-head { font-size: 1.02rem; line-height: 1.3; }
+      body .price-notice--solo .price-notice-sub { font-size: 0.8rem; margin-top: 0.35rem; line-height: 1.35; }
+      body .confirm-btn { margin-top: 0.7rem; }
+      body .field-error:empty { min-height: 0; margin: 0; }
+      body .step.active { row-gap: 0.4rem; }
+      body #step3 .step-sub { font-size: 0.85rem; line-height: 1.35; margin-bottom: 0.3rem; }
+      body #step3 .form-note { font-size: 0.68rem; line-height: 1.3; margin-top: 0.2rem; }
+      body #step3 { padding-bottom: 0.3rem; }
+      body .form-group input, body .phone-prefix { padding-top: 0.45rem; padding-bottom: 0.45rem; min-height: 40px; }
+    }
+
+    @media (max-width: 359px) {
+      body #step3 .form-group { margin-bottom: 0.2rem; }
+      body #step3 .wa-btn { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+    }
   </style>
 <!-- PUENTE-AEO-GRAPH -->
 <script type="application/ld+json" id="puente-aeo-graph">
