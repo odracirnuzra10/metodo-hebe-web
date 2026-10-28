@@ -1,3 +1,7 @@
+## 2026-10-28 — /evaluacion: «Últimos cupos» que rotan
+
+Marketing: al elegir cualquier sede, 1 o 2 días (no seguidos) muestran «Últimos 2 cupos» o «Últimos 3 cupos» (en celular, «Últimos 2»). Al elegir ese día, las franjas reparten esos mismos cupos (1+1 con una franja Full, 1+1+1 o 2+1 con una Full); la franja Full no se puede elegir. Los días cambian en cada visita y se mantienen durante la misma visita (sessionStorage `evalCupos`). No vienen de la agenda. El sábado de Los Ángeles sigue Full. El paso no crece: las etiquetas van sobre el borde de los botones.
+
 ## 2026-10-28 — /evaluacion: Los Ángeles no abre los sábados
 
 Si la paciente elige la sede Los Ángeles, el sábado se ve en la grilla de días como «Full», gris y sin poder elegirse. Al tocarlo, la bajada del paso dice «Sábado full de evaluaciones. Elige otro día.» por unos segundos. Concón y Vitacura siguen con sábado. Si cambia de sede a Los Ángeles con el sábado ya elegido, el día se suelta. Lo mismo vale para lo restaurado de la sesión y el prefill por URL (`?sede=losangeles&dia=SÁB …`). El paso no crece: mismo alto que antes en 375×667.
