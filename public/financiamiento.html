@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZC56NQ5');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financiamiento: paga tu tratamiento en cuotas precio contado</title>
+<meta name="description" content="Paga tu tratamiento en 3, 6, 9 o 12 cuotas precio contado, sin interés para ti. Tus descuentos se mantienen y con 3 cuotas recibes un regalo extra.">
+<!-- Página para clientas con el regalo aún por definir: no se indexa ni va al sitemap. -->
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.metodohebe.cl/financiamiento">
+<meta property="og:title" content="Paga tu tratamiento en cuotas precio contado">
+<meta property="og:description" content="3, 6, 9 o 12 cuotas precio contado, sin interés para ti. Con 3 cuotas, un regalo extra.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.metodohebe.cl/financiamiento">
+<meta property="og:locale" content="es_CL">
+<meta property="og:image" content="https://www.metodohebe.cl/img/og-metodo-hebe.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="theme-color" content="#0A6B65">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #14B5A7;
+    --teal-dark: #0FA094;
+    --teal-darker: #0A6B65;
+    --teal-light: #E8F5F3;
+    --text: #14201F;
+    --text-sec: #4A5856;
+    --line: #E3E9E8;
+    --bg: #FAFBFB;
+    --paper: #FFFFFF;
+    --gift: #B4232C;
+    --gift-light: #FDF0F0;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+  /* Marca: solo el ícono, sin texto. */
+  .top { padding: 18px 0 0; }
+  .top a { display: inline-block; line-height: 0; border-radius: 10px; }
+  .top img { width: 44px; height: 44px; border-radius: 10px; display: block; }
+
+  /* Hero */
+  .hero { padding: 28px 0 8px; }
+  .hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.75rem, 7vw, 2.4rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .hero p { margin: 0; font-size: 1.05rem; color: var(--text-sec); }
+
+  section { padding: 28px 0 4px; }
+  h2 {
+    margin: 0 0 6px;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  .lead { margin: 0 0 16px; color: var(--text-sec); }
+
+  /* Formas de pago */
+  .cuotas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .cuota {
+    position: relative;
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 6px 14px;
+    text-align: center;
+  }
+  .cuota .n {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--teal-darker);
+  }
+  .cuota .t { display: block; margin-top: 6px; font-weight: 600; }
+  .cuota .s { display: block; font-size: 0.85rem; color: var(--text-sec); }
+  .cuota.top3 {
+    grid-column: 1 / -1;
+    border: 2px solid var(--teal);
+    background: var(--teal-light);
+    padding-top: 26px;
+  }
+  .cuota.top3 .n { font-size: 3rem; }
+  .etiqueta {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: var(--gift);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+  .nota {
+    margin: 14px 0 0;
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-size: 0.92rem;
+    color: var(--text-sec);
+  }
+
+  /* Bloques de texto */
+  .bloque {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 18px;
+  }
+  .bloque p { margin: 0 0 8px; }
+  .bloque p:last-child { margin-bottom: 0; }
+  .pct {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal-darker);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .regalo { background: var(--gift-light); border-color: #F2D3D5; }
+  .regalo .item {
+    margin: 10px 0 12px;
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 1.5px dashed var(--gift);
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .regalo ul { margin: 0; padding-left: 20px; }
+  .regalo li { margin-bottom: 4px; }
+
+  /* Preguntas frecuentes */
+  .faq details {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 16px 44px 16px 16px;
+    font-weight: 600;
+    position: relative;
+    min-height: 48px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--teal-darker);
+  }
+  .faq details[open] summary::after { content: '–'; }
+  .faq details p { margin: 0; padding: 0 16px 16px; color: var(--text-sec); }
+
+  /* CTA final */
+  .cta { padding: 32px 0 40px; text-align: center; }
+  .cta h2 { margin-bottom: 8px; }
+  .cta p { margin: 0 0 18px; color: var(--text-sec); }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 360px;
+    padding: 16px 24px;
+    background: var(--teal);
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--teal-dark); }
+  :where(a, summary):focus-visible { outline: 3px solid var(--teal-darker); outline-offset: 2px; }
+
+  footer { padding: 0 0 28px; text-align: center; font-size: 0.85rem; color: var(--text-sec); }
+  footer a { color: var(--teal-darker); }
+
+  @media (min-width: 560px) {
+    .cuotas { grid-template-columns: repeat(4, 1fr); }
+    .cuota.top3 { grid-column: auto; padding-top: 26px; }
+    .cuota.top3 .n { font-size: 2.4rem; }
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZC56NQ5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="wrap">
+  <header class="top">
+    <a href="/" aria-label="Ir al inicio"><img src="/favicon.svg" alt="" width="44" height="44"></a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>💳 Paga tu tratamiento en cuotas</h1>
+      <p>3, 6, 9 o 12 cuotas precio contado. Sin interés para ti.</p>
+    </div>
+
+    <section aria-labelledby="formas">
+      <h2 id="formas">Formas de pago</h2>
+      <p class="lead">Seguimos con financiamiento flexible. Elige el plan que te acomode.</p>
+      <ul class="cuotas">
+        <li class="cuota top3">
+          <span class="etiqueta">🎁 Incluye regalo extra</span>
+          <span class="n">3</span>
+          <span class="t">cuotas</span>
+          <span class="s">precio contado</span>
+        </li>
+        <li class="cuota">
+          <span class="n">6</span>
+          <span class="t">cuotas</span>
+          <span class="s">precio contado</span>
+        </li>
+        <li class="cuota">
+          <span class="n">9</span>
+          <span class="t">cuotas</span>
+          <span class="s">precio contado</span>
+        </li>
+        <li class="cuota">
+          <span class="n">12</span>
+          <span class="t">cuotas</span>
+          <span class="s">precio contado</span>
+        </li>
+      </ul>
+      <p class="nota">Los valores de los tratamientos se actualizaron. El financiamiento en 12 cuotas precio contado se mantiene.</p>
+    </section>
+
+    <section aria-labelledby="descuentos">
+      <h2 id="descuentos">Descuentos</h2>
+      <div class="bloque">
+        <div class="pct">20% a 30%</div>
+        <p>Tus descuentos siguen vigentes, como siempre.</p>
+        <p>Se aplican en cualquier forma de pago: 3, 6, 9 o 12 cuotas.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="regalo">
+      <h2 id="regalo">🎁 Regalo extra</h2>
+      <div class="bloque regalo">
+        <p>Si eliges <strong>3 cuotas precio contado</strong>, tu tratamiento incluye un regalo extra:</p>
+        <div class="item">[REGALO POR DEFINIR]</div>
+        <ul>
+          <li>Solo aplica con 3 cuotas precio contado.</li>
+          <li>Con 6, 9 o 12 cuotas no se entrega.</li>
+          <li>El detalle del regalo se confirma en tu evaluación presencial.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="preguntas">
+      <h2 id="preguntas">Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Qué es precio contado?</summary>
+        <p>Pagas lo mismo que si pagaras todo de una vez. El valor se divide en cuotas, sin interés para ti.</p>
+      </details>
+      <details>
+        <summary>¿Los descuentos se acumulan con el regalo?</summary>
+        <p>Sí. Si eliges 3 cuotas precio contado, mantienes tu descuento y además recibes el regalo extra. Todo se confirma en tu evaluación.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cambiar de plan de cuotas después de contratar?</summary>
+        <p>El plan de cuotas se elige al contratar. Si después necesitas cambiarlo, escríbenos y lo revisamos contigo. El regalo extra aplica solo si tu plan es de 3 cuotas precio contado.</p>
+      </details>
+      <details>
+        <summary>¿Cómo reservo?</summary>
+        <p>Agenda tu evaluación: eliges sede, día y horario. En la evaluación presencial revisamos tu caso y te confirmamos valores, plan de cuotas y regalo.</p>
+      </details>
+    </section>
+
+    <section class="cta" aria-labelledby="agenda">
+      <h2 id="agenda">¿Lista para empezar?</h2>
+      <p>Los valores y el regalo se confirman en tu evaluación presencial.</p>
+      <a class="btn" href="/evaluacion">Agenda tu evaluación</a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="/">metodohebe.cl</a>
+  </footer>
+</div>
+</body>
+</html>

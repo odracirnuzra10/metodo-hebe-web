@@ -1,3 +1,7 @@
+## 2026-10-28 — /financiamiento: landing de formas de pago
+
+Página nueva de una vista para clientas: 3, 6, 9 y 12 cuotas precio contado (la de 3 destacada con «Incluye regalo extra»), descuentos del 20% al 30% vigentes en cualquier forma de pago, bloque del regalo extra (solo con 3 cuotas; texto `[REGALO POR DEFINIR]` pendiente), 4 preguntas frecuentes y CTA a `/evaluacion`. Sin precios ni montos de cuotas. `noindex` y fuera del sitemap mientras el regalo esté por definir. Marca: solo el ícono.
+
 ## 2026-10-28 — /evaluacion: «Últimos cupos» que rotan
 
 Marketing: al elegir cualquier sede, 1 o 2 días (no seguidos) muestran «Últimos 2 cupos» o «Últimos 3 cupos» (en celular, «Últimos 2»). Al elegir ese día, las franjas reparten esos mismos cupos (1+1 con una franja Full, 1+1+1 o 2+1 con una Full); la franja Full no se puede elegir. Los días cambian en cada visita y se mantienen durante la misma visita (sessionStorage `evalCupos`). No vienen de la agenda. El sábado de Los Ángeles sigue Full. El paso no crece: las etiquetas van sobre el borde de los botones.
