@@ -1,3 +1,7 @@
+## 2026-10-28 — /evaluacion: Los Ángeles no abre los sábados
+
+Si la paciente elige la sede Los Ángeles, el sábado se ve en la grilla de días como «Full», gris y sin poder elegirse. Al tocarlo, la bajada del paso dice «Sábado full de evaluaciones. Elige otro día.» por unos segundos. Concón y Vitacura siguen con sábado. Si cambia de sede a Los Ángeles con el sábado ya elegido, el día se suelta. Lo mismo vale para lo restaurado de la sesión y el prefill por URL (`?sede=losangeles&dia=SÁB …`). El paso no crece: mismo alto que antes en 375×667.
+
 ## 2026-10-23 — /evaluacion: conversiones de Meta en USD y sin ClickPagar
 
 El Lead del navegador pasa de $2.000 CLP a US$5, el mismo valor del Lead que n8n manda por CAPI con ese eventID; `generate_lead` de GA4 igual. Se quita el evento `ClickPagar` del clic en pagar: el pago llega a Meta una sola vez, como `Schedule` US$29 cuando el lead pasa a Cita confirmada en Twenty. `eval_pago_evaluacion` sigue en el dataLayer como paso del embudo, sin valor. El webhook de pago a n8n no cambia.
