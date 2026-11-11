@@ -1,3 +1,7 @@
+## 2026-11-11 — Home: video de Paloma Ávila en dos columnas
+
+En escritorio el video vertical va a la izquierda y a la derecha dos tarjetas con logo: Método Hebe (cuerpo, a /el-metodo.html) y Protocolo Lumina (rostro, a protocololumina.cl). En celular se apilan. Vimeo sin título ni autor encima del video.
+
 ## 2026-11-11 — Home: video de Paloma Ávila
 
 Sección nueva antes de las preguntas frecuentes: «Paloma Ávila visitó nuestra red de clínicas», con el video vertical (9:16) de Vimeo `1245671062`, de 380 px de ancho como máximo, y el texto de que se atendió en Método Hebe (corporal) y en Protocolo Lumina (facial, con link a protocololumina.cl). Sin JSON-LD nuevo y sin tocar `/evaluacion`.
