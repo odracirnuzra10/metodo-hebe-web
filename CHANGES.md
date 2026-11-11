@@ -1,6 +1,6 @@
 ## 2026-11-11 — Home: video de Paloma Ávila
 
-Sección nueva antes de las preguntas frecuentes: «Paloma Ávila visitó nuestra red de clínicas», con el video de Vimeo `1245671062` y el texto de que se atendió en Método Hebe (corporal) y en Protocolo Lumina (facial, con link a protocololumina.cl). Sin JSON-LD nuevo y sin tocar `/evaluacion`.
+Sección nueva antes de las preguntas frecuentes: «Paloma Ávila visitó nuestra red de clínicas», con el video vertical (9:16) de Vimeo `1245671062`, de 380 px de ancho como máximo, y el texto de que se atendió en Método Hebe (corporal) y en Protocolo Lumina (facial, con link a protocololumina.cl). Sin JSON-LD nuevo y sin tocar `/evaluacion`.
 
 ## 2026-10-28 — /evaluacion: sin scroll en celulares chicos
 
