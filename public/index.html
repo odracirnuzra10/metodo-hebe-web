@@ -1051,16 +1051,54 @@ img{max-width:100%;display:block}
 </section>
 
 <!-- ═══ PALOMA ÁVILA (video, 11-nov-2026) ═══ -->
+<style>
+.pal-grid{display:grid;gap:28px;align-items:center;max-width:960px;margin:0 auto}
+.pal-video{width:100%;max-width:360px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px -16px rgba(0,0,0,.3)}
+.pal-marcas{display:grid;gap:14px}
+.pal-marca{display:flex;gap:18px;align-items:center;padding:20px 22px;border-radius:16px;background:#fff;border:1px solid rgba(15,61,58,.12);text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.pal-marca:hover{transform:translateY(-2px);box-shadow:0 12px 28px -14px rgba(0,0,0,.25)}
+.pal-logo{flex:0 0 96px;display:flex;justify-content:center}
+.pal-tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.pal-marca h3{margin:0 0 4px;font-size:20px}
+.pal-marca p{margin:0;font-size:15px;line-height:1.45;color:#4b5b5a}
+.pal-ir{display:inline-block;margin-top:8px;font-size:14px;font-weight:600}
+.pal-hebe .pal-tag,.pal-hebe .pal-ir{color:#0d7c74}
+.pal-lumina{background:#fbf6f5;border-color:rgba(196,139,144,.35)}
+.pal-lumina .pal-tag,.pal-lumina .pal-ir{color:#a8666c}
+@media(min-width:900px){.pal-grid{grid-template-columns:360px 1fr;gap:48px}.pal-video{margin:0}.pal-marca{padding:26px 28px}.pal-marca h3{font-size:22px}}
+</style>
 <section class="section" id="paloma-avila">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Visita</div>
       <h2 class="sec-title">Paloma Ávila visitó nuestra <em>red de clínicas</em></h2>
-      <p class="sec-desc">Se atendió en Método Hebe, con su tratamiento corporal, y en <a href="https://www.protocololumina.cl" target="_blank" rel="noopener">Protocolo Lumina</a>, nuestra clínica de estética facial.</p>
+      <p class="sec-desc">Se atendió en nuestras dos clínicas: Método Hebe para su cuerpo y Protocolo Lumina para su rostro.</p>
     </div>
-    <div class="video-paloma" style="max-width:380px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 12px 32px -12px rgba(0,0,0,.25)">
-      <div style="padding:177.78% 0 0 0;position:relative">
-        <iframe src="https://player.vimeo.com/video/1245671062?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%" title="Paloma Ávila en Método Hebe y Protocolo Lumina"></iframe>
+    <div class="pal-grid">
+      <div class="pal-video">
+        <div style="padding:177.78% 0 0 0;position:relative">
+          <iframe src="https://player.vimeo.com/video/1245671062?badge=0&amp;autopause=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;player_id=0&amp;app_id=58479" loading="lazy" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%" title="Paloma Ávila en Método Hebe y Protocolo Lumina"></iframe>
+        </div>
+      </div>
+      <div class="pal-marcas">
+        <a class="pal-marca pal-hebe" href="/el-metodo.html" data-paloma-marca="hebe">
+          <span class="pal-logo"><img src="/img/logo-hebe-stacked.png" alt="Método Hebe" width="89" height="68" loading="lazy"></span>
+          <span>
+            <span class="pal-tag">Cuerpo</span>
+            <h3>Método Hebe</h3>
+            <p>Remodelación corporal coreana: grasa localizada, flacidez y celulitis.</p>
+            <span class="pal-ir">Conoce el método →</span>
+          </span>
+        </a>
+        <a class="pal-marca pal-lumina" href="https://www.protocololumina.cl" target="_blank" rel="noopener" data-paloma-marca="lumina">
+          <span class="pal-logo"><svg width="96" height="50" viewBox="0 0 360 186" role="img" aria-label="Protocolo Lumina"><path transform="translate(168 44)" fill="#C48B90" d="M12 0C12.8 10 14 12 24 18C14 24 12.8 26 12 36C11.2 26 10 24 0 18C10 12 11.2 10 12 0Z"/><text x="180" y="130" text-anchor="middle" font-family="'Playfair Display',serif" font-size="74" fill="#1E1818" font-weight="500" letter-spacing="3">lumina</text><text x="180" y="162" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1E1818" opacity="0.4" letter-spacing="5">CLÍNICA FACIAL COREANA</text></svg></span>
+          <span>
+            <span class="pal-tag">Rostro</span>
+            <h3>Protocolo Lumina</h3>
+            <p>Estética facial coreana, de nuestra misma red de clínicas.</p>
+            <span class="pal-ir">Ir a protocololumina.cl →</span>
+          </span>
+        </a>
       </div>
     </div>
   </div>
