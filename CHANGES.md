@@ -1,3 +1,7 @@
+## 2026-11-11 — Home: video de Paloma Ávila
+
+Sección nueva antes de las preguntas frecuentes: «Paloma Ávila visitó nuestra red de clínicas», con el video de Vimeo `1245671062` y el texto de que se atendió en Método Hebe (corporal) y en Protocolo Lumina (facial, con link a protocololumina.cl). Sin JSON-LD nuevo y sin tocar `/evaluacion`.
+
 ## 2026-10-28 — /evaluacion: sin scroll en celulares chicos
 
 En 320×568 (y hasta ~700 px de alto) cada paso cabe sin scroll: se oculta la cinta «Los más solicitados», la imagen del encabezado baja a 96 px y se compactan espacios, el aviso de costo y el formulario. Los campos siguen en 16 px (sin zoom en iOS) y 40 px de alto. De 360 px en adelante con pantallas altas no cambia nada.
